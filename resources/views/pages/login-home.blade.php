@@ -3,17 +3,17 @@
     <head>
         <meta charset="utf-8">
         <title>スキー場検索</title>
-        <!--<link rel="stylesheet" href="/css/style.css">-->
-        <link rel="stylesheet" href="/css/style.css">
+        <!--<link rel="stylesheet" href="/ski/public/CSS/style.css">-->
+        <link rel="stylesheet" href="/ski/public/css/style.css">
         
     </head>
     <body>
         <table>
-            <tr>
-            <td><h1>My best place</h1></td>
-            <td><a href="/pages/registration">新規登録</a></td>
-            <td><a href="/pages/login">ログイン</a></td>
-            </tr>
+        <tr>
+        <td><h1 class=hoge>My best place</h1></td>
+        <td><a href="/pages/registration">自己プロフィール編集</a></td>
+        <td><a href="/pages/login">ログアウト</a></td>
+        </tr>
         </table>
         <hr>
         
@@ -32,36 +32,36 @@
             <p>カムイスキーリンクス</p>
             <h3>福井県</h3>
             <p>スキージャム勝山</p>
-            <a href="/pages/izumi">福井和泉スキー場</a>
-            <!--<p>福井和泉スキー場</p>-->
+            <p>福井和泉スキー場</p>
         </div>
-        <div class=twitter>
+        <div style="text-align: right">
             <h2>Twitter</h2>
-            <textarea placeholder="スキー、スノーボードに関する投稿"></textarea>
+            <textarea  placeholder="スキー、スノーボードに関する投稿"></textarea>
         </div>
-        </br>
-        <hr class=horizontal>
-        <hr class=bar>
+        <hr>
        
         <h2>お気に入りランキング</h2>
         <table>
         <tr>
-        <td><p>No.1　福井和泉スキー場</p></td>
-        <td><a class=star href="/pages/izumi">詳細を見る</a></td>
+        <td><p>No.1　カムイスキーリンクス</p></td>
+        <td><p>　　　　　　　　</p></p></td>
+        <td><button class=starButton> 詳細を見る</button></td>
         </tr>
         </table>
         
         <table>
         <tr>
         <td><p>No.2　カムイスキーリンクス</p></td>
-        <td><button class=star> 詳細を見る</button></td>
+        <td><p>　　　　　　　　</p></p></td>
+        <td><button class=starButton> 詳細を見る</button></td>
         </tr>
         </table>
         
         <table>
         <tr>
         <td><p>No.3　カムイスキーリンクス</p></td>
-        <td><button class=star> 詳細を見る</button></td>
+        <td><p>　　　　　　　　</p></p></td>
+        <td><button class=starButton> 詳細を見る</button></td>
         </tr>
         </table>
         
