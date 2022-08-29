@@ -16,3 +16,9 @@
 // });
 
 Route::get('/', 'PostController@home');
+Route::get('/pages/login', 'PostController@login');
+Route::get('/pages/registration', 'PostController@registration');
+Route::get('/pages/izumi', 'PostController@izumi');
+Route::get('/pages/star', 'PostController@star');
+
+

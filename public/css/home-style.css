@@ -1,0 +1,41 @@
+h1{
+    color: blue;
+}
+
+.header{
+    position: absolute;
+    right: 10px;
+}
+
+.twitter{
+    
+    /*text-align: right;*/
+    position: absolute;
+    top: 170px;
+    left: 66%;
+    
+}
+
+.horizontal{
+    position: absolute;
+    width: 65%;
+    left: 0;
+}
+
+.bar{
+    position: absolute;
+    top: 155px;
+    left: 65%;
+    height:80vh;
+    width:.1vw;
+    border-width:0;
+    /*color:#000;*/
+    background-color:#000;
+
+}
+
+.star{
+    position: absolute;
+    left: 45%;
+    
+}
