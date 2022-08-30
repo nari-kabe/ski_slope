@@ -3,65 +3,87 @@
     <head>
         <meta charset="utf-8">
         <title>スキー場検索</title>
-        <!--<link rel="stylesheet" href="/ski/public/CSS/style.css">-->
-        <link rel="stylesheet" href="/ski/public/css/style.css">
+        <!--<link rel="stylesheet" href="/css/style.css">-->
+        <link rel="stylesheet" href="/css/home-style.css">
         
     </head>
     <body>
-        <table>
-        <tr>
-        <td><h1 class=hoge>My best place</h1></td>
-        <td><a href="/pages/registration">自己プロフィール編集</a></td>
-        <td><a href="/pages/login">ログアウト</a></td>
-        </tr>
-        </table>
+        <div class=header>
+            <h1>My best place</h1>
+            <div class=head>
+                <table>
+                    <tr>
+                        <td><a href="/pages/registration">自己プロフィール編集</a></td>
+                        <td>　</td>
+                        <td><a href="/pages/login">ログアウト</a></td>
+                    </tr>
+                </table>
+            </div>
+            <hr>
+        </div>
+        
+        
+        
+        <div id=search>
+            <table>
+                <tr>
+                    <td><a href="/pages/star">お気に入り</a></td>
+                    <td> </td>
+                    <td><button class=Button2> 都道府県から探す</button></td>
+                    <td> </td>
+                    <td><input type=text placeholder="スキー場の名前で検索"></td>
+                    <td> </td>
+                    <td><a href="/">ログイン前の画面</a></td>
+                </tr>
+            </table>
+        </div>
+        </br>
+        
         <hr>
         
-        <table>
-        <tr>
-        <td><a href="/pages/star">お気に入り</a></td>
-        <td><button class=Button2> 都道府県から探す</button></td>
-        <td><input type=text placeholder="スキー場の名前で検索"></td>
-        </tr>
-        </table>
-        <hr>
         
         <div>
-            <h2>スキー場一覧</h2>
+            <table>
+                <tr>
+                    <td><h2>スキー場一覧</h2></td>
+                    <td>　</td>
+                    <td><a href="/pages/create_slope">スキー場を追加する</a></td>
+                </tr>
+            </table>
             <h3>北海道</h3>
             <p>カムイスキーリンクス</p>
             <h3>福井県</h3>
             <p>スキージャム勝山</p>
-            <p>福井和泉スキー場</p>
+            <a href="/pages/izumi">福井和泉スキー場</a>
+            <!--<p>福井和泉スキー場</p>-->
         </div>
-        <div style="text-align: right">
+        <div class=twitter>
             <h2>Twitter</h2>
-            <textarea  placeholder="スキー、スノーボードに関する投稿"></textarea>
+            <textarea placeholder="スキー、スノーボードに関する投稿"></textarea>
         </div>
-        <hr>
+        </br>
+        <hr class=horizontal>
+        <hr class=bar>
        
         <h2>お気に入りランキング</h2>
         <table>
         <tr>
-        <td><p>No.1　カムイスキーリンクス</p></td>
-        <td><p>　　　　　　　　</p></p></td>
-        <td><button class=starButton> 詳細を見る</button></td>
+        <td><p>No.1　福井和泉スキー場</p></td>
+        <td><a class=star href="/pages/izumi">詳細を見る</a></td>
         </tr>
         </table>
         
         <table>
         <tr>
         <td><p>No.2　カムイスキーリンクス</p></td>
-        <td><p>　　　　　　　　</p></p></td>
-        <td><button class=starButton> 詳細を見る</button></td>
+        <td><button class=star> 詳細を見る</button></td>
         </tr>
         </table>
         
         <table>
         <tr>
         <td><p>No.3　カムイスキーリンクス</p></td>
-        <td><p>　　　　　　　　</p></p></td>
-        <td><button class=starButton> 詳細を見る</button></td>
+        <td><button class=star> 詳細を見る</button></td>
         </tr>
         </table>
         
