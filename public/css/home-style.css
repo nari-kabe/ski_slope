@@ -3,17 +3,39 @@ h1{
 }
 
 .header{
+    position: sticky;
+    top: 0;
+    background-color: #FFFFCC;
+    z-index: 99;
+}
+
+.head{
     position: absolute;
+    top: 40px;
     right: 10px;
+}
+
+#search{
+    position: absolute;
+    left: 30%;
+    /*margin: auto;*/
+    /*margin-left: auto;*/
+    /*margin-right: auto;*/
+    
+    
 }
 
 .twitter{
     
     /*text-align: right;*/
     position: absolute;
-    top: 170px;
+    top: 140px;
     left: 66%;
     
+}
+
+hr{
+    background-color: black;
 }
 
 .horizontal{
@@ -24,13 +46,12 @@ h1{
 
 .bar{
     position: absolute;
-    top: 155px;
+    top: 125px;
     left: 65%;
-    height:80vh;
+    height:90vh;
     width:.1vw;
     border-width:0;
-    /*color:#000;*/
-    background-color:#000;
+    background-color: #567;
 
 }
 

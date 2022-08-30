@@ -10,14 +10,22 @@
         <table> 
             <tr>
                 <td><h1>和泉スキー場</h1></td>
+                <td>　</td>
                 <td><button>お気に入り</button></td>
+                 <td>　</td>
                 <td><a href="/">ホームに戻る</a></td>
             </tr>
         </table>
         <hr>
         
-        <button>編集</button>
-        <h2>情報一覧</h2>
+        <table> 
+            <tr>
+                <td><h2>情報一覧</h2></td>
+                <td>　</td>
+                <td><button>編集</button></td>
+            </tr>
+        </table>
+        
         <div id="list">
             <table>
                

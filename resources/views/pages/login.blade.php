@@ -25,7 +25,7 @@
         </tr>
         </table>
         
-        <input type="submit" value="送信" /></br>
+        <input type="submit" value="送信"/></br>
         </form>
         
         <table>
