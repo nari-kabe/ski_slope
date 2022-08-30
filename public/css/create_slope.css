@@ -1,0 +1,33 @@
+/*#list table {*/
+/*  border-collapse: collapse;*/
+  /*border: solid 1px #888;*/
+/*}*/
+
+.header{
+  display: block;
+  font-size: 2em;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+
+#list table, #list th, #list td {
+  border-collapse: collapse;
+  padding: 5px 15px; /* 上下 左右 */
+  /*border: dashed 1px #a8d4f3;*/
+  border: solid 1px #a8d4f3;
+}
+
+textarea{
+  width: 500px;
+}
+
+input{
+  width: 500px;
+}
+
+.form{
+  width: 100px;
+}

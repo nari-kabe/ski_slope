@@ -32,4 +32,10 @@ class PostController extends Controller
     {
         return view('pages/star');
     }
+    
+    public function create_slope(Post $post)
+    {
+        return view('pages/create_slope');
+    }
+    
 }

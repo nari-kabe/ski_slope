@@ -4,30 +4,58 @@
         <meta charset="utf-8">
         <title>スキー場検索</title>
         <!--<link rel="stylesheet" href="/css/style.css">-->
-        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/home-style.css">
         
     </head>
     <body>
-        <table>
-            <tr>
-            <td><h1>My best place</h1></td>
-            <td><a href="/pages/registration">新規登録</a></td>
-            <td><a href="/pages/login">ログイン</a></td>
-            </tr>
-        </table>
+        <!--<table>-->
+        <!--    <tr>-->
+        <!--    <td><h1>My best place</h1></td>-->
+        <!--    <td><a href="/pages/registration">新規登録</a></td>-->
+        <!--    <td><a href="/pages/login">ログイン</a></td>-->
+        <!--    </tr>-->
+        <!--</table>-->
+        
+        <div class=header>
+            <h1>My best place</h1>
+            <div class=head>
+                <table>
+                    <tr>
+                        <td><a href="/pages/registration">新規登録</a></td>
+                        <td>　</td>
+                        <td><a href="/pages/login">ログイン</a></td>
+                    </tr>
+                </table>
+            </div>
+            <hr>
+        </div>
+        
+        
+        
+        <div id=search>
+            <table>
+                <tr>
+                    <td><a href="/pages/star">お気に入り</a></td>
+                    <td> </td>
+                    <td><button class=Button2> 都道府県から探す</button></td>
+                    <td> </td>
+                    <td><input type=text placeholder="スキー場の名前で検索"></td>
+                </tr>
+            </table>
+        </div>
+        </br>
+        
         <hr>
         
-        <table>
-        <tr>
-        <td><a href="/pages/star">お気に入り</a></td>
-        <td><button class=Button2> 都道府県から探す</button></td>
-        <td><input type=text placeholder="スキー場の名前で検索"></td>
-        </tr>
-        </table>
-        <hr>
         
         <div>
-            <h2>スキー場一覧</h2>
+            <table>
+                <tr>
+                    <td><h2>スキー場一覧</h2></td>
+                    <td>　</td>
+                    <td><a href="/pages/create_slope">スキー場を追加する</a></td>
+                </tr>
+            </table>
             <h3>北海道</h3>
             <p>カムイスキーリンクス</p>
             <h3>福井県</h3>
