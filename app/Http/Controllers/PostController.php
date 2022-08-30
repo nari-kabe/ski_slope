@@ -38,4 +38,8 @@ class PostController extends Controller
         return view('pages/create_slope');
     }
     
+    public function login_home(Post $post)
+    {
+        return view('pages/login-home');
+    }
 }

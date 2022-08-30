@@ -8,14 +8,6 @@
         
     </head>
     <body>
-        <!--<table>-->
-        <!--    <tr>-->
-        <!--    <td><h1>My best place</h1></td>-->
-        <!--    <td><a href="/pages/registration">新規登録</a></td>-->
-        <!--    <td><a href="/pages/login">ログイン</a></td>-->
-        <!--    </tr>-->
-        <!--</table>-->
-        
         <div class=header>
             <h1>My best place</h1>
             <div class=head>
@@ -32,6 +24,8 @@
         
         
         
+        
+        
         <div id=search>
             <table>
                 <tr>
@@ -40,12 +34,16 @@
                     <td><button class=Button2> 都道府県から探す</button></td>
                     <td> </td>
                     <td><input type=text placeholder="スキー場の名前で検索"></td>
+                    <td> </td>
+                    <td><a href="/pages/login-home">ログイン後の画面</a></td>
                 </tr>
             </table>
         </div>
         </br>
         
         <hr>
+        
+        
         
         
         <div>
@@ -72,26 +70,7 @@
         <hr class=bar>
        
         <h2>お気に入りランキング</h2>
-        <table>
-        <tr>
-        <td><p>No.1　福井和泉スキー場</p></td>
-        <td><a class=star href="/pages/izumi">詳細を見る</a></td>
-        </tr>
-        </table>
-        
-        <table>
-        <tr>
-        <td><p>No.2　カムイスキーリンクス</p></td>
-        <td><button class=star> 詳細を見る</button></td>
-        </tr>
-        </table>
-        
-        <table>
-        <tr>
-        <td><p>No.3　カムイスキーリンクス</p></td>
-        <td><button class=star> 詳細を見る</button></td>
-        </tr>
-        </table>
+        <p>ログインすると見れます</p>
         
     </body>
 </html>
