@@ -59,7 +59,22 @@
         </div>
         <div class=twitter>
             <h2>Twitter</h2>
-            <textarea placeholder="スキー、スノーボードに関する投稿"></textarea>
+            @php
+            //結果のうち最新9件を出力
+            for ($i = 0; $i < 10; $i++) {
+              $name = $result['includes']['users'][$i]['name'];
+              $username = $result['includes']['users'][$i]['username'];
+              $created_at = $result['data'][$i]['created_at'];
+              $text = $result['data'][$i]['text'];
+              $url = $result['includes']['users'][$i]['url'];
+              echo '<p>';
+              echo $created_at . '<br>';
+              //echo $url . '<br>';
+              echo '投稿者：' . $name . '（@' . $username . '）<br>';
+              echo $text;
+              echo '</p>';
+            }
+            @endphp
         </div>
         </br>
         <hr class=horizontal>
