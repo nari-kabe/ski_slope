@@ -22,10 +22,6 @@
             <hr>
         </div>
         
-        
-        
-        
-        
         <div id=search>
             <table>
                 <tr>
@@ -43,9 +39,6 @@
         
         <hr>
         
-        
-        
-        
         <div>
             <table>
                 <tr>
@@ -61,6 +54,7 @@
             <a href="/pages/izumi">福井和泉スキー場</a>
             <!--<p>福井和泉スキー場</p>-->
         </div>
+        
         <div class=twitter>
             <h2>Twitter</h2>
             <textarea placeholder="スキー、スノーボードに関する投稿"></textarea>
@@ -71,6 +65,5 @@
        
         <h2>お気に入りランキング</h2>
         <p>ログインすると見れます</p>
-        
     </body>
 </html>

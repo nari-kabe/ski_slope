@@ -33,6 +33,9 @@
                     <td>スキー場名</td> <td>27</td>
                 </tr>
                 <tr>
+                    <td>住所</td> <td>福井県　大野市</td>
+                </tr>
+                <tr>
                     <td>ホームページ</td> <td><a href="https://www.fukuiizumi.com/">福井和泉スキー場</a></td>
                 </tr>
                 <tr>
