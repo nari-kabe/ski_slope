@@ -27,6 +27,9 @@
                     <td>スキー場名</td>  <td id=InputData><input placeholder="スキー場名を入力"></td>
                 </tr>
                 <tr>
+                    <td>住所</td>  <td id=InputData><input placeholder="住所（県名と市名のみ）を入力"></td>
+                </tr>
+                <tr>
                     <td>ホームページ</td>  <td><textarea placeholder="ホームページURLを入力"></textarea></td>
                 </tr>
                 <tr>

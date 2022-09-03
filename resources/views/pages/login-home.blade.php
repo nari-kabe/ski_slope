@@ -4,45 +4,86 @@
         <meta charset="utf-8">
         <title>スキー場検索</title>
         <!--<link rel="stylesheet" href="/css/style.css">-->
-        <link rel="stylesheet" href="/css/home-style.css">
+        <link rel="stylesheet" href="/css/login_home-style.css">
+        <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">-->
         
     </head>
     <body>
-        <div class=header>
-            <h1>My best place</h1>
-            <div class=head>
+        <div id=header>
+            <div id=header_color>
+                <h1>My best place</h1>
+                <div class=head>
+                    <table>
+                        <tr>
+                            <td><a href="/pages/registration">自己プロフィール編集</a></td>
+                            <td>　</td>
+                            <td><a href="/pages/login">ログアウト</a></td>
+                        </tr>
+                    </table>
+                </div>
+                <hr>
+            </div>
+            
+            <div id=search>
                 <table>
                     <tr>
-                        <td><a href="/pages/registration">自己プロフィール編集</a></td>
+                        <td><a href="/pages/how_to_use">使い方</a></td>
+                        <td class=line-right>　</td>
                         <td>　</td>
-                        <td><a href="/pages/login">ログアウト</a></td>
+                        <td><a href="/pages/star">お気に入り</a></td>
+                        <td class=line-right>　</td>
+                        <td>　</td>
+                        <td><button class=Button2> 都道府県から探す</button></td>
+                        <td class=line-right>　</td>
+                        <td>　</td>
+                        <td><input type=text placeholder="スキー場の名前で検索"></td>
+                        <td class=line-right>　</td>
+                        <td>　</td>
+                        <td><a href="/">ログイン前の画面</a></td>
                     </tr>
                 </table>
             </div>
-            <hr>
+            </br>
+        </div>
+        
+        <div class=image_container>
+            <img id=image src=/images/sample3.jpeg>
+            <button id=back_button onclick="go_back()">◀</button>
+            <button  id=forward_button onclick="go_forward()">▶</button>
+        </div>
+    
+            <script>
+                const array = ["/images/sample1.jpeg", "/images/sample2.jpeg", "/images/sample3.jpeg", "/images/sample4.jpeg"];
+                let num = 0;
+                
+                function go_back(){
+                    if (num == 0) {
+                        num = 2;
+                    }
+                    else {
+                        num --;
+                    }
+                    document.getElementById("image").src=array[num];
+                }
+                
+                function go_forward(){
+                    if (num == 3) {
+                        num = 0;
+                    }
+                    else {
+                        num ++;
+                    }
+                    document.getElementById("image").src=array[num];
+                }
+     
+            </script>
         </div>
         
         
+        <!--<hr class=horizontal>-->
         
-        <div id=search>
-            <table>
-                <tr>
-                    <td><a href="/pages/star">お気に入り</a></td>
-                    <td> </td>
-                    <td><button class=Button2> 都道府県から探す</button></td>
-                    <td> </td>
-                    <td><input type=text placeholder="スキー場の名前で検索"></td>
-                    <td> </td>
-                    <td><a href="/">ログイン前の画面</a></td>
-                </tr>
-            </table>
-        </div>
-        </br>
-        
-        <hr>
-        
-        
-        <div>
+        <!--スキー場一覧-->
+        <div class=slope_list>
             <table>
                 <tr>
                     <td><h2>スキー場一覧</h2></td>
@@ -60,8 +101,8 @@
         <div class=twitter>
             <h2>Twitter</h2>
             @php
-            //結果のうち最新9件を出力
-            for ($i = 0; $i < 10; $i++) {
+            //結果のうち最新5件を出力
+            for ($i = 0; $i < 5; $i++) {
               $name = $result['includes']['users'][$i]['name'];
               $username = $result['includes']['users'][$i]['username'];
               $created_at = $result['data'][$i]['created_at'];
@@ -75,32 +116,42 @@
               echo '</p>';
             }
             @endphp
-        </div>
+        
         </br>
-        <hr class=horizontal>
+        
+        
+        </div>       
+        <!--<hr class=horizontal>-->
         <hr class=bar>
        
-        <h2>お気に入りランキング</h2>
-        <table>
-        <tr>
-        <td><p>No.1　福井和泉スキー場</p></td>
-        <td><a class=star href="/pages/izumi">詳細を見る</a></td>
-        </tr>
-        </table>
+       <!--お気に入り　ログインユーザー限定-->
+        <div  class=star_list>
+            <h2>お気に入りランキング</h2>
+            <table>
+            <tr>
+            <td><p>No.1　福井和泉スキー場</p></td>
+            <td>　</td>
+            <td><a class=star_detail href="/pages/izumi">詳細を見る</a></td>
+            </tr>
+            </table>
+            
+            <table>
+            <tr>
+            <td><p>No.2　カムイスキーリンクス</p></td>
+            <td>　</td>
+            <td><button class=star_detail> 詳細を見る</button></td>
+            </tr>
+            </table>
+            
+            <table>
+            <tr>
+            <td><p>No.3　カムイスキーリンクス</p></td>
+            <td>　</td>
+            <td><button class=star_detail> 詳細を見る</button></td>
+            </tr>
+            </table>
+        </div>
         
-        <table>
-        <tr>
-        <td><p>No.2　カムイスキーリンクス</p></td>
-        <td><button class=star> 詳細を見る</button></td>
-        </tr>
-        </table>
-        
-        <table>
-        <tr>
-        <td><p>No.3　カムイスキーリンクス</p></td>
-        <td><button class=star> 詳細を見る</button></td>
-        </tr>
-        </table>
-        
+        <!--<script src="{{ asset('/js/login_home.js') }}"></script>-->
     </body>
 </html>
