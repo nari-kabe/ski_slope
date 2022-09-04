@@ -46,25 +46,54 @@
             </br>
         </div>
         
-        <div class=image_container>
-            <img id=image src=/images/sample3.jpeg>
+        <!--お試しラジオ-->
+        <!--<div class="example2">-->
+        <!--    <input type="radio" checked id="11" name="example3"><label for="11">ボタン</label>-->
+        <!--    <input type="radio" id="12" name="example3"><label for="12">ボタン</label>-->
+        <!--    <input type="radio" id="13" name="example3"><label for="13">ボタン</label>-->
+        <!--</div>-->
+        
+        <!--お試しラジオ-->
+        <!--<div class="example">-->
+        <!--    <input type="radio" checked class="radio1" name="radio_button" onclick="radius1()">-->
+        <!--    <input type="radio" class="radio1" name="radio_button" onclick="radius2()">-->
+        <!--    <input type="radio" class="radio1" name="radio_button" onclick="radius3()">-->
+        <!--    <input type="radio" class="radio1" name="radio_button" onclick="radius4()">-->
+        <!--</div>-->
+        
+        <!--現在使用中のラジオボタン-->
+        <div class="example">
+            <input type="radio" checked id="radio1" name="ex" onclick="radius1()"><label for="radio1">　</label>
+            <input type="radio" id="radio2" name="ex" onclick="radius2()"><label for="radio2">　</label>
+            <input type="radio" id="radio3" name="ex" onclick="radius3()"><label for="radio3">　</label>
+            <input type="radio" id="radio4" name="ex" onclick="radius4()"><label for="radio4">　</label>
+        </div>
+        
+        
+        <!--４枚の画像-->
+       <div class=image_container>
+            <img id=image src=/images/sample1.jpeg>
             <button id=back_button onclick="go_back()">◀</button>
             <button  id=forward_button onclick="go_forward()">▶</button>
         </div>
-    
-            <script>
+        
+        
+        
+            <!--画像 横ボタン-->
+            <script> 
                 const array = ["/images/sample1.jpeg", "/images/sample2.jpeg", "/images/sample3.jpeg", "/images/sample4.jpeg"];
                 let num = 0;
                 
+                /*画像 横ボタン*/
                 function go_back(){
-                    if (num == 0) {
+                　　if (num == 0) {
                         num = 2;
                     }
                     else {
                         num --;
                     }
                     document.getElementById("image").src=array[num];
-                }
+            　　}
                 
                 function go_forward(){
                     if (num == 3) {
@@ -75,12 +104,23 @@
                     }
                     document.getElementById("image").src=array[num];
                 }
-     
+                
+                /*画像 下の丸ボタン*/
+                function radius1(){
+                    document.getElementById("image").src=array[0];
+                }
+                function radius2(){
+                    document.getElementById("image").src=array[1];
+                }
+                function radius3(){
+                    document.getElementById("image").src=array[2];
+                }
+                function radius4(){
+                    document.getElementById("image").src=array[3];
+                }
             </script>
+
         </div>
-        
-        
-        <!--<hr class=horizontal>-->
         
         <!--スキー場一覧-->
         <div class=slope_list>

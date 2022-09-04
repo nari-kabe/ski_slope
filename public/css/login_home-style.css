@@ -2,10 +2,6 @@ h1{
     color: blue;
 }
 
-head{
-    background-color: #FFFFCC;
-}
-
 #header{
     position: sticky;
     top: 0px;
@@ -122,9 +118,65 @@ hr{
     height: 40px;
     border: none;
     background-color: rgba(0, 0, 0, 0.5);
-    border-radius:100%;
+    border-radius:50%;
 }
 
+/*画像下のラジオボタン*/
+label{
+    width: 20px;
+    height: 20px;
+}
+
+.example label{
+    background: rgba(0, 0, 0, 0.5);
+    color: #000;
+    /*padding: 10px;*/
+    /*margin: 5px;*/
+    /*box-sizing: border-box;*/
+    /*text-align: center;*/
+    /*text-decoration: none;*/
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 15px;
+}
+.example input:checked+label{
+    background: #000;
+    color: #000;
+    
+}
+
+.example input{
+    display: none;
+}
+
+.example{
+    position: absolute;
+    top: 790px;
+    left: 49%;
+}
+
+
+/*＜サンプル＞*/
+/*.example2 label{*/
+/*    width: 150px;*/
+/*    background: #c8eac3;*/
+/*    color: #000;*/
+/*    padding: 10px;*/
+/*    margin: 10px;*/
+/*    box-sizing: border-box;*/
+/*    text-align: center;*/
+/*    text-decoration: none;*/
+/*    border-radius: 30px;*/
+/*    cursor: pointer;*/
+/*}*/
+/*.example2 input:checked+label{*/
+/*    background: #1a720d;*/
+/*    color: #FFF;*/
+/*}*/
+
+/*.example2 input{*/
+/*    display: none;*/
+/*}*/
 
 
 

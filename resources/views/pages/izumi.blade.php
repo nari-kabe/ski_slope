@@ -2,14 +2,14 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
-        <title>スキー場検索</title>
+        <title>福井和泉スキー場</title>
         <link rel="stylesheet" href="/css/slope.css">
         
     </head>
     <body>
         <table> 
             <tr>
-                <td><h1>和泉スキー場</h1></td>
+                <td><h1>福井和泉スキー場</h1></td>
                 <td>　</td>
                 <td><button>お気に入り</button></td>
                  <td>　</td>

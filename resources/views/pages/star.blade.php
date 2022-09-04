@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
-        <title>スキー場検索</title>
+        <title>お気に入り一覧</title>
         <!--<link rel="stylesheet" href="/ski/public/CSS/style.css">-->
         
         
