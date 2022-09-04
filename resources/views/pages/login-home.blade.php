@@ -30,7 +30,7 @@
                         <td><a href="/pages/how_to_use">使い方</a></td>
                         <td class=line-right>　</td>
                         <td>　</td>
-                        <td><a href="/pages/star">お気に入り</a></td>
+                        <td><a href="/pages/star">お気に入り登録一覧</a></td>
                         <td class=line-right>　</td>
                         <td>　</td>
                         <td><button class=Button2> 都道府県から探す</button></td>
@@ -62,12 +62,19 @@
         <!--</div>-->
         
         <!--現在使用中のラジオボタン-->
-        <div class="example">
-            <input type="radio" checked id="radio1" name="ex" onclick="radius1()"><label for="radio1">　</label>
-            <input type="radio" id="radio2" name="ex" onclick="radius2()"><label for="radio2">　</label>
-            <input type="radio" id="radio3" name="ex" onclick="radius3()"><label for="radio3">　</label>
-            <input type="radio" id="radio4" name="ex" onclick="radius4()"><label for="radio4">　</label>
+        <div class="image_radio_button">
+            <input type="radio" checked id="radio1" name="radio_button" onclick="radius1()"><label for="radio1">　</label>
+            <input type="radio" id="radio2" name="radio_button" onclick="radius2()"><label for="radio2">　</label>
+            <input type="radio" id="radio3" name="radio_button" onclick="radius3()"><label for="radio3">　</label>
+            <input type="radio" id="radio4" name="radio_button" onclick="radius4()"><label for="radio4">　</label>
         </div>
+        
+        <!--<div class="radio_button">-->
+        <!--    <input type="radio" checked id="radio1" name="radio_button" onclick="radius1()"><label for="radio1">　</label>-->
+        <!--    <input type="radio" checked=false id="radio2" name="radio_button" onclick="radius2()"><label for="radio2">　</label>-->
+        <!--    <input type="radio" checked=false id="radio3" name="radio_button" onclick="radius3()"><label for="radio3">　</label>-->
+        <!--    <input type="radio" checked=false id="radio4" name="radio_button" onclick="radius4()"><label for="radio4">　</label>-->
+        <!--</div>-->
         
         
         <!--４枚の画像-->
@@ -82,20 +89,26 @@
             <!--画像 横ボタン-->
             <script> 
                 const array = ["/images/sample1.jpeg", "/images/sample2.jpeg", "/images/sample3.jpeg", "/images/sample4.jpeg"];
+                const array2 = ["'radius1'", "'radius2'", "'radius3'", "'radius4'"];
                 let num = 0;
+                const elements = document.getElementsByName('radio_button');
                 
                 /*画像 横ボタン*/
                 function go_back(){
+                    elements[num].checked = false;
+                    
                 　　if (num == 0) {
-                        num = 2;
+                        num = 3;
                     }
                     else {
                         num --;
                     }
                     document.getElementById("image").src=array[num];
+                    elements[num].checked = true;
             　　}
                 
                 function go_forward(){
+                    elements[num].checked = false;
                     if (num == 3) {
                         num = 0;
                     }
@@ -103,19 +116,24 @@
                         num ++;
                     }
                     document.getElementById("image").src=array[num];
+                    elements[num].checked = true;
                 }
                 
                 /*画像 下の丸ボタン*/
                 function radius1(){
+                    num=0;
                     document.getElementById("image").src=array[0];
                 }
                 function radius2(){
+                    num=1;
                     document.getElementById("image").src=array[1];
                 }
                 function radius3(){
+                    num=2;
                     document.getElementById("image").src=array[2];
                 }
                 function radius4(){
+                    num=3;
                     document.getElementById("image").src=array[3];
                 }
             </script>
