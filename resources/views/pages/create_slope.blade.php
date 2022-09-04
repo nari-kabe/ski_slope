@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
-        <title>スキー場検索</title>
+        <title>スキー場追加</title>
         <link rel="stylesheet" href="/css/create_slope.css">
         
     </head>
@@ -22,7 +22,6 @@
         <h2>情報一覧</h2>
         <div id="list">
             <table>
-               
                 <tr>
                     <td>スキー場名</td>  <td id=InputData><input placeholder="スキー場名を入力"></td>
                 </tr>
