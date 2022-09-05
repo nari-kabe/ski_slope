@@ -11,7 +11,7 @@
             <tr>
                 <td><h1>福井和泉スキー場</h1></td>
                 <td>　</td>
-                <td><button>お気に入り</button></td>
+                <td><button>お気に入り登録</button></td>
                  <td>　</td>
                 <td><a href="/">ホームに戻る</a></td>
             </tr>

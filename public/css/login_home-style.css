@@ -51,7 +51,7 @@ hr{
 .bar{
     position: absolute;
     top: 900px;
-    left: 65%;
+    left: 60%;
     height:230vh;
     width:.1vw;
     border-width:0;
@@ -64,8 +64,9 @@ hr{
     /*text-align: right;*/
     position: absolute;
     top: 900px;
-    left: 66%;
-    right: 15px;
+    left: 61%;
+    /*right: 15px;*/
+    right: 50px;
     
 }
 
@@ -111,7 +112,10 @@ hr{
     
 /*}*/
 
-/*画像関係*/
+
+/*
+**画像関係
+*/
 .image_container{
     position: absolute;
     top: 150px;
@@ -156,7 +160,7 @@ label{
     height: 20px;
 }
 
-.example label{
+.image_radio_button label{
     background: rgba(0, 0, 0, 0.5);
     color: #000;
     /*padding: 10px;*/
@@ -168,24 +172,28 @@ label{
     cursor: pointer;
     font-size: 15px;
 }
-.example input:checked+label{
+.image_radio_button input:checked+label{
     background: #000;
     color: #000;
     
 }
 
-.example input{
+/*ラジオボタンは消す*/
+.image_radio_button input{
     display: none;
 }
 
-.example{
+/*ラジオボタンの位置*/
+.image_radio_button{
     position: absolute;
     top: 790px;
     left: 49%;
 }
 
 
-/*＜サンプル＞*/
+/*
+**＜サンプル＞
+*/
 /*.example2 label{*/
 /*    width: 150px;*/
 /*    background: #c8eac3;*/
