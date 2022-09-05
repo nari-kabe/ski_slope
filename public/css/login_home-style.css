@@ -2,6 +2,11 @@ h1{
     color: blue;
 }
 
+.link_color{
+    /*color: #000;*/
+    text-decoration: none;
+}
+
 #header{
     position: sticky;
     top: 0px;
@@ -29,7 +34,7 @@ h1{
 
 .line-right{
     border-right: 1px solid;
-    /*padding-right: 10px*/
+    color: #BBBBBB;
 }
 
 hr{
@@ -62,6 +67,30 @@ hr{
     left: 66%;
     right: 15px;
     
+}
+
+#h2_twitter{
+    display: inline-block;
+    padding-right: 10px
+}
+
+/*twitterアイコン*/
+.fa-twitter{    
+    /*position: absolute;*/
+    /*margin-left: 7px;*/
+    /*margin-right: 7px;*/
+    height: 55px;
+    vertical-align: bottom;
+    /*top: 923px;*/
+    /*left: 74%;*/
+    /*top: 890px;*/
+    /*left: 74%;*/
+    /*top: 3000px;*/
+    /*left: 74%;*/
+    margin: auto;
+    padding: auto;
+    color: #1DA1F2;
+    text-decoration: none;
 }
 
 .slope_list{
