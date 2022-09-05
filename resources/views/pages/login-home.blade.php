@@ -3,9 +3,10 @@
     <head>
         <meta charset="utf-8">
         <title>スキー場検索</title>
-        <!--<link rel="stylesheet" href="/css/style.css">-->
         <link rel="stylesheet" href="/css/login_home-style.css">
-        <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">-->
+        <link href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" rel="stylesheet">
+        
+        
         
     </head>
     <body>
@@ -15,9 +16,9 @@
                 <div class=head>
                     <table>
                         <tr>
-                            <td><a href="/pages/registration">自己プロフィール編集</a></td>
+                            <td><a class=link_color href="/pages/registration">自己プロフィール編集</a></td>
                             <td>　</td>
-                            <td><a href="/pages/login">ログアウト</a></td>
+                            <td><a class=link_color href="/pages/login">ログアウト</a></td>
                         </tr>
                     </table>
                 </div>
@@ -27,10 +28,10 @@
             <div id=search>
                 <table>
                     <tr>
-                        <td><a href="/pages/how_to_use">使い方</a></td>
+                        <td><a class=link_color href="/pages/how_to_use">使い方</a></td>
                         <td class=line-right>　</td>
                         <td>　</td>
-                        <td><a href="/pages/star">お気に入り登録一覧</a></td>
+                        <td><a class=link_color　href="/pages/star">お気に入り登録一覧</a></td>
                         <td class=line-right>　</td>
                         <td>　</td>
                         <td><button class=Button2> 都道府県から探す</button></td>
@@ -39,7 +40,7 @@
                         <td><input type=text placeholder="スキー場の名前で検索"></td>
                         <td class=line-right>　</td>
                         <td>　</td>
-                        <td><a href="/">ログイン前の画面</a></td>
+                        <td><a class=link_color href="/">ログイン前の画面</a></td>
                     </tr>
                 </table>
             </div>
@@ -78,12 +79,15 @@
         
         
         <!--４枚の画像-->
-       <div class=image_container>
+        <div class=image_container>
             <img id=image src=/images/sample1.jpeg>
             <button id=back_button onclick="go_back()">◀</button>
             <button  id=forward_button onclick="go_forward()">▶</button>
         </div>
         
+        
+            
+            
         
         
             <!--画像 横ボタン-->
@@ -146,18 +150,19 @@
                 <tr>
                     <td><h2>スキー場一覧</h2></td>
                     <td>　</td>
-                    <td><a href="/pages/create_slope">スキー場を追加する</a></td>
+                    <td><a class=link_color href="/pages/create_slope">スキー場を追加する</a></td>
                 </tr>
             </table>
             <h3>北海道</h3>
             <p>カムイスキーリンクス</p>
             <h3>福井県</h3>
             <p>スキージャム勝山</p>
-            <a href="/pages/izumi">福井和泉スキー場</a>
+            <a class=link_color href="/pages/izumi">福井和泉スキー場</a>
             <!--<p>福井和泉スキー場</p>-->
         </div>
         <div class=twitter>
-            <h2>Twitter</h2>
+            <h2 id=h2_twitter>Twitter</h2>
+            <a class="fab fa-twitter fa-2x" href="https://twitter.com/?lang=ja"></a>
             @php
             //結果のうち最新5件を出力
             for ($i = 0; $i < 5; $i++) {
@@ -189,7 +194,7 @@
             <tr>
             <td><p>No.1　福井和泉スキー場</p></td>
             <td>　</td>
-            <td><a class=star_detail href="/pages/izumi">詳細を見る</a></td>
+            <td><a class="star_detail link_color" href="/pages/izumi">詳細を見る</a></td>
             </tr>
             </table>
             
