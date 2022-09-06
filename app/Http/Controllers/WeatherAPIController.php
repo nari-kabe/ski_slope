@@ -11,7 +11,7 @@ class WeatherAPIController extends Controller
         $API_KEY = config('const.openweathermap.key');
         $base_url = config('const.openweathermap.url');
         $city = 'Tokyo';
-
+  
         $url = "$base_url?units=metric&q=$city&APPID=$API_KEY";
 
         // 接続

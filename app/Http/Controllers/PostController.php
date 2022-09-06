@@ -45,7 +45,7 @@ class PostController extends Controller
         
         //検索条件を指定
         $query = [
-          'query' => '#スキー #スノーボード',
+          'query' => '#スキー OR #スノーボード',
           'sort_order' => 'recency',
           'expansions' => 'author_id',
           'user.fields' => 'name,username,url',
