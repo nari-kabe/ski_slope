@@ -23,34 +23,58 @@
         <div id="list">
             <table>
                 <tr>
-                    <td>スキー場名</td>  <td id=InputData><input placeholder="スキー場名を入力"></td>
+                    <td>スキー場名</td> <td><input placeholder="スキー場名を入力"></td>
                 </tr>
                 <tr>
-                    <td>住所</td>  <td id=InputData><input placeholder="住所（県名と市名のみ）を入力"></td>
+                    <td>住所（郵便番号）</td> <td><input placeholder="住所（郵便番号）を入力" 〒></td>
                 </tr>
                 <tr>
-                    <td>ホームページ</td>  <td><textarea placeholder="ホームページURLを入力"></textarea></td>
+                    <td>住所（県名）</td> <td><input placeholder="住所（県名）を入力"></td>
                 </tr>
                 <tr>
-                    <td>電話番号</td>  <td><input placeholder="電話番号を入力"></td>
+                    <td>住所（市町村名）</td> <td><input placeholder="住所（市町村名）を入力"></td>
                 </tr>
                 <tr>
-                    <td>営業時間</td>  <td><input placeholder="営業時間を入力"></td>
+                    <td>住所（番地以降）</td> <td><input placeholder="住所（番地以降）を入力"></td>
                 </tr>
                 <tr>
-                    <td>ナイター</td>  <td><input placeholder="ナイターの有無を入力"></td>
+                    <td>ホームページ</td> <td><textarea placeholder="ホームページURLを入力"></textarea></td>
                 </tr>
                 <tr>
-                    <td>シーズン期間</td>  <td><input placeholder="シーズン期間を入力"></td>
+                    <td>電話番号</td> <td><input placeholder="電話番号を入力"></td>
                 </tr>
                 <tr>
-                    <td>レッスン</td>  <td><textarea placeholder="レッスンの有無を入力"></textarea></td>
+                    <td>営業時間</td> <td><input placeholder="営業時間を入力"></td>
+                </tr>
+                
+                
+                
+          
+                
+                <tr>
+                    <td>ナイター</td> 
+                    <td class=radio><input type="radio" checked id="night_game" name="radio_button" onclick="night_game()"><label for="radio1">有</label>
+                        <!--<input type="radio" checked id="night_game" name="radio_button" onclick="night_game()"><label for="radio1">無</label>-->
+                    </td>
+                </tr>
+                
+                        <!--<td><input placeholder="ナイターの有無を入力"></td>-->
+                
+                
+                
+                
+                
+                <tr>
+                    <td>シーズン期間</td> <td><input placeholder="シーズン期間を入力"></td>
                 </tr>
                 <tr>
-                    <td>レストラン</td>  <td><textarea placeholder="レストランの有無を入力"></textarea></td>
+                    <td>レッスン</td> <td><textarea placeholder="レッスンの有無を入力"></textarea></td>
                 </tr>
                 <tr>
-                    <td>温泉</td>  <td><textarea placeholder="温泉の有無を入力"></textarea></td>
+                    <td>レストラン</td> <td><textarea placeholder="レストランの有無を入力"></textarea></td>
+                </tr>
+                <tr>
+                    <td>温泉</td> <td><textarea placeholder="温泉の有無を入力"></textarea></td>
                 </tr>
                 <tr>
                     <td>宿泊施設</td>  <td><textarea placeholder="宿泊施設を入力"></textarea></td>

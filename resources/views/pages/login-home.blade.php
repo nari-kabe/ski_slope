@@ -45,6 +45,28 @@
                 </table>
             </div>
             </br>
+            
+            <!--<div id=search>-->
+            <!--    <table>-->
+            <!--        <tr>-->
+            <!--            <td><a class='link_color space' href="/pages/how_to_use">使い方</a></td>-->
+            <!--            <td class=line-right>　</td>-->
+                        
+            <!--            <td><a class='link_color space'　href="/pages/star">お気に入り登録一覧</a></td>-->
+            <!--            <td class=line-right>　</td>-->
+                        
+            <!--            <td><button class='Button2 sp'> 都道府県から探す</button></td>-->
+            <!--            <td class=line-right>　</td>-->
+                        
+            <!--            <td><input class=sp type=text placeholder="スキー場の名前で検索"></td>-->
+            <!--            <td class=line-right>　</td>-->
+                        
+            <!--            <td><a class='link_color space' href="/">ログイン前の画面</a></td>-->
+            <!--        </tr>-->
+            <!--    </table>-->
+            <!--</div>-->
+            <!--</br>-->
+            
         </div>
         
         <!--お試しラジオ-->
@@ -179,7 +201,6 @@
               echo '</p>';
             }
             @endphp
-        
         </br>
         
         
