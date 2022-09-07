@@ -11,7 +11,7 @@
         @csrf
         <table> 
             <tr>
-                <td><input class=header placeholder="スキー場名を入力"></td>
+                <td><input class="header" placeholder="スキー場名を入力"></td>
                 <td>　</td>
                  <td>　</td>
                 <td><a href="/">ホームに戻る</a></td>
@@ -23,68 +23,98 @@
         <div id="list">
             <table>
                 <tr>
-                    <td>スキー場名</td> <td><input placeholder="スキー場名を入力"></td>
+                    <td>スキー場名</td> <td><input class="input_list" placeholder="スキー場名を入力"></td>
                 </tr>
                 <tr>
-                    <td>住所（郵便番号）</td> <td><input placeholder="住所（郵便番号）を入力" 〒></td>
+                    <td>住所（郵便番号）</td> <td><input class="input_list" placeholder="住所（郵便番号）を入力" 〒></td>
                 </tr>
                 <tr>
-                    <td>住所（県名）</td> <td><input placeholder="住所（県名）を入力"></td>
+                    <td>住所（県名）</td> <td><input class="input_list" placeholder="住所（県名）を入力"></td>
                 </tr>
                 <tr>
-                    <td>住所（市町村名）</td> <td><input placeholder="住所（市町村名）を入力"></td>
+                    <td>住所（市町村名）</td> <td><input class="input_list" placeholder="住所（市町村名）を入力"></td>
                 </tr>
                 <tr>
-                    <td>住所（番地以降）</td> <td><input placeholder="住所（番地以降）を入力"></td>
+                    <td>住所（番地以降）</td> <td><input class="input_list" placeholder="住所（番地以降）を入力"></td>
                 </tr>
                 <tr>
-                    <td>ホームページ</td> <td><textarea placeholder="ホームページURLを入力"></textarea></td>
+                    <td>ホームページ</td> <td><input class="input_list" placeholder="ホームページURLを入力"></input></td>
                 </tr>
                 <tr>
-                    <td>電話番号</td> <td><input placeholder="電話番号を入力"></td>
+                    <td>電話番号</td> <td><input class="input_list" placeholder="電話番号を入力"></td>
                 </tr>
                 <tr>
-                    <td>営業時間</td> <td><input placeholder="営業時間を入力"></td>
+                    <td>営業時間</td> <td><input class="input_list" placeholder="営業時間を入力"></td>
                 </tr>
-                
-                
-                
-          
-                
+                <tr>
+                    <td>シーズン期間</td> <td><input class="input_list" placeholder="シーズン期間を入力"></td>
+                </tr>
                 <tr>
                     <td>ナイター</td> 
-                    <td class=radio><input type="radio" checked id="night_game" name="radio_button" onclick="night_game()"><label for="radio1">有</label>
-                        <!--<input type="radio" checked id="night_game" name="radio_button" onclick="night_game()"><label for="radio1">無</label>-->
+                    <td>
+                        <input type="radio" checked id="night_game1" class="radio1" name="radio_button1" onclick="textarea_off(1)"><label for="night_game1">無</label>
+                        <input type="radio" id="night_game2" class="radio2" name="radio_button1" onclick="textarea_on(1)"><label for="night_game2">有</label></br>
+                        <input id=1 class="detail" style="display: none" placeholder="ナイターの詳細を入力">
+                        <!--<input id=1 class="detail" placeholder="ナイターの詳細を入力">-->
                     </td>
                 </tr>
-                
-                        <!--<td><input placeholder="ナイターの有無を入力"></td>-->
-                
-                
-                
-                
-                
                 <tr>
-                    <td>シーズン期間</td> <td><input placeholder="シーズン期間を入力"></td>
+                    <td>レッスン</td> 
+                    <td>
+                        <input type="radio" checked id="lesson1" class="radio1" name="radio_button2" onclick="textarea_off(2)"><label for="lesson1">無</label>
+                        <input type="radio" id="lesson2" class="radio2" name="radio_button2" onclick="textarea_on(2)"><label for="lesson2">有</label></br>
+                        <input id=2 class="detail" style="display: none" placeholder="レッスンの詳細を入力">
+                        <!--<input id=1 class="detail" placeholder="ナイターの詳細を入力">-->
+                    </td>
                 </tr>
                 <tr>
-                    <td>レッスン</td> <td><textarea placeholder="レッスンの有無を入力"></textarea></td>
+                    <td>レストラン</td> 
+                     <td>
+                        <input type="radio" checked id="restaurant1" class="radio1" name="radio_button3" onclick="textarea_off(3)"><label for="restaurant1">無</label>
+                        <input type="radio" id="restaurant2" class="radio2" name="radio_button3" onclick="textarea_on(3)"><label for="restaurant2">有</label></br>
+                        <input id=3 class="detail" style="display: none" placeholder="レストランの詳細を入力">
+                        <!--<input id=1 class="detail" placeholder="ナイターの詳細を入力">-->
+                    </td>
                 </tr>
                 <tr>
-                    <td>レストラン</td> <td><textarea placeholder="レストランの有無を入力"></textarea></td>
+                    <td>温泉</td> 
+                    <td>
+                        <input type="radio" checked id="spa1" class="radio1" name="radio_button4" onclick="textarea_off(4)"><label for="spa1">無</label>
+                        <input type="radio" id="spa2" class="radio2" name="radio_button4" onclick="textarea_on(4)"><label for="spa2">有</label></br>
+                        <input id=4 class="detail" style="display: none" placeholder="温泉の詳細を入力">
+                        <!--<input id=1 class="detail" placeholder="ナイターの詳細を入力">-->
+                    </td>
                 </tr>
                 <tr>
-                    <td>温泉</td> <td><textarea placeholder="温泉の有無を入力"></textarea></td>
+                    <td>宿泊施設</td> 
+                    <td>
+                        <input type="radio" checked id="inn1" class="radio1" name="radio_button5" onclick="textarea_off(5)"><label for="inn1">無</label>
+                        <input type="radio" id="inn2" class="radio2" name="radio_button5" onclick="textarea_on(5)"><label for="inn2">有</label></br>
+                        <input id=5 class="detail" style="display: none" placeholder="宿泊施設の詳細を入力">
+                        <!--<input id=1 class="detail" placeholder="ナイターの詳細を入力">-->
+                    </td>
                 </tr>
                 <tr>
-                    <td>宿泊施設</td>  <td><textarea placeholder="宿泊施設を入力"></textarea></td>
+                    <td>ゲレンデマップ</td>  
+                    <td>
+                        <input type="radio" checked id="slope_map1" class="radio1" name="radio_button6" onclick="textarea_off(6)"><label for="slope_map1">無</label>
+                        <input type="radio" id="slope_map2" class="radio2" name="radio_button6" onclick="textarea_on(6)"><label for="slope_map2">有</label></br>
+                        <input id=6 class="detail" style="display: none" placeholder="ゲレンデマップの画像を入力">
+                        <!--<input id=1 class="detail" placeholder="ナイターの詳細を入力">-->
                 </tr>
-                <tr>
-                    <td>ゲレンデマップ</td>  <td><input placeholder="ゲレンデマップを入力"></td>
-                </tr>
-                
             </table>
         </div>
+        
+        <script>
+            function textarea_off(num){
+                /*document.getElementsByClassName("detail").style="display: none";*/
+                document.getElementById(num).style="display: none";
+            }
+                
+            function textarea_on(num){
+                document.getElementById(num).style="display: block";
+            }
+        </script>
         
         <hr>
         <h2>ゲレンデマップ</h2>
