@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <title>スキー場追加</title>
         <link rel="stylesheet" href="/css/create_slope.css">
-        
+        <script src="{{ asset('/js/create_slope.js') }}"></script>
     </head>
     <body>
         <form action="pages/login-home" method="POST">
@@ -104,17 +104,6 @@
                 </tr>
             </table>
         </div>
-        
-        <script>
-            function textarea_off(num){
-                /*document.getElementsByClassName("detail").style="display: none";*/
-                document.getElementById(num).style="display: none";
-            }
-                
-            function textarea_on(num){
-                document.getElementById(num).style="display: block";
-            }
-        </script>
         
         <hr>
         <h2>ゲレンデマップ</h2>
