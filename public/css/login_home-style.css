@@ -72,6 +72,10 @@ hr{
 
 }
 
+/*
+**twitterAPI
+**
+*/
 .twitter{
     
     /*text-align: right;*/
@@ -106,6 +110,12 @@ hr{
     color: #1DA1F2;
     text-decoration: none;
 }
+
+.tweet{
+    /*display: inline-block;*/
+    margin: 0;
+}
+
 
 .slope_list{
     position: absolute;
@@ -201,7 +211,7 @@ label{
 .image_radio_button{
     position: absolute;
     top: 790px;
-    left: 49%;
+    left: 50%;
 }
 
 

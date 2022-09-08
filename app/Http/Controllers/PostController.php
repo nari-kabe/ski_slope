@@ -40,6 +40,24 @@ class PostController extends Controller
     
     public function login_home(Post $post)
     {
+        // dd($this->getTweets(15));
+        $results=$this->getTweets(10);
+        $users=[];
+        $tweets=[];
+        for($i=0; $i < count($results["includes"]["users"]); $i++){
+            $users[$results["includes"]["users"][$i]["id"]] = $results["includes"]["users"][$i];
+        }
+        for($i=0; $i < count($results["data"]); $i++){
+            $tweets[$i]=$results["data"][$i];
+            $tweets[$i]["user"]=$users[$results["data"][$i]["author_id"]];
+        }
+        //dd($tweets);
+        
+        return view('pages/login-home')->with(['tweets'=>$tweets]);
+    }
+    
+    public function getTweets($num)
+    {
         //エンドポイントを指定
         $base_url = 'https://api.twitter.com/2/tweets/search/recent';
         
@@ -51,15 +69,16 @@ class PostController extends Controller
           'user.fields' => 'name,username,url',
           //'user.fields' => 'url',
           'tweet.fields' => 'created_at',
-          'max_results' => '20'
+          'max_results' => $num
         ];
         $url = $base_url . '?' . http_build_query($query);
         
         //ヘッダ生成
-        $token = 'AAAAAAAAAAAAAAAAAAAAAKcaggEAAAAAvGT%2BPJUKPydrJv5YQikxN6NaoTI%3DlocKWnY8JImwXhsLPXjDbygDIlRx2haIBF70VMv7lOLnr5iOSX';  //Bearer Token
+        // $token = 'AAAAAAAAAAAAAAAAAAAAAKcaggEAAAAAvGT%2BPJUKPydrJv5YQikxN6NaoTI%3DlocKWnY8JImwXhsLPXjDbygDIlRx2haIBF70VMv7lOLnr5iOSX';  //Bearer Token
+        $token = config('const.twitter.bearer_token');
         $header = [
-          'Authorization: Bearer ' . $token,
-          'Content-Type: application/json',
+            'Authorization: Bearer ' . $token,
+            'Content-Type: application/json',
         ];
         
         //cURLで問い合わせ
@@ -76,6 +95,6 @@ class PostController extends Controller
         //dd($result);
         curl_close($curl);
         
-            return view('pages/login-home')->with(['result'=>$result]);
+        return $result;
     }
 }

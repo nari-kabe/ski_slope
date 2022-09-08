@@ -5,6 +5,7 @@
         <title>スキー場検索</title>
         <link rel="stylesheet" href="/css/login_home-style.css">
         <link href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" rel="stylesheet">
+        <script src="{{ asset('/js/login_home.js') }}"></script>
         
         
         
@@ -107,65 +108,6 @@
             <button  id=forward_button onclick="go_forward()">▶</button>
         </div>
         
-        
-            
-            
-        
-        
-            <!--画像 横ボタン-->
-            <script> 
-                const array = ["/images/sample1.jpeg", "/images/sample2.jpeg", "/images/sample3.jpeg", "/images/sample4.jpeg"];
-                const array2 = ["'radius1'", "'radius2'", "'radius3'", "'radius4'"];
-                let num = 0;
-                const elements = document.getElementsByName('radio_button');
-                
-                /*画像 横ボタン*/
-                function go_back(){
-                    elements[num].checked = false;
-                    
-                　　if (num == 0) {
-                        num = 3;
-                    }
-                    else {
-                        num --;
-                    }
-                    document.getElementById("image").src=array[num];
-                    elements[num].checked = true;
-            　　}
-                
-                function go_forward(){
-                    elements[num].checked = false;
-                    if (num == 3) {
-                        num = 0;
-                    }
-                    else {
-                        num ++;
-                    }
-                    document.getElementById("image").src=array[num];
-                    elements[num].checked = true;
-                }
-                
-                /*画像 下の丸ボタン*/
-                function radius1(){
-                    num=0;
-                    document.getElementById("image").src=array[0];
-                }
-                function radius2(){
-                    num=1;
-                    document.getElementById("image").src=array[1];
-                }
-                function radius3(){
-                    num=2;
-                    document.getElementById("image").src=array[2];
-                }
-                function radius4(){
-                    num=3;
-                    document.getElementById("image").src=array[3];
-                }
-            </script>
-
-        </div>
-        
         <!--スキー場一覧-->
         <div class=slope_list>
             <table>
@@ -185,25 +127,25 @@
         <div class=twitter>
             <h2 id=h2_twitter>Twitter</h2>
             <a class="fab fa-twitter fa-2x" href="https://twitter.com/?lang=ja"></a>
-            @php
-            //結果のうち最新5件を出力
-            for ($i = 0; $i < 5; $i++) {
-              $name = $result['includes']['users'][$i]['name'];
-              $username = $result['includes']['users'][$i]['username'];
-              $created_at = $result['data'][$i]['created_at'];
-              $text = $result['data'][$i]['text'];
-              $url = $result['includes']['users'][$i]['url'];
-              echo '<p>';
-              echo $created_at . '<br>';
-              //echo $url . '<br>';
-              echo '投稿者：' . $name . '（@' . $username . '）<br>';
-              echo $text;
-              echo '</p>';
-            }
-            @endphp
-        </br>
-        
-        
+            @for ($i = 0; $i < count($tweets); $i++) 
+              <!--$name = $result['includes']['users'][$i]['name'];-->
+              <!--$username = $result['includes']['users'][$i]['username'];-->
+              <!--$created_at = $result['data'][$i]['created_at'];-->
+              <!--$text = $result['data'][$i]['text'];-->
+              <!--$url = $result['includes']['users'][$i]['url'];-->
+              
+              <!--echo '<p>';-->
+              <!--echo $created_at . '<br>';-->
+              <!--//echo $url . '<br>';-->
+              <!--echo '投稿者：' . $name . '（@' . $username . '）<br>';-->
+              <!--echo $text;-->
+              <!--echo '</p>';-->
+              
+              <p class=tweet>{{ $tweets[$i]['created_at'] }}</p>
+              <p class=tweet>{{'投稿者：'. $tweets[$i]['user']['name'] }}　{{'@'. $tweets[$i]['user']['username'] }}</p>
+              <a href="{{ $tweets[$i]['user']['url'] }}">{{ $tweets[$i]['text'] }}</a>
+              <p></p>
+            @endfor
         </div>       
         <!--<hr class=horizontal>-->
         <hr class=bar>
@@ -235,7 +177,5 @@
             </tr>
             </table>
         </div>
-        
-        <!--<script src="{{ asset('/js/login_home.js') }}"></script>-->
     </body>
 </html>
