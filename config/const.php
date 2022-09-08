@@ -1,6 +1,7 @@
 <?php
 
 return [
+    //twitterはbearer_tokenのみ使用
     'twitter' => [
         'key' => env('TWITTER_CLIENT_KEY'),
         'secret_key' => env('TWITTER_CLIENT_SECRET'),
