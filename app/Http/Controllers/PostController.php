@@ -67,7 +67,7 @@ class PostController extends Controller
           'sort_order' => 'recency',
           'expansions' => 'author_id',
           'user.fields' => 'name,username,url',
-          //'user.fields' => 'url',
+        //   'user.fields' => 'url',
           'tweet.fields' => 'created_at',
           'max_results' => $num
         ];

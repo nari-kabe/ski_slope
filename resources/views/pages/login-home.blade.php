@@ -23,7 +23,7 @@
                         </tr>
                     </table>
                 </div>
-                <hr>
+                <hr id=header_horizon>
             </div>
             
             <div id=search>
@@ -69,22 +69,7 @@
             <!--</br>-->
             
         </div>
-        
-        <!--お試しラジオ-->
-        <!--<div class="example2">-->
-        <!--    <input type="radio" checked id="11" name="example3"><label for="11">ボタン</label>-->
-        <!--    <input type="radio" id="12" name="example3"><label for="12">ボタン</label>-->
-        <!--    <input type="radio" id="13" name="example3"><label for="13">ボタン</label>-->
-        <!--</div>-->
-        
-        <!--お試しラジオ-->
-        <!--<div class="example">-->
-        <!--    <input type="radio" checked class="radio1" name="radio_button" onclick="radius1()">-->
-        <!--    <input type="radio" class="radio1" name="radio_button" onclick="radius2()">-->
-        <!--    <input type="radio" class="radio1" name="radio_button" onclick="radius3()">-->
-        <!--    <input type="radio" class="radio1" name="radio_button" onclick="radius4()">-->
-        <!--</div>-->
-        
+    
         <!--現在使用中のラジオボタン-->
         <div class="image_radio_button">
             <input type="radio" checked id="radio1" name="radio_button" onclick="radius1()"><label for="radio1">　</label>
@@ -92,14 +77,6 @@
             <input type="radio" id="radio3" name="radio_button" onclick="radius3()"><label for="radio3">　</label>
             <input type="radio" id="radio4" name="radio_button" onclick="radius4()"><label for="radio4">　</label>
         </div>
-        
-        <!--<div class="radio_button">-->
-        <!--    <input type="radio" checked id="radio1" name="radio_button" onclick="radius1()"><label for="radio1">　</label>-->
-        <!--    <input type="radio" checked=false id="radio2" name="radio_button" onclick="radius2()"><label for="radio2">　</label>-->
-        <!--    <input type="radio" checked=false id="radio3" name="radio_button" onclick="radius3()"><label for="radio3">　</label>-->
-        <!--    <input type="radio" checked=false id="radio4" name="radio_button" onclick="radius4()"><label for="radio4">　</label>-->
-        <!--</div>-->
-        
         
         <!--４枚の画像-->
         <div class=image_container>
@@ -124,6 +101,7 @@
             <a class=link_color href="/pages/izumi">福井和泉スキー場</a>
             <!--<p>福井和泉スキー場</p>-->
         </div>
+        
         <div class=twitter>
             <h2 id=h2_twitter>Twitter</h2>
             <a class="fab fa-twitter fa-2x" href="https://twitter.com/?lang=ja"></a>
@@ -141,10 +119,18 @@
               <!--echo $text;-->
               <!--echo '</p>';-->
               
+              <!--使用できる-->
+              <!--<p class=tweet>{{ $tweets[$i]['created_at'] }}</p>-->
+              <!--<p class=tweet>{{'投稿者：'. $tweets[$i]['user']['name'] }}　{{'@'. $tweets[$i]['user']['username'] }}</p>-->
+              <!--<a href="{{ $tweets[$i]['user']['url'] }}">{{ $tweets[$i]['text'] }}</a>-->
+              <!--<p></p>-->
+              
               <p class=tweet>{{ $tweets[$i]['created_at'] }}</p>
               <p class=tweet>{{'投稿者：'. $tweets[$i]['user']['name'] }}　{{'@'. $tweets[$i]['user']['username'] }}</p>
-              <a href="{{ $tweets[$i]['user']['url'] }}">{{ $tweets[$i]['text'] }}</a>
-              <p></p>
+              <p class=tweet_text>{{ $tweets[$i]['text'] }}</p>
+              <a href="{{ $tweets[$i]['user']['url'] }}">twitterで表示</a>
+              <p class=tweet_space></p>
+              
             @endfor
         </div>       
         <!--<hr class=horizontal>-->
