@@ -44,11 +44,16 @@ class PostController extends Controller
         $results=$this->getTweets(10);
         $users=[];
         $tweets=[];
+        //連想配列を作る
         for($i=0; $i < count($results["includes"]["users"]); $i++){
-            $users[$results["includes"]["users"][$i]["id"]] = $results["includes"]["users"][$i];
+            //左辺：空の配列$users=[]に["includes"]["users"][$i]["id"]をkeyとして入れる
+            //右辺：keyに対するデータとして、$results["includes"]["users"][$i]を指定する
+            $users[$results["includes"]["users"][$i]["id"]] = $results["includes"]["users"][$i]; 
         }
         for($i=0; $i < count($results["data"]); $i++){
+            //空の配列の$tweets=[]のkeyを$iで０番目から指定し、データとして$results["data"][$i]を入れていく
             $tweets[$i]=$results["data"][$i];
+            
             $tweets[$i]["user"]=$users[$results["data"][$i]["author_id"]];
         }
         //dd($tweets);
@@ -66,8 +71,8 @@ class PostController extends Controller
           'query' => '#スキー OR #スノーボード',
           'sort_order' => 'recency',
           'expansions' => 'author_id',
-          'user.fields' => 'name,username,url',
-        //   'user.fields' => 'url',
+          'user.fields' => 'name,username,url', //こっちのurlはtwitterのヘッダーにURL(ホームページなど)を記載してた場合にそのurlをとってきている
+          'media.fields' => 'url', //こっちがtwitterへ飛ぶurl？？
           'tweet.fields' => 'created_at',
           'max_results' => $num
         ];
@@ -92,7 +97,7 @@ class PostController extends Controller
         $response = curl_exec($curl);
         
         $result = json_decode($response, true);
-        //dd($result);
+        dd($result);
         curl_close($curl);
         
         return $result;
