@@ -1,5 +1,8 @@
 h1{
     color: blue;
+    margin-top: 10px;
+    margin-bottom: 0;
+    display: inline-block
 }
 
 body {
@@ -19,7 +22,7 @@ body {
 
 .head{
     position: absolute;
-    top: 17px;
+    top: 22px;
     right: 10px;
 }
 
@@ -27,10 +30,14 @@ body {
     background-color: #FFFFCC;
 }
 
+#header_horizon{
+    margin: 20px 0;
+}
+
 #search{
     position: absolute;
     left: 25%;
-    top: 83px;
+    top: 93px;
     
     /*margin: auto;*/
     /*margin-left: auto;*/
@@ -116,6 +123,15 @@ hr{
     margin: 0;
 }
 
+.tweet_text{
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
+.tweet_space{
+    /*margin-bottom: 20px;*/
+    padding-bottom: 20px;
+}
 
 .slope_list{
     position: absolute;
