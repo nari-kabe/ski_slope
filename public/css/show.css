@@ -10,6 +10,7 @@
   border: solid 1px #a8d4f3;
 }
 
-/*#list table{*/
-/*  width: 70%;*/
-/*}*/
+.input_list, .detail{
+    width: 500px;
+    height: 25px;
+}

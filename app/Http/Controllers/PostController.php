@@ -26,9 +26,9 @@ class PostController extends Controller
         return view('pages/login');
     }
     
-    public function izumi(Post $post)
+    public function izumi(Ski_area $ski_area)
     {
-        return view('pages/izumi');
+        return view('pages/izumi')->with(['ski_area' => $ski_area]);;
     }
     
     public function star(Post $post)
@@ -123,9 +123,4 @@ class PostController extends Controller
         return redirect('/ski_areas/' . $ski_area->id);
     }
     
-    // //いらない
-    // public function b(Ski_area $ski_area)
-    // {
-    //     return view('try')->with(['ski_areas' => $ski_area->get()]);
-    // }
 }

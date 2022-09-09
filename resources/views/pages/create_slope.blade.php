@@ -11,10 +11,10 @@
         @csrf
         <table> 
             <tr>
-                <td><input class="header" name="ski_area[place_name]" placeholder="スキー場名を入力"></td>
+                <td><p class="header">CREATE SKI SLOPE!</p></td>
                 <td>　</td>
                  <td>　</td>
-                <td><a href="/">ホームに戻る</a></td>
+                <td><a href="/pages/login_home">ホームに戻る</a></td>
             </tr>
         </table>
         <hr>
