@@ -22,7 +22,7 @@
             <tr>
                 <td><h2>情報一覧</h2></td>
                 <td>　</td>
-                <td><button>編集</button></td>
+                <td><a href=/pages/create_slope>編集</a></td>
                 <td>　</td>
                 <td>{{ '最終更新日時：'. $ski_area->updated_at }}</td>
             </tr>
