@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+// use Illuminate\Http\Request;
+use App\Http\Requests\SkiAreaRequest;
+
 use App\Post;
 use App\Ski_area;
 use App\Star;
 use App\Public_user;
+
 
 class PostController extends Controller
 {
@@ -115,7 +118,7 @@ class PostController extends Controller
         return view('pages/show')->with(['ski_area' => $ski_area]);
     }
     
-    public function store(Request $request, Ski_area $ski_area)
+    public function store(SkiAreaRequest $request, Ski_area $ski_area)
     {
         $input = $request['ski_area'];
         //dd($input);
