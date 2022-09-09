@@ -99,7 +99,18 @@
             <h3>福井県</h3>
             <p>スキージャム勝山</p>
             <a class=link_color href="/pages/izumi">福井和泉スキー場</a>
-            <!--<p>福井和泉スキー場</p>-->
+            <h3>その他の県</h3>
+            <!--<a>  </a> それぞれ、都道府県ごとに分けて表示できるといいね-->
+            <h3>とりあえず一覧</h3>
+            <div class='ski_areas'>
+                @foreach ($ski_areas as $ski_area)
+                    <!--<div class='ski_area'>-->
+                        <a class='ski_slope' href="/ski_areas/{{ $ski_area->id }}">{{ $ski_area->place_name }}</a>
+                    <!--</div>-->
+                @endforeach
+            </div>
+            
+            
         </div>
         
         <div class=twitter>
@@ -128,7 +139,7 @@
               <p class=tweet>{{ $tweets[$i]['created_at'] }}</p>
               <p class=tweet>{{'投稿者：'. $tweets[$i]['user']['name'] }}　{{'@'. $tweets[$i]['user']['username'] }}</p>
               <p class=tweet_text>{{ $tweets[$i]['text'] }}</p>
-              <a href="{{ $tweets[$i]['user']['url'] }}">twitterで表示</a>
+              <a href="{{ 'https://twitter.com/'. $tweets[$i]['user']['username']. '/status/'. $tweets[$i]['id'] }}">twitterで表示</a>
               <p class=tweet_space></p>
               
             @endfor
@@ -163,5 +174,6 @@
             </tr>
             </table>
         </div>
+        
     </body>
 </html>

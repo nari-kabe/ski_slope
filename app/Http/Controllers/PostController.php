@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use App\Ski_area;
+use App\Star;
+use App\Public_user;
 
 class PostController extends Controller
 {
@@ -38,7 +41,7 @@ class PostController extends Controller
         return view('pages/create_slope');
     }
     
-    public function login_home(Post $post)
+    public function login_home(Ski_area $ski_area)
     {
         // dd($this->getTweets(15));
         $results=$this->getTweets(10);
@@ -49,16 +52,19 @@ class PostController extends Controller
             //左辺：空の配列$users=[]に["includes"]["users"][$i]["id"]をkeyとして入れる
             //右辺：keyに対するデータとして、$results["includes"]["users"][$i]を指定する
             $users[$results["includes"]["users"][$i]["id"]] = $results["includes"]["users"][$i]; 
+            //dd($users);
         }
         for($i=0; $i < count($results["data"]); $i++){
             //空の配列の$tweets=[]のkeyを$iで０番目から指定し、データとして$results["data"][$i]を入れていく
             $tweets[$i]=$results["data"][$i];
             
             $tweets[$i]["user"]=$users[$results["data"][$i]["author_id"]];
+            //dd($tweets);
         }
-        //dd($tweets);
         
-        return view('pages/login-home')->with(['tweets'=>$tweets]);
+        return view('pages/login_home')->with(
+            ['tweets'=>$tweets ,'ski_areas' => $ski_area->get()]
+            );
     }
     
     public function getTweets($num)
@@ -97,9 +103,29 @@ class PostController extends Controller
         $response = curl_exec($curl);
         
         $result = json_decode($response, true);
-        dd($result);
+        //dd($result);
         curl_close($curl);
         
         return $result;
     }
+    
+    public function show(Ski_area $ski_area)
+    {
+        //dd($ski_area);
+        return view('pages/show')->with(['ski_area' => $ski_area]);
+    }
+    
+    public function store(Request $request, Ski_area $ski_area)
+    {
+        $input = $request['ski_area'];
+        //dd($input);
+        $ski_area->fill($input)->save();
+        return redirect('/ski_areas/' . $ski_area->id);
+    }
+    
+    // //いらない
+    // public function b(Ski_area $ski_area)
+    // {
+    //     return view('try')->with(['ski_areas' => $ski_area->get()]);
+    // }
 }
