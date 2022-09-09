@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class ChangeStarTable extends Migration
+class CreateStarsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,12 @@ class ChangeStarTable extends Migration
      */
     public function up()
     {
-        Schema::table('star', function (Blueprint $table) {
-            $table->string('prefecture', 10);
-            $table->string('municipalities', 30);
+        Schema::create('stars', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('user_id');
+            $table->integer('place_id');
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -26,8 +29,6 @@ class ChangeStarTable extends Migration
      */
     public function down()
     {
-        Schema::table('star', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('stars');
     }
 }

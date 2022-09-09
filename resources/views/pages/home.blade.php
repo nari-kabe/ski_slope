@@ -31,7 +31,7 @@
                     <td> </td>
                     <td><input type=text placeholder="スキー場の名前で検索"></td>
                     <td> </td>
-                    <td><a href="/pages/login-home">ログイン後の画面</a></td>
+                    <td><a href="/pages/login_home">ログイン後の画面</a></td>
                 </tr>
             </table>
         </div>
