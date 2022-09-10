@@ -35,17 +35,17 @@
                     <td>スキー場名</td> <td class="input_list">{{ $ski_area->place_name }}</td>
                 </tr>
                 <tr>
-                    <td>住所（郵便番号）</td> <td>{{ '〒'. $ski_area->zip_code }}</td>
+                    <td>住所</td> <td>{{ '〒'. $ski_area->zip_code. ' '. $ski_area->prefecture. $ski_area->municipalities. $ski_area->after_address}}</td>
                 </tr>
-                <tr>
-                    <td>住所（都道府県名）</td> <td>{{ $ski_area->prefecture }}</td>
-                </tr>
-                <tr>
-                    <td>住所（市町村名）</td> <td>{{ $ski_area->municipalities }}</td>
-                </tr>
-                <tr>
-                    <td>住所（番地以降）</td> <td>{{ $ski_area->after_address }}</td>
-                </tr>
+                <!--<tr>-->
+                <!--    <td>住所（都道府県名）</td> <td>{{ $ski_area->prefecture }}</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                <!--    <td>住所（市町村名）</td> <td>{{ $ski_area->municipalities }}</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                <!--    <td>住所（番地以降）</td> <td>{{ $ski_area->after_address }}</td>-->
+                <!--</tr>-->
                 <tr>
                     <td>ホームページ</td> <td><a href="{{ $ski_area->home_page }}">{{ $ski_area->home_page }}</a></td>
                 </tr>
