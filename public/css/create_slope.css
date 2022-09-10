@@ -8,6 +8,22 @@
     font-weight: bold;
 }
 
+/*body{*/
+/*    margin: 0;*/
+/*}*/
+
+.inline{
+    display: inline-block;
+}
+
+#inline_width{
+    padding-left: 20px;
+}
+
+span{
+    color: red;
+}
+
 #list table, #list th, #list td {
     border-collapse: collapse;
     padding: 5px 15px; /* 上下 左右 */
@@ -15,9 +31,18 @@
     border: solid 1px #a8d4f3;
 }
 
-.input_list, .detail{
+.input_list{
     width: 500px;
     height: 25px;
+}
+
+.normal_textarea{
+    width: 500px;
+    height: 40px;
+}
+
+.input_list, .normal_textarea{
+    margin-top: 15px;
 }
 
 .form{
@@ -25,6 +50,7 @@
 }
 
 .radio1, .radio2{
+    margin-top: 15px;
     width: 30px;
 }
 
@@ -32,11 +58,30 @@
     margin-left: 15px;
 }
 
+.check1, .check2, .check3{
+    width: 30px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.check2, .check3{
+    margin-left: 15px;
+}
+
 .detail{
-    display: none;
-    /*padding: 10px 0;*/
+    width: 500px;
+    height: 40px;
+    /*display: none;*/
     margin-top: 10px;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+.others{
+    width: 500px;
+    height: 40px;
+    /*display: none;*/
+    margin-top: 10px;
+    margin-bottom: 15px;
 }
 
 .error{

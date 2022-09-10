@@ -52,16 +52,20 @@ class PostController extends Controller
         $tweets=[];
         //連想配列を作る
         for($i=0; $i < count($results["includes"]["users"]); $i++){
-            //左辺：空の配列$users=[]に["includes"]["users"][$i]["id"]をkeyとして入れる
-            //右辺：keyに対するデータとして、$results["includes"]["users"][$i]を指定する
-            $users[$results["includes"]["users"][$i]["id"]] = $results["includes"]["users"][$i]; 
+            //・左辺：空の配列$users=[]に["includes"]["users"][$i]["id"]をkeyとして入れる
+            //・右辺：keyに対する値として、$results["includes"]["users"][$i]を指定する
+            $users[$results["includes"]["users"][$i]["id"]] = $results["includes"]["users"][$i]; //i番目のID（authorID）=ユーザーのi番目
             //dd($users);
         }
         for($i=0; $i < count($results["data"]); $i++){
-            //空の配列の$tweets=[]のkeyを$iで０番目から指定し、データとして$results["data"][$i]を入れていく
-            $tweets[$i]=$results["data"][$i];
-            
-            $tweets[$i]["user"]=$users[$results["data"][$i]["author_id"]];
+            //・空の配列の$tweets=[]に$results["data"][$i]の中身を0番目から入れていく
+            $tweets[$i]=$results["data"][$i]; //普通の配列で、i番目をresultsデータのi番目とする
+            //dd($tweets);
+            $tweets[$i]["user"]=$users[$results["data"][$i]["author_id"]]; 
+            //・上のfor文の$results["includes"]["users"][$i]["id"]] と 下のfor文の$results["data"][$i]["author_id"] は同じだから、
+            //  $results["data"][$i]["author_id"]を連想配列のkeyとして、連想配列$usersの値を呼び出す
+            //・つまり、64行目では、$results["data"][$i]が誰のものかを上のfor文で作った連想配列$usersから炙り出し、結びつけている
+            //  (resultsデータのi番目をauthorID（各個人のid。tweetのidではない）と結びつける)
             //dd($tweets);
         }
         
@@ -88,7 +92,7 @@ class PostController extends Controller
         $url = $base_url . '?' . http_build_query($query);
         
         //ヘッダ生成
-        // $token = 'AAAAAAAAAAAAAAAAAAAAAKcaggEAAAAAvGT%2BPJUKPydrJv5YQikxN6NaoTI%3DlocKWnY8JImwXhsLPXjDbygDIlRx2haIBF70VMv7lOLnr5iOSX';  //Bearer Token
+        ///Bearer Token
         $token = config('const.twitter.bearer_token');
         $header = [
             'Authorization: Bearer ' . $token,
@@ -104,7 +108,7 @@ class PostController extends Controller
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
         
         $response = curl_exec($curl);
-        
+        //dd($response);
         $result = json_decode($response, true);
         //dd($result);
         curl_close($curl);

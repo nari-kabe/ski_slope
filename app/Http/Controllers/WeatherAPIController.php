@@ -21,6 +21,7 @@ class WeatherAPIController extends Controller
         $response = $client->request($method, $url);
 
         $weather_data = $response->getBody();
+        //dd($weather_data);
         $weather_data = json_decode($weather_data, true);
 
         return response()->json($weather_data);

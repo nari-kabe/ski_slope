@@ -19,98 +19,116 @@
         </table>
         <hr>
         
-        <h2>情報一覧</h2>
+        <h2 class=inline>情報一覧</h2>
+        <p class=inline id=inline_width><span>*</span>は必須です</p>
         <div id="list">
             <table>
                 <tr>
-                    <td>スキー場名</td> 
-                    <td><input class="input_list" name="ski_area[place_name]" placeholder="スキー場名を入力" value="{{ old('ski_area.place_name') }}"></td>
-                    <td class=error>{{ $errors->first('ski_area.place_name') }}</td>
-                </tr>
-                <tr>
-                    <td>住所（郵便番号）</td> 
-                    <td><input class="input_list" name="ski_area[zip_code]" placeholder="例：010-0012" value="{{ old('ski_area.zip_code') }}"></td>
-                    <td class=error>{{ $errors->first('ski_area.zip_code') }}</td>
-                </tr>
-                <tr>
-                    <td>住所（都道府県名）</td> 
-                    <td><input class="input_list" name="ski_area[prefecture]" placeholder="住所（都道府県名）を入力" value="{{ old('ski_area.prefecture') }}"></td>
-                    <td class=error>{{ $errors->first('ski_area.prefecture') }}</td>
-                </tr>
-                <tr>
-                    <td>住所（市町村名）</td> 
-                    <td><input class="input_list" name="ski_area[municipalities]" placeholder="住所（市町村名）を入力" value="{{ old('ski_area.municipalities') }}"></td>
-                    <td class=error>{{ $errors->first('ski_area.municipalities') }}</td>
-                </tr>
-                <tr>
-                    <td>住所（番地以降）</td> 
-                    <td><input class="input_list" name="ski_area[after_address]" placeholder="住所（番地以降）を入力" value="{{ old('ski_area.after_address') }}"></td>
-                    <td class=error>{{ $errors->first('ski_area.after_address') }}</td>
+                    <td><span>*</span>スキー場名</td> 
+                    <td><input class="input_list" name="ski_area[place_name]" placeholder="例１：札幌国際スキー場　例２：ルスツリゾート" value="{{ old('ski_area.place_name') }}">
+                        <p class=error>{{ $errors->first('ski_area.place_name') }}</p></td>
                 </tr>
                 <tr>
                     <td>ホームページ</td> 
-                    <td><input class="input_list" name="ski_area[home_page]" placeholder="ホームページURLを入力" value="{{ old('ski_area.home_page') }}"></input></td>
-                    <td class=error>{{ $errors->first('ski_area.home_page') }}</td>
+                    <td><input class="input_list" name="ski_area[home_page]" placeholder="例：https://www.sapporo-kokusai.jp/" value="{{ old('ski_area.home_page') }}">
+                    <p class=error>{{ $errors->first('ski_area.home_page') }}
+                    </td>
                 </tr>
                 <tr>
-                    <td>電話番号</td> 
-                    <td><input class="input_list" name="ski_area[phone_number]" placeholder="電話番号を入力" value="{{ old('ski_area.phone_number') }}"></td>
-                    <td class=error>{{ $errors->first('ski_area.phone_number') }}</td>
+                    <td><span>*</span>住所（郵便番号）</td> 
+                    <td><input class="input_list" name="ski_area[zip_code]" placeholder="例：010-0012" value="{{ old('ski_area.zip_code') }}">
+                    <p class=error>{{ $errors->first('ski_area.zip_code') }}</p>
+                    </td>
                 </tr>
                 <tr>
-                    <td>営業時間</td> 
-                    <td><input class="input_list" name="ski_area[business_hours]" placeholder="営業時間を入力" value="{{ old('ski_area.business_hours') }}"></td>
-                    <td class=error>{{ $errors->first('ski_area.business_hours') }}</td>
+                    <td><span>*</span>住所（都道府県名）</td> 
+                    <td><input class="input_list" name="ski_area[prefecture]" placeholder="例：北海道" value="{{ old('ski_area.prefecture') }}">
+                    <p class=error>{{ $errors->first('ski_area.prefecture') }}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span>*</span>住所（市区名）</td> 
+                    <td><input class="input_list" name="ski_area[]" placeholder="例：南区定山渓" value="{{ old('ski_area.') }}">
+                    <p class=error>{{ $errors->first('ski_area.municipalities') }}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span>*</span>住所（町村名以降）</td> 
+                    <td><input class="input_list" name="ski_area[after_address]" placeholder="例：937番地先" value="{{ old('ski_area.after_address') }}">
+                    <p class=error>{{ $errors->first('ski_area.after_address') }}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span>*</span>電話番号</td> 
+                    <td><input class="input_list" name="ski_area[phone_number]" placeholder="例：011-598-4519" value="{{ old('ski_area.phone_number') }}">
+                    <p class=error>{{ $errors->first('ski_area.phone_number') }}
+                    </td>
+                </tr>
+                <tr>
+                    <td><span>*</span>営業時間</td> 
+                    <td><textarea class="normal_textarea" name="ski_area[business_hours]" placeholder="例：通常 2022年12月1日（木）~ 2023年3月31日（金）平日 9:00 ~ 17:00 / 土日祝 8:30 ~ 17:00">{{ old('ski_area.business_hours') }}</textarea>
+                    <p class=error>{{ $errors->first('ski_area.business_hours') }}</p>
+                    </td>
                 </tr>
                 <tr>
                     <td>シーズン期間</td> 
-                    <td><input class="input_list" name="ski_area[season]" placeholder="シーズン期間を入力" value="{{ old('ski_area.season') }}"></td>
-                    <td class=error>{{ $errors->first('ski_area.season') }}</td>
+                    <td><input class="input_list" name="ski_area[season]" placeholder="例：2022年11月18日（金） ~ 2023年5月7日（日）" value="{{ old('ski_area.season') }}">
+                    <p class=error>{{ $errors->first('ski_area.season') }}</p>
+                    </td>
                 </tr>
                 <tr>
                     <td>ナイター</td> 
                     <td>
                         <input type="radio" id="night_game1" class="radio1" name="radio_button1" onclick="textarea_off(1)"><label for="night_game1">無</label>
                         <input type="radio" checked id="night_game2" class="radio2" name="radio_button1" onclick="textarea_on(1)"><label for="night_game2">有</label></br>
-                        <input id=1 class="detail" style="display: block" name="ski_area[evening_hours]" placeholder="ナイターの詳細を入力" value="{{ old('ski_area.evening_hours') }}">
+                        <textarea id=1 class="detail" style="display: block" name="ski_area[evening_hours]" placeholder="例：17:00 ~ 20:00" value="{{ old('ski_area.evening_hours') }}"></textarea>
+                        <p class=error>{{ $errors->first('ski_area.evening_hours') }}</p>
                     </td>
-                    <td class=error>{{ $errors->first('ski_area.evening_hours') }}</td>
                 </tr>
                 <tr>
                     <td>レッスン</td> 
                     <td>
                         <input type="radio" id="lesson1" class="radio1" name="radio_button2" onclick="textarea_off(2)"><label for="lesson1">無</label>
                         <input type="radio" checked id="lesson2" class="radio2" name="radio_button2" onclick="textarea_on(2)"><label for="lesson2">有</label></br>
-                        <input id=2 class="detail" style="display: block" name="ski_area[lesson]" placeholder="レッスンの詳細を入力" value="{{ old('ski_area.lesson') }}">
+                        <textarea id=2 class="detail" style="display: block" name="ski_area[lesson]" placeholder="例：３日集中レッスン、キッズ・ジュニアレッスン、レベル別レッスン、プライベートレッスン" value="{{ old('ski_area.lesson') }}"></textarea>
+                        <p class=error>{{ $errors->first('ski_area.lesson') }}
                     </td>
-                    <td class=error>{{ $errors->first('ski_area.lesson') }}</td>
+                </tr>
+                <tr>
+                    <td>使用可能アクティビティ</td> 
+                    <td>
+                        <input type="checkbox" checked id="available1"  class="check1" name="check_box1"><label for="available1">スキー</label>
+                        <input type="checkbox" checked id="available2" class="check2" name="check_box1"><label for="available2">スノーボード</label>
+                        <input type="checkbox" id="available3" class="check3" name="check_box1" onclick="textarea_display(7)"><label for="available3">その他</label>
+                        <textarea id=7 class="others" style="display: none" name="ski_area[]" placeholder="その他を選択の場合はここに入力してください" value="{{ old('ski_area.') }}"></textarea>
+                    </td>
                 </tr>
                 <tr>
                     <td>レストラン</td> 
                      <td>
                         <input type="radio" id="restaurant1" class="radio1" name="radio_button3" onclick="textarea_off(3)"><label for="restaurant1">無</label>
                         <input type="radio" checked id="restaurant2" class="radio2" name="radio_button3" onclick="textarea_on(3)"><label for="restaurant2">有</label></br>
-                        <input id=3 class="detail" style="display: block" name="ski_area[restaurant]" placeholder="レストランの詳細を入力" value="{{ old('ski_area.restaurant') }}">
+                        <textarea id=3 class="detail" style="display: block" name="ski_area[restaurant]" placeholder="スキー場内に６つ有り" value="{{ old('ski_area.restaurant') }}"></textarea>
+                        <p class=error>{{ $errors->first('ski_area.restaurant') }}</p>
                     </td>
-                    <td class=error>{{ $errors->first('ski_area.restaurant') }}</td>
                 </tr>
                 <tr>
                     <td>温泉</td> 
                     <td>
                         <input type="radio" id="spa1" class="radio1" name="radio_button4" onclick="textarea_off(4)"><label for="spa1">無</label>
                         <input type="radio" checked id="spa2" class="radio2" name="radio_button4" onclick="textarea_on(4)"><label for="spa2">有</label></br>
-                        <input id=4 class="detail" style="display: block" name="ski_area[spa]" placeholder="温泉の詳細を入力" value="{{ old('ski_area.spa') }}">
+                        <textarea id=4 class="detail" style="display: block" name="ski_area[spa]" placeholder="例：◯◯温泉 （スキー場から1km ）" value="{{ old('ski_area.spa') }}"></textarea>
+                        <p class=error>{{ $errors->first('ski_area.spa') }}
                     </td>
-                    <td class=error>{{ $errors->first('ski_area.spa') }}</td>
                 </tr>
                 <tr>
                     <td>宿泊施設</td> 
                     <td>
                         <input type="radio" id="inn1" class="radio1" name="radio_button5" onclick="textarea_off(5)"><label for="inn1">無</label>
                         <input type="radio" checked id="inn2" class="radio2" name="radio_button5" onclick="textarea_on(5)"><label for="inn2">有</label></br>
-                        <input id=5 class="detail" style="display: block" name="ski_area[hotel]" placeholder="宿泊施設の詳細を入力" value="{{ old('ski_area.hotel') }}">
-                    </td>
-                    <td class=error>{{ $errors->first('ski_area.hotel') }}</td>
+                        <textarea id=5 class="detail" style="display: block" name="ski_area[hotel]" placeholder="◯◯ホテル（スキー場から15km ）" value="{{ old('ski_area.hotel') }}"></textarea>
+                        <p class=error>{{ $errors->first('ski_area.hotel') }}</p>
+                        </td>
                 </tr>
                 <tr>
                     <td>ゲレンデマップ</td>  
@@ -118,10 +136,12 @@
                         <input type="radio" id="slope_map1" class="radio1" name="radio_button6" onclick="textarea_off(6)"><label for="slope_map1">無</label>
                         <input type="radio" checked id="slope_map2" class="radio2" name="radio_button6" onclick="textarea_on(6)"><label for="slope_map2">有</label></br>
                         <input id=6 class="detail" style="display: block" name="ski_area[slope_map]" placeholder="ゲレンデマップの画像を入力" value="{{ old('ski_area.slope_map') }}">
+                        <p class=error>{{ $errors->first('ski_area.slope_map') }}</p>
                     </td>
-                    <td class=error>{{ $errors->first('ski_area.slope_map') }}</td>
                 </tr>
             </table>
+            
+            <label for="agree"><input type="checkbox" id="agree" name="agree" value="1">同意する</label>
         </div>
         
         <hr>

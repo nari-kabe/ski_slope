@@ -32,15 +32,15 @@ class SkiAreaRequest extends FormRequest
             'ski_area.prefecture' => 'required|string|max:3',
             'ski_area.municipalities' => 'required|string|max:30',
             'ski_area.after_address' => 'required|string|max:50',
-            'ski_area.home_page' => 'string',
+            'ski_area.home_page' => 'nullable|url',
             'ski_area.phone_number' => 'required|string|max:60',
             'ski_area.business_hours' => 'required|string|max:30',
-            'ski_area.evening_hours' => 'string|max:30',
-            'ski_area.season' => 'string|max:30',
-            'ski_area.lesson' => 'string',
-            'ski_area.restaurant' => 'string',
-            'ski_area.spa' => 'string',
-            'ski_area.hotel' => 'string',
+            'ski_area.evening_hours' => 'nullable|string|max:30',
+            'ski_area.season' => 'nullable|string|max:30',
+            'ski_area.lesson' => 'nullable|string',
+            'ski_area.restaurant' => 'nullable|string',
+            'ski_area.spa' => 'nullable|string',
+            'ski_area.hotel' => 'nullable|string',
             // 'ski_area.slope_map' => 'required|string',  画像入力にしたいから、一旦保留
         ];
     }
