@@ -34,14 +34,20 @@ class SkiAreaRequest extends FormRequest
             'ski_area.after_address' => 'required|string|max:50',
             'ski_area.home_page' => 'nullable|url',
             'ski_area.phone_number' => 'required|string|max:60',
-            'ski_area.business_hours' => 'required|string|max:30',
+            'ski_area.business_hours' => 'required|string',
             'ski_area.evening_hours' => 'nullable|string|max:30',
-            'ski_area.season' => 'nullable|string|max:30',
+            'ski_area.season' => 'nullable|string',
             'ski_area.lesson' => 'nullable|string',
             'ski_area.restaurant' => 'nullable|string',
             'ski_area.spa' => 'nullable|string',
             'ski_area.hotel' => 'nullable|string',
             // 'ski_area.slope_map' => 'required|string',  画像入力にしたいから、一旦保留
+            
+            //追加分
+            'ski_area.parking_lot' => 'nullable|string',
+            'ski_area.activity' => 'nullable|string',
+            'ski_area.kids_park' => 'nullable|string',
+            'ski_area.lift_ticket' => 'nullable|string',
         ];
     }
 }
