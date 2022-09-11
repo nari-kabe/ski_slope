@@ -163,7 +163,10 @@ return [
         'ski_area.restaurant' => 'レストラン',
         'ski_area.spa' => '温泉',
         'ski_area.hotel' => 'ホテル',
-        
+        'ski_area.parking_lot' => '駐車場',
+        'ski_area.activity' => 'アクティビティ',
+        'ski_area.kids_park' => 'キッズパーク',
+        'ski_area.lift_ticket' => 'リフト券',
     ],
 
 ];
