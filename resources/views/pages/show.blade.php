@@ -22,7 +22,7 @@
             <tr>
                 <td><h2>情報一覧</h2></td>
                 <td>　</td>
-                <td><a href=/pages/create_slope>編集</a></td>
+                <td><a href='/ski_areas/{{ $ski_area->id }}/edit'>編集</a></td>
                 <td>　</td>
                 <td>{{ '最終更新日時：'. $ski_area->updated_at }}</td>
             </tr>
@@ -32,10 +32,12 @@
             <table>
                
                 <tr>
-                    <td>スキー場名</td> <td class="input_list">{{ $ski_area->place_name }}</td>
+                    <td>スキー場名</td> 
+                    <td class="input_list">{{ $ski_area->place_name }}</td>
                 </tr>
                 <tr>
-                    <td>住所</td> <td>{{ '〒'. $ski_area->zip_code. ' '. $ski_area->prefecture. $ski_area->municipalities. $ski_area->after_address}}</td>
+                    <td>住所</td> 
+                    <td>{{ '〒'. $ski_area->zip_code. ' '. $ski_area->prefecture. $ski_area->city. $ski_area->after_address}}</td>
                 </tr>
                 <!--<tr>-->
                 <!--    <td>住所（都道府県名）</td> <td>{{ $ski_area->prefecture }}</td>-->
@@ -47,31 +49,87 @@
                 <!--    <td>住所（番地以降）</td> <td>{{ $ski_area->after_address }}</td>-->
                 <!--</tr>-->
                 <tr>
-                    <td>ホームページ</td> <td><a href="{{ $ski_area->home_page }}">{{ $ski_area->home_page }}</a></td>
+                    <td>ホームページ</td> 
+                    <td><a href="{{ $ski_area->home_page }}">{{ $ski_area->home_page }}</a></td>
                 </tr>
                 <tr>
-                    <td>電話番号</td> <td>{{ $ski_area->phone_number }}</td>
+                    <td>電話番号</td> 
+                    <td>{{ $ski_area->phone_number }}</td>
                 </tr>
                 <tr>
-                    <td>営業時間</td> <td>{{ $ski_area->business_hours }}</td>
+                    <td>営業時間</td> 
+                    <td>{{ $ski_area->business_hours }}</td>
                 </tr>
                 <tr>
-                    <td>シーズン期間</td> <td>{{ $ski_area->season }}</td>
+                    <td>リフト料金</td> 
+                    <td>{{ $ski_area->lift_ticket }}</td>
                 </tr>
                 <tr>
-                    <td>ナイター</td> <td>{{ $ski_area->evening_hours }}</td>
+                    <td>シーズン期間</td> 
+                    <td>{{ $ski_area->season }}</td>
                 </tr>
                 <tr>
-                    <td>レッスン</td> <td>{{ $ski_area->lesson }}</td>
+                    <td>ナイター</td> 
+                    @if($ski_area->parking_lot===null)
+                        <td>無し</td>
+                    @else
+                        <td>{{ $ski_area->evening_hours }}</td>
+                    @endif
                 </tr>
                 <tr>
-                    <td>レストラン</td> <td>{{ $ski_area->restaurant }}</td>
+                    <td>レッスン</td> 
+                    @if($ski_area->parking_lot===null)
+                        <td>無し</td>
+                    @else
+                        <td>{{ $ski_area->lesson }}</td>
+                    @endif
                 </tr>
                 <tr>
-                    <td>温泉</td> <td>{{ $ski_area->spa }}</td>
+                    <td>キッズパーク</td> 
+                    @if($ski_area->parking_lot===null)
+                        <td>無し</td>
+                    @else
+                        <td>{{ $ski_area->kids_park }}</td>
+                    @endif
+                </tr>
+                
+                //ここどうする？
+                <tr>
+                    <td>使用可能アクティビティ</td> 
+                    <td>{{ $ski_area->activity }}</td>
+                </tr>
+                
+                <tr>
+                    <td>駐車場</td> 
+                    @if($ski_area->parking_lot===null)
+                        <td>無し</td>
+                    @else
+                        <td>{{ $ski_area->parking_lot }}</td>
+                    @endif
                 </tr>
                 <tr>
-                    <td>宿泊施設</td> <td>{{ $ski_area->hotel }}</td>
+                    <td>レストラン</td> 
+                    @if($ski_area->parking_lot===null)
+                        <td>無し</td>
+                    @else
+                        <td>{{ $ski_area->restaurant }}</td>
+                    @endif
+                </tr>
+                <tr>
+                    <td>温泉</td> 
+                    @if($ski_area->parking_lot===null)
+                        <td>無し</td>
+                    @else
+                        <td>{{ $ski_area->spa }}</td>
+                    @endif
+                </tr>
+                <tr>
+                    <td>宿泊施設</td> 
+                    @if($ski_area->parking_lot===null)
+                        <td>無し</td>
+                    @else
+                        <td>{{ $ski_area->hotel }}</td>
+                    @endif
                 </tr>
                 
             </table>

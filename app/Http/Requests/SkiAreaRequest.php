@@ -30,7 +30,7 @@ class SkiAreaRequest extends FormRequest
             'ski_area.place_name' => 'required|string|max:40',
             'ski_area.zip_code' => 'required|string|max:8',
             'ski_area.prefecture' => 'required|string|max:3',
-            'ski_area.municipalities' => 'required|string|max:30',
+            'ski_area.city' => 'required|string|max:30',
             'ski_area.after_address' => 'required|string|max:50',
             'ski_area.home_page' => 'nullable|url',
             'ski_area.phone_number' => 'required|string|max:60',
