@@ -130,4 +130,9 @@ class PostController extends Controller
         return redirect('/ski_areas/' . $ski_area->id);
     }
     
+    public function edit(Ski_area $ski_area)
+    {
+        return view('pages/edit_slope')->with(['ski_area' => $ski_area]);
+    }
+    
 }
