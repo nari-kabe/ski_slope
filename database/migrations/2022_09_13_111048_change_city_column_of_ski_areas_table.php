@@ -14,6 +14,7 @@ class ChangeCityColumnOfSkiAreasTable extends Migration
     public function up()
     {
         Schema::table('ski_areas', function (Blueprint $table) {
+            $table->integer('user_id');
             $table->string('city', 10)->change();
         });
     }

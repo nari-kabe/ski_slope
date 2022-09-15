@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title>{{ $ski_area->place_name }}</title>
-        <link rel="stylesheet" href="/css/show.css">
+        <link rel="stylesheet" href="/css/show_slope.css">
         
     </head>
     <body>
@@ -70,7 +70,7 @@
                 </tr>
                 <tr>
                     <td>ナイター</td> 
-                    @if($ski_area->parking_lot===null)
+                    @if($ski_area->evening_hours===null)
                         <td>無し</td>
                     @else
                         <td>{{ $ski_area->evening_hours }}</td>
@@ -78,7 +78,7 @@
                 </tr>
                 <tr>
                     <td>レッスン</td> 
-                    @if($ski_area->parking_lot===null)
+                    @if($ski_area->lesson===null)
                         <td>無し</td>
                     @else
                         <td>{{ $ski_area->lesson }}</td>
@@ -86,7 +86,7 @@
                 </tr>
                 <tr>
                     <td>キッズパーク</td> 
-                    @if($ski_area->parking_lot===null)
+                    @if($ski_area->kids_park===null)
                         <td>無し</td>
                     @else
                         <td>{{ $ski_area->kids_park }}</td>
@@ -109,7 +109,7 @@
                 </tr>
                 <tr>
                     <td>レストラン</td> 
-                    @if($ski_area->parking_lot===null)
+                    @if($ski_area->restaurant===null)
                         <td>無し</td>
                     @else
                         <td>{{ $ski_area->restaurant }}</td>
@@ -117,7 +117,7 @@
                 </tr>
                 <tr>
                     <td>温泉</td> 
-                    @if($ski_area->parking_lot===null)
+                    @if($ski_area->spa===null)
                         <td>無し</td>
                     @else
                         <td>{{ $ski_area->spa }}</td>
@@ -125,7 +125,7 @@
                 </tr>
                 <tr>
                     <td>宿泊施設</td> 
-                    @if($ski_area->parking_lot===null)
+                    @if($ski_area->hotel===null)
                         <td>無し</td>
                     @else
                         <td>{{ $ski_area->hotel }}</td>

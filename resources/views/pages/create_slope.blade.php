@@ -34,7 +34,7 @@
                     <td>ホームページ</td> 
                     <td>
                         <input class="input_list" name="ski_area[home_page]" placeholder="例：https://www.sapporo-kokusai.jp/" value="{{ old('ski_area.home_page') }}">
-                        <p class=error>{{ $errors->first('ski_area.home_page') }}
+                        <p class=error>{{ $errors->first('ski_area.home_page') }}</p>
                     </td>
                 </tr>
                 <tr>
@@ -68,8 +68,8 @@
                 <tr>
                     <td><span>*</span>電話番号</td> 
                     <td>
-                        <input class="input_list" name="ski_area[phone_number]" placeholder="例：011-598-4519" value="{{ old('ski_area.phone_number') }}">
-                        <p class=error>{{ $errors->first('ski_area.phone_number') }}
+                        <input class="input_list" name="ski_area[phone_number]" placeholder="例：0811-59-4819" value="{{ old('ski_area.phone_number') }}">
+                        <p class=error>{{ $errors->first('ski_area.phone_number') }}</p>
                     </td>
                 </tr>
                 <tr>
@@ -125,7 +125,7 @@
                         <input type="radio" id="lesson1" class="radio1" name="radio_button2" onclick="textarea_off(2)"><label for="lesson1">無</label>
                         <input type="radio" checked id="lesson2" class="radio2" name="radio_button2" onclick="textarea_on(2)"><label for="lesson2">有</label></br>
                         <textarea id=2 class="detail" style="display: block" name="ski_area[lesson]" placeholder="例：３日集中レッスン、キッズ・ジュニアレッスン、レベル別レッスン、プライベートレッスン">{{ old('ski_area.lesson') }}</textarea>
-                        <p class=error>{{ $errors->first('ski_area.lesson') }}
+                        <p class=error>{{ $errors->first('ski_area.lesson') }}</p>
                     </td>
                 </tr>
                 <tr>
@@ -135,6 +135,7 @@
                         <input type="checkbox" checked id="available2" class="check2" name="check_box1"><label for="available2">スノーボード</label>
                         <input type="checkbox" id="available3" class="check3" name="check_box1" onclick="textarea_display(0)"><label for="available3">その他</label>
                         <textarea id=0 class="others" style="display: none" name="ski_area[activity]" placeholder="その他を選択の場合はここに入力してください">{{ old('ski_area.activity') }}</textarea>
+                        <p class=error>{{ $errors->first('ski_area.activity') }}</p>
                     </td>
                 </tr>
                 <tr>
@@ -152,7 +153,7 @@
                         <input type="radio" id="spa1" class="radio1" name="radio_button4" onclick="textarea_off(4)"><label for="spa1">無</label>
                         <input type="radio" checked id="spa2" class="radio2" name="radio_button4" onclick="textarea_on(4)"><label for="spa2">有</label></br>
                         <textarea id=4 class="detail" style="display: block" name="ski_area[spa]" placeholder="例：◯◯温泉 （スキー場から1km ）">{{ old('ski_area.spa') }}</textarea>
-                        <p class=error>{{ $errors->first('ski_area.spa') }}
+                        <p class=error>{{ $errors->first('ski_area.spa') }}</p>
                     </td>
                 </tr>
                 <tr>

@@ -14,7 +14,8 @@ class AddColumnOfSkiAreasTable extends Migration
     public function up()
     {
         Schema::table('ski_areas', function (Blueprint $table) {
-            $table->integer('user_id');
+            //$table->foreign('user_id')->references('id')->on('users');
+             $table->foreignId('user_id')->constrained();
         });
     }
 
@@ -26,7 +27,7 @@ class AddColumnOfSkiAreasTable extends Migration
     public function down()
     {
         Schema::table('ski_areas', function (Blueprint $table) {
-            //
+        
         });
     }
 }

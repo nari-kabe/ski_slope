@@ -17,7 +17,7 @@
                 <div class=head>
                     <table>
                         <tr>
-                            <td><a class=link_color href="/pages/registration">自己プロフィール編集</a></td>
+                            <td><a class=link_color href="/pages/profile">自己プロフィール編集</a></td>
                             <td>　</td>
                             <td><a class=link_color href="/pages/login">ログアウト</a></td>
                         </tr>

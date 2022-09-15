@@ -1,0 +1,20 @@
+/*#list table {*/
+/*  border-collapse: collapse;*/
+  /*border: solid 1px #888;*/
+/*}*/
+
+#list table, #list th, #list td {
+  border-collapse: collapse;
+  padding: 5px 15px; /* 上下 左右 */
+  /*border: dashed 1px #a8d4f3;*/
+  border: solid 1px #a8d4f3;
+}
+
+.input_list{
+    width: 500px;
+    height: 25px;
+}
+
+.horizontal_line{
+  margin-top: 40px;
+}
