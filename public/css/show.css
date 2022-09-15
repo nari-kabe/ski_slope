@@ -14,3 +14,12 @@
     width: 500px;
     height: 25px;
 }
+
+.horizontal_line{
+  margin-top: 40px;
+}
+
+#openweathermap-widget-1{
+  position: relative;
+  left: 7vw;
+}

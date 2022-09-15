@@ -135,11 +135,18 @@
             </table>
         </div>
         
-        <hr>
+        <hr class=horizontal_line>
         <h2>ゲレンデマップ</h2>
-        <hr>
+        <hr class=horizontal_line>
         <h2>天気</h2>
-        <hr>
+        <div id="openweathermap-widget-1"></div>
+        <script src='//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/d3.min.js'></script><script>window.myWidgetParam ? 
+        window.myWidgetParam : window.myWidgetParam = [];  window.myWidgetParam.push({id: 1,cityid: {{ $place_id }},appid: '7a8d0fd25d5a115e3573385ecafc1197',
+        units: 'metric',containerid: 'openweathermap-widget-1',  });  (function() {var script = document.createElement('script');script.async = true;
+        script.charset = "utf-8";script.src = "//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/weather-widget-generator.js";
+        var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(script, s);  })();
+        </script>
+        <hr class=horizontal_line>
         <h2>Googleマップ</h2>
         
     </body>
