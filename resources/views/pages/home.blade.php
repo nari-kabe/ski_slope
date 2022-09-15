@@ -13,7 +13,7 @@
             <div class=head>
                 <table>
                     <tr>
-                        <td><a href="/pages/registration">新規登録</a></td>
+                        <td><a href="/pages/profile">プロフィール登録</a></td>
                         <td>　</td>
                         <td><a href="/pages/login">ログイン</a></td>
                     </tr>

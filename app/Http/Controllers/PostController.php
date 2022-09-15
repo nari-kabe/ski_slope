@@ -20,9 +20,9 @@ class PostController extends Controller
         return view('pages/home');
     }
     
-    public function registration(Post $post)
+    public function profile(Post $post)
     {
-        return view('pages/registration');
+        return view('pages/profile');
     }
     
     public function login(Post $post)
@@ -157,7 +157,7 @@ class PostController extends Controller
             //dd($temp_min);
         }
 
-        return view('pages/show')->with(['ski_area' => $ski_area, 'place_id' => $place_id, 'weather' => $weather, 'icon' => $icon, 'temp_max' => $temp_max, 'temp_min' => $temp_min]);
+        return view('pages/show_slope')->with(['ski_area' => $ski_area, 'place_id' => $place_id, 'weather' => $weather, 'icon' => $icon, 'temp_max' => $temp_max, 'temp_min' => $temp_min]);
         //return view('pages/show')->with(['ski_area' => $ski_area]);
     }
     
