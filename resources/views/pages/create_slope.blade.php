@@ -89,7 +89,7 @@
                 <tr>
                     <td>リフト料金</td> 
                     <td><textarea class="normal_textarea" name="ski_area[lift_ticket]" placeholder="例：1日券：4000円¥n4時間券：3000円">{{ old('ski_area.lift_ticket') }}</textarea>
-                    <p class=error>{{ $errors->first('ski_area.business_hours') }}</p>
+                    <p class=error>{{ $errors->first('ski_area.lift_ticket') }}</p>
                     </td>
                 </tr>
                 <tr>
@@ -178,14 +178,6 @@
             
             <label for="agree"><input type="checkbox" id="agree" name="agree" value="1">同意する</label>
         </div>
-        
-        <hr>
-        <h2>ゲレンデマップ</h2>
-        <hr>
-        <h2>天気</h2>
-        <hr>
-        <h2>Googleマップ</h2>
-        
         <input class=form type="submit" value="送信"/></br>
         </form>
         

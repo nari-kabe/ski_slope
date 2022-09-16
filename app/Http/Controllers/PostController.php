@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-// use Illuminate\Http\Request;
-use App\Http\Requests\SkiAreaRequest;
+use Illuminate\Http\Request;
+//use App\Http\Requests\SkiAreaRequest;　郵便番号の正規表現Ruleを作ったため使わない
 use GuzzleHttp\Client;
+use App\Rules\ZipCodeRule;
 
 use App\Post;
 use App\Ski_area;
@@ -161,8 +162,33 @@ class PostController extends Controller
         //return view('pages/show')->with(['ski_area' => $ski_area]);
     }
     
-    public function store(SkiAreaRequest $request, Ski_area $ski_area)
+    public function store(Request $request, Ski_area $ski_area)
     {
+        
+        $request->validate([
+            'ski_area.place_name' => ['required','string','max:40'],
+            'ski_area.home_page' => ['nullable','url'],
+            'ski_area.zip_code' => ['required', new ZipCodeRule()],
+            'ski_area.prefecture' => ['required','string','max:3'],
+            'ski_area.city' => ['required','string','max:30'],
+            'ski_area.after_address' => ['required','string','max:50'],
+            'ski_area.phone_number' => ['required','string','max:60'],
+            'ski_area.business_hours' => ['required','string'],
+            'ski_area.evening_hours' => ['nullable','string','max:30'],
+            'ski_area.season' => ['nullable','string'],
+            'ski_area.lesson' => ['nullable','string'],
+            'ski_area.restaurant' => ['nullable','string'],
+            'ski_area.spa' => ['nullable','string'],
+            'ski_area.hotel' => ['nullable','string'],
+            // 'ski_area.slope_map' => 'required','string',  画像入力にしたいから、一旦保留
+            
+            //追加分
+            'ski_area.parking_lot' => ['nullable','string'],
+            'ski_area.activity' => ['nullable','string'],
+            'ski_area.kids_park' => ['nullable','string'],
+            'ski_area.lift_ticket' => ['nullable','string'],
+        ]);
+        
         $input = $request['ski_area'];
         //dd($input);
         $ski_area->fill($input)->save();
@@ -172,6 +198,39 @@ class PostController extends Controller
     public function edit(Ski_area $ski_area)
     {
         return view('pages/edit_slope')->with(['ski_area' => $ski_area]);
+    }
+    
+    public function update(Request $request, Ski_area $ski_area)
+    {
+        
+        $request->validate([
+            'ski_area.place_name' => ['required','string','max:40'],
+            'ski_area.home_page' => ['nullable','url'],
+            'ski_area.zip_code' => ['required', new ZipCodeRule()],
+            'ski_area.prefecture' => ['required','string','max:3'],
+            'ski_area.city' => ['required','string','max:30'],
+            'ski_area.after_address' => ['required','string','max:50'],
+            'ski_area.phone_number' => ['required','string','max:60'],
+            'ski_area.business_hours' => ['required','string'],
+            'ski_area.evening_hours' => ['nullable','string','max:30'],
+            'ski_area.season' => ['nullable','string'],
+            'ski_area.lesson' => ['nullable','string'],
+            'ski_area.restaurant' => ['nullable','string'],
+            'ski_area.spa' => ['nullable','string'],
+            'ski_area.hotel' => ['nullable','string'],
+            // 'ski_area.slope_map' => 'required','string',  画像入力にしたいから、一旦保留
+            
+            //追加分
+            'ski_area.parking_lot' => ['nullable','string'],
+            'ski_area.activity' => ['nullable','string'],
+            'ski_area.kids_park' => ['nullable','string'],
+            'ski_area.lift_ticket' => ['nullable','string'],
+        ]);
+        
+        $input = $request['ski_area'];
+        $ski_area->fill($input)->save();
+    
+        return redirect('/ski_areas/' . $ski_area->id);
     }
     
 }

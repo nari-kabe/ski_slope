@@ -179,13 +179,6 @@
             <label for="agree"><input type="checkbox" id="agree" name="agree" value="1">同意する</label>
         </div>
         
-        <hr>
-        <h2>ゲレンデマップ</h2>
-        <hr>
-        <h2>天気</h2>
-        <hr>
-        <h2>Googleマップ</h2>
-        
         <input class=form type="submit" value="更新"/></br>
         </form>
     </body>
