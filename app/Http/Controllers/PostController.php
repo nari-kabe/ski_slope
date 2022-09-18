@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 //use App\Http\Requests\SkiAreaRequest;　郵便番号の正規表現Ruleを作ったため使わない
 use GuzzleHttp\Client;
 use App\Rules\ZipCodeRule;
+use App\Rules\PrefectureRule;
+use App\Rules\PhoneNumberRule;
 
 use App\Post;
 use App\Ski_area;
@@ -133,7 +135,16 @@ class PostController extends Controller
         $client = new Client();
 
         $method = "GET";
-        $response = $client->request($method, $url);
+        
+        try{
+            $response = $client->request($method, $url);
+        }catch(\Exception $e){
+            $prefecture = $ski_area->prefecture;
+            $url = "$base_url?units=metric&q=$prefecture&APPID=$API_KEY";
+            $response = $client->request($method, $url);
+        }
+        
+        
 
         $weather_data = $response->getBody();
         //dd($weather_data);
@@ -169,10 +180,10 @@ class PostController extends Controller
             'ski_area.place_name' => ['required','string','max:40'],
             'ski_area.home_page' => ['nullable','url'],
             'ski_area.zip_code' => ['required', new ZipCodeRule()],
-            'ski_area.prefecture' => ['required','string','max:3'],
-            'ski_area.city' => ['required','string','max:30'],
+            'ski_area.prefecture' => ['required', new PrefectureRule()],
+            'ski_area.city' => ['required','string','max:30'],  //ここもRule作った方がいい
             'ski_area.after_address' => ['required','string','max:50'],
-            'ski_area.phone_number' => ['required','string','max:60'],
+            'ski_area.phone_number' => ['required', new PhoneNumberRule()],
             'ski_area.business_hours' => ['required','string'],
             'ski_area.evening_hours' => ['nullable','string','max:30'],
             'ski_area.season' => ['nullable','string'],

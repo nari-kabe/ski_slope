@@ -53,10 +53,10 @@
                 <tr>
                     <td><span>*</span>性別</td>
                     <td>
-                        <input type="radio" checked id="sex0" name="radio_button1"><label for="sex0">回答しない</label>
-                        <input type="radio" id="sex1" name="radio_button1"><label for="sex1">男</label>
-                        <input type="radio" id="sex2" name="radio_button1"><label for="sex2">女</label>
-                        <input type="radio" id="sex9" name="radio_button1"><label for="sex9">その他</label></br>
+                        <input type="radio" checked id="sex0" name="profiles[sex]" value="0"><label for="sex0">回答しない</label>
+                        <input type="radio" id="sex1" name="profiles[sex]" value="1"><label for="sex1">男</label>
+                        <input type="radio" id="sex2" name="profiles[sex]" value="2"><label for="sex2">女</label>
+                        <input type="radio" id="sex9" name="profiles[sex]" value="9"><label for="sex9">その他</label></br>
                     </td>
                 </tr>
                 <tr>

@@ -24,3 +24,6 @@ Route::put('/profiles/{profile}', 'ProfileController@update'); //スキー場情
 Route::get('/a', 'WeatherAPIController@weatherData');
 Route::get('/b', 'WeatherAPIController@get_json');
 
+
+Auth::routes();
+
