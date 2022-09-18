@@ -13,7 +13,11 @@ class WeatherAPIController extends Controller
         $base_url = config('const.openweathermap.url');
         //$city = '堺市';
         //$city = '坂井市';
-        $city = '福井市';
+        //$city = '福井市';
+        //$city = '東京';
+        $city = '西牟婁郡';
+        
+        
   
         $url = "$base_url?units=metric&q=$city&APPID=$API_KEY";
 
@@ -21,7 +25,15 @@ class WeatherAPIController extends Controller
         $client = new Client();
 
         $method = "GET";
-        $response = $client->request($method, $url);
+        
+        try{
+            $response = $client->request($method, $url);
+        }catch(\Exception $e){
+            $prefecture = '和歌山県';
+            $url = "$base_url?units=metric&q=$prefecture&APPID=$API_KEY";
+            $response = $client->request($method, $url);
+        }
+        
 
         $weather_data = $response->getBody();
         //dd($weather_data);
