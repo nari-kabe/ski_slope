@@ -1,66 +1,19 @@
-h1{
-    color: blue;
+.login_yes, .login_no{
+    display: block;
 }
 
-.header{
-    position: sticky;
-    top: 0;
-    background-color: #FFFFCC;
-    z-index: 99;
+.login_yes{
+    /*position: relative;*/
+    /*left: 25%;*/
+    margin-bottom: 15px;
 }
 
-.head{
-    position: absolute;
-    top: 17px;
-    right: 10px;
+.login_no{
+    /*position: relative;*/
+    /*left: 75%;*/
 }
 
-#search{
-    position: absolute;
-    left: 30%;
-    /*margin: auto;*/
-    /*margin-left: auto;*/
-    /*margin-right: auto;*/
-}
-
-.line-right{
-    border-right: 1px solid;
-    /*padding-right: 10px*/
-}
-
-.twitter{
-    
-    /*text-align: right;*/
-    position: absolute;
-    top: 140px;
-    left: 66%;
-    
-}
-
-hr{
-    /*background-color: black;*/
-    /*color: black;*/
-}
-
-.horizontal{
-    position: absolute;
-    width: 65%;
-    left: 0;
-}
-
-.bar{
-    position: absolute;
-    top: 125px;
-    left: 65%;
-    height:230vh;
-    width:.1vw;
-    border-width:0;
-    background-color: #567;
-
-}
-
-.star{
-    position: absolute;
-    left: 45%;
-    
+.attention{
+    color: red;
+    margin-top: 8px;
 }

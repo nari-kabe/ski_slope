@@ -5,6 +5,11 @@ h1{
     display: inline-block
 }
 
+h2{
+    display: inline-block;
+    padding-right: 10px
+}
+
 body {
     margin: 0px;
 }
@@ -21,9 +26,11 @@ body {
 }
 
 .head{
-    position: absolute;
-    top: 22px;
-    right: 10px;
+   position: absolute;
+   /*position: relative;*/
+   top: 22px;
+   display: inline;
+   right: 10px;
 }
 
 #header_color{
@@ -34,14 +41,15 @@ body {
     margin: 20px 0;
 }
 
-#search{
-    position: absolute;
+.various{
+    /*position: absolute;*/
+    position: relative;
+    margin: 15px 0;
     left: 25%;
-    top: 93px;
-    
-    /*margin: auto;*/
-    /*margin-left: auto;*/
-    /*margin-right: auto;*/
+}
+
+.right_space{
+    margin: 0 20px;
 }
 
 .space{
@@ -52,14 +60,10 @@ body {
     margin-left: 15px;
 }
 
-.line-right{
+.line_right{
+    display: inline;
     border-right: 1px solid;
     color: #BBBBBB;
-}
-
-hr{
-    /*background-color: black;*/
-    /*color: black;*/
 }
 
 .horizontal{
@@ -70,7 +74,7 @@ hr{
 
 .bar{
     position: absolute;
-    top: 900px;
+    margin: 0;
     left: 60%;
     height:300vh;
     width:.1vw;
@@ -79,39 +83,38 @@ hr{
 
 }
 
+.information_container{
+    position:relative;
+    margin-top: 40px;
+}
+
+.information{
+    position: absolute;
+    left: 15px;
+}
+
 /*
 **twitterAPI
 **
 */
 .twitter{
-    
     /*text-align: right;*/
     position: absolute;
-    top: 900px;
-    left: 61%;
-    /*right: 15px;*/
+    /*position: relative;*/
+    /*left: 61%;*/
+    top: 0px;
+    width: 35vw;
     right: 50px;
-    
 }
 
-#h2_twitter{
-    display: inline-block;
-    padding-right: 10px
+.information_header{
+    margin-bottom: 10px;    
 }
 
 /*twitterアイコン*/
-.fa-twitter{    
-    /*position: absolute;*/
-    /*margin-left: 7px;*/
-    /*margin-right: 7px;*/
-    height: 55px;
-    vertical-align: bottom;
-    /*top: 923px;*/
-    /*left: 74%;*/
-    /*top: 890px;*/
-    /*left: 74%;*/
-    /*top: 3000px;*/
-    /*left: 74%;*/
+.fa-twitter{
+    /*height: 55px;*/
+    /*vertical-align: bottom;*/
     margin: auto;
     padding: auto;
     color: #1DA1F2;
@@ -119,7 +122,6 @@ hr{
 }
 
 .tweet{
-    /*display: inline-block;*/
     margin: 0;
 }
 
@@ -134,16 +136,9 @@ hr{
 }
 
 .slope_list{
-    position: absolute;
-    top: 900px;
-    left: 15px;
-}
-
-.star_list{
-    position: absolute;
-    /*top: 1240px;*/
-    top: 2000px;
-    left: 15px;
+    /*position: absolute;*/
+    /*left: 15px;*/
+    margin-bottom: 35px;
 }
 
 .ski_slope{
@@ -151,15 +146,32 @@ hr{
     margin: 10px 0;
 }
 
+.margin_bottom{
+    margin-bottom: 3px;
+    display: block;
+}
+
+.star_list{
+    /*position: absolute;*/
+    /*left: 15px;*/
+}
+
+.star_ranking{
+    margin-top: 10px;
+}
+
+
 /*.ski_areas{*/
 /*    position:  absolute;*/
 /*    top: 300px;*/
 /*}*/
 
-/*.star_detail{*/
-    /*position: absolute;*/
-/*    left: 45%;*/
-    
+.star_detail{
+    display: inline-block;
+}
+
+/*.star_block{*/
+/*    display: block;*/
 /*}*/
 
 
@@ -168,13 +180,13 @@ hr{
 **画像関係
 */
 .image_container{
-    position: absolute;
-    top: 150px;
+    /*position: absolute;*/
+    position: relative;
+    /*top: 150px;*/
     /*width: 100vw;*/
     width: 100vw;
     /*height: 50vh;*/
     height: 80vh;
-    
 }
 
 #image{
@@ -223,10 +235,10 @@ label{
     cursor: pointer;
     font-size: 15px;
 }
+
 .image_radio_button input:checked+label{
     background: #000;
     color: #000;
-    
 }
 
 /*ラジオボタンは消す*/
@@ -237,8 +249,8 @@ label{
 /*ラジオボタンの位置*/
 .image_radio_button{
     position: absolute;
-    top: 790px;
-    left: 50%;
+    bottom: 5px;
+    left: 48%;
 }
 
 
