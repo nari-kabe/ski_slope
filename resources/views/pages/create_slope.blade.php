@@ -88,7 +88,7 @@
                 </tr>
                 <tr>
                     <td>リフト料金</td> 
-                    <td><textarea class="normal_textarea" name="ski_area[lift_ticket]" placeholder="例：1日券：4000円¥n4時間券：3000円">{{ old('ski_area.lift_ticket') }}</textarea>
+                    <td><textarea class="normal_textarea" name="ski_area[lift_ticket]" placeholder="例：1日券：4000円 &#10; 4時間券：3000円">{{ old('ski_area.lift_ticket') }}</textarea>
                     <p class=error>{{ $errors->first('ski_area.lift_ticket') }}</p>
                     </td>
                 </tr>
@@ -106,7 +106,7 @@
                         <td>
                         <input type="radio" id="kids_park1" class="radio1" name="radio_button7" onclick="textarea_off(7)"><label for="kids_park1">無</label>
                         <input type="radio" checked id="kids_park2" class="radio2" name="radio_button7" onclick="textarea_on(7)"><label for="kids_park2">有</label></br>
-                        <textarea id=7 class="detail" style="display: block" name="ski_area[kids_park]" placeholder="例：場所：センターハウス横¥nソリー使用可能">{{ old('ski_area.kids_park') }}</textarea>
+                        <textarea id=7 class="detail" style="display: block" name="ski_area[kids_park]" placeholder="例：場所：センターハウス横 &#10; ソリー使用可能">{{ old('ski_area.kids_park') }}</textarea>
                         <p class=error>{{ $errors->first('ski_area.kids_park') }}</p>
                     </td>
                 </tr>

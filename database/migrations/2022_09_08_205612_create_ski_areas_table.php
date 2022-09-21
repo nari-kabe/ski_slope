@@ -53,5 +53,6 @@ class CreateSkiAreasTable extends Migration
     public function down()
     {
         Schema::dropIfExists('ski_areas');
+        Schema::dropIfExists('users');
     }
 }

@@ -50,7 +50,11 @@
                 <!--</tr>-->
                 <tr>
                     <td>ホームページ</td> 
-                    <td><a href="{{ $ski_area->home_page }}">{{ $ski_area->home_page }}</a></td>
+                    @if($ski_area->home_page===null)
+                        <td>無し</td>
+                    @else
+                        <td><a href="{{ $ski_area->home_page }}">{{ $ski_area->home_page }}</a></td>
+                    @endif
                 </tr>
                 <tr>
                     <td>電話番号</td> 
@@ -62,11 +66,19 @@
                 </tr>
                 <tr>
                     <td>リフト料金</td> 
-                    <td>{{ $ski_area->lift_ticket }}</td>
+                    @if($ski_area->lift_ticket===null)
+                        <td>無し</td>
+                    @else
+                        <td>{{ $ski_area->lesson }}</td>
+                    @endif
                 </tr>
                 <tr>
-                    <td>シーズン期間</td> 
-                    <td>{{ $ski_area->season }}</td>
+                    <td>シーズン期間</td>
+                    @if($ski_area->season===null)
+                        <td>無し</td>
+                    @else
+                        <td>{{ $ski_area->lesson }}</td>
+                    @endif
                 </tr>
                 <tr>
                     <td>ナイター</td> 

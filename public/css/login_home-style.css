@@ -72,17 +72,6 @@ body {
     left: 0;
 }
 
-.bar{
-    position: absolute;
-    margin: 0;
-    left: 60%;
-    height:300vh;
-    width:.1vw;
-    border-width:0;
-    background-color: #567;
-
-}
-
 .information_container{
     position:relative;
     margin-top: 40px;
@@ -90,7 +79,8 @@ body {
 
 .information{
     position: absolute;
-    left: 15px;
+    /*left: 15px;*/
+    left: 50px;
 }
 
 /*
@@ -98,13 +88,23 @@ body {
 **
 */
 .twitter{
-    /*text-align: right;*/
     position: absolute;
-    /*position: relative;*/
     /*left: 61%;*/
     top: 0px;
-    width: 35vw;
+    /*width: 35vw;*/ /*twitterの位置*/
+    width: 50vw;
     right: 50px;
+}
+.bar{
+    position: absolute;
+    margin: 0;
+    /*left: 60%;*/ /*twitterの位置*/
+    left: 45%;
+    /*height:250vh;*/ /*twitterの位置*/
+    height: 210vh;
+    width:.1vw;
+    border-width:0;
+    background-color: #567;
 }
 
 .information_header{

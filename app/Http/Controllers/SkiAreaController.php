@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Auth;
 use GuzzleHttp\Client;
 use App\Rules\ZipCodeRule;
 use App\Rules\PrefectureRule;
@@ -168,6 +169,7 @@ class SkiAreaController extends Controller
         
         $input = $request['ski_area'];
         //dd($input);
+        $ski_area['user_id'] = Auth::id();
         $ski_area->fill($input)->save();
         return redirect('/ski_areas/' . $ski_area->id);
     }
@@ -184,10 +186,10 @@ class SkiAreaController extends Controller
             'ski_area.place_name' => ['required','string','max:40'],
             'ski_area.home_page' => ['nullable','url'],
             'ski_area.zip_code' => ['required', new ZipCodeRule()],
-            'ski_area.prefecture' => ['required','string','max:3'],
-            'ski_area.city' => ['required','string','max:30'],
+            'ski_area.prefecture' => ['required', new PrefectureRule()],
+            'ski_area.city' => ['required','string','max:30'],  //ここもRule作った方がいい
             'ski_area.after_address' => ['required','string','max:50'],
-            'ski_area.phone_number' => ['required','string','max:60'],
+            'ski_area.phone_number' => ['required', new PhoneNumberRule()],
             'ski_area.business_hours' => ['required','string'],
             'ski_area.evening_hours' => ['nullable','string','max:30'],
             'ski_area.season' => ['nullable','string'],
