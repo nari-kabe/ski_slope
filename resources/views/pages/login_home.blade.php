@@ -92,6 +92,14 @@
                 <div class=slope_list>
                     <div class="information_header">
                         <h2>スキー場一覧</h2>
+                        /*
+                        @auth
+                            <a class=link_color href="/pages/create_slope">スキー場を追加する</a>
+                        @endauth
+                        @guest
+                            <p>※ログインするとスキー場を追加できるようになります</p>
+                        @endguest
+                        */
                         <a class=link_color href="/pages/create_slope">スキー場を追加する</a>
                     </div>
                     <h5>北海道</h5>

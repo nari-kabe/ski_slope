@@ -36,4 +36,20 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    
+    /**
+     * ProfilesとUsersのリレーション
+     */ 
+    public function Profile()   
+    {
+        return $this->belongsTo('App\Profile');  
+    }
+    
+    /**
+     * SkiareasとUsersのリレーション
+     */
+    public function Skiarea()   
+    {
+        return $this->belongsTo('App\Ski_area');  
+    }
 }
