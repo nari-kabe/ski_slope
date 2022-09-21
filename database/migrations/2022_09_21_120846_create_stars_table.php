@@ -31,5 +31,6 @@ class CreateStarsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('stars');
+        Schema::dropIfExists('users');
     }
 }

@@ -92,23 +92,42 @@
                 <div class=slope_list>
                     <div class="information_header">
                         <h2>スキー場一覧</h2>
-                        /*
-                        @auth
-                            <a class=link_color href="/pages/create_slope">スキー場を追加する</a>
-                        @endauth
-                        @guest
-                            <p>※ログインするとスキー場を追加できるようになります</p>
-                        @endguest
-                        */
-                        <a class=link_color href="/pages/create_slope">スキー場を追加する</a>
+                        
+                        <!--@auth-->
+                        <!--    <a class=link_color href="/pages/create_slope">スキー場を追加する</a>-->
+                        <!--@endauth-->
+                        <!--@guest-->
+                        <!--    <p>※ログインするとスキー場を追加できるようになります</p>-->
+                        <!--@endguest-->
+                        
+                        <a class="link_color" href="/pages/create_slope">スキー場を追加する</a>
                     </div>
-                    <h5>北海道</h5>
-                    <p class="margin_bottom">カムイスキーリンクス</p>
-                    <h5>福井県</h5>
-                    <p class="margin_bottom">スキージャム勝山</p>
-                    <a class="link_color margin_bottom" href="/pages/izumi">福井和泉スキー場</a>
-                    <h5>その他の県</h5>
-                    <!--<a>  </a> それぞれ、都道府県ごとに分けて表示できるといいね-->
+                    <!--@php-->
+                        
+                    <!--    $prefecture_name=($ski_area->id)>($ski_area->prefecture);-->
+                    <!--    $place_name=($ski_area->id)>($ski_area->place_name);-->
+                    <!--@endphp-->
+                    
+                    
+                        <h5>北海道</h5>
+                        @foreach ($ski_areas as $ski_area)
+                            @if( $ski_area->prefecture === "北海道")
+                                <a class='ski_slope' href="/ski_areas/{{ $ski_area->id }}">{{ $ski_area->place_name }}</a>
+                            @endif    
+                        @endforeach
+                        <h5>福井県</h5>
+                        @foreach ($ski_areas as $ski_area)
+                            @if($ski_area->prefecture === "福井県")
+                                <a class='ski_slope' href="/ski_areas/{{ $ski_area->id }}">{{ $ski_area->place_name }}</a>
+                            @endif
+                        @endforeach
+                        <h5>その他の県</h5>
+                        @foreach ($ski_areas as $ski_area)
+                            @if($ski_area->prefecture !== "北海道" && $ski_area->prefecture !== "福井県")
+                                <a class='ski_slope' href="/ski_areas/{{ $ski_area->id }}">{{ $ski_area->place_name }}</a>
+                            @endif
+                        @endforeach
+                    <!--<a>  </a> それぞれ、都道府県ごとに分けて表示どうやる？-->
                     <h5>とりあえず一覧</h5>
                     <div class='ski_areas'>
                         @foreach ($ski_areas as $ski_area)
