@@ -10,4 +10,12 @@ class Star extends Model
     'user_id',
     'place_id',
     ];
+    
+    /**
+     * ProfilesとStarsのリレーション
+     */
+    public function star()   
+    {
+        return $this->hasOne('App\Profile');  
+    }
 }

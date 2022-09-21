@@ -29,4 +29,12 @@ class Ski_area extends Model
     'kids_park',
     'lift_ticket',
     ];
+    
+    /**
+     * SkiareasとUsersのリレーション
+     */
+    public function user()   
+    {
+        return $this->hasOne('App\User');  
+    }
 }
