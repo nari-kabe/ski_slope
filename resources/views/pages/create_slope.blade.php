@@ -93,15 +93,58 @@
                         <p class=error>{{ $errors->first('ski_area.lift_ticket') }}</p>
                     </td>
                 </tr>
+                
+                <!--<tr>-->
+                <!--    <td>駐車場</td> -->
+                <!--        <td>-->
+                <!--        <input type="radio" id="parking_lot1" class="radio1" name="radio_button8" value="無" {{ old("radio_button8") == "無" ? "checked" : "" }} onclick="textarea_off(8)"><label for="parking_lot1">無</label>-->
+                <!--        <input type="radio" checked id="parking_lot2" class="radio2" name="radio_button8" value="有" {{ old("radio_button8") == "有" ? "checked" : "" }} onclick="textarea_on(8)"><label for="parking_lot2">有</label></br>-->
+                <!--        <textarea id=8 class="detail" style="display: block" name="ski_area[parking_lot]" placeholder="例：第一駐車場（800台）" >{{ old('ski_area.parking_lot') }}</textarea>-->
+                <!--        <p class=error>{{ $errors->first('ski_area.parking_lot') }}</p>-->
+                <!--    </td>-->
+                <!--</tr>-->
+                
+                //これはだめ（２つ目のラジオボタンにチェック）
                 <tr>
                     <td>駐車場</td> 
                         <td>
-                        <input type="radio" id="parking_lot1" class="radio1" name="radio_button8" onclick="textarea_off(8)"><label for="parking_lot1">無</label>
-                        <input type="radio" checked id="parking_lot2" class="radio2" name="radio_button8" onclick="textarea_on(8)"><label for="parking_lot2">有</label></br>
+                        <input type="radio" id="parking_lot1" class="radio1" name="radio_button8" value="無" {{ old("radio_button8") == "無" ? "checked" : "" }} onclick="textarea_off(8)"><label for="parking_lot1">無</label>
+                        <input type="radio" checked id="parking_lot2" class="radio2" name="radio_button8" value="有" {{ old("radio_button8") == "有" ? "checked" : "" }} onclick="textarea_on(8)"><label for="parking_lot2">有</label></br>
                         <textarea id=8 class="detail" style="display: block" name="ski_area[parking_lot]" placeholder="例：第一駐車場（800台）" >{{ old('ski_area.parking_lot') }}</textarea>
                         <p class=error>{{ $errors->first('ski_area.parking_lot') }}</p>
                     </td>
                 </tr>
+                
+                <!--//これは良い（１つ目のラジオボタンにチェック）-->
+                <!--<tr>-->
+                <!--    <td>駐車場</td> -->
+                <!--        <td>-->
+                        
+                <!--        <input type="radio" checked id="parking_lot2" class="radio2" name="radio_button8" value="有" {{ old("radio_button8") == "有" ? "checked" : "" }} onclick="textarea_on(8)"><label for="parking_lot2">有</label></br>-->
+                <!--        <input type="radio" id="parking_lot1" class="radio1" name="radio_button8" value="無" {{ old("radio_button8") == "無" ? "checked" : "" }} onclick="textarea_off(8)"><label for="parking_lot1">無</label>-->
+                <!--        <textarea id=8 class="detail" style="display: block" name="ski_area[parking_lot]" placeholder="例：第一駐車場（800台）" >{{ old('ski_area.parking_lot') }}</textarea>-->
+                <!--        <p class=error>{{ $errors->first('ski_area.parking_lot') }}</p>-->
+                <!--    </td>-->
+                <!--</tr>-->
+                
+                
+                
+               
+                
+                <!--<tr>-->
+                <!--    <td>駐車場</td> -->
+                <!--        <td>-->
+                <!--        <input type="radio" checked id="parking_lot1" class="radio1" name="ski_area[parking_lot]" value="無" {{ old("ski_area.parking_lot") == "無" ? "checked" : "" }}><label for="parking_lot1">無</label>-->
+                <!--        <input type="radio" id="parking_lot2" class="radio2" name="ski_area[parking_lot]" value="有" {{ old("ski_area.parking_lot") == "有" ? "checked" : "" }}><label for="parking_lot2">有</label></br>-->
+                        
+                <!--        <p class=error>{{ $errors->first('ski_area.parking_lot') }}</p>-->
+                <!--    </td>-->
+                <!--</tr>-->
+                
+                
+                
+                
+                
                 <tr>
                     <td>キッズパーク</td> 
                         <td>
@@ -166,15 +209,15 @@
                         <p class=error>{{ $errors->first('ski_area.hotel') }}</p>
                         </td>
                 </tr>
-                <tr>
-                    <td>ゲレンデマップ</td>  
-                    <td>
-                        <input type="radio" id="slope_map1" class="radio1" name="radio_button6" onclick="textarea_off(6)"><label for="slope_map1">無</label>
-                        <input type="radio" checked id="slope_map2" class="radio2" name="radio_button6" onclick="textarea_on(6)"><label for="slope_map2">有</label></br>
-                        <input id=6 class="detail" style="display: block" name="ski_area[slope_map]" placeholder="ゲレンデマップの画像を入力" value="{{ old('ski_area.slope_map') }}">
-                        <p class=error>{{ $errors->first('ski_area.slope_map') }}</p>
-                    </td>
-                </tr>
+                <!--<tr>-->
+                <!--    <td>ゲレンデマップ</td>  -->
+                <!--    <td>-->
+                <!--        <input type="radio" id="slope_map1" class="radio1" name="radio_button6" onclick="textarea_off(6)"><label for="slope_map1">無</label>-->
+                <!--        <input type="radio" checked id="slope_map2" class="radio2" name="radio_button6" onclick="textarea_on(6)"><label for="slope_map2">有</label></br>-->
+                <!--        <input id=6 class="detail" style="display: block" name="ski_area[slope_map]" placeholder="ゲレンデマップの画像を入力" value="{{ old('ski_area.slope_map') }}">-->
+                <!--        <p class=error>{{ $errors->first('ski_area.slope_map') }}</p>-->
+                <!--    </td>-->
+                <!--</tr>-->
             </table>
             
             <label for="agree"><input type="checkbox" id="agree" name="agree" value="1">同意する</label>

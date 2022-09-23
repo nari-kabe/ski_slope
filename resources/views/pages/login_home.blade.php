@@ -37,8 +37,8 @@
         
             
         <div class="various">
-            <a class="link_color right_space" href="/pages/how_to_use">使い方</a>
-            <p class="line_right"></p>
+            <!--<a class="link_color right_space" href="/pages/how_to_use">使い方</a>-->
+            <!--<p class="line_right"></p>-->
             <a class="link_color right_space"　href="/pages/star">お気に入り登録一覧</a>
             <p class="line_right"></p>
             <button class="Button2 right_space"> 都道府県から探す</button>
