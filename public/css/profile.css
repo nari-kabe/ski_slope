@@ -44,14 +44,14 @@ textarea{
     margin-top: 20px;
 }
 
-#sex0, #sex1, #sex2, #sex9{
-    margin: 15px 0;
-    width: 30px;
-}
+/*#sex0, #sex1, #sex2, #sex9{*/
+/*    margin: 15px 0;*/
+/*    width: 30px;*/
+/*}*/
 
- #sex1, #sex2, #sex9{
-    margin-left: 15px;
-}
+/* #sex1, #sex2, #sex9{*/
+/*    margin-left: 15px;*/
+/*}*/
 
 .radio1, .radio2, .radio3, .radio4{
     margin-top: 20px;
@@ -73,13 +73,13 @@ textarea{
     margin-left: 15px;
 }
 
-.others{
-    width: 500px;
-    height: 40px;
+/*.others{*/
+/*    width: 500px;*/
+/*    height: 40px;*/
     /*display: none;*/
-    margin-top: 10px;
-    margin-bottom: 15px;
-}
+/*    margin-top: 10px;*/
+/*    margin-bottom: 15px;*/
+/*}*/
 
 .error{
     color: red;

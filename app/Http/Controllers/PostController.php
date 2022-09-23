@@ -23,19 +23,14 @@ class PostController extends Controller
         return view('pages/home');
     }
     
-    public function profile(Post $post)
-    {
-        return view('pages/profile');
-    }
+    // public function profile(Post $post)
+    // {
+    //     return view('pages/create_profile');
+    // }
     
     public function login(Post $post)
     {
         return view('pages/login');
-    }
-    
-    public function izumi(Ski_area $ski_area)
-    {
-        return view('pages/izumi')->with(['ski_area' => $ski_area]);;
     }
     
     public function star(Post $post)

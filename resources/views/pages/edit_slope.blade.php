@@ -14,13 +14,13 @@
             <tr>
                 <td><p class="header">EDIT SKI SLOPE!</p></td>
                 <td>　</td>
-                 <td>　</td>
+                <td>　</td>
                 <td><a href="/ski_areas/{{ $ski_area->id }}">編集をやめる</a></td>
             </tr>
         </table>
         <hr>
         
-        <h2 class=inline>情報一覧</h2>
+        <h2 class=inline>情報一覧編集</h2>
         <p class=inline id=inline_width><span>*</span>は必須です</p>
         <div id="list">
             <table>

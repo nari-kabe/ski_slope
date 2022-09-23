@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title>My Profile</title>
-        <link rel="stylesheet" href="/css/show.css">
+        <link rel="stylesheet" href="/css/show_profile.css">
         
     </head>
     <body>
@@ -20,7 +20,7 @@
             <tr>
                 <td><h2>情報一覧</h2></td>
                 <td>　</td>
-                <td><a href='/profile/{{ $profile->id }}/edit'>編集</a></td>
+                <td><a href='/profiles/{{ $profile->id }}/edit'>編集</a></td>
                 <td>　</td>
                 <td>{{ '最終更新日時：'. $profile->updated_at }}</td>
             </tr>
@@ -28,38 +28,63 @@
         
         <div id="list">
             <table>
-               
                 <tr>
                     <td>ユーザーネーム</td> 
                     <td class="input_list">{{ $profile->user_name }}</td>
                 </tr>
                 <tr>
                     <td>性別</td> 
-                    <td class="input_list">{{ $profile->sex }}</td>
+                    @if ($profile->sex===0)
+                        <td>未回答</td>
+                    @elseif ($profile->sex===1)
+                        <td>男</td>
+                    @elseif ($profile->sex===2)
+                        <td>女</td>
+                    @else
+                        <td>その他</td>
+                    @endif
                 </tr>
                 <tr>
-                    <td>年齢</td> 
-                    <td class="input_list">{{ $profile->age }}</td>
+                    <td>年齢</td>
+                    @if($profile->age===null)
+                        <td>無し</td>
+                    @else
+                        <td class="input_list">{{ $profile->age }}</td>
+                    @endif
                 </tr>
                 <tr>
                     <td>職業</td> 
-                    <td>{{ $profile->occupation }}</td>
+                    @if($profile->occupation===null)
+                        <td>無し</td>
+                    @else
+                        <td class="input_list">{{ $profile->occupation }}</td>
+                    @endif
+                </tr>
+                <!--<tr>-->
+                <!--    <td>種目</td> -->
+                <!--    <td>{{ $profile->activity }}</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                <!--    <td>経験年数</td> -->
+                <!--    <td>{{ $profile->experience }}</td>-->
+                <!--</tr>-->
+                <tr>
+                    <td>スキーの経験</td> 
+                    <td>{{ $profile->ski_level }}</td>
                 </tr>
                 <tr>
-                    <td>種目</td> 
-                    <td>{{ $profile->activity }}</td>
+                    <td>スノーボードの経験</td> 
+                    <td>{{ $profile->snowboard_level }}</td>
                 </tr>
-                <tr>
-                    <td>経験年数</td> 
-                    <td>{{ $profile->experience }}</td>
-                </tr>
-                <tr>
-                    <td>レベル</td> 
-                    <td>{{ $profile->level }}</td>
-                </tr>
+                @if ($profile->others_level!==null)
+                    <tr>
+                        <td>その他の経験</td> 
+                        <td>{{ $profile->others_level }}</td>
+                    </tr>
+                @endif
                 <tr>
                     <td>ホームゲレンデ</td> 
-                    @if($profile->parking_lot===null)
+                    @if($profile->home_slope===null)
                         <td>無し</td>
                     @else
                         <td>{{ $profile->home_slope }}</td>
@@ -67,18 +92,14 @@
                 </tr>
                 <tr>
                     <td>公開設定</td> 
-                    @if($profile->parking_lot===null)
-                        <td>無し</td>
-                    @else
-                        <td>{{ $profile->lesson }}</td>
-                    @endif
+                    <td>{{ $profile->public_setting }}</td>
                 </tr>
                 <tr>
                     <td>コメント</td> 
-                    @if($profile->parking_lot===null)
+                    @if($profile->greeting===null)
                         <td>無し</td>
                     @else
-                        <td>{{ $profile->kids_park }}</td>
+                        <td>{{ $profile->greeting }}</td>
                     @endif
                 </tr>
             </table>

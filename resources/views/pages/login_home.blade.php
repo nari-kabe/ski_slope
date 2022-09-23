@@ -24,7 +24,7 @@
                     <!--    </table>-->
                     <!--</div>-->
                     
-                    <a class="head link_color" href="/pages/profile">自己プロフィール編集</a>
+                    <a class="head link_color" href="/pages/profile">自己プロフィール登録</a>
                 @endauth
                 
                 @guest
