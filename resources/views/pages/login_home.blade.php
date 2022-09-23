@@ -36,14 +36,14 @@
         </div>
             
         <div class="image_container">
-            //４枚の画像
+            <!--４枚の画像-->
             <div>
                 <img id=image src=/images/sample1.jpeg>
                 <button id=back_button onclick="go_back()">◀</button>
                 <button id=forward_button onclick="go_forward()">▶</button>
             </div>
         
-            //画像下部ラジオボタン
+            <!--画像下部ラジオボタン-->
             <div class="image_radio_button">
                 <input type="radio" checked id="radio1" name="radio_button" onclick="radius1()"><label for="radio1">　</label>
                 <input type="radio" id="radio2" name="radio_button" onclick="radius2()"><label for="radio2">　</label>
@@ -54,7 +54,7 @@
         
         <div class="information_container">
             <div class="information">
-                //スキー場一覧
+                <!--スキー場一覧-->
                 <div class=slope_list>
                     <div class="information_header">
                         <h2>スキー場一覧</h2>
@@ -84,7 +84,7 @@
                             <a class='ski_slope' href="/ski_areas/{{ $ski_area->id }}">{{ $ski_area->place_name }}</a>
                         @endif
                     @endforeach
-                    //それぞれ、都道府県ごとに分けて表示どうやる？
+                    <!--それぞれ、都道府県ごとに分けて表示どうやる？-->
                     <h5>とりあえず一覧</h5>
                     <div class='ski_areas'>
                         @foreach ($ski_areas as $ski_area)
@@ -93,7 +93,7 @@
                     </div>
                 </div>
             
-                    //お気に入り　ログインユーザー限定
+                    <!--お気に入り　ログインユーザー限定-->
                     <div  class=star_list>
                         <h2>お気に入りランキング</h2>
                         @auth
