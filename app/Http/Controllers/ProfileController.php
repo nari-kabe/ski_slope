@@ -2,44 +2,48 @@
 
 namespace App\Http\Controllers;
 
-// use Illuminate\Http\Request;
-use App\Http\Requests\ProfileRequest;
+use Illuminate\Http\Request;
+//use App\Http\Requests\ProfileRequest;
 use GuzzleHttp\Client;
+use Illuminate\Support\Facades\Auth;
 
 use App\Profile;
 
 
-class PostController extends Controller
+class ProfileController extends Controller
 {
+    
+    public function profile(Profile $profile)
+    {
+        return view('pages/create_profile');
+    }
+    
     public function show(Profile $profile)
     {
          return view('pages/show_profile')->with(['profile' => $profile]);
     }
     
-    public function store(ProfileRequest $request, Profile $profile)
+    public function store(Request $request, Profile $profile)
     {
+        //dd($request->all());
         $request->validate([
-            'profile.place_name' => ['required','string','max:40'],
-            'profile.home_page' => ['nullable','url'],
-            'profile.zip_code' => ['required', new ZipCodeRule()],
-            'profile.prefecture' => ['required','string','max:3'],
-            'profile.city' => ['required','string','max:30'],
-            'profile.after_address' => ['required','string','max:50'],
-            'profile.phone_number' => ['required','string','max:60'],
-            'profile.business_hours' => ['required','string'],
-            'profile.evening_hours' => ['nullable','string','max:30'],
-            'profile.season' => ['nullable','string'],
-            'profile.lesson' => ['nullable','string'],
-            'profile.restaurant' => ['nullable','string'],
-            'profile.spa' => ['nullable','string'],
-            'profile.hotel' => ['nullable','string'],
-           
+            'profile.user_name' => ['required','string','max:20'],
+            'profile.sex' => ['required'],
+            'profile.age' => ['nullable','integer','max:100'],
+            'profile.occupation' => ['nullable','max:10'],
+            'profile.ski_level' => ['required'],
+            'profile.snowboard_level' => ['required'],
+            'profile.others_level' => ['nullable','string','max:200'],
+            'profile.home_slope' => ['nullable','string','max:20'],
+            'profile.public_setting' => ['required'],
+            'profile.greeting' => ['nullable','string','max:300'],
         ]);
         
         $input = $request['profile'];
         //dd($input);
+        $profile['user_id'] = Auth::id();
         $profile->fill($input)->save();
-        return redirect('/profile/' . $profile->id);
+        return redirect('/profiles/' . $profile->id);
     }
     
     public function edit(Profile $profile)
@@ -51,26 +55,21 @@ class PostController extends Controller
     {
         
         $request->validate([
-            'profile.place_name' => ['required','string','max:40'],
-            'profile.home_page' => ['nullable','url'],
-            'profile.zip_code' => ['required', new ZipCodeRule()],
-            'profile.prefecture' => ['required','string','max:3'],
-            'profile.city' => ['required','string','max:30'],
-            'profile.after_address' => ['required','string','max:50'],
-            'profile.phone_number' => ['required','string','max:60'],
-            'profile.business_hours' => ['required','string'],
-            'profile.evening_hours' => ['nullable','string','max:30'],
-            'profile.season' => ['nullable','string'],
-            'profile.lesson' => ['nullable','string'],
-            'profile.restaurant' => ['nullable','string'],
-            'profile.spa' => ['nullable','string'],
-            'profile.hotel' => ['nullable','string'],
-           
+            'profile.user_name' => ['required','string','max:20'],
+            'profile.sex' => ['required'],
+            'profile.age' => ['nullable', 'max:2'],
+            'profile.occupation' => ['nullable', 'max:10'],
+            'profile.ski_level' => ['required'],
+            'profile.snowboard_level' => ['required'],
+            'profile.others_level' => ['nullable','string','max:200'],
+            'profile.home_slope' => ['nullable','string','max:20'],
+            'profile.public_setting' => ['required'],
+            'profile.greeting' => ['nullable','string','max:300'],
         ]);
         
         $input = $request['profile'];
         $profile->fill($input)->save();
     
-        return redirect('/profile/' . $profile->id);
+        return redirect('/profiles/' . $profile->id);
     }
 }

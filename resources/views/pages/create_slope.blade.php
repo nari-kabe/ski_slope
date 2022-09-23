@@ -88,8 +88,9 @@
                 </tr>
                 <tr>
                     <td>リフト料金</td> 
-                    <td><textarea class="normal_textarea" name="ski_area[lift_ticket]" placeholder="例：1日券：4000円 &#10; 4時間券：3000円">{{ old('ski_area.lift_ticket') }}</textarea>
-                    <p class=error>{{ $errors->first('ski_area.lift_ticket') }}</p>
+                    <td>
+                        <textarea class="normal_textarea" name="ski_area[lift_ticket]" placeholder="例：1日券：4000円 &#10; 4時間券：3000円">{{ old('ski_area.lift_ticket') }}</textarea>
+                        <p class=error>{{ $errors->first('ski_area.lift_ticket') }}</p>
                     </td>
                 </tr>
                 <tr>

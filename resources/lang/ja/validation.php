@@ -59,7 +59,7 @@ return [
     'image' => 'The :attribute must be an image.',
     'in' => 'The selected :attribute is invalid.',
     'in_array' => 'The :attribute field does not exist in :other.',
-    'integer' => 'The :attribute must be an integer.',
+    'integer' => ':attributeは数字で入力してください',
     'ip' => 'The :attribute must be a valid IP address.',
     'ipv4' => 'The :attribute must be a valid IPv4 address.',
     'ipv6' => 'The :attribute must be a valid IPv6 address.',
@@ -149,6 +149,7 @@ return [
     */
 
     'attributes' => [
+        //スキー場作成
         'ski_area.place_name' => 'スキー場名',
         'ski_area.zip_code' => '郵便番号',
         'ski_area.prefecture' => '都道府県名',
@@ -167,6 +168,19 @@ return [
         'ski_area.activity' => 'アクティビティ',
         'ski_area.kids_park' => 'キッズパーク',
         'ski_area.lift_ticket' => 'リフト券',
+        
+        //プロフィール作成
+        'profile.user_name' => 'ユーザーネーム',
+        'profile.sex' => '性別',
+        'profile.age' => '年齢',
+        'profile.occupation' => '職業',
+        'profile.ski_level' => 'スキーの経験',
+        'profile.snowboard_level' => 'スノーボードの経験',
+        'profile.others_level' => 'その他のレベル',
+        'profile.home_slope' => 'ホームゲレンデ',
+        'profile.public_setting' => '公開設定',
+        'profile.greeting' => 'コメント'
+        
     ],
 
 ];
