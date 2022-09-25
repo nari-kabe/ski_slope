@@ -31,10 +31,18 @@ class Ski_area extends Model
     ];
     
     /**
-     * SkiareasとUsersのリレーション
+     * UsersとSkiareasのリレーション
      */
-    public function user()   
+    public function users()   
     {
-        return $this->hasOne('App\User');  
+        return $this->hasMany('App\User');  
+    }
+    
+    /**
+     * StarsとSkiareasのリレーション
+     */
+    public function star()   
+    {
+        return $this->belongsTo('App\Star');  
     }
 }

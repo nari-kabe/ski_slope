@@ -181,6 +181,7 @@ class SkiAreaController extends Controller
     
     public function update(Request $request, Ski_area $ski_area)
     {
+        //dd($request->all());
         
         $request->validate([
             'ski_area.place_name' => ['required','string','max:40'],
