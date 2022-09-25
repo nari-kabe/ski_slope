@@ -28,9 +28,7 @@ class CreateSkiAreasTable extends Migration
             $table->text('lift_ticket')->nullable();
             $table->text('season')->nullable();
             $table->text('evening_hours')->nullable();
-            $table->text('activity')->nullable();
-            $table->string('ski', 10)->nullable(); //変更
-            $table->string('snowboard', 10)->nullable(); //変更
+            $table->boolean('snowboard')->nullable();
             $table->text('lesson')->nullable();
             $table->text('kids_park')->nullable();
             $table->text('parking_lot')->nullable();
@@ -38,8 +36,8 @@ class CreateSkiAreasTable extends Migration
             $table->text('spa')->nullable();
             $table->text('hotel')->nullable();
             $table->text('slope_map')->nullable();
-            $table->integer('latitude')->nullable();
-            $table->integer('longitude')->nullable();
+            // $table->integer('latitude')->nullable();
+            // $table->integer('longitude')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
@@ -53,6 +51,6 @@ class CreateSkiAreasTable extends Migration
     public function down()
     {
         Schema::dropIfExists('ski_areas');
-        Schema::dropIfExists('users');
+        
     }
 }

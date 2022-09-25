@@ -24,19 +24,11 @@ class Profile extends Model
     ];
     
     /**
-     * ProfilesとUsersのリレーション
+     * UsersとProfilesのリレーション
      */
     public function user()   
     {
         return $this->hasOne('App\User');  
-    }
-    
-    /**
-     * ProfilesとStarsのリレーション
-     */
-    public function Star()   
-    {
-        return $this->belongsTo('App\Profile');  
     }
     
 }

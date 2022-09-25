@@ -88,13 +88,14 @@
                         <td>{{ $ski_area->evening_hours }}</td>
                     @endif
                 </tr>
-                
-                //ここどうする？
                 <tr>
-                    <td>使用可能アクティビティ</td> 
-                    <td>{{ $ski_area->activity }}</td>
+                    <td>スノーボードの使用</td> 
+                    @if($ski_area->snowboard==0)
+                        <td>使用不可</td>
+                    @else
+                        <td>使用可能</td>
+                    @endif
                 </tr>
-                
                 <tr>
                     <td>レッスン</td> 
                     @if($ski_area->lesson===null)
