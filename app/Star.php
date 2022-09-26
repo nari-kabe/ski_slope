@@ -11,11 +11,20 @@ class Star extends Model
     'place_id',
     ];
     
+    
     /**
-     * ProfilesとStarsのリレーション
+     * UseresとStarsのリレーション
      */
-    public function star()   
+    public function users()   
     {
-        return $this->hasOne('App\Profile');  
+        return $this->hasMany('App\User');  
+    }
+    
+    /**
+     * Ski_areasとStarsのリレーション
+     */
+    public function Ski_areas()   
+    {
+        return $this->hasMany('App\Ski_area');  
     }
 }

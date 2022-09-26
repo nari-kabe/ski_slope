@@ -40,7 +40,7 @@ class User extends Authenticatable
     /**
      * ProfilesとUsersのリレーション
      */ 
-    public function Profile()   
+    public function profile()   
     {
         return $this->belongsTo('App\Profile');  
     }
@@ -48,8 +48,16 @@ class User extends Authenticatable
     /**
      * SkiareasとUsersのリレーション
      */
-    public function Skiarea()   
+    public function skiarea()   
     {
         return $this->belongsTo('App\Ski_area');  
+    }
+    
+    /**
+     * StarsとUsersのリレーション
+     */
+    public function star()   
+    {
+        return $this->belongsTo('App\Star');  
     }
 }
