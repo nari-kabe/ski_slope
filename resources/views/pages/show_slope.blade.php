@@ -161,6 +161,9 @@
         </script>
         <hr class=horizontal_line>
         <h2>Googleマップ</h2>
-        
+        <div id="map">
+	    </div>
+	    <script src="{{ asset('/js/google_map.js') }}"></script>
+	    <script src="https://maps.googleapis.com/maps/api/js?language=ja&region=JP&key={{ $google }}&callback=initMap" async defer></script>
     </body>
 </html>

@@ -52,14 +52,14 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><span>*</span>住所（市区名）</td> 
+                    <td><span>*</span>住所（市区郡名）</td> 
                     <td>
                         <input class="input_list" name="ski_area[city]" placeholder="例：南区" value="{{ old('ski_area.city') }}">
                         <p class=error>{{ $errors->first('ski_area.city') }}</p>
                     </td>
                 </tr>
                 <tr>
-                    <td><span>*</span>住所（町村名以降）</td> 
+                    <td><span>*</span>住所（上記以降）</td> 
                     <td>
                         <input class="input_list" name="ski_area[after_address]" placeholder="例：定山渓937番地先" value="{{ old('ski_area.after_address') }}">
                         <p class=error>{{ $errors->first('ski_area.after_address') }}</p>
