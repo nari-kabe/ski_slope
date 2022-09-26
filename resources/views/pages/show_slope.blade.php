@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <title>{{ $ski_area->place_name }}</title>
         <link rel="stylesheet" href="/css/show_slope.css">
+        <link href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" rel="stylesheet">
         
     </head>
     <body>
@@ -18,140 +19,161 @@
         </table>
         <hr>
         
-        <table> 
-            <tr>
-                <td><h2>情報一覧</h2></td>
-                <td>　</td>
-                <td><a href='/ski_areas/{{ $ski_area->id }}/edit'>編集</a></td>
-                <td>　</td>
-                <td>{{ '最終更新日時：'. $ski_area->updated_at }}</td>
-            </tr>
-        </table>
-        
-        <div id="list">
-            <table>
-               
+        <div class=container>
+            <table> 
                 <tr>
-                    <td>スキー場名</td> 
-                    <td class="input_list">{{ $ski_area->place_name }}</td>
+                    <td><h2>情報一覧</h2></td>
+                    <td>　</td>
+                    <td><a href='/ski_areas/{{ $ski_area->id }}/edit'>編集</a></td>
+                    <td>　</td>
+                    <td>{{ '最終更新日時：'. $ski_area->updated_at }}</td>
                 </tr>
-                <tr>
-                    <td>住所</td> 
-                    <td>{{ '〒'. $ski_area->zip_code. ' '. $ski_area->prefecture. $ski_area->city. $ski_area->after_address}}</td>
-                </tr>
-                <!--<tr>-->
-                <!--    <td>住所（都道府県名）</td> <td>{{ $ski_area->prefecture }}</td>-->
-                <!--</tr>-->
-                <!--<tr>-->
-                <!--    <td>住所（市町村名）</td> <td>{{ $ski_area->municipalities }}</td>-->
-                <!--</tr>-->
-                <!--<tr>-->
-                <!--    <td>住所（番地以降）</td> <td>{{ $ski_area->after_address }}</td>-->
-                <!--</tr>-->
-                <tr>
-                    <td>ホームページ</td> 
-                    @if($ski_area->home_page===null)
-                        <td>無し</td>
-                    @else
-                        <td><a href="{{ $ski_area->home_page }}">{{ $ski_area->home_page }}</a></td>
-                    @endif
-                </tr>
-                <tr>
-                    <td>電話番号</td> 
-                    <td>{{ $ski_area->phone_number }}</td>
-                </tr>
-                <tr>
-                    <td>営業時間</td> 
-                    <td>{{ $ski_area->business_hours }}</td>
-                </tr>
-                <tr>
-                    <td>リフト料金</td> 
-                    @if($ski_area->lift_ticket===null)
-                        <td>無し</td>
-                    @else
-                        <td>{{ $ski_area->lesson }}</td>
-                    @endif
-                </tr>
-                <tr>
-                    <td>シーズン期間</td>
-                    @if($ski_area->season===null)
-                        <td>無し</td>
-                    @else
-                        <td>{{ $ski_area->lesson }}</td>
-                    @endif
-                </tr>
-                <tr>
-                    <td>ナイター</td> 
-                    @if($ski_area->evening_hours===null)
-                        <td>無し</td>
-                    @else
-                        <td>{{ $ski_area->evening_hours }}</td>
-                    @endif
-                </tr>
-                <tr>
-                    <td>スノーボードの使用</td> 
-                    @if($ski_area->snowboard==0)
-                        <td>使用不可</td>
-                    @else
-                        <td>使用可能</td>
-                    @endif
-                </tr>
-                <tr>
-                    <td>レッスン</td> 
-                    @if($ski_area->lesson===null)
-                        <td>無し</td>
-                    @else
-                        <td>{{ $ski_area->lesson }}</td>
-                    @endif
-                </tr>
-                <tr>
-                    <td>キッズパーク</td> 
-                    @if($ski_area->kids_park===null)
-                        <td>無し</td>
-                    @else
-                        <td>{{ $ski_area->kids_park }}</td>
-                    @endif
-                </tr>
-                <tr>
-                    <td>駐車場</td> 
-                    @if($ski_area->parking_lot===null)
-                        <td>無し</td>
-                    @else
-                        <td>{{ $ski_area->parking_lot }}</td>
-                    @endif
-                </tr>
-                <tr>
-                    <td>レストラン</td> 
-                    @if($ski_area->restaurant===null)
-                        <td>無し</td>
-                    @else
-                        <td>{{ $ski_area->restaurant }}</td>
-                    @endif
-                </tr>
-                <tr>
-                    <td>温泉</td> 
-                    @if($ski_area->spa===null)
-                        <td>無し</td>
-                    @else
-                        <td>{{ $ski_area->spa }}</td>
-                    @endif
-                </tr>
-                <tr>
-                    <td>宿泊施設</td> 
-                    @if($ski_area->hotel===null)
-                        <td>無し</td>
-                    @else
-                        <td>{{ $ski_area->hotel }}</td>
-                    @endif
-                </tr>
-                
             </table>
+        
+            <div id="list">
+                <table>
+                    <tr>
+                        <td>スキー場名</td> 
+                        <td class="input_list">{{ $ski_area->place_name }}</td>
+                    </tr>
+                    <tr>
+                        <td>住所</td> 
+                        <td>{{ '〒'. $ski_area->zip_code. ' '. $ski_area->prefecture. $ski_area->city. $ski_area->after_address}}</td>
+                    </tr>
+                    <!--<tr>-->
+                    <!--    <td>住所（都道府県名）</td> <td>{{ $ski_area->prefecture }}</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                    <!--    <td>住所（市町村名）</td> <td>{{ $ski_area->municipalities }}</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                    <!--    <td>住所（番地以降）</td> <td>{{ $ski_area->after_address }}</td>-->
+                    <!--</tr>-->
+                    <tr>
+                        <td>ホームページ</td> 
+                        @if($ski_area->home_page===null)
+                            <td>無し</td>
+                        @else
+                            <td><a href="{{ $ski_area->home_page }}">{{ $ski_area->home_page }}</a></td>
+                        @endif
+                    </tr>
+                    <tr>
+                        <td>電話番号</td> 
+                        <td>{{ $ski_area->phone_number }}</td>
+                    </tr>
+                    <tr>
+                        <td>営業時間</td> 
+                        <td>{{ $ski_area->business_hours }}</td>
+                    </tr>
+                    <tr>
+                        <td>リフト料金</td> 
+                        @if($ski_area->lift_ticket===null)
+                            <td>無し</td>
+                        @else
+                            <td>{{ $ski_area->lesson }}</td>
+                        @endif
+                    </tr>
+                    <tr>
+                        <td>シーズン期間</td>
+                        @if($ski_area->season===null)
+                            <td>無し</td>
+                        @else
+                            <td>{{ $ski_area->lesson }}</td>
+                        @endif
+                    </tr>
+                    <tr>
+                        <td>ナイター</td> 
+                        @if($ski_area->evening_hours===null)
+                            <td>無し</td>
+                        @else
+                            <td>{{ $ski_area->evening_hours }}</td>
+                        @endif
+                    </tr>
+                    <tr>
+                        <td>スノーボードの使用</td> 
+                        @if($ski_area->snowboard==0)
+                            <td>使用不可</td>
+                        @else
+                            <td>使用可能</td>
+                        @endif
+                    </tr>
+                    <tr>
+                        <td>レッスン</td> 
+                        @if($ski_area->lesson===null)
+                            <td>無し</td>
+                        @else
+                            <td>{{ $ski_area->lesson }}</td>
+                        @endif
+                    </tr>
+                    <tr>
+                        <td>キッズパーク</td> 
+                        @if($ski_area->kids_park===null)
+                            <td>無し</td>
+                        @else
+                            <td>{{ $ski_area->kids_park }}</td>
+                        @endif
+                    </tr>
+                    <tr>
+                        <td>駐車場</td> 
+                        @if($ski_area->parking_lot===null)
+                            <td>無し</td>
+                        @else
+                            <td>{{ $ski_area->parking_lot }}</td>
+                        @endif
+                    </tr>
+                    <tr>
+                        <td>レストラン</td> 
+                        @if($ski_area->restaurant===null)
+                            <td>無し</td>
+                        @else
+                            <td>{{ $ski_area->restaurant }}</td>
+                        @endif
+                    </tr>
+                    <tr>
+                        <td>温泉</td> 
+                        @if($ski_area->spa===null)
+                            <td>無し</td>
+                        @else
+                            <td>{{ $ski_area->spa }}</td>
+                        @endif
+                    </tr>
+                    <tr>
+                        <td>宿泊施設</td> 
+                        @if($ski_area->hotel===null)
+                            <td>無し</td>
+                        @else
+                            <td>{{ $ski_area->hotel }}</td>
+                        @endif
+                    </tr>
+                    
+                </table>
+            </div>
+        
+            <div class=twitter>
+                <div class="information_header">
+                    <h2 class="h2_twitter">Twitter</h2>
+                    <a class="fab fa-twitter fa-2x" href="https://twitter.com/?lang=ja"></a>
+                </div>
+                      
+                @auth  
+                    @for ($i = 0; $i < count($tweets); $i++)
+                      <p class=tweet>{{ $tweets[$i]['created_at'] }}</p>
+                      <p class=tweet>{{'投稿者：'. $tweets[$i]['user']['name'] }}　{{'@'. $tweets[$i]['user']['username'] }}</p>
+                      <p class=tweet_text>{{ $tweets[$i]['text'] }}</p>
+                      <a href="{{ 'https://twitter.com/'. $tweets[$i]['user']['username']. '/status/'. $tweets[$i]['id'] }}">twitterで表示</a>
+                      <p class=tweet_space></p>
+                    @endfor
+                @endauth
+                @guest
+                    <p>※ログインするとtwitter情報を見れます</p>
+                @endguest
+            </div>
         </div>
         
-        <hr class=horizontal_line>
-        <h2>ゲレンデマップ</h2>
-        <hr class=horizontal_line>
-        <h2>天気</h2>
+        
+        <!--<h2>ゲレンデマップ</h2>-->
+        <!--<hr class=horizontal_line>-->
+        <h2 class="h2_weather">天気</h2>
         <div id="openweathermap-widget-1"></div>
         <script src='//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/d3.min.js'></script><script>window.myWidgetParam ? 
         window.myWidgetParam : window.myWidgetParam = [];  window.myWidgetParam.push({id: 1,cityid: {{ $place_id }},appid: '7a8d0fd25d5a115e3573385ecafc1197',
@@ -159,8 +181,8 @@
         script.charset = "utf-8";script.src = "//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/weather-widget-generator.js";
         var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(script, s);  })();
         </script>
-        <hr class=horizontal_line>
-        <h2>Googleマップ</h2>
+        <!--<hr class=horizontal_line>-->
+        <h2 class="h2_map">Googleマップ</h2>
         <div id="map">
 	    </div>
 	    <script src="{{ asset('/js/google_map.js') }}"></script>

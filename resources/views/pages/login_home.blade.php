@@ -12,27 +12,37 @@
     </head>
     <body>
         <div id=header>
-            <div id=header_color>
-                <h1>My best place</h1>
-                @auth
-                    <a class="head link_color" href="/pages/profile">自己プロフィール登録</a>
-                @endauth
-                
-                @guest
-                    <p class="head">ログインすると自己プロフィール編集を行えます</p>
-                @endguest
-                <hr id=header_horizon>
-            </div>
+            <h1>My best place</h1>
+            <hr id=header_horizon>
         </div>
             
         <div class="various">
-            <a class="link_color right_space"　href="/pages/star">お気に入り登録一覧</a>
+            <!--<div class='ski_areas'>-->
+            <!--    @foreach ($ski_areas as $ski_area)-->
+            <!--        <a class='ski_slope' href="/profiles/{{ $profile->id }}">{{ $profile->user_name }}</a>-->
+            <!--    @endforeach-->
+            <!--</div>-->
+            
+            <!--<p class="line_right"></p>-->
+            
+            @auth
+                <a class="link_color right_space" href="/pages/profile">自己プロフィール登録</a>
+            @endauth
+            @guest
+                <p class="head">ログインすると自己プロフィール編集を行えます</p>
+            @endguest
             <p class="line_right"></p>
-            <button class="Button2 right_space"> 都道府県から探す</button>
+            <!--<button class="Button2 right_space"> 都道府県から探す</button>-->
+            <!--<p class="line_right"></p>-->
+            <!--<input class="right_space" type=text placeholder="スキー場の名前で検索">-->
+            @auth
+                <a class="link_color right_space" href="/pages/create_slope">スキー場を追加する</a>
+            @endauth
+            @guest
+                <p>※ログインするとスキー場を追加できるようになります</p>
+            @endguest
             <p class="line_right"></p>
-            <input class="right_space" type=text placeholder="スキー場の名前で検索">
-            <p class="line_right"></p>
-            <a class="link_color right_space" href="/">ログイン前の画面</a>
+            <a class="link_color right_space"href="/pages/star">お気に入り登録一覧</a>
         </div>
             
         <div class="image_container">
@@ -58,12 +68,12 @@
                 <div class=slope_list>
                     <div class="information_header">
                         <h2>スキー場一覧</h2>
-                        @auth
-                            <a class=link_color href="/pages/create_slope">スキー場を追加する</a>
-                        @endauth
-                        @guest
-                            <p>※ログインするとスキー場を追加できるようになります</p>
-                        @endguest
+                        <!--@auth-->
+                        <!--    <a class=link_color href="/pages/create_slope">スキー場を追加する</a>-->
+                        <!--@endauth-->
+                        <!--@guest-->
+                        <!--    <p>※ログインするとスキー場を追加できるようになります</p>-->
+                        <!--@endguest-->
                     </div>
         
                     <h5>北海道</h5>
@@ -118,7 +128,6 @@
                             <p>※ログインするとお気に入り一覧を見れます</p>
                         @endguest
                     </div>
-                    
             </div>
             
                 <div class=twitter>
