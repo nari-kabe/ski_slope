@@ -36,8 +36,6 @@ class CreateSkiAreasTable extends Migration
             $table->text('spa')->nullable();
             $table->text('hotel')->nullable();
             $table->text('slope_map')->nullable();
-            // $table->integer('latitude')->nullable();
-            // $table->integer('longitude')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

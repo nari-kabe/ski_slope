@@ -1,8 +1,6 @@
 function textarea_off(e){
     document.getElementById(e).style="display: none";
-    // document.getElementById(e).name="";
     document.getElementById(e).value="";
-    console.log(document.getElementById(e).value);
 }
                 
 function textarea_on(e){

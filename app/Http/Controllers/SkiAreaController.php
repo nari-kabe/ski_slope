@@ -11,39 +11,10 @@ use App\Rules\PrefectureRule;
 use App\Rules\PhoneNumberRule;
 
 use App\Ski_area;
+use App\Profile;
 
 class SkiAreaController extends Controller
 {
-    public function login_home(Ski_area $ski_area)
-    {
-        // dd($this->getTweets(15));
-        $results=$this->getTweets(10);
-        $users=[];
-        $tweets=[];
-        //連想配列を作る
-        for($i=0; $i < count($results["includes"]["users"]); $i++){
-            //・左辺：空の配列$users=[]に["includes"]["users"][$i]["id"]をkeyとして入れる
-            //・右辺：keyに対する値として、$results["includes"]["users"][$i]を指定する
-            $users[$results["includes"]["users"][$i]["id"]] = $results["includes"]["users"][$i]; //i番目のID（authorID）=ユーザーのi番目
-            //dd($users);
-        }
-        for($i=0; $i < count($results["data"]); $i++){
-            //・空の配列の$tweets=[]に$results["data"][$i]の中身を0番目から入れていく
-            $tweets[$i]=$results["data"][$i]; //普通の配列で、i番目をresultsデータのi番目とする
-            //dd($tweets);
-            $tweets[$i]["user"]=$users[$results["data"][$i]["author_id"]]; 
-            //・上のfor文の$results["includes"]["users"][$i]["id"]] と 下のfor文の$results["data"][$i]["author_id"] は同じだから、
-            //  $results["data"][$i]["author_id"]を連想配列のkeyとして、連想配列$usersの値を呼び出す
-            //・つまり、64行目では、$results["data"][$i]が誰のものかを上のfor文で作った連想配列$usersから炙り出し、結びつけている
-            //  (resultsデータのi番目をauthorID（各個人のid。tweetのidではない）と結びつける)
-            //dd($tweets);
-        }
-        
-        return view('pages/login_home')->with(
-            ['tweets'=>$tweets ,'ski_areas' => $ski_area->get()]
-            );
-    }
-    
     public function getTweets($num)
     {
         //エンドポイントを指定
@@ -86,8 +57,93 @@ class SkiAreaController extends Controller
         return $result;
     }
     
+    public function getAreaTweets($num)
+    {
+        //エンドポイントを指定
+        $base_url = 'https://api.twitter.com/2/tweets/search/recent';
+        
+        //検索条件を指定
+        $query = [
+          'query' => '#オフトレ OR #ハーフパイプ OR #モーグル OR #スノーゴーグル OR #冬スポ22 OR #リフト券',
+          'sort_order' => 'recency',
+          'expansions' => 'author_id',
+          'tweet.fields' => 'created_at',
+          'max_results' => $num
+        ];
+        $url = $base_url . '?' . http_build_query($query);
+        
+        //ヘッダ生成
+        ///Bearer Token
+        $token = config('const.twitter.bearer_token');
+        $header = [
+            'Authorization: Bearer ' . $token,
+            'Content-Type: application/json',
+        ];
+        
+        //cURLで問い合わせ
+        $curl = curl_init();
+        
+        curl_setopt($curl, CURLOPT_URL, $url);
+        curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'GET');
+        curl_setopt($curl, CURLOPT_HTTPHEADER, $header);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        
+        $response = curl_exec($curl);
+        //dd($response);
+        $result = json_decode($response, true);
+        //dd($result);
+        curl_close($curl);
+        
+        return $result;
+    }
+    
+   
+    
+    public function login_home(Ski_area $ski_area, Profile $profile)
+    {
+        // dd($this->getTweets(15));
+        $results=$this->getTweets(10);
+        $users=[];
+        $tweets=[];
+        //連想配列を作る
+        for($i=0; $i < count($results["includes"]["users"]); $i++){
+            //・左辺：空の配列$users=[]に["includes"]["users"][$i]["id"]をkeyとして入れる
+            //・右辺：keyに対する値として、$results["includes"]["users"][$i]を指定する
+            $users[$results["includes"]["users"][$i]["id"]] = $results["includes"]["users"][$i]; //i番目のID（authorID）=ユーザーのi番目
+            //dd($users);
+        }
+        for($i=0; $i < count($results["data"]); $i++){
+            //・空の配列の$tweets=[]に$results["data"][$i]の中身を0番目から入れていく
+            $tweets[$i]=$results["data"][$i]; //普通の配列で、i番目をresultsデータのi番目とする
+            //dd($tweets);
+            $tweets[$i]["user"]=$users[$results["data"][$i]["author_id"]]; 
+            //・上のfor文の$results["includes"]["users"][$i]["id"]] と 下のfor文の$results["data"][$i]["author_id"] は同じだから、
+            //  $results["data"][$i]["author_id"]を連想配列のkeyとして、連想配列$usersの値を呼び出す
+            //・つまり、64行目では、$results["data"][$i]が誰のものかを上のfor文で作った連想配列$usersから炙り出し、結びつけている
+            //  (resultsデータのi番目をauthorID（各個人のid。tweetのidではない）と結びつける)
+            //dd($tweets);
+        }
+        
+        // if (Auth::check()){
+        //     $profile_record = Profile::where('user_id', \Auth::user()->id)->first();
+        // }
+        // else {
+        //     $profile_record = null;
+        // }
+        // return view('pages/login_home')->with(
+        //     ['tweets'=>$tweets ,'ski_areas'=>$ski_area->get(), 'profile'=>$profile_record ]
+        //     );
+        
+        return view('pages/login_home')->with(
+            ['tweets'=>$tweets ,'ski_areas'=>$ski_area->get()]
+            );
+    }
+    
     public function show(Ski_area $ski_area)
     {
+        /*
+         *OpenweatherAPI
+         */
         $API_KEY = config('const.openweathermap.key');
         $base_url = config('const.openweathermap.url');
         //$city = '堺市';
@@ -110,32 +166,53 @@ class SkiAreaController extends Controller
             $response = $client->request($method, $url);
         }
         
-        
-
         $weather_data = $response->getBody();
         //dd($weather_data);
         $weather_data = json_decode($weather_data, true);
         //dd($weather_data);
-
-        //return response()->json($weather_data);
-        
-        // $weather=$weather_data['list'][0]['weather'][0];
         $weather=$weather_data['list'][0];
-        //dd($weather);
-        
+        //dd($weather);   
         $place_id=$weather_data['city']['id'];
         //dd($place_id);
         
-        for($i=0; $i < 32; $i++){
-            $weather=$weather_data['list'][$i]['weather'][0]['main'];
-            $icon=$weather_data['list'][$i]['weather'][0]['icon'];
-            $temp_max=$weather_data['list'][$i]['main']['temp_max'];
-            $temp_min=$weather_data['list'][$i]['main']['temp_min'];
-            //dd($weather);
-            //dd($temp_min);
+        /*
+         *TwitterAPI
+         */
+         // dd($this->getTweets(10));
+         
+        // $results=$this->getAreaTweets(10);
+        // $users=[];
+        // $tweets=[];
+        // for($i=0; $i < count($results["includes"]["users"]); $i++){
+        //     $users[$results["includes"]["users"][$i]["id"]] = $results["includes"]["users"][$i];
+        //     //dd($users);
+        // }
+        // for($i=0; $i < count($results["data"]); $i++){
+        //     $tweets[$i]=$results["data"][$i];
+        //     //dd($tweets);
+        //     $tweets[$i]["user"]=$users[$results["data"][$i]["author_id"]]; 
+        
+        $results=$this->getAreaTweets(10);
+        $users=[];
+        $tweets=[];
+        for($i=0; $i < 4; $i++){
+            $users[$results["includes"]["users"][$i]["id"]] = $results["includes"]["users"][$i];
+            //dd($users);
         }
+        for($i=0; $i < 4; $i++){
+            $tweets[$i]=$results["data"][$i];
+            //dd($tweets);
+            $tweets[$i]["user"]=$users[$results["data"][$i]["author_id"]]; 
+        }
+        
+        
+        /*
+         *GoogleMapAPI
+         */
+         
+         $GOOGLE_MAP_API_KEY = config('const.googlemap.key');
 
-        return view('pages/show_slope')->with(['ski_area' => $ski_area, 'place_id' => $place_id, 'weather' => $weather, 'icon' => $icon, 'temp_max' => $temp_max, 'temp_min' => $temp_min]);
+        return view('pages/show_slope')->with(['ski_area' => $ski_area, 'place_id' => $place_id, 'tweets'=>$tweets, 'google' => $GOOGLE_MAP_API_KEY]);
         //return view('pages/show')->with(['ski_area' => $ski_area]);
     }
     
@@ -171,6 +248,7 @@ class SkiAreaController extends Controller
         //dd($input);
         $ski_area['user_id'] = Auth::id();
         $ski_area->fill($input)->save();
+        //dd($ski_area);
         return redirect('/ski_areas/' . $ski_area->id);
     }
     

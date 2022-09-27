@@ -4,10 +4,10 @@
 /*}*/
 
 #list table, #list th, #list td {
-  border-collapse: collapse;
-  padding: 5px 15px; /* 上下 左右 */
-  /*border: dashed 1px #a8d4f3;*/
-  border: solid 1px #a8d4f3;
+    border-collapse: collapse;
+    padding: 5px 15px; /* 上下 左右 */
+    /*border: dashed 1px #a8d4f3;*/
+    border: solid 1px #a8d4f3;
 }
 
 .input_list{
@@ -16,5 +16,72 @@
 }
 
 .horizontal_line{
-  margin-top: 40px;
+    margin-top: 40px;
+}
+
+/*
+**twitterAPI
+**
+*/
+.container{
+    position: relative;
+}
+
+.twitter{
+    position: absolute;
+    /*left: 61%;*/
+    top: 0px;
+    /*width: 35vw;*/ /*twitterの位置*/
+    width: 40vw;
+    right: 50px;
+}
+
+.h2_twitter{
+    display: inline-block;
+    padding-right: 10px;
+}
+
+
+/*twitterアイコン*/
+.fa-twitter{
+    /*height: 55px;*/
+    /*vertical-align: bottom;*/
+    margin: auto;
+    padding: auto;
+    color: #1DA1F2;
+    text-decoration: none;
+}
+
+.tweet{
+    margin: 0;
+}
+
+.tweet_text{
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
+.tweet_space{
+    /*margin-bottom: 20px;*/
+    padding-bottom: 20px;
+}
+
+/*
+**weatherAPI
+**
+*/
+.h2_weather{
+    margin-top: 30px;
+}
+    
+/*
+**mapAPI
+**
+*/
+.h2_map{
+    margin-top: 80px;
+}
+
+#map{
+    height: 760px;
 }

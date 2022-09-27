@@ -11,28 +11,28 @@
         <script src="{{ asset('/js/login_home.js') }}"></script>
     </head>
     <body>
-        <div id=header>
-            <div id=header_color>
-                <h1>My best place</h1>
-                @auth
-                    <a class="head link_color" href="/pages/profile">自己プロフィール登録</a>
-                @endauth
-                
-                @guest
-                    <p class="head">ログインすると自己プロフィール編集を行えます</p>
-                @endguest
-                <hr id=header_horizon>
-            </div>
-        </div>
+        <!--<div id=header>-->
+        <!--    <h1>My best place</h1>-->
+        <!--    <hr id=header_horizon>-->
+        <!--</div>-->
             
         <div class="various">
-            <a class="link_color right_space"　href="/pages/star">お気に入り登録一覧</a>
-            <p class="line_right"></p>
-            <button class="Button2 right_space"> 都道府県から探す</button>
-            <p class="line_right"></p>
-            <input class="right_space" type=text placeholder="スキー場の名前で検索">
-            <p class="line_right"></p>
-            <a class="link_color right_space" href="/">ログイン前の画面</a>
+            <div class="nav">
+                <div>
+                    @guest
+                        <p>ログインすると自己プロフィール登録・編集、スキー場追加、お気に入り登録ができます</p>
+                    @endguest
+                    
+                    @auth
+                        <a class="link_color right_space" href="/pages/profile">自己プロフィール登録</a>
+                        <p class="line_right"></p>
+                        
+                        <a class="link_color right_space" href="/pages/create_slope">スキー場を追加する</a>
+                        <p class="line_right"></p>
+                        <a class="link_color right_space"href="/pages/star">お気に入り登録一覧</a>
+                    @endauth
+                </div>
+            </div>
         </div>
             
         <div class="image_container">
@@ -57,13 +57,7 @@
                 <!--スキー場一覧-->
                 <div class=slope_list>
                     <div class="information_header">
-                        <h2>スキー場一覧</h2>
-                        @auth
-                            <a class=link_color href="/pages/create_slope">スキー場を追加する</a>
-                        @endauth
-                        @guest
-                            <p>※ログインするとスキー場を追加できるようになります</p>
-                        @endguest
+                        <h2 class="information_header">スキー場一覧</h2>
                     </div>
         
                     <h5>北海道</h5>
@@ -94,8 +88,8 @@
                 </div>
             
                     <!--お気に入り　ログインユーザー限定-->
-                    <div  class=star_list>
-                        <h2>お気に入りランキング</h2>
+                    <div>
+                        <h2>お気に入りランキング（実装中）</h2>
                         @auth
                             <div class=star_ranking>
                                 <div>
@@ -118,7 +112,6 @@
                             <p>※ログインするとお気に入り一覧を見れます</p>
                         @endguest
                     </div>
-                    
             </div>
             
                 <div class=twitter>
@@ -126,24 +119,18 @@
                         <h2>Twitter</h2>
                         <a class="fab fa-twitter fa-2x" href="https://twitter.com/?lang=ja"></a>
                     </div>
-                          
-                    @auth  
-                        @for ($i = 0; $i < count($tweets); $i++)
-                          <p class=tweet>{{ $tweets[$i]['created_at'] }}</p>
-                          <p class=tweet>{{'投稿者：'. $tweets[$i]['user']['name'] }}　{{'@'. $tweets[$i]['user']['username'] }}</p>
-                          <p class=tweet_text>{{ $tweets[$i]['text'] }}</p>
-                          <a href="{{ 'https://twitter.com/'. $tweets[$i]['user']['username']. '/status/'. $tweets[$i]['id'] }}">twitterで表示</a>
-                          <p class=tweet_space></p>
-                        @endfor
-                    @endauth
-                    @guest
-                        <p>※ログインするとtwitter情報を見れます</p>
-                    @endguest
+                    @for ($i = 0; $i < count($tweets); $i++)
+                      <p class=tweet>{{ $tweets[$i]['created_at'] }}</p>
+                      <p class=tweet>{{'投稿者：'. $tweets[$i]['user']['name'] }}　{{'@'. $tweets[$i]['user']['username'] }}</p>
+                      <p class=tweet_text>{{ $tweets[$i]['text'] }}</p>
+                      <a href="{{ 'https://twitter.com/'. $tweets[$i]['user']['username']. '/status/'. $tweets[$i]['id'] }}">twitterで表示</a>
+                      <p class=tweet_space></p>
+                    @endfor
                 </div>
                 @auth
                 <hr class=bar>
                 @endauth
-                
+    
         </div>
     </body>
 </html>
