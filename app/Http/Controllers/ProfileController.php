@@ -20,7 +20,7 @@ class ProfileController extends Controller
     
     public function show(Profile $profile)
     {
-         return view('pages/show_profile')->with(['profile' => $profile]);
+        return view('pages/show_profile')->with(['profile' => $profile]);
     }
     
     public function store(Request $request, Profile $profile)

@@ -21,6 +21,7 @@ class Ski_area extends Model
     'restaurant',
     'spa',
     'hotel',
+    'snowboard',
     'slope_map',
     'latitude',
     'longitude',
