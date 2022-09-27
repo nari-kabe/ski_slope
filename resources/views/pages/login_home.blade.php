@@ -53,19 +53,38 @@
                 <div class=slope_list>
                     <div class="information_header">
                         <h2 class="information_header">スキー場一覧</h2>
+                        <p>※カッコの数字はその県または道内にある全てのスキー場の数です</p>
                     </div>
         
-                    <h5>北海道</h5>
+                    <h5>北海道(全51ヶ所)</h5>
                     @foreach ($ski_areas as $ski_area)
                         @if( $ski_area->prefecture === "北海道")
                             <a class='ski_slope' href="/ski_areas/{{ $ski_area->id }}">{{ $ski_area->place_name }}</a>
                         @endif    
                     @endforeach
-                    <h5>福井県</h5>
+                    <h5>群馬県(全22ヶ所)</h5>
                     @foreach ($ski_areas as $ski_area)
-                        @if($ski_area->prefecture === "福井県")
+                        @if( $ski_area->prefecture === "群馬県")
                             <a class='ski_slope' href="/ski_areas/{{ $ski_area->id }}">{{ $ski_area->place_name }}</a>
-                        @endif
+                        @endif    
+                    @endforeach
+                    <h5>新潟県(全48ヶ所)</h5>
+                    @foreach ($ski_areas as $ski_area)
+                        @if( $ski_area->prefecture === "新潟県")
+                            <a class='ski_slope' href="/ski_areas/{{ $ski_area->id }}">{{ $ski_area->place_name }}</a>
+                        @endif    
+                    @endforeach
+                    <h5>長野県(全79ヶ所)</h5>
+                    @foreach ($ski_areas as $ski_area)
+                        @if( $ski_area->prefecture === "長野県")
+                            <a class='ski_slope' href="/ski_areas/{{ $ski_area->id }}">{{ $ski_area->place_name }}</a>
+                        @endif    
+                    @endforeach
+                    <h5>岐阜県(全22ヶ所)</h5>
+                    @foreach ($ski_areas as $ski_area)
+                        @if( $ski_area->prefecture === "岐阜県")
+                            <a class='ski_slope' href="/ski_areas/{{ $ski_area->id }}">{{ $ski_area->place_name }}</a>
+                        @endif    
                     @endforeach
                     <h5>その他の県</h5>
                     @foreach ($ski_areas as $ski_area)
