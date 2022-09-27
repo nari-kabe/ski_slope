@@ -5,6 +5,7 @@ function textarea_off(e){
                 
 function textarea_on(e){
     document.getElementById(e).style="display: block";
+    document.getElementById(e).focus();
 }
 
 function textarea_display(e){
