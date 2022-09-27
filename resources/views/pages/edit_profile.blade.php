@@ -4,8 +4,6 @@
         <meta charset="utf-8">
         <title>自己プロフィール登録</title>
         <link rel="stylesheet" href="/css/profile.css">
-        <!--<link rel="stylesheet" href="/css/create_slope.css">-->
-        <!--<script src="{{ asset('/js/create_slope.js') }}"></script>-->
         
     </head>
     <body>
@@ -80,13 +78,6 @@
                         <p class=error>{{ $errors->first('profile.occupation') }}</p>
                     </td>
                 </tr>
-                <!--<tr>-->
-                <!--    <td>経験年数</td>-->
-                <!--    <td>-->
-                <!--        <input class="input_list" type=text name="profile[experience]" value="{{ $profile->experience }}">　年-->
-                <!--        <p class=error>{{ $errors->first('profile.experience') }}</p>-->
-                <!--    </td>-->
-                <!--</tr>-->
                 <tr>
                     <td><span>*</span>スキーの経験</td>
                     @if ($profile->ski_level=="未経験")
