@@ -102,6 +102,11 @@
                             <input type="radio" id="parking_lot2" class="radio2" name="radio_button8"value="有" {{ old("radio_button8") == "有" ? "checked" : "" }} onclick="textarea_on(8)"><label for="parking_lot2">有</label></br>
                             <textarea id=8 class="detail" style="display: none" name="ski_area[parking_lot]" placeholder="例：第一駐車場（800台）" >{{ old('ski_area.parking_lot', $ski_area->parking_lot) }}</textarea>
                             <p class=error>{{ $errors->first('ski_area.parking_lot') }}</p>
+                        @elseif ((old("radio_button8") == "無"))  
+                            <input type="radio" id="parking_lot1" class="radio1" name="radio_button8" value="無" {{ old("radio_button8", "無") == "無" ? "checked" : "" }} onclick="textarea_off(8)"><label for="parking_lot1">無</label>
+                            <input type="radio" id="parking_lot2" class="radio2" name="radio_button8"value="有" {{ old("radio_button8") == "有" ? "checked" : "" }} onclick="textarea_on(8)"><label for="parking_lot2">有</label></br>
+                            <textarea id=8 class="detail" style="display: none" name="ski_area[parking_lot]" placeholder="例：第一駐車場（800台）" >{{ old('ski_area.parking_lot', $ski_area->parking_lot) }}</textarea>
+                            <p class=error>{{ $errors->first('ski_area.parking_lot') }}</p>
                         @else
                             <input type="radio" id="parking_lot1" class="radio1" name="radio_button8" value="無" {{ old("radio_button8") == "無" ? "checked" : "" }} onclick="textarea_off(8)"><label for="parking_lot1">無</label>
                             <input type="radio" id="parking_lot2" class="radio2" name="radio_button8"value="有" {{ old("radio_button8", "有") == "有" ? "checked" : "" }} onclick="textarea_on(8)"><label for="parking_lot2">有</label></br>
@@ -114,6 +119,11 @@
                     <td>キッズパーク</td> 
                     <td>
                         @if ((old('ski_area.kids_park')===null) && $ski_area->kids_park===null)
+                            <input type="radio" id="kids_park1" class="radio1" name="radio_button7" value="無" {{ old("radio_button7", "無") == "無" ? "checked" : "" }} onclick="textarea_off(7)"><label for="kids_park1">無</label>
+                            <input type="radio" id="kids_park2" class="radio2" name="radio_button7" value="有" {{ old("radio_button7") == "有" ? "checked" : "" }} onclick="textarea_on(7)"><label for="kids_park2">有</label></br>
+                            <textarea id=7 class="detail" style="display: none" name="ski_area[kids_park]" placeholder="例：場所：センターハウス横¥nソリー使用可能">{{ old('ski_area.kids_park', $ski_area->kids_park) }}</textarea>
+                            <p class=error>{{ $errors->first('ski_area.kids_park') }}</p>
+                        @elseif ((old("radio_button7") == "無"))
                             <input type="radio" id="kids_park1" class="radio1" name="radio_button7" value="無" {{ old("radio_button7", "無") == "無" ? "checked" : "" }} onclick="textarea_off(7)"><label for="kids_park1">無</label>
                             <input type="radio" id="kids_park2" class="radio2" name="radio_button7" value="有" {{ old("radio_button7") == "有" ? "checked" : "" }} onclick="textarea_on(7)"><label for="kids_park2">有</label></br>
                             <textarea id=7 class="detail" style="display: none" name="ski_area[kids_park]" placeholder="例：場所：センターハウス横¥nソリー使用可能">{{ old('ski_area.kids_park', $ski_area->kids_park) }}</textarea>
@@ -134,6 +144,11 @@
                             <input type="radio" id="night_game2" class="radio2" name="radio_button1" value="有" {{ old("radio_button1") == "有" ? "checked" : "" }} onclick="textarea_on(1)"><label for="night_game2">有</label></br>
                             <textarea id=1 class="detail" style="display: none" name="ski_area[evening_hours]" placeholder="例：17:00 ~ 20:00">{{ old('ski_area.evening_hours', $ski_area->evening_hours) }}</textarea>
                             <p class=error>{{ $errors->first('ski_area.evening_hours') }}</p>
+                        @elseif ((old("radio_button1") == "無"))
+                            <input type="radio" id="night_game1" class="radio1" name="radio_button1" value="無" {{ old("radio_button1", "無") == "無" ? "checked" : "" }} onclick="textarea_off(1)"><label for="night_game1">無</label>
+                            <input type="radio" id="night_game2" class="radio2" name="radio_button1" value="有" {{ old("radio_button1") == "有" ? "checked" : "" }} onclick="textarea_on(1)"><label for="night_game2">有</label></br>
+                            <textarea id=1 class="detail" style="display: none" name="ski_area[evening_hours]" placeholder="例：17:00 ~ 20:00">{{ old('ski_area.evening_hours', $ski_area->evening_hours) }}</textarea>
+                            <p class=error>{{ $errors->first('ski_area.evening_hours') }}</p>
                         @else
                             <input type="radio" id="night_game1" class="radio1" name="radio_button1" value="無" {{ old("radio_button1") == "無" ? "checked" : "" }} onclick="textarea_off(1)"><label for="night_game1">無</label>
                             <input type="radio" id="night_game2" class="radio2" name="radio_button1" value="有" {{ old("radio_button1", "有") == "有" ? "checked" : "" }} onclick="textarea_on(1)"><label for="night_game2">有</label></br>
@@ -150,6 +165,11 @@
                             <input type="radio" id="lesson2" class="radio2" name="radio_button2" value="有" {{ old("radio_button2") == "有" ? "checked" : "" }} onclick="textarea_on(2)"><label for="lesson2">有</label></br>
                             <textarea id=2 class="detail" style="display: none" name="ski_area[lesson]" placeholder="例：３日集中レッスン、キッズ・ジュニアレッスン、レベル別レッスン、プライベートレッスン">{{ old('ski_area.lesson', $ski_area->lesson) }}</textarea>
                             <p class=error>{{ $errors->first('ski_area.lesson') }}
+                        @elseif ((old("radio_button2") == "無"))
+                            <input type="radio" id="lesson1" class="radio1" name="radio_button2" value="無" {{ old("radio_button2", "無") == "無" ? "checked" : "" }} onclick="textarea_off(2)"><label for="lesson1">無</label>
+                            <input type="radio" id="lesson2" class="radio2" name="radio_button2" value="有" {{ old("radio_button2") == "有" ? "checked" : "" }} onclick="textarea_on(2)"><label for="lesson2">有</label></br>
+                            <textarea id=2 class="detail" style="display: none" name="ski_area[lesson]" placeholder="例：３日集中レッスン、キッズ・ジュニアレッスン、レベル別レッスン、プライベートレッスン">{{ old('ski_area.lesson', $ski_area->lesson) }}</textarea>
+                            <p class=error>{{ $errors->first('ski_area.lesson') }}
                         @else
                             <input type="radio" id="lesson1" class="radio1" name="radio_button2" value="無" {{ old("radio_button2") == "無" ? "checked" : "" }} onclick="textarea_off(2)"><label for="lesson1">無</label>
                             <input type="radio" id="lesson2" class="radio2" name="radio_button2" value="有" {{ old("radio_button2", "有") == "有" ? "checked" : "" }} onclick="textarea_on(2)"><label for="lesson2">有</label></br>
@@ -161,7 +181,10 @@
                 <tr>
                     <td>スノーボードの使用</td> 
                     <td>
-                        @if ((old('ski_area.snowboard')==0) && $ski_area->snowboard==0)
+                        @if ((old("ski_area.snowboard")==0) && $ski_area->snowboard==0)
+                            <input type="radio" id="available1" class="radio1" name="ski_area[snowboard]" value="1" {{ old("ski_area[snowboard]") == "1" ? "checked" : "" }}><label for="available1">使用可能</label>
+                            <input type="radio" id="available2" class="radio2" name="ski_area[snowboard]" value="0" {{ old("ski_area[snowboard]", "0") == "0" ? "checked" : "" }}><label for="available2">使用不可</label>
+                        @elseif ((old("ski_area.snowboard") == "0"))
                             <input type="radio" id="available1" class="radio1" name="ski_area[snowboard]" value="1" {{ old("ski_area[snowboard]") == "1" ? "checked" : "" }}><label for="available1">使用可能</label>
                             <input type="radio" id="available2" class="radio2" name="ski_area[snowboard]" value="0" {{ old("ski_area[snowboard]", "0") == "0" ? "checked" : "" }}><label for="available2">使用不可</label>
                         @else
@@ -174,6 +197,11 @@
                     <td>レストラン</td> 
                      <td>
                         @if ((old('ski_area.restaurant')===null) && $ski_area->restaurant===null)
+                            <input type="radio" id="restaurant1" class="radio1" name="radio_button3" value="無" {{ old("radio_button3", "無") == "無" ? "checked" : "" }} onclick="textarea_off(3)"><label for="restaurant1">無</label>
+                            <input type="radio" id="restaurant2" class="radio2" name="radio_button3" value="有" {{ old("radio_button3") == "有" ? "checked" : "" }} onclick="textarea_on(3)"><label for="restaurant2">有</label></br>
+                            <textarea id=3 class="detail" style="display: none" name="ski_area[restaurant]" placeholder="スキー場内に６つ有り">{{ old('ski_area.restaurant', $ski_area->restaurant) }}</textarea>
+                            <p class=error>{{ $errors->first('ski_area.restaurant') }}</p>
+                        @elseif ((old("radio_button3") == "無"))
                             <input type="radio" id="restaurant1" class="radio1" name="radio_button3" value="無" {{ old("radio_button3", "無") == "無" ? "checked" : "" }} onclick="textarea_off(3)"><label for="restaurant1">無</label>
                             <input type="radio" id="restaurant2" class="radio2" name="radio_button3" value="有" {{ old("radio_button3") == "有" ? "checked" : "" }} onclick="textarea_on(3)"><label for="restaurant2">有</label></br>
                             <textarea id=3 class="detail" style="display: none" name="ski_area[restaurant]" placeholder="スキー場内に６つ有り">{{ old('ski_area.restaurant', $ski_area->restaurant) }}</textarea>
@@ -194,6 +222,11 @@
                             <input type="radio" id="spa2" class="radio2" name="radio_button4" value="有" {{ old("radio_button4") == "有" ? "checked" : "" }} onclick="textarea_on(4)"><label for="spa2">有</label></br>
                             <textarea id=4 class="detail" style="display: none" name="ski_area[spa]" placeholder="例：◯◯温泉 （スキー場から1km ）">{{ old('ski_area.spa', $ski_area->spa) }}</textarea>
                             <p class=error>{{ $errors->first('ski_area.spa') }}
+                        @elseif ((old("radio_button4") == "無"))
+                            <input type="radio" id="spa1" class="radio1" name="radio_button4" value="無" {{ old("radio_button4", "無") == "無" ? "checked" : "" }} onclick="textarea_off(4)"><label for="spa1">無</label>
+                            <input type="radio" id="spa2" class="radio2" name="radio_button4" value="有" {{ old("radio_button4") == "有" ? "checked" : "" }} onclick="textarea_on(4)"><label for="spa2">有</label></br>
+                            <textarea id=4 class="detail" style="display: none" name="ski_area[spa]" placeholder="例：◯◯温泉 （スキー場から1km ）">{{ old('ski_area.spa', $ski_area->spa) }}</textarea>
+                            <p class=error>{{ $errors->first('ski_area.spa') }}
                         @else
                             <input type="radio" id="spa1" class="radio1" name="radio_button4" value="無" {{ old("radio_button4") == "無" ? "checked" : "" }} onclick="textarea_off(4)"><label for="spa1">無</label>
                             <input type="radio" id="spa2" class="radio2" name="radio_button4" value="有" {{ old("radio_button4", "有") == "有" ? "checked" : "" }} onclick="textarea_on(4)"><label for="spa2">有</label></br>
@@ -206,6 +239,11 @@
                     <td>宿泊施設</td> 
                     <td>
                         @if ((old('ski_area.hotel')===null) && $ski_area->hotel===null)
+                            <input type="radio" id="inn1" class="radio1" name="radio_button5" value="無" {{ old("radio_button5", "無") == "無" ? "checked" : "" }} onclick="textarea_off(5)"><label for="inn1">無</label>
+                            <input type="radio" id="inn2" class="radio2" name="radio_button5" value="有" {{ old("radio_button5") == "有" ? "checked" : "" }} onclick="textarea_on(5)"><label for="inn2">有</label></br>
+                            <textarea id=5 class="detail" style="display: none" name="ski_area[hotel]" placeholder="◯◯ホテル（スキー場から15km ）">{{ old('ski_area.hotel', $ski_area->hotel) }}</textarea>
+                            <p class=error>{{ $errors->first('ski_area.hotel') }}</p>
+                        @elseif ((old("radio_button5") == "無"))
                             <input type="radio" id="inn1" class="radio1" name="radio_button5" value="無" {{ old("radio_button5", "無") == "無" ? "checked" : "" }} onclick="textarea_off(5)"><label for="inn1">無</label>
                             <input type="radio" id="inn2" class="radio2" name="radio_button5" value="有" {{ old("radio_button5") == "有" ? "checked" : "" }} onclick="textarea_on(5)"><label for="inn2">有</label></br>
                             <textarea id=5 class="detail" style="display: none" name="ski_area[hotel]" placeholder="◯◯ホテル（スキー場から15km ）">{{ old('ski_area.hotel', $ski_area->hotel) }}</textarea>

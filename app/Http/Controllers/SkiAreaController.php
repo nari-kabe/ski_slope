@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use GuzzleHttp\Client;
 use App\Rules\ZipCodeRule;
 use App\Rules\PrefectureRule;
+use App\Rules\CityRule;
 use App\Rules\PhoneNumberRule;
 
 use App\Ski_area;
@@ -25,8 +26,6 @@ class SkiAreaController extends Controller
           'query' => '#スキー OR #スノーボード',
           'sort_order' => 'recency',
           'expansions' => 'author_id',
-          'user.fields' => 'name,username,url', //こっちのurlはtwitterのヘッダーにURL(ホームページなど)を記載してた場合にそのurlをとってきている
-          'media.fields' => 'url', //こっちがtwitterへ飛ぶurl？？
           'tweet.fields' => 'created_at',
           'max_results' => $num
         ];
@@ -146,8 +145,6 @@ class SkiAreaController extends Controller
          */
         $API_KEY = config('const.openweathermap.key');
         $base_url = config('const.openweathermap.url');
-        //$city = '堺市';
-        //$city = '坂井市';
         $city = $ski_area->city;
         //dd($city);
   
@@ -178,20 +175,6 @@ class SkiAreaController extends Controller
         /*
          *TwitterAPI
          */
-         // dd($this->getTweets(10));
-         
-        // $results=$this->getAreaTweets(10);
-        // $users=[];
-        // $tweets=[];
-        // for($i=0; $i < count($results["includes"]["users"]); $i++){
-        //     $users[$results["includes"]["users"][$i]["id"]] = $results["includes"]["users"][$i];
-        //     //dd($users);
-        // }
-        // for($i=0; $i < count($results["data"]); $i++){
-        //     $tweets[$i]=$results["data"][$i];
-        //     //dd($tweets);
-        //     $tweets[$i]["user"]=$users[$results["data"][$i]["author_id"]]; 
-        
         $results=$this->getAreaTweets(10);
         $users=[];
         $tweets=[];
@@ -209,23 +192,20 @@ class SkiAreaController extends Controller
         /*
          *GoogleMapAPI
          */
-         
-         $GOOGLE_MAP_API_KEY = config('const.googlemap.key');
+        $GOOGLE_MAP_API_KEY = config('const.googlemap.key');
 
         return view('pages/show_slope')->with(['ski_area' => $ski_area, 'place_id' => $place_id, 'tweets'=>$tweets, 'google' => $GOOGLE_MAP_API_KEY]);
-        //return view('pages/show')->with(['ski_area' => $ski_area]);
     }
     
     public function store(Request $request, Ski_area $ski_area)
     {
         //dd($request->all());
-        
         $request->validate([
             'ski_area.place_name' => ['required','string','max:40'],
             'ski_area.home_page' => ['nullable','url'],
             'ski_area.zip_code' => ['required', new ZipCodeRule()],
             'ski_area.prefecture' => ['required', new PrefectureRule()],
-            'ski_area.city' => ['required','string','max:30'],  //ここもRule作った方がいい
+            'ski_area.city' => ['required', new CityRule()],
             'ski_area.after_address' => ['required','string','max:50'],
             'ski_area.phone_number' => ['required', new PhoneNumberRule()],
             'ski_area.business_hours' => ['required','string'],
@@ -260,13 +240,12 @@ class SkiAreaController extends Controller
     public function update(Request $request, Ski_area $ski_area)
     {
         //dd($request->all());
-        
         $request->validate([
             'ski_area.place_name' => ['required','string','max:40'],
             'ski_area.home_page' => ['nullable','url'],
             'ski_area.zip_code' => ['required', new ZipCodeRule()],
             'ski_area.prefecture' => ['required', new PrefectureRule()],
-            'ski_area.city' => ['required','string','max:30'],  //ここもRule作った方がいい
+            'ski_area.city' => ['required', new CityRule()],
             'ski_area.after_address' => ['required','string','max:50'],
             'ski_area.phone_number' => ['required', new PhoneNumberRule()],
             'ski_area.business_hours' => ['required','string'],

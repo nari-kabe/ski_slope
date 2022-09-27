@@ -11,11 +11,6 @@
         <script src="{{ asset('/js/login_home.js') }}"></script>
     </head>
     <body>
-        <!--<div id=header>-->
-        <!--    <h1>My best place</h1>-->
-        <!--    <hr id=header_horizon>-->
-        <!--</div>-->
-            
         <div class="various">
             <div class="nav">
                 <div>
@@ -98,12 +93,10 @@
                                 </div>
                                 <div>
                                     <p class="star_detail">No.2　カムイスキーリンクス</p>
-                                    <!--<button class=star_detail> 詳細を見る</button>-->
                                     <a class="link_color star_block" href="/pages/izumi">詳細を見る</a>
                                 </div>
                                 <div>
                                     <p class="star_detail">No.3　カムイスキーリンクス</p>
-                                    <!--<button class=star_detail> 詳細を見る</button>-->
                                     <a class="link_color star_block" href="/pages/izumi">詳細を見る</a>
                                 </div>
                             </div>

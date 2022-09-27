@@ -70,7 +70,7 @@
                         @if($ski_area->lift_ticket===null)
                             <td>無し</td>
                         @else
-                            <td>{{ $ski_area->lesson }}</td>
+                            <td>{{ $ski_area->lift_ticket }}</td>
                         @endif
                     </tr>
                     <tr>
@@ -78,7 +78,7 @@
                         @if($ski_area->season===null)
                             <td>無し</td>
                         @else
-                            <td>{{ $ski_area->lesson }}</td>
+                            <td>{{ $ski_area->season }}</td>
                         @endif
                     </tr>
                     <tr>
