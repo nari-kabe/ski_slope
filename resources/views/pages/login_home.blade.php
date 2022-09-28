@@ -22,7 +22,7 @@
                             <a class="link_color right_space" href="/pages/profile">自己プロフィール登録</a>
                             <p class="line_right"></p>
                         @else
-                            <a class='line_color right_space' href="/profiles/{{ $profile_record->id }}">自己プロフィール編集</a>
+                            <a class='line_color right_space' href="/profiles/{{ $profile_record->id }}">自己プロフィールを見る</a>
                             <p class="line_right"></p>
                         @endif
                         <a class="link_color right_space" href="/pages/create_slope">スキー場を追加する</a>
@@ -95,13 +95,6 @@
                             <a class='ski_slope' href="/ski_areas/{{ $ski_area->id }}">{{ $ski_area->place_name }}</a>
                         @endif
                     @endforeach
-                    <!--それぞれ、都道府県ごとに分けて表示どうやる？-->
-                    <h5>とりあえず一覧</h5>
-                    <div class='ski_areas'>
-                        @foreach ($ski_areas as $ski_area)
-                                <a class='ski_slope' href="/ski_areas/{{ $ski_area->id }}">{{ $ski_area->place_name }}</a>
-                        @endforeach
-                    </div>
                 </div>
             
                     <!--お気に入り　ログインユーザー限定-->
