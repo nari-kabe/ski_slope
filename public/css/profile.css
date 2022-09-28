@@ -9,8 +9,7 @@
 
 #list table, #list th, #list td {
     border-collapse: collapse;
-    padding: 5px 15px; /* 上下 左右 */
-    /*border: dashed 1px #a8d4f3;*/
+    padding: 5px 15px;
     border: solid 1px #a8d4f3;
 }
 
@@ -44,18 +43,8 @@ textarea{
     margin-top: 20px;
 }
 
-/*#sex0, #sex1, #sex2, #sex9{*/
-/*    margin: 15px 0;*/
-/*    width: 30px;*/
-/*}*/
-
-/* #sex1, #sex2, #sex9{*/
-/*    margin-left: 15px;*/
-/*}*/
-
 .radio1, .radio2, .radio3, .radio4{
     margin-top: 20px;
-    /*margin: 20px 0;*/
     width: 30px;
 }
 
@@ -66,21 +55,11 @@ textarea{
 .check1, .check2, .check3{
     width: 30px;
     margin-top: 20px;
-    /*margin-bottom: 15px;*/
 }
 
 .check2, .check3{
     margin-left: 15px;
 }
-
-/*.others{*/
-/*    width: 500px;*/
-/*    height: 40px;*/
-    /*display: none;*/
-/*    margin-top: 10px;*/
-/*    margin-bottom: 15px;*/
-/*}*/
-
 .error{
     color: red;
 }
