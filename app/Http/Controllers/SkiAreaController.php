@@ -134,7 +134,7 @@ class SkiAreaController extends Controller
             );
     }
     
-    public function show(Ski_area $ski_area)
+    public function show(Ski_area $ski_area, Profile $profile)
     {
         /*
          *OpenweatherAPI
@@ -189,8 +189,18 @@ class SkiAreaController extends Controller
          *GoogleMapAPI
          */
         $GOOGLE_MAP_API_KEY = config('const.googlemap.key');
+        
+        
 
-        return view('pages/show_slope')->with(['ski_area' => $ski_area, 'place_id' => $place_id, 'tweets'=>$tweets, 'google' => $GOOGLE_MAP_API_KEY]);
+        // if (Auth::check()){
+        //     $profile_record = Profile::where('user_id', \Auth::user()->id)->first();
+        // }
+        // else {
+        //     $profile_record = null;
+        // }
+        return view('pages/show_slope')->with([
+            'ski_area' => $ski_area, 'place_id' => $place_id, 'tweets'=>$tweets, 'google' => $GOOGLE_MAP_API_KEY, 'profile'=>$profile //, 'profile_record'=>$profile_record,
+            ]);
     }
     
     public function store(Request $request, Ski_area $ski_area)
