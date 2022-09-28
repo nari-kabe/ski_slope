@@ -213,6 +213,13 @@
                         @endif
                     </td>
                 </tr>
+                <tr>
+                    <td>自由記入欄</td> 
+                    <td>
+                        <textarea class="normal_textarea" name="ski_area[free_entry]" placeholder="自由に記入してください">{{ old('ski_area.free_entry') }}</textarea>
+                        <p class=error>{{ $errors->first('ski_area.free_entry') }}</p>
+                    </td>
+                </tr>
                 <!--<tr>まだ何も触ってない-->
                 <!--    <td>ゲレンデマップ</td>  -->
                 <!--    <td>-->

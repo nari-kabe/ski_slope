@@ -53,13 +53,6 @@
                         <p class=error>{{ $errors->first('profile.occupation') }}</p>
                     </td>
                 </tr>
-                <!--<tr>-->
-                <!--    <td>経験年数</td>-->
-                <!--    <td>-->
-                <!--        <input class="input_list" type=text name="profile[experience]" value="{{ old('profile.experience') }}">　年-->
-                <!--        <p class=error>{{ $errors->first('profile.experience') }}</p>-->
-                <!--    </td>-->
-                <!--</tr>-->
                 <tr>
                     <td><span>*</span>スキーの経験</td>
                     <td>

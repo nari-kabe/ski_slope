@@ -47,7 +47,7 @@
                 <tr>
                     <td>年齢</td>
                     @if($profile->age===null)
-                        <td>無し</td>
+                        <td>未記入</td>
                     @else
                         <td class="input_list">{{ $profile->age }}</td>
                     @endif
@@ -55,19 +55,11 @@
                 <tr>
                     <td>職業</td> 
                     @if($profile->occupation===null)
-                        <td>無し</td>
+                        <td>未記入</td>
                     @else
                         <td class="input_list">{{ $profile->occupation }}</td>
                     @endif
                 </tr>
-                <!--<tr>-->
-                <!--    <td>種目</td> -->
-                <!--    <td>{{ $profile->activity }}</td>-->
-                <!--</tr>-->
-                <!--<tr>-->
-                <!--    <td>経験年数</td> -->
-                <!--    <td>{{ $profile->experience }}</td>-->
-                <!--</tr>-->
                 <tr>
                     <td>スキーの経験</td> 
                     <td>{{ $profile->ski_level }}</td>
@@ -85,7 +77,7 @@
                 <tr>
                     <td>ホームゲレンデ</td> 
                     @if($profile->home_slope===null)
-                        <td>無し</td>
+                        <td>未記入</td>
                     @else
                         <td>{{ $profile->home_slope }}</td>
                     @endif
@@ -97,7 +89,7 @@
                 <tr>
                     <td>コメント</td> 
                     @if($profile->greeting===null)
-                        <td>無し</td>
+                        <td>未記入</td>
                     @else
                         <td>{{ $profile->greeting }}</td>
                     @endif

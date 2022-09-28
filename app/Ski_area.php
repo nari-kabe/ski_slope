@@ -29,6 +29,7 @@ class Ski_area extends Model
     'activity',
     'kids_park',
     'lift_ticket',
+    'free_entry',
     ];
     
     /**
