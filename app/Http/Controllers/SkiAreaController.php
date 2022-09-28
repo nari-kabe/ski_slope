@@ -123,19 +123,19 @@ class SkiAreaController extends Controller
             //dd($tweets);
         }
         
-        // if (Auth::check()){
-        //     $profile_record = Profile::where('user_id', \Auth::user()->id)->first();
-        // }
-        // else {
-        //     $profile_record = null;
-        // }
-        // return view('pages/login_home')->with(
-        //     ['tweets'=>$tweets ,'ski_areas'=>$ski_area->get(), 'profile'=>$profile_record ]
-        //     );
-        
+        if (Auth::check()){
+            $profile_record = Profile::where('user_id', \Auth::user()->id)->first();
+        }
+        else {
+            $profile_record = null;
+        }
         return view('pages/login_home')->with(
-            ['tweets'=>$tweets ,'ski_areas'=>$ski_area->get()]
+            ['tweets'=>$tweets ,'ski_areas'=>$ski_area->get(), 'profile'=>$profile, 'profile_record'=>$profile_record]
             );
+        
+        // return view('pages/login_home')->with(
+        //     ['tweets'=>$tweets ,'ski_areas'=>$ski_area->get()]
+        //     );
     }
     
     public function show(Ski_area $ski_area)

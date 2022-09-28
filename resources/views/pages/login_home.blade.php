@@ -17,11 +17,14 @@
                     @guest
                         <p>ログインすると自己プロフィール登録・編集、スキー場追加、お気に入り登録ができます</p>
                     @endguest
-                    
                     @auth
-                        <a class="link_color right_space" href="/pages/profile">自己プロフィール登録</a>
-                        <p class="line_right"></p>
-                        
+                        @if ($profile_record === null)
+                            <a class="link_color right_space" href="/pages/profile">自己プロフィール登録</a>
+                            <p class="line_right"></p>
+                        @else
+                            <a class='line_color right_space' href="/profiles/{{ $profile_record->id }}">自己プロフィール編集</a>
+                            <p class="line_right"></p>
+                        @endif
                         <a class="link_color right_space" href="/pages/create_slope">スキー場を追加する</a>
                         <p class="line_right"></p>
                         <a class="link_color right_space"href="/pages/star">お気に入り登録一覧</a>
