@@ -98,7 +98,7 @@ class SkiAreaController extends Controller
     
    
     
-    public function login_home(Ski_area $ski_area, Profile $profile)
+    public function login_home(Ski_area $ski_area)
     {
         // dd($this->getTweets(15));
         $results=$this->getTweets(10);
@@ -130,12 +130,8 @@ class SkiAreaController extends Controller
             $profile_record = null;
         }
         return view('pages/login_home')->with(
-            ['tweets'=>$tweets ,'ski_areas'=>$ski_area->get(), 'profile'=>$profile, 'profile_record'=>$profile_record]
+            ['tweets'=>$tweets ,'ski_areas'=>$ski_area->get(), 'profile_record'=>$profile_record]
             );
-        
-        // return view('pages/login_home')->with(
-        //     ['tweets'=>$tweets ,'ski_areas'=>$ski_area->get()]
-        //     );
     }
     
     public function show(Ski_area $ski_area)

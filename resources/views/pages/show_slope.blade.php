@@ -40,19 +40,10 @@
                         <td>住所</td> 
                         <td>{{ '〒'. $ski_area->zip_code. ' '. $ski_area->prefecture. $ski_area->city. $ski_area->after_address}}</td>
                     </tr>
-                    <!--<tr>-->
-                    <!--    <td>住所（都道府県名）</td> <td>{{ $ski_area->prefecture }}</td>-->
-                    <!--</tr>-->
-                    <!--<tr>-->
-                    <!--    <td>住所（市町村名）</td> <td>{{ $ski_area->municipalities }}</td>-->
-                    <!--</tr>-->
-                    <!--<tr>-->
-                    <!--    <td>住所（番地以降）</td> <td>{{ $ski_area->after_address }}</td>-->
-                    <!--</tr>-->
                     <tr>
                         <td>ホームページ</td> 
                         @if($ski_area->home_page===null)
-                            <td>無し</td>
+                            <td>未記入</td>
                         @else
                             <td><a href="{{ $ski_area->home_page }}">{{ $ski_area->home_page }}</a></td>
                         @endif
@@ -68,7 +59,7 @@
                     <tr>
                         <td>リフト料金</td> 
                         @if($ski_area->lift_ticket===null)
-                            <td>無し</td>
+                            <td>未記入</td>
                         @else
                             <td>{{ $ski_area->lift_ticket }}</td>
                         @endif
@@ -76,7 +67,7 @@
                     <tr>
                         <td>シーズン期間</td>
                         @if($ski_area->season===null)
-                            <td>無し</td>
+                            <td>未記入</td>
                         @else
                             <td>{{ $ski_area->season }}</td>
                         @endif
@@ -84,7 +75,7 @@
                     <tr>
                         <td>ナイター</td> 
                         @if($ski_area->evening_hours===null)
-                            <td>無し</td>
+                            <td>未記入</td>
                         @else
                             <td>{{ $ski_area->evening_hours }}</td>
                         @endif
@@ -100,7 +91,7 @@
                     <tr>
                         <td>レッスン</td> 
                         @if($ski_area->lesson===null)
-                            <td>無し</td>
+                            <td>未記入</td>
                         @else
                             <td>{{ $ski_area->lesson }}</td>
                         @endif
@@ -108,7 +99,7 @@
                     <tr>
                         <td>キッズパーク</td> 
                         @if($ski_area->kids_park===null)
-                            <td>無し</td>
+                            <td>未記入</td>
                         @else
                             <td>{{ $ski_area->kids_park }}</td>
                         @endif
@@ -116,7 +107,7 @@
                     <tr>
                         <td>駐車場</td> 
                         @if($ski_area->parking_lot===null)
-                            <td>無し</td>
+                            <td>未記入</td>
                         @else
                             <td>{{ $ski_area->parking_lot }}</td>
                         @endif
@@ -124,7 +115,7 @@
                     <tr>
                         <td>レストラン</td> 
                         @if($ski_area->restaurant===null)
-                            <td>無し</td>
+                            <td>未記入</td>
                         @else
                             <td>{{ $ski_area->restaurant }}</td>
                         @endif
@@ -132,7 +123,7 @@
                     <tr>
                         <td>温泉</td> 
                         @if($ski_area->spa===null)
-                            <td>無し</td>
+                            <td>未記入</td>
                         @else
                             <td>{{ $ski_area->spa }}</td>
                         @endif
@@ -140,12 +131,15 @@
                     <tr>
                         <td>宿泊施設</td> 
                         @if($ski_area->hotel===null)
-                            <td>無し</td>
+                            <td>未記入</td>
                         @else
                             <td>{{ $ski_area->hotel }}</td>
                         @endif
                     </tr>
-                    
+                    <tr>
+                        <td>自由記入欄</td> 
+                        <td>{{ $ski_area->free_entry }}</td>
+                    </tr>
                 </table>
             </div>
         
@@ -154,8 +148,6 @@
                     <h2 class="h2_twitter">Twitter</h2>
                     <a class="fab fa-twitter fa-2x" href="https://twitter.com/?lang=ja"></a>
                 </div>
-                      
-                @auth  
                     @for ($i = 0; $i < count($tweets); $i++)
                       <p class=tweet>{{ $tweets[$i]['created_at'] }}</p>
                       <p class=tweet>{{'投稿者：'. $tweets[$i]['user']['name'] }}　{{'@'. $tweets[$i]['user']['username'] }}</p>
@@ -163,10 +155,6 @@
                       <a href="{{ 'https://twitter.com/'. $tweets[$i]['user']['username']. '/status/'. $tweets[$i]['id'] }}">twitterで表示</a>
                       <p class=tweet_space></p>
                     @endfor
-                @endauth
-                @guest
-                    <p>※ログインするとtwitter情報を見れます</p>
-                @endguest
             </div>
         </div>
         
