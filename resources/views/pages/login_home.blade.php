@@ -22,7 +22,7 @@
                             <a class="link_color right_space" href="/pages/profile">自己プロフィール登録</a>
                             <p class="line_right"></p>
                         @else
-                            <a class='line_color right_space' href="/profiles/{{ $profile_record->id }}">自己プロフィールを見る</a>
+                            <a class='line_color right_space' href="/profiles/{{ $profile_record->id }}">自己プロフィール</a>
                             <p class="line_right"></p>
                         @endif
                         <a class="link_color right_space" href="/pages/create_slope">スキー場を追加する</a>
@@ -63,30 +63,325 @@
                     @foreach ($ski_areas as $ski_area)
                         @if( $ski_area->prefecture === "北海道")
                             <a class='ski_slope' href="/ski_areas/{{ $ski_area->id }}">{{ $ski_area->place_name }}</a>
+                            <div class=slope_information>
+                                <div class=summary_left>
+                                    <table>
+                                        <tr>
+                                            <td class="color_first_row">シーズン期間</td>
+                                            @if($ski_area->season===null)
+                                                <td class="color_second_row width_second_row_l">-</td>
+                                            @else
+                                                <td class="color_second_row width_second_row_l">{{ $ski_area->season }}</td>
+                                            @endif
+                                        </tr>
+                                        <tr>
+                                            <td class="color_first_row">リフト料金</td>
+                                            @if($ski_area->lift_ticket===null)
+                                                <td class="color_second_row width_second_row_l">-</td>
+                                            @else
+                                                 <td class="color_second_row width_second_row_l">{{ $ski_area->lift_ticket }}</td>
+                                            @endif
+                                        </tr>
+                                        <tr>
+                                            <td class="color_first_row">スノーボードの使用</td>
+                                            @if($ski_area->snowboard==0)
+                                                <td class="color_second_row width_second_row_l">使用不可</td>
+                                            @else
+                                                <td class="color_second_row width_second_row_l">使用可能</td>
+                                            @endif
+                                        </tr>
+                                    </table>
+                                </div>
+                                
+                                <div class=summary_right>
+                                    <table>
+                                        <tr>
+                                            <td class="color_first_row">ナイター</td>
+                                            @if($ski_area->evening_hours===null)
+                                                <td class="color_second_row width_second_row_r">-</td>
+                                            @else
+                                                <td class="color_second_row width_second_row_r">有り</td>
+                                            @endif
+                                        </tr>
+                                        <tr>
+                                            <td class="color_first_row">宿泊施設</td>
+                                            @if($ski_area->hotel===null)
+                                                <td class="color_second_row width_second_row_r">-</td>
+                                            @else
+                                                <td class="color_second_row width_second_row_r">有り</td>
+                                            @endif
+                                        </tr>
+                                        <tr>
+                                            <td class="color_first_row">レッスン</td>
+                                            @if($ski_area->lesson===null)
+                                                <td class="color_second_row width_second_row_r">-</td>
+                                            @else
+                                                <td class="color_second_row width_second_row_r">有り</td>
+                                            @endif
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
                         @endif    
                     @endforeach
                     <h5>群馬県(全22ヶ所)</h5>
                     @foreach ($ski_areas as $ski_area)
                         @if( $ski_area->prefecture === "群馬県")
                             <a class='ski_slope' href="/ski_areas/{{ $ski_area->id }}">{{ $ski_area->place_name }}</a>
+                            <div class=slope_information>
+                                <div class=summary_left>
+                                    <table>
+                                        <tr>
+                                            <td class="color_first_row">シーズン期間</td>
+                                            @if($ski_area->season===null)
+                                                <td class="color_second_row width_second_row_l">-</td>
+                                            @else
+                                                <td class="color_second_row width_second_row_l">{{ $ski_area->season }}</td>
+                                            @endif
+                                        </tr>
+                                        <tr>
+                                            <td class="color_first_row">リフト料金</td>
+                                            @if($ski_area->lift_ticket===null)
+                                                <td class="color_second_row width_second_row_l">-</td>
+                                            @else
+                                                 <td class="color_second_row width_second_row_l">{{ $ski_area->lift_ticket }}</td>
+                                            @endif
+                                        </tr>
+                                        <tr>
+                                            <td class="color_first_row">スノーボードの使用</td>
+                                            @if($ski_area->snowboard==0)
+                                                <td class="color_second_row width_second_row_l">使用不可</td>
+                                            @else
+                                                <td class="color_second_row width_second_row_l">使用可能</td>
+                                            @endif
+                                        </tr>
+                                    </table>
+                                </div>
+                                
+                                <div class=summary_right>
+                                    <table>
+                                        <tr>
+                                            <td class="color_first_row">ナイター</td>
+                                            @if($ski_area->evening_hours===null)
+                                                <td class="color_second_row width_second_row_r">-</td>
+                                            @else
+                                                <td class="color_second_row width_second_row_r">有り</td>
+                                            @endif
+                                        </tr>
+                                        <tr>
+                                            <td class="color_first_row">宿泊施設</td>
+                                            @if($ski_area->hotel===null)
+                                                <td class="color_second_row width_second_row_r">-</td>
+                                            @else
+                                                <td class="color_second_row width_second_row_r">有り</td>
+                                            @endif
+                                        </tr>
+                                        <tr>
+                                            <td class="color_first_row">レッスン</td>
+                                            @if($ski_area->lesson===null)
+                                                <td class="color_second_row width_second_row_r">-</td>
+                                            @else
+                                                <td class="color_second_row width_second_row_r">有り</td>
+                                            @endif
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
                         @endif    
                     @endforeach
                     <h5>新潟県(全48ヶ所)</h5>
                     @foreach ($ski_areas as $ski_area)
                         @if( $ski_area->prefecture === "新潟県")
                             <a class='ski_slope' href="/ski_areas/{{ $ski_area->id }}">{{ $ski_area->place_name }}</a>
+                            <div class=slope_information>
+                                <div class=summary_left>
+                                    <table>
+                                        <tr>
+                                            <td class="color_first_row">シーズン期間</td>
+                                            @if($ski_area->season===null)
+                                                <td class="color_second_row width_second_row_l">-</td>
+                                            @else
+                                                <td class="color_second_row width_second_row_l">{{ $ski_area->season }}</td>
+                                            @endif
+                                        </tr>
+                                        <tr>
+                                            <td class="color_first_row">リフト料金</td>
+                                            @if($ski_area->lift_ticket===null)
+                                                <td class="color_second_row width_second_row_l">-</td>
+                                            @else
+                                                 <td class="color_second_row width_second_row_l">{{ $ski_area->lift_ticket }}</td>
+                                            @endif
+                                        </tr>
+                                        <tr>
+                                            <td class="color_first_row">スノーボードの使用</td>
+                                            @if($ski_area->snowboard==0)
+                                                <td class="color_second_row width_second_row_l">使用不可</td>
+                                            @else
+                                                <td class="color_second_row width_second_row_l">使用可能</td>
+                                            @endif
+                                        </tr>
+                                    </table>
+                                </div>
+                                
+                                <div class=summary_right>
+                                    <table>
+                                        <tr>
+                                            <td class="color_first_row">ナイター</td>
+                                            @if($ski_area->evening_hours===null)
+                                                <td class="color_second_row width_second_row_r">-</td>
+                                            @else
+                                                <td class="color_second_row width_second_row_r">有り</td>
+                                            @endif
+                                        </tr>
+                                        <tr>
+                                            <td class="color_first_row">宿泊施設</td>
+                                            @if($ski_area->hotel===null)
+                                                <td class="color_second_row width_second_row_r">-</td>
+                                            @else
+                                                <td class="color_second_row width_second_row_r">有り</td>
+                                            @endif
+                                        </tr>
+                                        <tr>
+                                            <td class="color_first_row">レッスン</td>
+                                            @if($ski_area->lesson===null)
+                                                <td class="color_second_row width_second_row_r">-</td>
+                                            @else
+                                                <td class="color_second_row width_second_row_r">有り</td>
+                                            @endif
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
                         @endif    
                     @endforeach
                     <h5>長野県(全79ヶ所)</h5>
                     @foreach ($ski_areas as $ski_area)
                         @if( $ski_area->prefecture === "長野県")
                             <a class='ski_slope' href="/ski_areas/{{ $ski_area->id }}">{{ $ski_area->place_name }}</a>
+                            <div class=slope_information>
+                                <div class=summary_left>
+                                    <table>
+                                        <tr>
+                                            <td class="color_first_row">シーズン期間</td>
+                                            @if($ski_area->season===null)
+                                                <td class="color_second_row width_second_row_l">-</td>
+                                            @else
+                                                <td class="color_second_row width_second_row_l">{{ $ski_area->season }}</td>
+                                            @endif
+                                        </tr>
+                                        <tr>
+                                            <td class="color_first_row">リフト料金</td>
+                                            @if($ski_area->lift_ticket===null)
+                                                <td class="color_second_row width_second_row_l">-</td>
+                                            @else
+                                                 <td class="color_second_row width_second_row_l">{{ $ski_area->lift_ticket }}</td>
+                                            @endif
+                                        </tr>
+                                        <tr>
+                                            <td class="color_first_row">スノーボードの使用</td>
+                                            @if($ski_area->snowboard==0)
+                                                <td class="color_second_row width_second_row_l">使用不可</td>
+                                            @else
+                                                <td class="color_second_row width_second_row_l">使用可能</td>
+                                            @endif
+                                        </tr>
+                                    </table>
+                                </div>
+                                
+                                <div class=summary_right>
+                                    <table>
+                                        <tr>
+                                            <td class="color_first_row">ナイター</td>
+                                            @if($ski_area->evening_hours===null)
+                                                <td class="color_second_row width_second_row_r">-</td>
+                                            @else
+                                                <td class="color_second_row width_second_row_r">有り</td>
+                                            @endif
+                                        </tr>
+                                        <tr>
+                                            <td class="color_first_row">宿泊施設</td>
+                                            @if($ski_area->hotel===null)
+                                                <td class="color_second_row width_second_row_r">-</td>
+                                            @else
+                                                <td class="color_second_row width_second_row_r">有り</td>
+                                            @endif
+                                        </tr>
+                                        <tr>
+                                            <td class="color_first_row">レッスン</td>
+                                            @if($ski_area->lesson===null)
+                                                <td class="color_second_row width_second_row_r">-</td>
+                                            @else
+                                                <td class="color_second_row width_second_row_r">有り</td>
+                                            @endif
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
                         @endif    
                     @endforeach
                     <h5>岐阜県(全22ヶ所)</h5>
                     @foreach ($ski_areas as $ski_area)
                         @if( $ski_area->prefecture === "岐阜県")
                             <a class='ski_slope' href="/ski_areas/{{ $ski_area->id }}">{{ $ski_area->place_name }}</a>
+                            <div class=slope_information>
+                                <div class=summary_left>
+                                    <table>
+                                        <tr>
+                                            <td class="color_first_row">シーズン期間</td>
+                                            @if($ski_area->season===null)
+                                                <td class="color_second_row width_second_row_l">-</td>
+                                            @else
+                                                <td class="color_second_row width_second_row_l">{{ $ski_area->season }}</td>
+                                            @endif
+                                        </tr>
+                                        <tr>
+                                            <td class="color_first_row">リフト料金</td>
+                                            @if($ski_area->lift_ticket===null)
+                                                <td class="color_second_row width_second_row_l">-</td>
+                                            @else
+                                                 <td class="color_second_row width_second_row_l">{{ $ski_area->lift_ticket }}</td>
+                                            @endif
+                                        </tr>
+                                        <tr>
+                                            <td class="color_first_row">スノーボードの使用</td>
+                                            @if($ski_area->snowboard==0)
+                                                <td class="color_second_row width_second_row_l">使用不可</td>
+                                            @else
+                                                <td class="color_second_row width_second_row_l">使用可能</td>
+                                            @endif
+                                        </tr>
+                                    </table>
+                                </div>
+                                
+                                <div class=summary_right>
+                                    <table>
+                                        <tr>
+                                            <td class="color_first_row">ナイター</td>
+                                            @if($ski_area->evening_hours===null)
+                                                <td class="color_second_row width_second_row_r">-</td>
+                                            @else
+                                                <td class="color_second_row width_second_row_r">有り</td>
+                                            @endif
+                                        </tr>
+                                        <tr>
+                                            <td class="color_first_row">宿泊施設</td>
+                                            @if($ski_area->hotel===null)
+                                                <td class="color_second_row width_second_row_r">-</td>
+                                            @else
+                                                <td class="color_second_row width_second_row_r">有り</td>
+                                            @endif
+                                        </tr>
+                                        <tr>
+                                            <td class="color_first_row">レッスン</td>
+                                            @if($ski_area->lesson===null)
+                                                <td class="color_second_row width_second_row_r">-</td>
+                                            @else
+                                                <td class="color_second_row width_second_row_r">有り</td>
+                                            @endif
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
                         @endif    
                     @endforeach
                     <h5>その他の県</h5>
@@ -103,11 +398,11 @@
                         @auth
                             <div class=star_ranking>
                                 <div>
-                                    <p class="star_detail">No.1　福井和泉スキー場</p>
+                                    <p class="star_detail">No.1　白馬八方尾根スキー場</p>
                                     <a class="link_color star_block" href="/pages/izumi">詳細を見る</a>
                                 </div>
                                 <div>
-                                    <p class="star_detail">No.2　カムイスキーリンクス</p>
+                                    <p class="star_detail">No.2　高鷲スノーパーク</p>
                                     <a class="link_color star_block" href="/pages/izumi">詳細を見る</a>
                                 </div>
                                 <div>
