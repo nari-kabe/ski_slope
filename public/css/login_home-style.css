@@ -9,17 +9,19 @@ h2{
     padding-right: 10px;
 }
 
+h5{
+    margin-bottom: 15px;
+}
+
 body {
     margin: 0px;
 }
 
 .link_color{
-    /*color: #000;*/
     text-decoration: none;
 }
 
 #header{
-    /*position: sticky;*/
     position: relative;
     top: 0px;
     z-index: 99;
@@ -30,8 +32,8 @@ body {
 }
 
 .various{
-    position: relative;
-    margin: 15px ;
+    margin-top: 15px;
+    margin-bottom: 25px;
 }
 
 .nav{
@@ -72,50 +74,54 @@ body {
     left: 50px;
 }
 
-/*
-**twitterAPI
-**
-*/
-.twitter{
-    position: absolute;
-    top: 0px;
-    width: 50vw;
-    right: 50px;
-}
-
-.bar{
-    position: absolute;
-    margin: 0;
-    left: 45%;
-    height: 210vh;
-    width:.1vw;
-    border-width:0;
-    background-color: #567;
-}
-
 .information_header{
-    margin-bottom: 10px;    
+    margin-bottom: 10px;
+    margin-right: 380px;
 }
 
-/*twitterアイコン*/
-.fa-twitter{
-    margin: auto;
-    padding: auto;
-    color: #1DA1F2;
-    text-decoration: none;
+.slope_information{
+    position: relative;
+    margin-bottom: 40px;
 }
 
-.tweet{
-    margin: 0;
+table, th, td {
+    border-collapse: collapse;
+    padding: 5px 15px;
+    border: solid 5px #F7FAFC;
 }
 
-.tweet_text{
-    margin-top: 5px;
-    margin-bottom: 0;
+td{
+    height: 50px;
 }
 
-.tweet_space{
-    padding-bottom: 20px;
+.color_first_row{
+    /*background-color: #EEEEEE;*/
+    background-color: #DDDDDD;
+}
+
+.color_second_row{
+    /*background-color: #DDDDDD;*/
+    background-color: #EEEEEE;
+}
+
+.width_second_row_l{
+    width: 450px;
+}
+
+.width_second_row_r{
+    width: 180px;
+}
+
+.summary_left{
+    display: inline-block;
+}
+
+.summary_right{
+    position: absolute;
+    top: 0;
+    left: 45vw;
+    
+    
 }
 
 .slope_list{
@@ -138,6 +144,53 @@ body {
 
 .star_detail{
     display: inline-block;
+}
+
+/*
+**twitterAPI
+**
+*/
+.twitter{
+    position: absolute;
+    top: 0px;
+    /*width: 50vw;*/
+    width: 25vw;
+    right: 50px;
+}
+
+.bar{
+    position: absolute;
+    margin: 0;
+    /*left: 45%;*/
+    left: 70%;
+    height: 290vh;
+    width:.1vw;
+    border-width:0;
+    background-color: #567;
+}
+
+/*twitterアイコン*/
+.fa-twitter{
+    margin: auto;
+    padding: auto;
+    color: #1DA1F2;
+    text-decoration: none;
+    position: absolute;
+    top: 3px;
+    left: 110px;
+}
+
+.tweet{
+    margin: 0;
+}
+
+.tweet_text{
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
+.tweet_space{
+    padding-bottom: 20px;
 }
 
 /*

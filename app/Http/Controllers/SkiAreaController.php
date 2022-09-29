@@ -191,7 +191,6 @@ class SkiAreaController extends Controller
         $GOOGLE_MAP_API_KEY = config('const.googlemap.key');
         
         
-
         // if (Auth::check()){
         //     $profile_record = Profile::where('user_id', \Auth::user()->id)->first();
         // }
