@@ -87,7 +87,10 @@ body {
 table, th, td {
     border-collapse: collapse;
     padding: 5px 15px;
-    border: solid 5px #F7FAFC;
+    /*border: solid 5px #F7FAFC;*/
+    border-top: 5px solid #F7FAFC;
+    border-bottom: 2px solid #F7FAFC;
+    
 }
 
 td{
