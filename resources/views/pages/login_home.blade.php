@@ -22,7 +22,7 @@
                             <a class="link_color right_space" href="/pages/profile">自己プロフィール登録</a>
                             <p class="line_right"></p>
                         @else
-                            <a class='line_color right_space' href="/profiles/{{ $profile_record->id }}">自己プロフィール</a>
+                            <a class='line_color right_space' href="/profiles/{{ $profile_record->id }}">自己プロフィール閲覧・編集</a>
                             <p class="line_right"></p>
                         @endif
                         <a class="link_color right_space" href="/pages/create_slope">スキー場を追加する</a>

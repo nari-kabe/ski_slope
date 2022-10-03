@@ -140,6 +140,10 @@
                         <td>自由記入欄</td> 
                         <td>{{ $ski_area->free_entry }}</td>
                     </tr>
+                    <tr>
+                        <td>作成者</td> 
+                        <td>{{ $edited_user }}</td>
+                    </tr>
                 </table>
             </div>
         
