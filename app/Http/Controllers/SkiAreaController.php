@@ -3,14 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use Illuminate\Support\Facades\Auth;
 use GuzzleHttp\Client;
 use App\Rules\ZipCodeRule;
 use App\Rules\PrefectureRule;
 use App\Rules\CityRule;
 use App\Rules\PhoneNumberRule;
-
 use App\Ski_area;
 use App\Profile;
 
@@ -95,8 +93,6 @@ class SkiAreaController extends Controller
         
         return $result;
     }
-    
-   
     
     public function login_home(Ski_area $ski_area)
     {
@@ -190,15 +186,11 @@ class SkiAreaController extends Controller
          */
         $GOOGLE_MAP_API_KEY = config('const.googlemap.key');
         
+        $user_id = $ski_area['user_id'];
+        $edited_user = Profile::where('user_id', '=', $user_id)->first()['user_name'];
         
-        // if (Auth::check()){
-        //     $profile_record = Profile::where('user_id', \Auth::user()->id)->first();
-        // }
-        // else {
-        //     $profile_record = null;
-        // }
         return view('pages/show_slope')->with([
-            'ski_area' => $ski_area, 'place_id' => $place_id, 'tweets'=>$tweets, 'google' => $GOOGLE_MAP_API_KEY, 'profile'=>$profile //, 'profile_record'=>$profile_record,
+            'ski_area' => $ski_area, 'place_id' => $place_id, 'tweets'=>$tweets, 'google' => $GOOGLE_MAP_API_KEY, 'profile'=>$profile, 'edited_user'=>$edited_user
             ]);
     }
     
