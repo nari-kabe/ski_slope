@@ -8,9 +8,9 @@
     font-weight: bold;
 }
 
-/*body{*/
-/*    margin: 0;*/
-/*}*/
+h2{
+    margin-left: 15px;
+}
 
 .inline{
     display: inline-block;
@@ -26,9 +26,9 @@ span{
 
 #list table, #list th, #list td {
     border-collapse: collapse;
-    padding: 5px 15px; /* 上下 左右 */
-    /*border: dashed 1px #a8d4f3;*/
+    padding: 5px 15px;
     border: solid 1px #a8d4f3;
+    margin-left: 30px;
 }
 
 .input_list{
@@ -49,6 +49,7 @@ span{
 .form{
     width: 100px;
     margin-top: 20px;
+    margin-left: 30px;
 }
 
 .radio1, .radio2{
@@ -73,7 +74,6 @@ span{
 .detail{
     width: 500px;
     height: 40px;
-    /*display: none;*/
     margin-top: 10px;
     margin-bottom: 15px;
 }
@@ -81,38 +81,10 @@ span{
 .others{
     width: 500px;
     height: 40px;
-    /*display: none;*/
     margin-top: 10px;
     margin-bottom: 15px;
 }
 
 .error{
     color: red;
-    /*border: none;*/
 }
-
-
-
-
-/*
- *クリックしたら画像とか入力するところがフワッと出るやつ
- *https://saruwakakun.com/html-css/reference/hidden-show
- */
-/*.hidden_box{*/
-/*    display: inline-block;*/
-/*}*/
-
-/*.hidden_box .hidden_show {*/
-    /*height: 0;*/
-    /*padding: 0; いらない*/
-/*    overflow: hidden;*/
-/*    opacity: 0;*/
-/*    transition: 0.8s;*/
-/*}*/
-
-/*クリックで中身表示*/
-/*.hidden_box input:checked ~ .hidden_show {*/
-/*    padding: 10px 0;*/
-/*    height: auto;*/
-/*    opacity: 1;*/
-/*}*/
