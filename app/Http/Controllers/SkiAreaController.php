@@ -171,7 +171,7 @@ class SkiAreaController extends Controller
         
         $user_id = $ski_area['user_id'];
         if (Auth::check() && Profile::where('user_id', \Auth::user()->id)->first() !== null){
-            $edited_user = Profile::where('user_id', '=', $user_id)->first()['user_name'];
+            $edited_user = Profile::where('user_id', '=', $user_id)->first();
         } else {
             $edited_user = null;
         }

@@ -148,8 +148,10 @@
                         <td>作成者</td> 
                         @if($edited_user===null)
                             <td>プロフィール情報は見れません</td>
+                        @elseif($edited_user['public_setting'] == "public")
+                            <td><a href="{{'/profiles/' . $edited_user['id']}}">{{ $edited_user['user_name']}}</a></td>
                         @else
-                            <td>{{ $edited_user }}</td>
+                            <td>{{ $edited_user['user_name']}}</td>
                         @endif
                     </tr>
                 </table>
