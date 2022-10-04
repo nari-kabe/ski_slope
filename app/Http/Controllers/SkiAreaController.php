@@ -28,8 +28,7 @@ class SkiAreaController extends Controller
           'max_results' => $num
         ];
         $url = $base_url . '?' . http_build_query($query);
-        
-        //ヘッダ生成
+    
         ///Bearer Token
         $token = config('const.twitter.bearer_token');
         $header = [
@@ -37,18 +36,14 @@ class SkiAreaController extends Controller
             'Content-Type: application/json',
         ];
         
-        //cURLで問い合わせ
         $curl = curl_init();
-        
         curl_setopt($curl, CURLOPT_URL, $url);
         curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'GET');
         curl_setopt($curl, CURLOPT_HTTPHEADER, $header);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
         
         $response = curl_exec($curl);
-        //dd($response);
         $result = json_decode($response, true);
-        //dd($result);
         curl_close($curl);
         
         return $result;
@@ -69,7 +64,6 @@ class SkiAreaController extends Controller
         ];
         $url = $base_url . '?' . http_build_query($query);
         
-        //ヘッダ生成
         ///Bearer Token
         $token = config('const.twitter.bearer_token');
         $header = [
@@ -77,18 +71,14 @@ class SkiAreaController extends Controller
             'Content-Type: application/json',
         ];
         
-        //cURLで問い合わせ
         $curl = curl_init();
-        
         curl_setopt($curl, CURLOPT_URL, $url);
         curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'GET');
         curl_setopt($curl, CURLOPT_HTTPHEADER, $header);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
         
         $response = curl_exec($curl);
-        //dd($response);
         $result = json_decode($response, true);
-        //dd($result);
         curl_close($curl);
         
         return $result;
@@ -138,7 +128,6 @@ class SkiAreaController extends Controller
         $API_KEY = config('const.openweathermap.key');
         $base_url = config('const.openweathermap.url');
         $city = $ski_area->city;
-        //dd($city);
   
         $url = "$base_url?units=metric&q=$city&APPID=$API_KEY&lang=ja";
 
@@ -156,13 +145,9 @@ class SkiAreaController extends Controller
         }
         
         $weather_data = $response->getBody();
-        //dd($weather_data);
         $weather_data = json_decode($weather_data, true);
-        //dd($weather_data);
         $weather=$weather_data['list'][0];
-        //dd($weather);   
         $place_id=$weather_data['city']['id'];
-        //dd($place_id);
         
         /*
          *TwitterAPI
@@ -172,11 +157,9 @@ class SkiAreaController extends Controller
         $tweets=[];
         for($i=0; $i < 4; $i++){
             $users[$results["includes"]["users"][$i]["id"]] = $results["includes"]["users"][$i];
-            //dd($users);
         }
         for($i=0; $i < 4; $i++){
             $tweets[$i]=$results["data"][$i];
-            //dd($tweets);
             $tweets[$i]["user"]=$users[$results["data"][$i]["author_id"]]; 
         }
         
@@ -187,14 +170,14 @@ class SkiAreaController extends Controller
         $GOOGLE_MAP_API_KEY = config('const.googlemap.key');
         
         $user_id = $ski_area['user_id'];
-        if (Profile::where('user_id', \Auth::user()->id)->first() !== null){
+        if (Auth::check() && Profile::where('user_id', \Auth::user()->id)->first() !== null){
             $edited_user = Profile::where('user_id', '=', $user_id)->first()['user_name'];
         } else {
             $edited_user = null;
         }
         
         return view('pages/show_slope')->with([
-            'ski_area' => $ski_area, 'place_id' => $place_id, 'tweets'=>$tweets, 'google' => $GOOGLE_MAP_API_KEY, 'profile'=>$profile, 'edited_user'=>$edited_user
+            'ski_area'=>$ski_area, 'place_id'=>$place_id, 'tweets'=>$tweets, 'google'=>$GOOGLE_MAP_API_KEY, 'profile'=>$profile, 'edited_user'=>$edited_user
             ]);
     }
     
@@ -216,7 +199,6 @@ class SkiAreaController extends Controller
             'ski_area.restaurant' => ['nullable','string'],
             'ski_area.spa' => ['nullable','string'],
             'ski_area.hotel' => ['nullable','string'],
-            // 'ski_area.slope_map' => 'required','string',  画像入力にしたいから、一旦保留
             
             //追加分
             'ski_area.parking_lot' => ['nullable','string'],

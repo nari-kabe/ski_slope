@@ -147,7 +147,7 @@
                     <tr>
                         <td>作成者</td> 
                         @if($edited_user===null)
-                            <td>プロフィール情報未登録</td>
+                            <td>プロフィール情報は見れません</td>
                         @else
                             <td>{{ $edited_user }}</td>
                         @endif
@@ -185,7 +185,7 @@
     	 function initMap() {
      
             var target = document.getElementById('map'); //マップを表示する要素を指定
-            var address = '{{ $ski_area->place_name }}';
+            var address = '{{ $ski_area->place_name }}';  //入力されたスキー場名でmap表示
             
             var geocoder = new google.maps.Geocoder();  
         

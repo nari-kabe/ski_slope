@@ -25,7 +25,7 @@ class CityRule implements Rule
      */
     public function passes($attribute, $value)
     {
-        return preg_match('/^(.{1,6}市)$/u', $value);
+        return preg_match('/^(.{1,6}(市|区|郡))$/u', $value);
     }
 
     /**

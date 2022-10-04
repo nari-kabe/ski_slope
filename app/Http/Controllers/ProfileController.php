@@ -40,7 +40,6 @@ class ProfileController extends Controller
         ]);
         
         $input = $request['profile'];
-        //dd($input);
         $profile['user_id'] = Auth::id();
         $profile->fill($input)->save();
         return redirect('/profiles/' . $profile->id);

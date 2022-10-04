@@ -9,7 +9,7 @@
     <body>
         <table> 
             <tr>
-                <td><h1>My Profile</h1></td>
+                <td><h1>Profile</h1></td>
                 <td>　</td>
                 <td><a href="/pages/login_home">ホームに戻る</a></td>
             </tr>
@@ -68,12 +68,14 @@
                     <td>スノーボードの経験</td> 
                     <td>{{ $profile->snowboard_level }}</td>
                 </tr>
-                @if ($profile->others_level!==null)
-                    <tr>
-                        <td>その他の経験</td> 
+                <tr>
+                    <td>その他の経験</td>
+                    @if ($profile->others_level===null)
+                        <td>未記入</td>
+                    @else
                         <td>{{ $profile->others_level }}</td>
-                    </tr>
-                @endif
+                    @endif
+                </tr>
                 <tr>
                     <td>ホームゲレンデ</td> 
                     @if($profile->home_slope===null)

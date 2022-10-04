@@ -1,8 +1,3 @@
-/*#list table {*/
-/*  border-collapse: collapse;*/
-  /*border: solid 1px #888;*/
-/*}*/
-
 #list table, #list th, #list td {
     border-collapse: collapse;
     padding: 5px 15px;
@@ -61,7 +56,6 @@
 }
 
 .tweet_space{
-    /*margin-bottom: 20px;*/
     padding-bottom: 20px;
 }
 
