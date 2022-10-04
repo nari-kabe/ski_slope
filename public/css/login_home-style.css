@@ -87,7 +87,6 @@ body {
 table, th, td {
     border-collapse: collapse;
     padding: 5px 15px;
-    /*border: solid 5px #F7FAFC;*/
     border-top: 5px solid #F7FAFC;
     border-bottom: 2px solid #F7FAFC;
     
@@ -98,12 +97,10 @@ td{
 }
 
 .color_first_row{
-    /*background-color: #EEEEEE;*/
     background-color: #DDDDDD;
 }
 
 .color_second_row{
-    /*background-color: #DDDDDD;*/
     background-color: #EEEEEE;
 }
 
@@ -123,8 +120,6 @@ td{
     position: absolute;
     top: 0;
     left: 45vw;
-    
-    
 }
 
 .slope_list{
@@ -156,7 +151,6 @@ td{
 .twitter{
     position: absolute;
     top: 0px;
-    /*width: 50vw;*/
     width: 25vw;
     right: 50px;
 }
@@ -164,7 +158,6 @@ td{
 .bar{
     position: absolute;
     margin: 0;
-    /*left: 45%;*/
     left: 70%;
     height: 290vh;
     width:.1vw;
