@@ -138,7 +138,11 @@
                     </tr>
                     <tr>
                         <td>自由記入欄</td> 
-                        <td>{{ $ski_area->free_entry }}</td>
+                        @if($ski_area->hotel===null)
+                            <td>未記入</td>
+                        @else
+                            <td>{{ $ski_area->free_entry }}</td>
+                        @endif
                     </tr>
                     <tr>
                         <td>作成者</td> 
