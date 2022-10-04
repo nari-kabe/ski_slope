@@ -220,15 +220,7 @@
                         <p class=error>{{ $errors->first('ski_area.free_entry') }}</p>
                     </td>
                 </tr>
-                <!--<tr>まだ何も触ってない-->
-                <!--    <td>ゲレンデマップ</td>  -->
-                <!--    <td>-->
-                <!--        <input type="radio" id="slope_map1" class="radio1" name="radio_button6" onclick="textarea_off(6)"><label for="slope_map1">無</label>-->
-                <!--        <input type="radio" checked id="slope_map2" class="radio2" name="radio_button6" onclick="textarea_on(6)"><label for="slope_map2">有</label></br>-->
-                <!--        <input id=6 class="detail" style="display: block" name="ski_area[slope_map]" placeholder="ゲレンデマップの画像を入力" value="{{ old('ski_area.slope_map') }}">-->
-                <!--        <p class=error>{{ $errors->first('ski_area.slope_map') }}</p>-->
-                <!--    </td>-->
-                <!--</tr>-->
+                <!--ゲレンデマップ省略-->
             </table>
         </div>
         <input class=form type="submit" value="送信"/></br>

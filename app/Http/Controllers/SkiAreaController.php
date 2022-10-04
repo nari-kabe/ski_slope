@@ -187,7 +187,11 @@ class SkiAreaController extends Controller
         $GOOGLE_MAP_API_KEY = config('const.googlemap.key');
         
         $user_id = $ski_area['user_id'];
-        $edited_user = Profile::where('user_id', '=', $user_id)->first()['user_name'];
+        if (Profile::where('user_id', \Auth::user()->id)->first() !== null){
+            $edited_user = Profile::where('user_id', '=', $user_id)->first()['user_name'];
+        } else {
+            $edited_user = null;
+        }
         
         return view('pages/show_slope')->with([
             'ski_area' => $ski_area, 'place_id' => $place_id, 'tweets'=>$tweets, 'google' => $GOOGLE_MAP_API_KEY, 'profile'=>$profile, 'edited_user'=>$edited_user
@@ -222,10 +226,8 @@ class SkiAreaController extends Controller
         ]);
         
         $input = $request['ski_area'];
-        //dd($input);
         $ski_area['user_id'] = Auth::id();
         $ski_area->fill($input)->save();
-        //dd($ski_area);
         return redirect('/ski_areas/' . $ski_area->id);
     }
     
@@ -252,7 +254,6 @@ class SkiAreaController extends Controller
             'ski_area.restaurant' => ['nullable','string'],
             'ski_area.spa' => ['nullable','string'],
             'ski_area.hotel' => ['nullable','string'],
-            // 'ski_area.slope_map' => 'required','string',  画像入力にしたいから、一旦保留
             
             //追加分
             'ski_area.parking_lot' => ['nullable','string'],

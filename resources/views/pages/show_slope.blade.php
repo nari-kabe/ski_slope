@@ -142,7 +142,11 @@
                     </tr>
                     <tr>
                         <td>作成者</td> 
-                        <td>{{ $edited_user }}</td>
+                        @if($edited_user===null)
+                            <td>プロフィール情報未登録</td>
+                        @else
+                            <td>{{ $edited_user }}</td>
+                        @endif
                     </tr>
                 </table>
             </div>
@@ -162,9 +166,6 @@
             </div>
         </div>
         
-        
-        <!--<h2>ゲレンデマップ</h2>-->
-        <!--<hr class=horizontal_line>-->
         <h2 class="h2_weather">天気</h2>
         <div id="openweathermap-widget-1"></div>
         <script src='//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/d3.min.js'></script><script>window.myWidgetParam ? 
@@ -173,7 +174,6 @@
         script.charset = "utf-8";script.src = "//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/weather-widget-generator.js";
         var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(script, s);  })();
         </script>
-        <!--<hr class=horizontal_line>-->
         <h2 class="h2_map">Googleマップ</h2>
         <div id="map">
 	    </div>
