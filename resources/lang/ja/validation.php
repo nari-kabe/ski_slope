@@ -154,7 +154,7 @@ return [
         'ski_area.zip_code' => '郵便番号',
         'ski_area.prefecture' => '都道府県名',
         'ski_area.city' => '市区名',
-        'ski_area.after_address' => '町村名以降',
+        'ski_area.after_address' => '上記以降の住所',
         'ski_area.home_page' => 'ホームページ',
         'ski_area.phone_number' => '電話番号',
         'ski_area.business_hours' => '営業時間',
