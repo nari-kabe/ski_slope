@@ -12,8 +12,14 @@
             <tr>
                 <td><h1>{{ $ski_area->place_name }}</h1></td>
                 <td>　</td>
-                <td><button>お気に入り登録</button></td>
-                 <td>　</td>
+                @auth
+                    <form action="/star_list" method="POST">
+                    @csrf
+                    <input type="hidden" name="star[place_id]" value="{{$ski_area->id}}">
+                        <td><button type="submit">お気に入り登録</button></td>
+                    </form>
+                @endauth
+                <td>　</td>
                 <td><a href="/pages/login_home">ホームに戻る</a></td>
             </tr>
         </table>
@@ -149,7 +155,7 @@
                         @if($edited_user===null)
                             <td>匿名</td>
                         @elseif($edited_user['public_setting'] == "public")
-                            <td><a href="{{'/profiles/' . $edited_user['id']}}">{{ $edited_user['user_name']}}</a></td>
+                            <td><a href='/profiles/{{ $edited_user['id'] }}'>{{ $edited_user['user_name']}}</a></td>
                         @else
                             <td>{{ $edited_user['user_name']}}</td>
                         @endif
@@ -175,7 +181,7 @@
         <h2 class="h2_weather">天気</h2>
         <div id="openweathermap-widget-1"></div>
         <script src='//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/d3.min.js'></script><script>window.myWidgetParam ? 
-        window.myWidgetParam : window.myWidgetParam = [];  window.myWidgetParam.push({id: 1,cityid: {{ $place_id }},appid: '7a8d0fd25d5a115e3573385ecafc1197',
+        window.myWidgetParam : window.myWidgetParam = [];  window.myWidgetParam.push({id: 1,cityid: {{ $place_id }},appid: '{{ $openweather_key }}',
         units: 'metric',containerid: 'openweathermap-widget-1',  });  (function() {var script = document.createElement('script');script.async = true;
         script.charset = "utf-8";script.src = "//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/weather-widget-generator.js";
         var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(script, s);  })();

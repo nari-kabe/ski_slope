@@ -146,15 +146,15 @@ class SkiAreaController extends Controller
         
         $weather_data = $response->getBody();
         $weather_data = json_decode($weather_data, true);
-        $weather=$weather_data['list'][0];
-        $place_id=$weather_data['city']['id'];
+        $weather = $weather_data['list'][0];
+        $place_id = $weather_data['city']['id'];
         
         /*
          *TwitterAPI
          */
-        $results=$this->getAreaTweets(10);
-        $users=[];
-        $tweets=[];
+        $results = $this->getAreaTweets(10);
+        $users = [];
+        $tweets = [];
         for($i=0; $i < 4; $i++){
             $users[$results["includes"]["users"][$i]["id"]] = $results["includes"]["users"][$i];
         }
@@ -178,7 +178,7 @@ class SkiAreaController extends Controller
         }
         
         return view('pages/show_slope')->with([
-            'ski_area'=>$ski_area, 'place_id'=>$place_id, 'tweets'=>$tweets, 'google'=>$GOOGLE_MAP_API_KEY, 'profile'=>$profile, 'edited_user'=>$edited_user
+            'ski_area'=>$ski_area, 'place_id'=>$place_id, 'tweets'=>$tweets, 'openweather_key'=>$API_KEY, 'google'=>$GOOGLE_MAP_API_KEY, 'profile'=>$profile, 'edited_user'=>$edited_user
             ]);
     }
     
