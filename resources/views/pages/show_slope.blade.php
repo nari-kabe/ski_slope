@@ -22,7 +22,7 @@
         <div class=container>
             <table> 
                 <tr>
-                    <td><h2>情報一覧</h2></td>
+                    <td><h2 class="information_header">情報一覧</h2></td>
                     <td>　</td>
                     <td><a href='/ski_areas/{{ $ski_area->id }}/edit'>編集</a></td>
                     <td>　</td>
@@ -147,7 +147,7 @@
                     <tr>
                         <td>作成者</td> 
                         @if($edited_user===null)
-                            <td>プロフィール情報は見れません</td>
+                            <td>匿名</td>
                         @elseif($edited_user['public_setting'] == "public")
                             <td><a href="{{'/profiles/' . $edited_user['id']}}">{{ $edited_user['user_name']}}</a></td>
                         @else
@@ -198,9 +198,10 @@
         
                     var map = new google.maps.Map(target, {  
                     center: results[0].geometry.location,
-                    zoom: 18
+                    zoom: 18 //縮尺
                     });
         
+                    //ピン
                     var marker = new google.maps.Marker({
                     position: results[0].geometry.location,
                     map: map,

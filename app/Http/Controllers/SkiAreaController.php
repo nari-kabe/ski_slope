@@ -169,6 +169,7 @@ class SkiAreaController extends Controller
          */
         $GOOGLE_MAP_API_KEY = config('const.googlemap.key');
         
+        //作成者のprofile表示関係
         $user_id = $ski_area['user_id'];
         if (Auth::check() && Profile::where('user_id', \Auth::user()->id)->first() !== null){
             $edited_user = Profile::where('user_id', '=', $user_id)->first();
