@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-//use App\Http\Requests\ProfileRequest;
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Auth;
 
@@ -20,7 +19,13 @@ class ProfileController extends Controller
     
     public function show(Profile $profile)
     {
-        return view('pages/show_profile')->with(['profile' => $profile]);
+        if (Auth::user()->id == $profile->user_id){
+            return view('pages/show_profile')->with(['profile' => $profile]);
+        } else if ($profile->public_setting == 'public') {
+            return view('pages/show_public_profile')->with(['profile' => $profile]);
+        } else {
+            return back();
+        }
     }
     
     public function store(Request $request, Profile $profile)

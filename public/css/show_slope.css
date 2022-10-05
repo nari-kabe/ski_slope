@@ -1,7 +1,12 @@
+.information_header{
+    margin-left: 15px;
+}
+
 #list table, #list th, #list td {
     border-collapse: collapse;
     padding: 5px 15px;
     border: solid 1px #a8d4f3;
+    margin-left: 15px;
 }
 
 .input_list{
@@ -23,9 +28,7 @@
 
 .twitter{
     position: absolute;
-    /*left: 61%;*/
     top: 0px;
-    /*width: 35vw;*/ /*twitterの位置*/
     width: 40vw;
     right: 50px;
 }
@@ -38,8 +41,6 @@
 
 /*twitterアイコン*/
 .fa-twitter{
-    /*height: 55px;*/
-    /*vertical-align: bottom;*/
     margin: auto;
     padding: auto;
     color: #1DA1F2;
