@@ -18,9 +18,9 @@ class ProfileController extends Controller
     
     public function show(Profile $profile)
     {
-        if (Auth::user()->id == $profile->user_id){
+        if (Auth::check() && Auth::user()->id == $profile->user_id){
             return view('pages/show_profile')->with(['profile' => $profile]);
-        } else if ($profile->public_setting == 'public') {
+        } else if (Auth::check() && $profile->public_setting == 'public') {
             return view('pages/show_public_profile')->with(['profile' => $profile]);
         } else {
             return back();

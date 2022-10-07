@@ -86,11 +86,11 @@ class SkiAreaController extends Controller
     
     public function login_home(Ski_area $ski_area)
     {
-        // dd($this->getTweets(15));
         $results=$this->getTweets(10);
         $users=[];
         $tweets=[];
-        //連想配列を作る
+        
+        //同じ人の投稿が省略されないようにする処理
         for($i=0; $i < count($results["includes"]["users"]); $i++){
             //・左辺：空の配列$users=[]に["includes"]["users"][$i]["id"]をkeyとして入れる
             //・右辺：keyに対する値として、$results["includes"]["users"][$i]を指定する

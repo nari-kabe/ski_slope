@@ -4,8 +4,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'PostController@home');
 Route::get('/pages/login', 'PostController@login');
-
-Route::get('/pages/star', 'PostController@star'); //お気に入りできたら消す
 Route::get('/pages/create_slope', 'PostController@create_slope');
 
 Route::get('/pages/login_home', 'SkiAreaController@login_home'); //Home
@@ -20,8 +18,9 @@ Route::post('/profile_list', 'ProfileController@store'); //データべースに
 Route::get('/profiles/{profile}/edit', 'ProfileController@edit'); //自己プロフィール作成内容編集
 Route::put('/profiles/{profile}', 'ProfileController@update'); //自己プロフィール情報編集内容反映
 
+Route::get('/pages/show_all_stars', 'StarController@star'); //お気に入り登録一覧
 Route::get('/stars/{star}', 'StarController@show'); 
-Route::post('/star_list', 'StarController@store');
+Route::post('/star_list', 'StarController@store'); //データべースに反映
 
 //OpenWeatherAPI
 Route::get('/a', 'WeatherAPIController@weatherData');
