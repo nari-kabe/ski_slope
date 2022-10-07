@@ -10,7 +10,7 @@
         <a href="/pages/login_home">ホームに戻る</a>
         @if ($place_id !== null)
             @for ($i = 0; $i < count($place_id); $i++)
-                    <a class="ski_slope" href='/ski_areas/{{ $place_id[$i] }}'>{{ $place_name[$i] }}</a>
+                    <a class="ski_slope" href='/ski_areas/{{ $place_id[$i] }}'>No.{{ $i+1 }} {{ $place_name[$i] }}</a>
             @endfor
         @else
             <p>お気に入り登録に追加したものはありません</p>

@@ -13,11 +13,15 @@
                 <td><h1>{{ $ski_area->place_name }}</h1></td>
                 <td>　</td>
                 @auth
-                    <form action="/star_list" method="POST">
-                    @csrf
-                    <input type="hidden" name="star[place_id]" value="{{$ski_area->id}}">
-                        <td><button type="submit">お気に入り登録</button></td>
-                    </form>
+                    @if ($star_slope === null)
+                        <form action="/star_list" method="POST">
+                        @csrf
+                        <input type="hidden" name="star[place_id]" value="{{$ski_area->id}}">
+                            <td><button type="submit">お気に入り登録</button></td>
+                        </form>
+                    @else
+                        <td><p>お気に入り登録済み</p></td>
+                    @endif
                 @endauth
                 <td>　</td>
                 <td><a href="/pages/login_home">ホームに戻る</a></td>

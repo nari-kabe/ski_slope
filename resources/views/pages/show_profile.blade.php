@@ -7,24 +7,12 @@
         
     </head>
     <body>
-        <table> 
-            <tr>
-                <td><h1>Profile</h1></td>
-                <td>　</td>
-                <td><a href="/pages/login_home">ホームに戻る</a></td>
-            </tr>
-        </table>
+        <h1 class="header">Profile</h1>
+        <a href="/pages/login_home">ホームに戻る</a>
         <hr>
-        
-        <table> 
-            <tr>
-                <td><h2>情報一覧</h2></td>
-                <td>　</td>
-                <td><a href='/profiles/{{ $profile->id }}/edit'>編集</a></td>
-                <td>　</td>
-                <td>{{ '最終更新日時：'. $profile->updated_at }}</td>
-            </tr>
-        </table>
+        <h2 class="sub_header">情報一覧</h2>
+        <a class="left_right_space" href='/profiles/{{ $profile->id }}/edit'>編集</a>
+        <p class="inline_block">{{ '最終更新日時：'. $profile->updated_at }}</p>
         
         <div id="list">
             <table>

@@ -2,11 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', 'PostController@home');
-Route::get('/pages/login', 'PostController@login');
-Route::get('/pages/create_slope', 'PostController@create_slope');
-
-Route::get('/pages/login_home', 'SkiAreaController@login_home'); //Home
+Route::get('/', 'SkiAreaController@welcome');
+Route::get('/pages/create_slope', 'SkiAreaController@create_slope'); //スキー場作成
+Route::get('/pages/login_home', 'SkiAreaController@login_home'); //ホーム
 Route::get('/ski_areas/{ski_area}', 'SkiAreaController@show'); //注意! Route::get('/pages/create_slope', 'PostController@create_slope');よりも下に書く
 Route::post('/infomation_list', 'SkiAreaController@store'); //スキー場作成画面の内容をデータべースに反映すために使用
 Route::get('/ski_areas/{ski_area}/edit', 'SkiAreaController@edit'); //スキー場作成内容編集
