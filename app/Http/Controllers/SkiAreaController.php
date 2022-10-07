@@ -11,9 +11,20 @@ use App\Rules\CityRule;
 use App\Rules\PhoneNumberRule;
 use App\Ski_area;
 use App\Profile;
+use App\Star;
 
 class SkiAreaController extends Controller
 {
+    public function welcome(Ski_area $ski_area)
+    {
+        return view('pages/welcome');
+    }
+    
+    public function create_slope(Ski_area $ski_area)
+    {
+        return view('pages/create_slope');
+    }
+    
     public function getTweets($num)
     {
         //エンドポイントを指定
@@ -120,7 +131,7 @@ class SkiAreaController extends Controller
             );
     }
     
-    public function show(Ski_area $ski_area, Profile $profile)
+    public function show(Ski_area $ski_area, Profile $profile, Star $star)
     {
         /*
          *OpenweatherAPI
@@ -163,7 +174,6 @@ class SkiAreaController extends Controller
             $tweets[$i]["user"]=$users[$results["data"][$i]["author_id"]]; 
         }
         
-        
         /*
          *GoogleMapAPI
          */
@@ -177,9 +187,19 @@ class SkiAreaController extends Controller
             $edited_user = null;
         }
         
+        //お気に入り登録済みかどうか
+        $star_slope = Star::where('place_id', '=', $ski_area['id'])->first();
+        
         return view('pages/show_slope')->with([
-            'ski_area'=>$ski_area, 'place_id'=>$place_id, 'tweets'=>$tweets, 'openweather_key'=>$API_KEY, 'google'=>$GOOGLE_MAP_API_KEY, 'profile'=>$profile, 'edited_user'=>$edited_user
-            ]);
+            'ski_area' => $ski_area, 
+            'place_id' => $place_id, 
+            'tweets' => $tweets, 
+            'openweather_key' => $API_KEY, 
+            'google' => $GOOGLE_MAP_API_KEY, 
+            'profile' => $profile, 
+            'edited_user' => $edited_user,
+            'star_slope' => $star_slope
+        ]);
     }
     
     public function store(Request $request, Ski_area $ski_area)

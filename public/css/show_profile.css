@@ -1,13 +1,27 @@
-/*#list table {*/
-/*  border-collapse: collapse;*/
-  /*border: solid 1px #888;*/
-/*}*/
+.header{
+  display: inline-block;
+  margin-left: 15px;
+  margin-right: 18px;
+}
+
+.sub_header{
+  margin-left: 18px;
+  display: inline-block;
+}
+
+.inline_block{
+  display: inline-block;
+}
+
+.left_right_space{
+  margin: 0 18px;
+}
 
 #list table, #list th, #list td {
   border-collapse: collapse;
-  padding: 5px 15px; /* 上下 左右 */
-  /*border: dashed 1px #a8d4f3;*/
+  padding: 5px 15px;
   border: solid 1px #a8d4f3;
+  margin-left: 30px;
 }
 
 .input_list{
