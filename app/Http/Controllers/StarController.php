@@ -12,13 +12,19 @@ class StarController extends Controller
 {
     public function star(Star $star)
     {
-        if (Auth::check() && Star::where('user_id', \Auth::user()->id)->first() !== null){
-            $count = Star::where('user_id', Auth::user()->id)->count();
+        $count = Star::count();
         
+        if (Auth::check() && Star::where('user_id', \Auth::user()->id)->first() !== null){
             for($i = 1; $i <= $count; $i++){
-                $stars[] = Star::find($i);
-                $place_id[] = $stars[$i - 1]['place_id'];
-                $place_name[] = Ski_area::where('id', '=', $place_id[$i - 1])->first()['place_name'];
+                if (Star::find($i) === null){
+                    $count += 1;
+                } else if (Star::find($i) !== null && Star::find($i)['user_id'] === Auth::user()->id) {
+                    $stars[] = Star::find($i);
+                }
+            }
+            for($i = 0; $i < count($stars); $i++){
+                    $place_id[] = $stars[$i]['place_id'];
+                    $place_name[] = Ski_area::where('id', '=', $place_id[$i])->first()['place_name'];
             }
             
         } else {
@@ -51,6 +57,8 @@ class StarController extends Controller
         $input = $request['star'];
         $star['user_id'] = Auth::id();
         $star->fill($input)->save();
-        return redirect('/stars/' . $star->id);
+        // return redirect('/stars/' . $star->id);
+        // //return redirect('/pages/show_all_stars');
+        return back();
     }
 }

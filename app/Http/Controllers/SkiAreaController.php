@@ -133,7 +133,7 @@ class SkiAreaController extends Controller
     
     public function show(Ski_area $ski_area, Profile $profile, Star $star)
     {
-        /*
+        /**
          *OpenweatherAPI
          */
         $API_KEY = config('const.openweathermap.key');
@@ -160,7 +160,7 @@ class SkiAreaController extends Controller
         $weather = $weather_data['list'][0];
         $place_id = $weather_data['city']['id'];
         
-        /*
+        /**
          *TwitterAPI
          */
         $results = $this->getAreaTweets(10);
@@ -174,12 +174,14 @@ class SkiAreaController extends Controller
             $tweets[$i]["user"]=$users[$results["data"][$i]["author_id"]]; 
         }
         
-        /*
+        /**
          *GoogleMapAPI
          */
         $GOOGLE_MAP_API_KEY = config('const.googlemap.key');
         
-        //作成者のprofile表示関係
+        /**
+         *作成者のprofile表示関係
+         */
         $user_id = $ski_area['user_id'];
         if (Auth::check() && Profile::where('user_id', \Auth::user()->id)->first() !== null){
             $edited_user = Profile::where('user_id', '=', $user_id)->first();
@@ -187,8 +189,16 @@ class SkiAreaController extends Controller
             $edited_user = null;
         }
         
-        //お気に入り登録済みかどうか
-        $star_slope = Star::where('place_id', '=', $ski_area['id'])->first();
+        /**
+         *お気に入り登録
+         */
+        $star_slope = null;
+        $num = Star::where('place_id', '=', $ski_area['id'])->get()->count();
+        for ($i = 0; $i < $num; $i++){
+            if (Auth::user()->id === Star::where('place_id', '=', $ski_area['id'])->get()[$i]['user_id']){
+                $star_slope = Star::where('place_id', '=', $ski_area['id'])->get()[$i]; //値はなんでも可（bladeでnullかどうか判別している）
+            }
+        }
         
         return view('pages/show_slope')->with([
             'ski_area' => $ski_area, 
