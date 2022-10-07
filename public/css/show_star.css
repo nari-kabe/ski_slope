@@ -1,0 +1,12 @@
+.header{
+    display: inline-block;
+    margin-right: 25px;
+}
+
+.ski_slope{
+    display: block;
+}
+
+.header_space{
+    margin: 0 15px;
+}

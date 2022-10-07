@@ -3,23 +3,12 @@
     <head>
         <meta charset="utf-8">
         <title>お気に入り一覧</title>
-        <!--<link rel="stylesheet" href="/ski/public/CSS/style.css">-->
-        
-        
+        <link rel="stylesheet" href="/css/show_star.css">
     </head>
     <body>
-        <h1>お気に入り一覧</h1>
-        <a href="/pages/login_home">ホームに戻る</a>
-        <p>カムイスキーリンクス</p>
-        <p>ルスツリゾート</p>
-        <p>高鷲スノーパーク</p>
-        <p>ウイングヒルズ白鳥リゾートスキー場</p>
-        <p>白馬八方尾根スキー場</p>
-        
-        <p>{{ $star->place_id }}</p>
-        <a href='/ski_areas/{{ $star->place_id }}'>お気に入り</a>
-        @if ($star_rank !==null)
-            <a href='/ski_areas/{{ $star_rank->id }}'>{{ $star_rank->place_name }}</a>
-        @endif
+        <h1 class="header">追加したお気に入りスキー場</h1>
+        <a class="header_space" href="/pages/login_home">ホームに戻る</a>
+        <a class="header_space" href="/pages/show_all_stars">お気に入り一覧を見る</a>
+        <a class="ski_slope" href='/ski_areas/{{ $star->place_id }}'>{{ $star_rank->place_name }}</a>
     </body>
 </html>

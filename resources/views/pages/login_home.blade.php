@@ -27,7 +27,7 @@
                         @endif
                         <a class="link_color right_space" href="/pages/create_slope">スキー場を追加する</a>
                         <p class="line_right"></p>
-                        <a class="link_color right_space"href="/pages/show_star">お気に入り登録一覧</a>
+                        <a class="link_color right_space"href="/pages/show_all_stars">お気に入り登録一覧</a>
                     @endauth
                 </div>
             </div>
