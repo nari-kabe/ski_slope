@@ -13,6 +13,8 @@ class StarController extends Controller
     public function star(Star $star)
     {
         $count = Star::count();
+        $place_id = null;
+        $place_name = null;
         
         if (Auth::check() && Star::where('user_id', \Auth::user()->id)->first() !== null){
             for($i = 1; $i <= $count; $i++){
@@ -27,12 +29,11 @@ class StarController extends Controller
                     $place_name[] = Ski_area::where('id', '=', $place_id[$i])->first()['place_name'];
             }
             
+            return view('pages/show_all_stars')->with(['star'=>$star, 'place_id'=>$place_id, 'place_name'=>$place_name]);
+            
         } else {
-            $place_id = null;
-            $place_name = null;
+            return back();
         }
-        
-        return view('pages/show_all_stars')->with(['star'=>$star, 'place_id'=>$place_id, 'place_name'=>$place_name]);
     }
     
     public function show(Star $star)
@@ -57,8 +58,6 @@ class StarController extends Controller
         $input = $request['star'];
         $star['user_id'] = Auth::id();
         $star->fill($input)->save();
-        // return redirect('/stars/' . $star->id);
-        // //return redirect('/pages/show_all_stars');
         return back();
     }
 }
