@@ -23,6 +23,9 @@
                         <td><p>お気に入り登録済み</p></td>
                     @endif
                 @endauth
+                @guest
+                    <td><p>ログインするとお気に入り登録ができます</p></td>
+                @endguest
                 <td>　</td>
                 <td><a href="/pages/login_home">ホームに戻る</a></td>
             </tr>

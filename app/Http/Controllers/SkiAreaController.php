@@ -95,7 +95,7 @@ class SkiAreaController extends Controller
         return $result;
     }
     
-    public function login_home(Ski_area $ski_area)
+    public function login_home(Ski_area $ski_area, Star $star)
     {
         $results=$this->getTweets(10);
         $users=[];
@@ -105,30 +105,55 @@ class SkiAreaController extends Controller
         for($i=0; $i < count($results["includes"]["users"]); $i++){
             //・左辺：空の配列$users=[]に["includes"]["users"][$i]["id"]をkeyとして入れる
             //・右辺：keyに対する値として、$results["includes"]["users"][$i]を指定する
-            $users[$results["includes"]["users"][$i]["id"]] = $results["includes"]["users"][$i]; //i番目のID（authorID）=ユーザーのi番目
-            //dd($users);
+            
+            $users[$results["includes"]["users"][$i]["id"]] = $results["includes"]["users"][$i]; 
+            //i番目のID（authorID）=ユーザーのi番目
         }
         for($i=0; $i < count($results["data"]); $i++){
             //・空の配列の$tweets=[]に$results["data"][$i]の中身を0番目から入れていく
-            $tweets[$i]=$results["data"][$i]; //普通の配列で、i番目をresultsデータのi番目とする
-            //dd($tweets);
+            
+            $tweets[$i]=$results["data"][$i]; 
+            //普通の配列で、i番目をresultsデータのi番目とする
+            
             $tweets[$i]["user"]=$users[$results["data"][$i]["author_id"]]; 
             //・上のfor文の$results["includes"]["users"][$i]["id"]] と 下のfor文の$results["data"][$i]["author_id"] は同じだから、
             //  $results["data"][$i]["author_id"]を連想配列のkeyとして、連想配列$usersの値を呼び出す
             //・つまり、64行目では、$results["data"][$i]が誰のものかを上のfor文で作った連想配列$usersから炙り出し、結びつけている
             //  (resultsデータのi番目をauthorID（各個人のid。tweetのidではない）と結びつける)
-            //dd($tweets);
         }
         
+        //プロフィール登録状況確認
         if (Auth::check()){
             $profile_record = Profile::where('user_id', \Auth::user()->id)->first();
         }
         else {
             $profile_record = null;
         }
-        return view('pages/login_home')->with(
-            ['tweets'=>$tweets ,'ski_areas'=>$ski_area->get(), 'profile_record'=>$profile_record]
-            );
+        
+        //お気に入りランキング
+        $num = 1;
+        $star_place_id_sort = $star->orderBy('place_id', 'asc')->take(10)->get();
+        for($i = 0; $i < count($star_place_id_sort); $i++){
+            $place_id = $star_place_id_sort[$i]['place_id'];
+            $sum[$place_id] = Star::where('place_id', '=', $place_id)->count();
+        }
+        arsort($sum);
+        $place_id_rank = array_keys($sum);
+        $place_id_num = array_values($sum);
+        
+        for($i = 0; $i < count($place_id_rank); $i++){
+            $place_name[] = Ski_area::find($place_id_rank[$i])['place_name'];
+        }
+        
+        return view('pages/login_home')->with([
+            'tweets'=>$tweets,
+            'ski_areas'=>$ski_area->get(), 
+            'profile_record'=>$profile_record, 
+            'place_id_rank'=>$place_id_rank,
+            'place_id_num'=>$place_id_num,
+            'place_name'=>$place_name,
+            'num'=>$num
+        ]);
     }
     
     public function show(Ski_area $ski_area, Profile $profile, Star $star)
@@ -195,7 +220,7 @@ class SkiAreaController extends Controller
         $star_slope = null;
         $num = Star::where('place_id', '=', $ski_area['id'])->get()->count();
         for ($i = 0; $i < $num; $i++){
-            if (Auth::user()->id === Star::where('place_id', '=', $ski_area['id'])->get()[$i]['user_id']){
+            if (Auth::check() && Auth::user()->id === Star::where('place_id', '=', $ski_area['id'])->get()[$i]['user_id']){
                 $star_slope = Star::where('place_id', '=', $ski_area['id'])->get()[$i]; //値はなんでも可（bladeでnullかどうか判別している）
             }
         }

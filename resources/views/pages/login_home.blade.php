@@ -386,35 +386,45 @@
                     @endforeach
                     <h5>その他の県</h5>
                     @foreach ($ski_areas as $ski_area)
-                        @if($ski_area->prefecture !== "北海道" && $ski_area->prefecture !== "福井県")
+                        @if($ski_area->prefecture !== "北海道" && $ski_area->prefecture !== "群馬県" && $ski_area->prefecture !== "新潟県" 
+                            && $ski_area->prefecture !== "長野県" && $ski_area->prefecture !== "岐阜県")
                             <a class='ski_slope' href="/ski_areas/{{ $ski_area->id }}">{{ $ski_area->place_name }}</a>
                         @endif
                     @endforeach
                 </div>
             
-                    <!--お気に入り　ログインユーザー限定-->
-                    <div>
-                        <h2>お気に入りランキング（実装中）</h2>
-                        @auth
-                            <div class=star_ranking>
-                                <div>
-                                    <p class="star_detail">No.1　白馬八方尾根スキー場</p>
-                                    <a class="link_color star_block" href="/pages/izumi">詳細を見る</a>
-                                </div>
-                                <div>
-                                    <p class="star_detail">No.2　高鷲スノーパーク</p>
-                                    <a class="link_color star_block" href="/pages/izumi">詳細を見る</a>
-                                </div>
-                                <div>
-                                    <p class="star_detail">No.3　カムイスキーリンクス</p>
-                                    <a class="link_color star_block" href="/pages/izumi">詳細を見る</a>
-                                </div>
+                <div>
+                    <h2>お気に入りランキング</h2>
+                    @auth
+                        <div class=star_ranking>
+                            <div>
+                                <p class="star_detail">No.1　白馬八方尾根スキー場</p>
+                                <a class="link_color star_block" href="/pages/izumi">詳細を見る</a>
                             </div>
-                        @endauth
-                        @guest
-                            <p>※ログインするとお気に入り一覧を見れます</p>
-                        @endguest
-                    </div>
+                            <div>
+                                <p class="star_detail">No.2　高鷲スノーパーク</p>
+                                <a class="link_color star_block" href="/pages/izumi">詳細を見る</a>
+                            </div>
+                            <div>
+                                <p class="star_detail">No.3　カムイスキーリンクス</p>
+                                <a class="link_color star_block" href="/pages/izumi">詳細を見る</a>
+                            </div>
+                            <div>
+                                @for ($i = 0; $i < count($place_id_rank); $i++)
+                                    <a class='ski_slope' href="/ski_areas/{{ $place_id_rank[$i] }}">No.{{ $num }} {{ $place_name[$i] }}</a>
+                                    @if ($i < (count($place_id_rank) -2) && $place_id_num[$i] !== $place_id_num[$i + 1])
+                                        @php
+                                            $num += 1;
+                                        @endphp
+                                    @endif
+                                @endfor
+                            </div>
+                        </div>
+                    @endauth
+                    @guest
+                        <p>※ログインするとお気に入り一覧を見れます</p>
+                    @endguest
+                </div>
             </div>
             
                 <div class=twitter>
