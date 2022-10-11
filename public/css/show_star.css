@@ -1,4 +1,14 @@
-.header{
+a {
+  color: #3490dc;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+a:hover{
+  color:red;
+}
+
+.star_header{
     display: inline-block;
     margin-right: 25px;
 }
@@ -10,4 +20,8 @@
 
 .header_space{
     margin: 0 15px;
+}
+
+.star_rank{
+    margin-left: 25px;
 }

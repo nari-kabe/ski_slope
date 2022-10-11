@@ -136,12 +136,17 @@ td{
     display: block;
 }
 
+/*
+ **お気に入りランキング
+ */
 .star_ranking{
     margin-top: 10px;
 }
 
-.star_detail{
-    display: inline-block;
+.rank{
+  display: inline-block;
+  margin: 0;
+  font-size: 17px;
 }
 
 /*

@@ -25,6 +25,8 @@
                             <a class='line_color right_space' href="/profiles/{{ $profile_record->id }}">自己プロフィール閲覧・編集</a>
                             <p class="line_right"></p>
                         @endif
+                        <a class="link_color right_space" href="/pages/my_information">My information</a>
+                        <p class="line_right"></p>
                         <a class="link_color right_space" href="/pages/create_slope">スキー場を追加する</a>
                         <p class="line_right"></p>
                         <a class="link_color right_space"href="/pages/show_all_stars">お気に入り登録一覧</a>
@@ -397,28 +399,23 @@
                     <h2>お気に入りランキング</h2>
                     @auth
                         <div class=star_ranking>
-                            <div>
-                                <p class="star_detail">No.1　白馬八方尾根スキー場</p>
-                                <a class="link_color star_block" href="/pages/izumi">詳細を見る</a>
-                            </div>
-                            <div>
-                                <p class="star_detail">No.2　高鷲スノーパーク</p>
-                                <a class="link_color star_block" href="/pages/izumi">詳細を見る</a>
-                            </div>
-                            <div>
-                                <p class="star_detail">No.3　カムイスキーリンクス</p>
-                                <a class="link_color star_block" href="/pages/izumi">詳細を見る</a>
-                            </div>
-                            <div>
-                                @for ($i = 0; $i < count($place_id_rank); $i++)
-                                    <a class='ski_slope' href="/ski_areas/{{ $place_id_rank[$i] }}">No.{{ $num }} {{ $place_name[$i] }}</a>
-                                    @if ($i < (count($place_id_rank) -2) && $place_id_num[$i] !== $place_id_num[$i + 1])
-                                        @php
-                                            $num += 1;
-                                        @endphp
-                                    @endif
-                                @endfor
-                            </div>
+                            <table>
+                            @for ($i = 0; $i < count($place_id_rank); $i++)
+                                <tr>
+                                    <td>
+                                        <p class="rank">No.{{ $i+1 }} {{ $place_name[$i] }}</p>
+                                    </td>
+                                    <td>
+                                        <a class='ski_slope' href="/ski_areas/{{ $place_id_rank[$i] }}">詳細を見る</a>
+                                    </td>
+                                </tr>
+                                @if ($i < (count($place_id_rank) -2) && $place_id_num[$i] !== $place_id_num[$i + 1])
+                                    @php
+                                        $num += 1;
+                                    @endphp
+                                @endif
+                            @endfor
+                            </table>
                         </div>
                     @endauth
                     @guest

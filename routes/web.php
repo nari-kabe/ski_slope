@@ -20,6 +20,8 @@ Route::get('/pages/show_all_stars', 'StarController@star'); //お気に入り登
 Route::get('/stars/{star}', 'StarController@show'); 
 Route::post('/star_list', 'StarController@store'); //データべースに反映
 
+Route::get('/pages/my_information', 'MyInformationController@show'); //自分の情報を見る
+
 //OpenWeatherAPI
 Route::get('/a', 'WeatherAPIController@weatherData');
 

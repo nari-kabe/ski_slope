@@ -4,7 +4,6 @@
         <meta charset="utf-8">
         <title>My Profile</title>
         <link rel="stylesheet" href="/css/show_profile.css">
-        
     </head>
     <body>
         <h1 class="header">Profile</h1>
@@ -85,6 +84,5 @@
                     @endif
                 </tr>
             </table>
-        </div>
     </body>
 </html>

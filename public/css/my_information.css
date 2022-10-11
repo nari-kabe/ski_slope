@@ -1,0 +1,81 @@
+a {
+  color: #3490dc;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+a:hover{
+  color:red;
+}
+
+.header{
+  display: inline-block;
+  margin-left: 15px;
+  margin-right: 18px;
+}
+
+.sub_header{
+  margin-left: 18px;
+  display: inline-block;
+}
+
+.inline_block{
+  display: inline-block;
+}
+
+.left_right_space{
+  margin: 0 18px;
+}
+
+.text{
+  margin-left: 24px;
+}
+
+#list table, #list th, #list td {
+  border-collapse: collapse;
+  padding: 5px 15px;
+  border: solid 1px #a8d4f3;
+  margin-left: 30px;
+}
+
+.input_list{
+  width: 500px;
+  height: 25px;
+}
+
+/*お気に入り*/
+.star_header{
+  display: inline-block;
+  margin: 30px 25px 0 18px;
+}
+
+.rank{
+  display: inline-block;
+}
+
+.ski_slope{
+  color:white;
+  background-color: #87CEFA;
+  padding: 10px 10px;
+  border-radius: 15px;
+  transition: all .7s;
+}
+
+.ski_slope:hover{
+  color: #87CEFA;
+  background-color: white;
+  border:3px solid #87CEFA;
+}
+
+table, th, td {
+  border-collapse: collapse;
+  padding: 5px 15px;
+}
+
+.header_space{
+  margin: 0 15px;
+}
+
+.star_rank{
+  margin-left: 25px;
+}

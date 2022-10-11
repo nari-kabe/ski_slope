@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="/css/show_star.css">
     </head>
     <body>
-        <h1 class="header">お気に入り一覧</h1>
+        <h1 class="star_header">お気に入り一覧</h1>
         <a href="/pages/login_home">ホームに戻る</a>
         @if ($place_id !== null)
             @for ($i = 0; $i < count($place_id); $i++)
