@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Auth;
 use App\Profile;
+use App\Star;
+use App\Ski_area;
 
 
 class ProfileController extends Controller
@@ -16,7 +18,7 @@ class ProfileController extends Controller
         return view('pages/create_profile');
     }
     
-    public function show(Profile $profile)
+    public function show(Profile $profile, Star $star)
     {
         if (Auth::check() && Auth::user()->id == $profile->user_id){
             return view('pages/show_profile')->with(['profile' => $profile]);
@@ -46,6 +48,7 @@ class ProfileController extends Controller
         $input = $request['profile'];
         $profile['user_id'] = Auth::id();
         $profile->fill($input)->save();
+        
         return redirect('/profiles/' . $profile->id);
     }
     
@@ -73,6 +76,7 @@ class ProfileController extends Controller
         $input = $request['profile'];
         $profile->fill($input)->save();
     
-        return redirect('/profiles/' . $profile->id);
+        return redirect('/pages/my_information');
+        //return back();
     }
 }

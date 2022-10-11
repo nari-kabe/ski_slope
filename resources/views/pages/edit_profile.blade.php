@@ -8,7 +8,7 @@
     </head>
     <body>
         <h1 class=header>EDIT YOUR PROFILE!</h1>
-        <a href="/profiles/{{ $profile->id }}">編集をやめる</a>
+        <a href="/pages/my_information">編集をやめる</a>
         <hr>
         
         <form action="/profiles/{{ $profile->id }}" method="POST">
@@ -116,7 +116,7 @@
                 </tr>
                 <tr>
                     <td><span>*</span>スノーボードの経験</td>
-                    @if ($profile->ski_level=="未経験")
+                    @if ($profile->snowboard_level=="未経験")
                         <td>
                             <input type="radio" id="snowboard_level0" class="radio4" name="profile[snowboard_level]" value="未経験" {{ old("profile[snowboard_level]", "未経験") == "未経験" ? "checked" : "" }}><label for="snowboard_level0">未経験</label>
                             <input type="radio" id="snowboard_level1" class="radio1" name="profile[snowboard_level]" value="初級者" {{ old("profile[snowboard_level]") == "初級者" ? "checked" : "" }}><label for="snowboard_level1">初級者</label>
@@ -124,7 +124,7 @@
                             <input type="radio" id="snowboard_level3" class="radio3" name="profile[snowboard_level]" value="上級者" {{ old("profile[snowboard_level]") == "上級者" ? "checked" : "" }}><label for="snowboard_level3">上級者</label>
                             <p class=error>{{ $errors->first('profile.snowboard_level') }}</p>
                         </td>
-                    @elseif ($profile->ski_level=="初級者")
+                    @elseif ($profile->snowboard_level=="初級者")
                         <td>
                             <input type="radio" id="snowboard_level0" class="radio4" name="profile[snowboard_level]" value="未経験" {{ old("profile[snowboard_level]") == "未経験" ? "checked" : "" }}><label for="snowboard_level0">未経験</label>
                             <input type="radio" id="snowboard_level1" class="radio1" name="profile[snowboard_level]" value="初級者" {{ old("profile[snowboard_level]", "初級者") == "初級者" ? "checked" : "" }}><label for="snowboard_level1">初級者</label>
@@ -132,7 +132,7 @@
                             <input type="radio" id="snowboard_level3" class="radio3" name="profile[snowboard_level]" value="上級者" {{ old("profile[snowboard_level]") == "上級者" ? "checked" : "" }}><label for="snowboard_level3">上級者</label>
                             <p class=error>{{ $errors->first('profile.snowboard_level') }}</p>
                         </td>
-                    @elseif ($profile->ski_level=="中級者")
+                    @elseif ($profile->snowboard_level=="中級者")
                         <td>
                             <input type="radio" id="snowboard_level0" class="radio4" name="profile[snowboard_level]" value="未経験" {{ old("profile[snowboard_level]") == "未経験" ? "checked" : "" }}><label for="snowboard_level0">未経験</label>
                             <input type="radio" id="snowboard_level1" class="radio1" name="profile[snowboard_level]" value="初級者" {{ old("profile[snowboard_level]") == "初級者" ? "checked" : "" }}><label for="snowboard_level1">初級者</label>

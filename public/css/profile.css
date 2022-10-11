@@ -1,3 +1,13 @@
+a {
+  color: #3490dc;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+a:hover{
+  color:red;
+}
+
 .header{
     display: inline-block;
     margin-right: 40px;

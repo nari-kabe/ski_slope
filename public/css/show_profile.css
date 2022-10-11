@@ -1,3 +1,9 @@
+a {
+  color: #3490dc;
+  text-decoration: none;
+  background-color: transparent;
+}
+
 .header{
   display: inline-block;
   margin-left: 15px;
@@ -25,6 +31,6 @@
 }
 
 .input_list{
-    width: 500px;
-    height: 25px;
+  width: 500px;
+  height: 25px;
 }
