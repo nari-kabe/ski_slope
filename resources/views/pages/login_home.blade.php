@@ -15,21 +15,18 @@
             <div class="nav">
                 <div>
                     @guest
-                        <p>ログインすると自己プロフィール登録・編集、スキー場追加、お気に入り登録ができます</p>
+                        <p>ログインしていません</p>
                     @endguest
                     @auth
                         @if ($profile_record === null)
                             <a class="link_color right_space" href="/pages/profile">自己プロフィール登録</a>
-                            <p class="line_right"></p>
-                        @else
-                            <a class='line_color right_space' href="/profiles/{{ $profile_record->id }}">自己プロフィール閲覧・編集</a>
                             <p class="line_right"></p>
                         @endif
                         <a class="link_color right_space" href="/pages/my_information">My information</a>
                         <p class="line_right"></p>
                         <a class="link_color right_space" href="/pages/create_slope">スキー場を追加する</a>
                         <p class="line_right"></p>
-                        <a class="link_color right_space"href="/pages/show_all_stars">お気に入り登録一覧</a>
+                        <a class="link_color right_space" href="#star_rank">お気に入りランキング</a>
                     @endauth
                 </div>
             </div>
@@ -396,7 +393,7 @@
                 </div>
             
                 <div>
-                    <h2>お気に入りランキング</h2>
+                    <a class="star" name="star_rank">お気に入りランキング</a>
                     @auth
                         <div class=star_ranking>
                             <table>
