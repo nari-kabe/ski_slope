@@ -17,8 +17,24 @@ body {
     margin: 0px;
 }
 
-.link_color{
+a {
+    color: #3490dc;
     text-decoration: none;
+    background-color: transparent;
+}
+
+a.link_color {
+    padding: 6px .3em;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 50%, #87CEFA 50%);
+    background-position: 0 0;
+    background-size: 200% auto;
+    transition: .3s;
+}
+
+a.link_color:hover {
+    text-decoration: none;
+    background-position: -100% 0;
+    color: #fff;
 }
 
 #header{
@@ -143,10 +159,32 @@ td{
     margin-top: 10px;
 }
 
+.star{
+    font-size: 28.8px;
+    color: #212529;
+    pointer-events: none;
+    padding-top: 20px;
+}
+
 .rank{
   display: inline-block;
   margin: 0;
   font-size: 17px;
+}
+
+.star_ranking a{
+    transition: 0.5s;
+}
+
+.star_ranking a:hover {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: -webkit-linear-gradient(left, #f69, #fc0, #3c3, #09f, #96f);
+    background-image: -moz-linear-gradient(left, #f69, #fc0, #3c3, #09f, #96f);
+    background-image: -o-linear-gradient(left, #f69, #fc0, #3c3, #09f, #96f);
+    background-image: -ms-linear-gradient(left, #f69, #fc0, #3c3, #09f, #96f);
+    -webkit-transform: rotateX(360deg);
+    transform: rotateX(360deg);
 }
 
 /*

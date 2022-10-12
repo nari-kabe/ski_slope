@@ -4,10 +4,6 @@ a {
   background-color: transparent;
 }
 
-a:hover{
-  color:red;
-}
-
 .star_header{
     display: inline-block;
     margin-right: 25px;
