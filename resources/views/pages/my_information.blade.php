@@ -105,14 +105,23 @@
                         <td>
                             <p class="rank">No.{{ $i+1 }} {{ $place_name[$i] }}</p>
                         </td>
-                        <td>
+                        <td class="detail">
                             <a class="ski_slope" href='/ski_areas/{{ $place_id[$i] }}'>詳細を見る</a>
                         </td>
-                        <form action="{{ route('star.destroy', ['id'=>$star_id[$i]]) }}" method="POST">
+                        <form action="{{ route('star.destroy', ['id'=>$star_id[$i]]) }}" id="{{ $place_name[$i] }}" name="{{ $i }}" method="POST">
                             @csrf
-                            <td><button type="submit">削除</button></td>
+                            <td><input type="button" id="{{ $i }}" class="delete" value="削除" name="{{ $star_id[$i] }}" onclick="deleteStar({{ $i }})"></td>
                         </form>
                     </tr>
+                    <script>
+            	        function deleteStar(e) {
+            	            const place_name = document.forms[e].id;
+            	            console.log(place_name);
+                            if (confirm(place_name + "のお気に入り登録を削除しますか？\n※削除すると復元できません")) {
+                                document.forms[e].submit();
+                            }
+            	        }
+            	    </script>
                 @endfor
                  </table>
             @else

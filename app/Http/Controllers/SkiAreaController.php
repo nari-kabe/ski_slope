@@ -248,7 +248,7 @@ class SkiAreaController extends Controller
     {
         //dd($request->all());
         $request->validate([
-            'ski_area.place_name' => ['required','string','max:40'],
+            'ski_area.place_name' => ['required','string','min:5','max:40'],
             'ski_area.home_page' => ['nullable','url'],
             'ski_area.zip_code' => ['required', new ZipCodeRule()],
             'ski_area.prefecture' => ['required', new PrefectureRule()],
@@ -285,7 +285,7 @@ class SkiAreaController extends Controller
     {
         //dd($request->all());
         $request->validate([
-            'ski_area.place_name' => ['required','string','max:40'],
+            'ski_area.place_name' => ['required','string','min:5','max:40'],
             'ski_area.home_page' => ['nullable','url'],
             'ski_area.zip_code' => ['required', new ZipCodeRule()],
             'ski_area.prefecture' => ['required', new PrefectureRule()],

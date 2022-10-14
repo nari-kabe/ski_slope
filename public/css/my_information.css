@@ -71,6 +71,13 @@ table, th, td {
   border-collapse: collapse;
   padding: 5px 15px;
 }
+td.detail{
+  width: 150px;
+}
+
+.delete{
+  width: 80px;
+}
 
 .header_space{
   margin: 0 15px;
