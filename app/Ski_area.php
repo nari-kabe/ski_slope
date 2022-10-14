@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Ski_area extends Model
 {
+    use SoftDeletes;
+    
     protected $fillable = [
     'place_name',
     'zip_code',

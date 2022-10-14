@@ -27,6 +27,12 @@
                     <td><p>ログインするとお気に入り登録ができます</p></td>
                 @endguest
                 <td>　</td>
+                <form action="/ski_areas/{{ $ski_area->id }}" id="form_{{ $ski_area->id }}" class="delete" method="post">
+                    @csrf
+                    @method('DELETE')
+                    <td><input type="button" value="削除" onclick="deleteSlope()"></td>
+                </form>
+                <td>　</td>
                 <td><a href="/pages/login_home">ホームに戻る</a></td>
             </tr>
         </table>
@@ -230,5 +236,17 @@
         }
         </script>
 	    <script src="https://maps.googleapis.com/maps/api/js?language=ja&region=JP&key={{ $google }}&callback=initMap" async defer></script>
+	    
+	    <script>
+	        function deleteSlope() {
+	            if ('{{ $author_slope }}' === 'author') {
+    	            if (confirm("'{{ $ski_area->place_name }}'の情報を削除しますか？\n※削除すると復元できません")) {
+    	                document.getElementById('form_{{ $ski_area->id }}').submit();
+    	            }
+	            } else {
+	                alert('作成者本人ではないため、削除することはできません');
+	            }
+	        }
+	    </script>
     </body>
 </html>

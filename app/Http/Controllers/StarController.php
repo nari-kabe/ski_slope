@@ -60,4 +60,5 @@ class StarController extends Controller
         $star->fill($input)->save();
         return back();
     }
+
 }

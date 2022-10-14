@@ -205,13 +205,19 @@ class SkiAreaController extends Controller
         $GOOGLE_MAP_API_KEY = config('const.googlemap.key');
         
         /**
-         *作成者のprofile表示関係
+         *作成者のprofile表示、スキー場情報削除
          */
-        $user_id = $ski_area['user_id'];
+        $user_id = $ski_area->user_id;
         if (Auth::check() && Profile::where('user_id', \Auth::user()->id)->first() !== null){
             $edited_user = Profile::where('user_id', '=', $user_id)->first();
         } else {
             $edited_user = null;
+        }
+        
+        if (Auth::check() && Auth::user()->id === $user_id) {
+            $author_slope = 'author';
+        } else {
+            $author_slope = 'strange';
         }
         
         /**
@@ -233,6 +239,7 @@ class SkiAreaController extends Controller
             'google' => $GOOGLE_MAP_API_KEY, 
             'profile' => $profile, 
             'edited_user' => $edited_user,
+            'author_slope' => $author_slope,
             'star_slope' => $star_slope
         ]);
     }
@@ -304,5 +311,11 @@ class SkiAreaController extends Controller
         $ski_area->fill($input)->save();
     
         return redirect('/ski_areas/' . $ski_area->id);
+    }
+    
+    public function delete(Ski_area $ski_area)
+    {
+        $ski_area->delete();
+        return redirect('/pages/login_home');
     }
 }

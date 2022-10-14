@@ -108,6 +108,10 @@
                         <td>
                             <a class="ski_slope" href='/ski_areas/{{ $place_id[$i] }}'>詳細を見る</a>
                         </td>
+                        <form action="{{ route('star.destroy', ['id'=>$star_id[$i]]) }}" method="POST">
+                            @csrf
+                            <td><button type="submit">削除</button></td>
+                        </form>
                     </tr>
                 @endfor
                  </table>

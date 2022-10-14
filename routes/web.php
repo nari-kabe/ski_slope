@@ -9,6 +9,7 @@ Route::get('/ski_areas/{ski_area}', 'SkiAreaController@show'); //注意! Route::
 Route::post('/infomation_list', 'SkiAreaController@store'); //スキー場作成画面の内容をデータべースに反映すために使用
 Route::get('/ski_areas/{ski_area}/edit', 'SkiAreaController@edit'); //スキー場作成内容編集
 Route::put('/ski_areas/{ski_area}', 'SkiAreaController@update'); //スキー場情報編集内容反映
+Route::delete('/ski_areas/{ski_area}', 'SkiAreaController@delete'); //削除
 
 Route::get('/pages/profile', 'ProfileController@profile'); //プロフィール登録
 Route::get('/profiles/{profile}', 'ProfileController@show'); //注意! 
@@ -21,6 +22,7 @@ Route::get('/stars/{star}', 'StarController@show');
 Route::post('/star_list', 'StarController@store'); //データべースに反映
 
 Route::get('/pages/my_information', 'MyInformationController@show'); //自分の情報を見る
+Route::post('/destroy{id}', 'MyInformationController@destroy')->name('star.destroy'); //削除
 
 //OpenWeatherAPI
 Route::get('/a', 'WeatherAPIController@weatherData');
