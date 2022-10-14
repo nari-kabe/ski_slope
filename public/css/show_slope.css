@@ -22,6 +22,10 @@
     margin-top: 40px;
 }
 
+.delete{
+    display: inline;
+}
+
 /*
 **twitterAPI
 **
