@@ -60,7 +60,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><span>*</span>住所（町村名以降）</td> 
+                    <td><span>*</span>住所（上記以降）</td> 
                     <td>
                         <input class="input_list" name="ski_area[after_address]" placeholder="例：定山渓937番地先" value="{{ old('ski_area.after_address', $ski_area->after_address) }}">
                         <p class=error>{{ $errors->first('ski_area.after_address') }}</p>
@@ -181,7 +181,7 @@
                 <tr>
                     <td>スノーボードの使用</td> 
                     <td>
-                        @if ((old("ski_area.snowboard")==0) && $ski_area->snowboard==0)
+                        @if ((old("ski_area.snowboard")=="0") && $ski_area->snowboard==0)
                             <input type="radio" id="available1" class="radio1" name="ski_area[snowboard]" value="1" {{ old("ski_area[snowboard]") == "1" ? "checked" : "" }}><label for="available1">使用可能</label>
                             <input type="radio" id="available2" class="radio2" name="ski_area[snowboard]" value="0" {{ old("ski_area[snowboard]", "0") == "0" ? "checked" : "" }}><label for="available2">使用不可</label>
                         @elseif ((old("ski_area.snowboard") == "0"))

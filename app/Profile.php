@@ -21,6 +21,9 @@ class Profile extends Model
     'home_slope',
     'public_setting',
     'greeting',
+    'prefecture',
+    'exchange_people',
+    'sns'
     ];
     
     /**
@@ -28,7 +31,15 @@ class Profile extends Model
      */
     public function user()   
     {
-        return $this->hasOne('App\User', 'user_id');  
+        return $this->belongsTo('App\User');
+    }
+    
+    /**
+     * Find_friendsとProfilesのリレーション
+     */
+    public function find_friends()   
+    {
+        return $this->hasMany('App\Find_friend'); 
     }
     
 }

@@ -38,6 +38,10 @@ a:hover{
   margin-left: 30px;
 }
 
+#list td{
+    height: 40px;
+}
+
 .input_list{
   width: 500px;
   height: 25px;
@@ -71,6 +75,7 @@ table, th, td {
   border-collapse: collapse;
   padding: 5px 15px;
 }
+
 td.detail{
   width: 150px;
 }

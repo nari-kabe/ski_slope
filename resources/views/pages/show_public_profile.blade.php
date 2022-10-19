@@ -7,22 +7,11 @@
         
     </head>
     <body>
-        <table> 
-            <tr>
-                <td><h1>Profile</h1></td>
-                <td>　</td>
-                <td><a href="/pages/login_home">ホームに戻る</a></td>
-            </tr>
-        </table>
+        <h1 class="header">Profile</h1>
+        <a href="/pages/login_home">ホームに戻る</a>
         <hr>
-        
-        <table> 
-            <tr>
-                <td><h2>情報一覧</h2></td>
-                <td>　</td>
-                <td>{{ '最終更新日時：'. $profile->updated_at }}</td>
-            </tr>
-        </table>
+        <h2 class="sub_header">情報一覧</h2>
+        <p class="inline_block">{{ '最終更新日時：'. $profile->updated_at }}</p>
         
         <div id="list">
             <table>
@@ -49,6 +38,10 @@
                     @else
                         <td class="input_list">{{ $profile->age }}</td>
                     @endif
+                </tr>
+                <tr>
+                    <td>住まい</td>
+                    <td class="input_list">{{ $profile->prefecture }}</td>
                 </tr>
                 <tr>
                     <td>職業</td> 
@@ -80,6 +73,22 @@
                         <td>未記入</td>
                     @else
                         <td>{{ $profile->home_slope }}</td>
+                    @endif
+                </tr>
+                <tr>
+                    <td>マッチング</td> 
+                    @if($profile->exchange_people===0)
+                        <td>許可しない</td>
+                    @else
+                        <td>許可</td>
+                    @endif
+                </tr>
+                <tr>
+                    <td>SNS</td> 
+                    @if($profile->sns===null)
+                        <td>未記入</td>
+                    @else
+                        <td>{{ $profile->sns }}</td>
                     @endif
                 </tr>
                 <tr>

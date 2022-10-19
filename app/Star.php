@@ -19,7 +19,7 @@ class Star extends Model
      */
     public function users()   
     {
-        return $this->hasMany('App\User');  
+        return $this->belongsTo('App\User');
     }
     
     /**
@@ -27,6 +27,6 @@ class Star extends Model
      */
     public function Ski_areas()   
     {
-        return $this->hasMany('App\Ski_area');  
+        return $this->belongsTo('App\Ski_area');
     }
 }

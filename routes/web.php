@@ -24,6 +24,11 @@ Route::post('/star_list', 'StarController@store'); //データべースに反映
 Route::get('/pages/my_information', 'MyInformationController@show'); //自分の情報を見る
 Route::post('/destroy{id}', 'MyInformationController@destroy')->name('star.destroy'); //削除
 
+Route::get('/pages/matching', 'MatchingController@matching')->name('matching');
+Route::get('/pages/match', 'MatchingController@show');
+Route::get('/find_friends/{find_friend}', 'MatchingController@show'); 
+Route::post('/find_friend_list', 'MatchingController@store');
+
 //OpenWeatherAPI
 Route::get('/a', 'WeatherAPIController@weatherData');
 

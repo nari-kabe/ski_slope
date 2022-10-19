@@ -40,6 +40,10 @@
                     @endif
                 </tr>
                 <tr>
+                    <td>住まい</td>
+                    <td class="input_list">{{ $profile->prefecture }}</td>
+                </tr>
+                <tr>
                     <td>職業</td> 
                     @if($profile->occupation===null)
                         <td>未記入</td>
@@ -72,6 +76,22 @@
                     @endif
                 </tr>
                 <tr>
+                    <td>マッチング</td> 
+                    @if($profile->exchange_people===0)
+                        <td>許可しない</td>
+                    @else
+                        <td>許可</td>
+                    @endif
+                </tr>
+                <tr>
+                    <td>SNS</td> 
+                    @if($profile->sns===null)
+                        <td>未記入</td>
+                    @else
+                        <td>{{ $profile->sns }}</td>
+                    @endif
+                </tr>
+                <tr>
                     <td>公開設定</td> 
                     <td>{{ $profile->public_setting }}</td>
                 </tr>
@@ -84,5 +104,6 @@
                     @endif
                 </tr>
             </table>
+        </div>
     </body>
 </html>

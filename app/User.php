@@ -42,15 +42,15 @@ class User extends Authenticatable
      */ 
     public function profile()   
     {
-        return $this->belongsTo('App\Profile');  
+        return $this->hasOne('App\profile');
     }
     
     /**
      * SkiareasとUsersのリレーション
      */
-    public function skiarea()   
+    public function ski_area()   
     {
-        return $this->belongsTo('App\Ski_area');  
+        return $this->hasMany('App\Ski_area');  
     }
     
     /**
@@ -58,6 +58,14 @@ class User extends Authenticatable
      */
     public function star()   
     {
-        return $this->belongsTo('App\Star');  
+        return $this->hasMany('App\Star'); 
+    }
+    
+    /**
+     * Find_friendsとUsersのリレーション
+     */
+    public function find_friends()   
+    {
+        return $this->hasMany('App\Find_friend'); 
     }
 }

@@ -47,6 +47,13 @@
                     </td>
                 </tr>
                 <tr>
+                    <td><span>*</span>住まい</td>
+                    <td>
+                        <input class="input_list" type=text name="profile[prefecture]" value="{{ old('profile.prefecture') }}">
+                        <p class=error>{{ $errors->first('profile.prefecture') }}</p>
+                    </td>
+                </tr>
+                <tr>
                     <td>職業</td>
                     <td>
                         <input class="input_list" type=text name="profile[occupation]" value="{{ old('profile.occupation') }}">
@@ -85,6 +92,22 @@
                     <td>
                         <input class="input_list" type=text placeholder="札幌国際スキー場" name=profile[home_slope] value="{{ old('profile.home_slope') }}">
                         <p class=error>{{ $errors->first('profile.home_slope') }}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span>*</span>マッチング</td>
+                    <td>
+                        <input type="radio" checked id="permission" class="radio1" name="profile[exchange_people]" value="0" {{ old("profile.exchange_people") == "0" ? "checked" : "" }}><label for="permission">許可</label>
+                        <input type="radio" id="no_permission" class="radio2" name="profile[exchange_people]" value="1" {{ old("profile.exchange_people") == "1" ? "checked" : "" }}><label for="no_permission">許可しない</label>
+                        <p>※許可を選択すると自分がマッチング候補者として他のユーザーに表示されます</p>
+                        <p class=error>{{ $errors->first('profile.exchange_people') }}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span>*</span>SNS</td>
+                    <td>
+                        <input class="input_list" type=text placeholder="使用しているSNSとそのユーザー名またはリンクを記載してください" name=profile[sns] value="{{ old('profile.sns') }}">
+                        <p class=error>{{ $errors->first('profile.sns') }}</p>
                     </td>
                 </tr>
                 <tr>
