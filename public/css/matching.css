@@ -1,0 +1,59 @@
+a {
+  color: #3490dc;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.matching_header{
+    display: inline-block;
+    margin-right: 25px;
+}
+
+.profile{
+    display: inline-block;
+    margin: 10px 15px;
+    font-size: 18px;
+}
+
+.sns{
+    display: inline-block;
+}
+
+.profile_information{
+    position: relative;
+    margin-left: 25px;
+    margin-bottom: 40px;
+}
+
+table, th, td {
+    border-collapse: collapse;
+    padding: 5px 15px;
+    border-top: 5px solid #FFFFFF;
+    border-bottom: 2px solid #FFFFFF;
+}
+
+.summary_left{
+    display: inline-block;
+}
+
+.summary_right{
+    position: absolute;
+    top: 0;
+    left: 45vw;
+}
+
+.color_first_row{
+    background-color: #DDDDDD;
+}
+
+.color_second_row{
+    background-color: #EEEEEE;
+}
+
+.width_second_row_l{
+    width: 450px;
+}
+
+.width_second_row_r{
+    width: 180px;
+}

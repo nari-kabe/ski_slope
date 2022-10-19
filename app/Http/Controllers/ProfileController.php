@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Auth;
+use App\Rules\PrefectureRule;
 use App\Profile;
 use App\Star;
 use App\Ski_area;
@@ -43,6 +44,8 @@ class ProfileController extends Controller
             'profile.home_slope' => ['nullable','string','max:20'],
             'profile.public_setting' => ['required'],
             'profile.greeting' => ['nullable','string','max:300'],
+            'profile.prefecture' => ['required', new PrefectureRule()],
+            'profile.sns' => ['required','string','max:300'],
         ]);
         
         $input = $request['profile'];
@@ -71,12 +74,13 @@ class ProfileController extends Controller
             'profile.home_slope' => ['nullable','string','max:20'],
             'profile.public_setting' => ['required'],
             'profile.greeting' => ['nullable','string','max:300'],
+            'profile.prefecture' => ['required', new PrefectureRule()],
+            'profile.sns' => ['required','string','max:300'],
         ]);
         
         $input = $request['profile'];
         $profile->fill($input)->save();
     
         return redirect('/pages/my_information');
-        //return back();
     }
 }

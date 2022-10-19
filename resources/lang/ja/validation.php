@@ -59,7 +59,7 @@ return [
     'image' => 'The :attribute must be an image.',
     'in' => 'The selected :attribute is invalid.',
     'in_array' => 'The :attribute field does not exist in :other.',
-    'integer' => ':attributeは数字で入力してください',
+    'integer' => ':attributeは半角数字で入力してください',
     'ip' => 'The :attribute must be a valid IP address.',
     'ipv4' => 'The :attribute must be a valid IPv4 address.',
     'ipv6' => 'The :attribute must be a valid IPv6 address.',
@@ -153,7 +153,7 @@ return [
         'ski_area.zip_code' => '郵便番号',
         'ski_area.prefecture' => '都道府県名',
         'ski_area.city' => '市区名',
-        'ski_area.after_address' => '上記以降の住所',
+        'ski_area.after_address' => '町村名、番地の住所',
         'ski_area.home_page' => 'ホームページ',
         'ski_area.phone_number' => '電話番号',
         'ski_area.business_hours' => '営業時間',
@@ -178,7 +178,10 @@ return [
         'profile.others_level' => 'その他のレベル',
         'profile.home_slope' => 'ホームゲレンデ',
         'profile.public_setting' => '公開設定',
-        'profile.greeting' => 'コメント'
+        'profile.greeting' => 'コメント',
+        'profile.prefecture' => '都道府県',
+        'profile.sns' => 'SNS'
+        
         
     ],
 
