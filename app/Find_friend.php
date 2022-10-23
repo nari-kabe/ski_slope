@@ -15,9 +15,6 @@ class Find_friend extends Model
     'profile_id',
     ];
     
-    protected $table = 'find_friends';
-    public $timestamps = false;
-    
     /**
      * UseresとFind_friendsのリレーション
      */
