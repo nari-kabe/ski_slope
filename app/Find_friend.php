@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\Auth;
 
 class Find_friend extends Model
 {
@@ -13,6 +14,9 @@ class Find_friend extends Model
     'user_id',
     'profile_id',
     ];
+    
+    protected $table = 'find_friends';
+    public $timestamps = false;
     
     /**
      * UseresとFind_friendsのリレーション
