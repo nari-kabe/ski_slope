@@ -1,4 +1,4 @@
-const array = ["/images/sample1.jpeg", "/images/sample2.jpeg", "/images/sample3.jpeg", "/images/sample4.jpeg"];
+const array = ["/images/sample1.webp", "/images/sample2.webp", "/images/sample3.webp", "/images/sample4.webp"];
 const array2 = ["'radius1'", "'radius2'", "'radius3'", "'radius4'"];
 let num = 0;
 const elements = document.getElementsByName('radio_button');

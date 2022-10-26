@@ -37,7 +37,7 @@
         <div class="image_container">
             <!--４枚の画像-->
             <div>
-                <img id=image src=/images/sample1.jpeg>
+                <img id=image src=/images/sample1.webp>
                 <button id=back_button onclick="go_back()">◀</button>
                 <button id=forward_button onclick="go_forward()">▶</button>
             </div>
