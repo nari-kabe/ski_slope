@@ -4,56 +4,119 @@ a {
   background-color: transparent;
 }
 
-.matching_header{
+.matching_header {
     display: inline-block;
     margin-right: 25px;
 }
 
-.profile{
+.profile {
     display: inline-block;
-    margin: 10px 15px;
+    margin: 10px 25px;
     font-size: 18px;
 }
 
-.sns{
+.sns {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.bookmark {
     display: inline-block;
 }
 
-.profile_information{
+.profile_information {
     position: relative;
-    margin-left: 25px;
+    margin-left: 35px;
     margin-bottom: 40px;
 }
 
-table, th, td {
+.summary_left table, .summary_left th, .summary_left td {
     border-collapse: collapse;
     padding: 5px 15px;
     border-top: 5px solid #FFFFFF;
     border-bottom: 2px solid #FFFFFF;
 }
 
-.summary_left{
-    display: inline-block;
+.summary_right table, .summary_right th, .summary_right td {
+    border-collapse: collapse;
+    padding: 5px 15px;
+    border-top: 5px solid #FFFFFF;
+    border-bottom: 2px solid #FFFFFF;
 }
 
-.summary_right{
+.summary_left {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.summary_right {
     position: absolute;
-    top: 0;
+    top: 32px;
     left: 45vw;
 }
 
-.color_first_row{
+.color_first_row {
     background-color: #DDDDDD;
 }
 
-.color_second_row{
+.color_second_row {
     background-color: #EEEEEE;
 }
 
-.width_second_row_l{
+.width_second_row_l {
     width: 450px;
 }
 
-.width_second_row_r{
+.width_second_row_r {
     width: 180px;
+}
+
+.refine_search {
+    position: relative;
+    width: 1278px;
+    margin: 2em 25px;
+    padding: 0.5em 1em;
+    border: solid 3px #a8ccf3;
+    border-radius: 8px;
+}
+
+.refine_search .refine_search_title {
+    position: absolute;
+    display: inline-block;
+    top: -13px;
+    left: 10px;
+    padding: 0 9px;
+    line-height: 1;
+    font-size: 19px;
+    background: #FFF;
+    color: #ff9595;
+    font-weight: bold;
+}
+
+#input_slope {
+    width: 200px;
+}
+
+.refine_search table, .refine_search th, .refine_search td {
+    border-collapse: collapse;
+    padding: 10px 15px;
+    border: solid 1px #a8d4f3;
+    text-align: center;
+    margin: 20px 92.961px;
+}
+
+.search {
+    /*width: 150px;*/
+    position: absolute;
+    right: 200px;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.clear {
+    position: absolute;
+    top: 50%;
+    right: 50px;
+    /*left: 0;*/
+    transform: translate(0, -50%);
 }

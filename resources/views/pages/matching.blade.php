@@ -10,63 +10,99 @@
         <a href="/pages/login_home">ホームに戻る</a>
         <hr>
         <h2>相手を探す</h2>
-        <form action='/find_friend_list'  method='POST'>
-            @csrf
-            <select name="sex[]">
-                @foreach($sex_data as $key => $value)
-                        @if ($key == $old_sex)
-                            <option value="{{ $key }}" selected>{{ $value }}</option>
-                        @else
-                            <option value="{{ $key }}" >{{ $value }}</option>
-                        @endif
-                    
-               @endforeach
-            </select>
-            <select name="age[]">
-                @foreach($age_data as $value)
-                        @if ($value === $age[0])
-                            <option value="{{ $value }}" selected>{{ $value }}</option>
-                        @else
-                            <option value="{{ $value }}" >{{ $value }}</option>
-                        @endif
-                    
-               @endforeach
-            </select>
-            <select name="prefecture[]">
-                @foreach($prefecture_data as $value)
-                        @if ($value === $prefecture[0])
-                            <option value="{{ $value }}" selected>{{ $value }}</option>
-                        @else
-                            <option value="{{ $value }}" >{{ $value }}</option>
-                        @endif
-               @endforeach
-            </select>
-            <select name="ski_level[]">
-                @foreach($level_data as $value)
-                        @if ($value === $ski_level[0])
-                            <option value="{{ $value }}" selected>{{ $value }}</option>
-                        @else
-                            <option value="{{ $value }}" >{{ $value }}</option>
-                        @endif
-               @endforeach
-            </select>
-            <select name="snowboard_level[]">
-                @foreach($level_data as $value)
-                        @if ($value === $snowboard_level[0])
-                            <option value="{{ $value }}" selected>{{ $value }}</option>
-                        @else
-                            <option value="{{ $value }}" >{{ $value }}</option>
-                        @endif
-               @endforeach
-            </select>
-            <input name='home_slope' value='{{ $home_slope }}'>
-            <button>すべての条件をクリア</button>
-            <p><input type='submit' value="検索"></p>
-        </form>
+        <div class="refine_search">
+            <span class="refine_search_title">絞り込み検索</span>
+            <table>
+                <form action='/find_friend_list' name="search"  method='POST'>
+                    @csrf
+                    <tr>
+                        <th>性別</th>
+                        <th>年齢</th>
+                        <th>住まい</th>
+                        <th>スキーの経験</th>
+                        <th>スノーボードの経験</th>
+                        <th>ホームゲレンデ・よく行くスキー場</th>
+                    </tr>
+                    <tr>
+                        <td class="terms">
+                            <select name="sex[]" id="select_sex">
+                                @foreach($sex_data as $key => $value)
+                                        @if ($key == $old_sex)
+                                            <option name="{{ $key }}" value="{{ $key }}" selected>{{ $value }}</option>
+                                        @else
+                                            <option name="{{ $key }}" value="{{ $key }}" >{{ $value }}</option>
+                                        @endif
+                                    
+                               @endforeach
+                            </select>
+                        </td>
+                        <td class="terms">
+                            <select name="age[]" id="select_age">
+                                @foreach($age_data as $value)
+                                        @if ($age !== null && $value === $age[0])
+                                            <option value="{{ $value }}" selected>{{ $value }}</option>
+                                        @else
+                                            <option value="{{ $value }}" >{{ $value }}</option>
+                                        @endif
+                                    
+                               @endforeach
+                            </select>
+                        </td>
+                        <td class="terms">
+                            <select name="prefecture[]" id="select_prefecture">
+                                @foreach($prefecture_data as $value)
+                                        @if ($prefecture !== null && $value === $prefecture[0])
+                                            <option value="{{ $value }}" selected>{{ $value }}</option>
+                                        @else
+                                            <option value="{{ $value }}" >{{ $value }}</option>
+                                        @endif
+                               @endforeach
+                            </select>
+                        </td>
+                        <td class="terms">
+                            <select name="ski_level[]" id="select_ski_level">
+                                @foreach($level_data as $value)
+                                        @if ($ski_level !== null && $value === $ski_level[0])
+                                            <option value="{{ $value }}" selected>{{ $value }}</option>
+                                        @else
+                                            <option value="{{ $value }}" >{{ $value }}</option>
+                                        @endif
+                               @endforeach
+                            </select>
+                        </td>
+                        <td class="terms">
+                            <select name="snowboard_level[]" id="select_snowboard_level">
+                                @foreach($level_data as $value)
+                                        @if ($snowboard_level !== null && $value === $snowboard_level[0])
+                                            <option value="{{ $value }}" selected>{{ $value }}</option>
+                                        @else
+                                            <option value="{{ $value }}" >{{ $value }}</option>
+                                        @endif
+                               @endforeach
+                            </select>
+                        </td>
+                        <td class="terms">
+                            <input name='home_slope' id="input_slope" value='{{ $home_slope }}' placeholder="スキー場名を入力">
+                        </td>
+                    </tr>
+            </table>
+                <input class="search" type='submit' value="検索">
+                </form>
+            <button class="clear" onclick="reset()">すべての条件を<br>クリア</button>
+        </div>
         @foreach ($profiles as $profile)
             <a class='profile' href="/profiles/{{ $profile['id'] }}">{{ $profile['user_name'] }}</a>
-            <p class='sns'>SNS：{{ $profile['sns'] }}</p>
+            @if ($star_profile === null)
+                <form action="/find_profile_list" method="POST" class="bookmark">
+                @csrf
+                <input type="hidden" name="star_profile[profile_id]" value="{{ $profile['id'] }}">
+                    <button type="submit">お気に入り登録</button>
+                </form>
+            @else
+                <td><p>お気に入り登録済み</p></td>
+            @endif
             <div class='profile_information'>
+                <p class='sns'>SNS：{{ $profile['sns'] }}</p>
                 <div class='summary_left'>
                     <table>
                         <tr>
@@ -109,5 +145,15 @@
         @if ($profiles->isEmpty() === true)
             <p>相手が見つかりませんでした</p>
         @endif
+        <script>
+            function reset() {
+                document.getElementById('select_sex').options[0].selected = true;
+                document.getElementById('select_age').options[0].selected = true;
+                document.getElementById('select_prefecture').options[0].selected = true;
+                document.getElementById('select_ski_level').options[0].selected = true;
+                document.getElementById('select_snowboard_level').options[0].selected = true;
+                document.getElementById('input_slope').value = null;
+            }
+        </script>
     </body>
 </html>
