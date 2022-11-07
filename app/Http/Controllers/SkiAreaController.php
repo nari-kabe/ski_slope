@@ -134,6 +134,8 @@ class SkiAreaController extends Controller
         $place_id_rank = null;
         $place_id_num = null;
         $place_name = null;
+        $num = null;
+        
         if (Star::where('id', 1)->exists()) {
             $num = 1;
             $star_place_id_sort = $star->orderBy('place_id', 'asc')->take(30)->get();
