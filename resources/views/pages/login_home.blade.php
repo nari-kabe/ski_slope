@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="/css/login_home-style.css">
         <link href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" rel="stylesheet">
         <script src="{{ asset('/js/login_home.js') }}"></script>
+        <hr class="head_hr">
     </head>
     <body>
         <div class="various">

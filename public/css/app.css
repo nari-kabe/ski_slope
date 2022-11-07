@@ -4543,6 +4543,7 @@ input[type=button].btn-block {
   align-items: center;
   justify-content: space-between;
   padding: 0.5rem 1rem;
+  background-color: #F7FAFC;
 }
 
 .navbar .container,
@@ -7115,7 +7116,7 @@ button.bg-dark:focus {
 }
 
 .bg-white {
-  background-color: #fff !important;
+  /*background-color: #fff !important;*/
 }
 
 .bg-transparent {
@@ -8366,7 +8367,7 @@ button.bg-dark:focus {
 }
 
 .shadow-sm {
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+  /*box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;*/
 }
 
 .shadow {

@@ -1,3 +1,8 @@
+.head_hr{
+    margin-top: 0;
+    margin-bottom: 50px;
+}
+
 h1{
     color: blue;
     margin: 10px 0 0 10px;
@@ -158,6 +163,10 @@ td{
     margin-top: 10px;
 }
 
+.star_ranking td{
+    padding-left: 0;
+}
+
 .star{
     font-size: 28.8px;
     color: #212529;
@@ -198,13 +207,14 @@ td{
 }
 
 .bar{
-    position: absolute;
-    margin: 0;
-    left: 70%;
-    height: 290vh;
-    width:.1vw;
-    border-width:0;
-    background-color: #567;
+    display: none;
+    /*position: absolute;*/
+    /*margin: 0;*/
+    /*left: 70%;*/
+    /*height: 290vh;*/
+    /*width:.1vw;*/
+    /*border-width:0;*/
+    /*background-color: #567;*/
 }
 
 /*twitterアイコン*/
