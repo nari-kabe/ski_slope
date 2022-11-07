@@ -118,35 +118,41 @@
         
         <h2 class="star_header">お気に入りスキー場一覧</h2>
         <div class="star_rank">
-            @if ($place_id !== null)
+            @if (!empty($star_slope))
                 <table>
-                @for ($i = 0; $i < count($place_id); $i++)
+                @foreach ($star_slope as $value)
                     <tr>
                         <td>
-                            <p class="rank">No.{{ $i+1 }} {{ $place_name[$i] }}</p>
+                            <p class="rank">No.{{ $value['num']+1 }} {{ $value['place_name'] }}</p>
                         </td>
                         <td class="detail">
-                            <a class="ski_slope" href='/ski_areas/{{ $place_id[$i] }}'>詳細を見る</a>
+                            <a class="ski_slope" href='/ski_areas/{{ $value['place_id'] }}'>詳細を見る</a>
                         </td>
-                        <form action="{{ route('star.destroy', ['id'=>$star_id[$i]]) }}" id="{{ $place_name[$i] }}" name="{{ $i }}" method="POST">
+                        <form action="{{ route('star.destroy', ['id'=>$value['star_id']]) }}" id="{{ $value['place_name'] }}" name="{{ $value['num'] }}" method="POST">
                             @csrf
-                            <td><input type="button" id="{{ $i }}" class="delete" value="削除" name="{{ $star_id[$i] }}" onclick="deleteStar({{ $i }})"></td>
+                            <td><input type="button" id="{{ $value['num'] }}" class="delete" value="削除"  onclick="deleteStar({{ $value['num'] }})"></td>
                         </form>
                     </tr>
                     <script>
             	        function deleteStar(e) {
             	            const place_name = document.forms[e].id;
-            	            console.log(place_name);
                             if (confirm(place_name + "のお気に入り登録を削除しますか？\n※削除すると復元できません")) {
                                 document.forms[e].submit();
                             }
             	        }
             	    </script>
-                @endfor
+                @endforeach
                  </table>
             @else
-                <p>お気に入り登録に追加したものはありません</p>
+                <p>お気に入り登録したスキー場はありません</p>
             @endif
         </div>
+        
+        @if (!empty($star_profile))
+            <h2 class="star_header">お気に入りマッチング相手一覧</h2>
+            @foreach ($star_profile as $key => $value)
+                <a class="profile" href='/ski_areas/{{ $key}}'>{{ $value }}</a>
+            @endforeach
+        @endif
     </body>
 </html>

@@ -399,7 +399,7 @@
                     @auth
                         <div class=star_ranking>
                             <table>
-                            @for ($i = 0; $i < count($place_id_rank); $i++)
+                            @for ($i = 0; $i < 10; $i++)
                                 <tr>
                                     <td>
                                         <p class="rank">No.{{ $i+1 }} {{ $place_name[$i] }}</p>
@@ -408,7 +408,7 @@
                                         <a class='ski_slope' href="/ski_areas/{{ $place_id_rank[$i] }}">詳細を見る</a>
                                     </td>
                                 </tr>
-                                @if ($i < (count($place_id_rank) -2) && $place_id_num[$i] !== $place_id_num[$i + 1])
+                                @if ($i < (10 -2) && $place_id_num[$i] !== $place_id_num[$i + 1])
                                     @php
                                         $num += 1;
                                     @endphp
