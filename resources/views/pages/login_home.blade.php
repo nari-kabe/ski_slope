@@ -398,25 +398,29 @@
                 <div>
                     <a class="star" name="star_rank">お気に入りランキング</a>
                     @auth
-                        <div class=star_ranking>
-                            <table>
-                            @for ($i = 0; $i < 10; $i++)
-                                <tr>
-                                    <td>
-                                        <p class="rank">No.{{ $i+1 }} {{ $place_name[$i] }}</p>
-                                    </td>
-                                    <td>
-                                        <a class='ski_slope' href="/ski_areas/{{ $place_id_rank[$i] }}">詳細を見る</a>
-                                    </td>
-                                </tr>
-                                @if ($i < (10 -2) && $place_id_num[$i] !== $place_id_num[$i + 1])
-                                    @php
-                                        $num += 1;
-                                    @endphp
-                                @endif
-                            @endfor
-                            </table>
-                        </div>
+                        @if (!empty($place_id_rank))
+                            <div class=star_ranking>
+                                <table>
+                                @for ($i = 0; $i < 10; $i++)
+                                    <tr>
+                                        <td>
+                                            <p class="rank">No.{{ $i+1 }} {{ $place_name[$i] }}</p>
+                                        </td>
+                                        <td>
+                                            <a class='ski_slope' href="/ski_areas/{{ $place_id_rank[$i] }}">詳細を見る</a>
+                                        </td>
+                                    </tr>
+                                    @if ($i < (10 -2) && $place_id_num[$i] !== $place_id_num[$i + 1])
+                                        @php
+                                            $num += 1;
+                                        @endphp
+                                    @endif
+                                @endfor
+                                </table>
+                            </div>
+                        @else
+                            <p>情報がありません</p>
+                        @endif
                     @endauth
                     @guest
                         <p>※ログインするとお気に入り一覧を見れます</p>

@@ -131,22 +131,24 @@ class SkiAreaController extends Controller
         }
         
         //お気に入りランキング
-        $num = 1;
-        $star_place_id_sort = $star->orderBy('place_id', 'asc')->take(30)->get();
-        for($i = 0; $i < count($star_place_id_sort); $i++){
-            //スキー場があるか確認し、あればお気に入りの数を数える
-            if (!empty(Ski_area::find($star_place_id_sort[$i]['place_id']))) {
-                $place_id = $star_place_id_sort[$i]['place_id'];
-                $sum[$place_id] = Star::where('place_id', '=', $place_id)->count();
+        if (Star::where('id', 1)->exists()) {
+            $num = 1;
+            $star_place_id_sort = $star->orderBy('place_id', 'asc')->take(30)->get();
+            for($i = 0; $i < count($star_place_id_sort); $i++){
+                //スキー場があるか確認し、あればお気に入りの数を数える
+                if (!empty(Ski_area::find($star_place_id_sort[$i]['place_id']))) {
+                    $place_id = $star_place_id_sort[$i]['place_id'];
+                    $sum[$place_id] = Star::where('place_id', '=', $place_id)->count();
+                }
             }
-        }
-        
-        arsort($sum);
-        $place_id_rank = array_keys($sum);
-        $place_id_num = array_values($sum);
-        
-        for($i = 0; $i < count($place_id_rank); $i++){
-            $place_name[] = Ski_area::find($place_id_rank[$i])['place_name'];
+            
+            arsort($sum);
+            $place_id_rank = array_keys($sum);
+            $place_id_num = array_values($sum);
+            
+            for($i = 0; $i < count($place_id_rank); $i++){
+                $place_name[] = Ski_area::find($place_id_rank[$i])['place_name'];
+            }
         }
         
         return view('pages/login_home')->with([
