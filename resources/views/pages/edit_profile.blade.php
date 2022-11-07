@@ -479,7 +479,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>ホームゲレンデ</td>
+                    <td>ホームゲレンデ・よく行くスキー場</td>
                     <td>
                         <input class="input_list" type=text placeholder="札幌国際スキー場" name=profile[home_slope] value="{{ old('profile.home_slope', $profile->home_slope) }}">
                         <p class=error>{{ $errors->first('profile.home_slope') }}</p>

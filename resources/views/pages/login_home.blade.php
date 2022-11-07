@@ -27,7 +27,7 @@
                         <p class="line_right"></p>
                         <a class="link_color right_space" href="/pages/create_slope">スキー場を追加する</a>
                         <p class="line_right"></p>
-                        <a class="link_color right_space" href="#star_rank">お気に入りランキング</a>
+                        <a class="link_color right_space" href="#star_rank">スキー場お気に入りランキング</a>
                         <p class="line_right"></p>
                         <a class="link_color right_space" href="/pages/matching">マッチング相手を探す</a>
                     @endauth

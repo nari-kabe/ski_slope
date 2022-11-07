@@ -111,7 +111,15 @@
                         </tr>
                         <tr>
                             <td class="color_first_row">性別</td>
-                            <td class="color_second_row width_second_row_l">{{ $profile['sex'] }}</td>
+                            @if ($profile['sex'] == 0)
+                                <td class="color_second_row width_second_row_l">未回答</td>
+                            @elseif ($profile['sex'] == 1)
+                                <td class="color_second_row width_second_row_l">男</td>
+                            @elseif ($profile['sex'] == 2)
+                                <td class="color_second_row width_second_row_l">女</td>
+                            @else
+                                <td class="color_second_row width_second_row_l">その他</td>
+                            @endif
                         </tr>
                         <tr>
                             <td class="color_first_row">年齢</td>
