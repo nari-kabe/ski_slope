@@ -15,6 +15,13 @@ class Find_friend extends Model
     'profile_id',
     ];
     
+    public function getData() 
+    {
+        $my_star_profile_data = Find_friend::where('user_id', Auth::user()->id)->get();
+        
+        return $my_star_profile_data;
+    }
+    
     /**
      * UseresとFind_friendsのリレーション
      */
