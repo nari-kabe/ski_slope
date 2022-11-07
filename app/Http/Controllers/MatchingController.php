@@ -14,8 +14,8 @@ class MatchingController extends Controller
     {
         if (Auth::check()) {
             $query = Profile::query();
-            $query->where('Exchange_people', 1); //マッチングを許可しているレコードを取り出す 
-            $query->where('Public_setting', 'public'); //公開設定をpublicにしているレコードを取り出す
+            $query->where('exchange_people', 1); //マッチングを許可しているレコードを取り出す 
+            $query->where('public_setting', 'public'); //公開設定をpublicにしているレコードを取り出す
             $query->where('user_id', '!=', Auth::user()->id);
             
             $sex = $request->input('sex');
