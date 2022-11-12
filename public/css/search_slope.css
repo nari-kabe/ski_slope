@@ -1,0 +1,65 @@
+a {
+  color: #3490dc;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+h1 {
+    display: inline-block;
+    margin-right: 25px;
+}
+
+.ski_slope {
+    margin-left: 30px;
+}
+
+/*
+ **スキー場概略テーブル
+ */
+.slope_information{
+    position: relative;
+    margin-left: 30px;
+    margin-bottom: 40px;
+}
+
+table, th, td {
+    border-collapse: collapse;
+    padding: 5px 15px;
+    border-top: 5px solid #FFFFFF;
+    border-bottom: 2px solid #FFFFFF;
+}
+
+td{
+    height: 50px;
+}
+
+.color_first_row{
+    background-color: #DDDDDD;
+}
+
+.color_second_row{
+    background-color: #EEEEEE;
+}
+
+.first_row_width {
+    width: 173.52px;
+}
+
+.width_second_row_l{
+    width: 450px;
+}
+
+.width_second_row_r{
+    /*width: 180px;*/
+    width: 450px;
+}
+
+.summary_left{
+    display: inline-block;
+}
+
+.summary_right{
+    position: absolute;
+    top: 0;
+    left: 47.5vw;
+}

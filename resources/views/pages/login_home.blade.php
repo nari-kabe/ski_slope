@@ -27,6 +27,8 @@
                         <p class="line_right"></p>
                         <a class="link_color right_space" href="/pages/create_slope">スキー場を追加する</a>
                         <p class="line_right"></p>
+                        <a class="link_color right_space" href="/pages/search_slope">スキー場を検索する</a>
+                        <p class="line_right"></p>
                         <a class="link_color right_space" href="#star_rank">スキー場お気に入りランキング</a>
                         <p class="line_right"></p>
                         <a class="link_color right_space" href="/pages/matching">マッチング相手を探す</a>
@@ -427,7 +429,6 @@
                     @endguest
                 </div>
             </div>
-            
                 <div class=twitter>
                     <div class="information_header">
                         <h2>Twitter</h2>
@@ -444,9 +445,7 @@
                 @auth
                 <hr class=bar>
                 @endauth
-    
         </div>
     </body>
 </html>
-
 @endsection

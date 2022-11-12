@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
-        <title>スキー場追加</title>
+        <title>スキー場情報追加</title>
         <link rel="stylesheet" href="/css/create_slope.css">
         <script src="{{ asset('/js/create_slope.js') }}"></script>
     </head>

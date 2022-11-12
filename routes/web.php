@@ -12,6 +12,9 @@ Route::post('/infomation_list', 'SkiAreaController@store');
 Route::get('/ski_areas/{ski_area}/edit', 'SkiAreaController@edit');
 Route::put('/ski_areas/{ski_area}', 'SkiAreaController@update');
 Route::delete('/ski_areas/{ski_area}', 'SkiAreaController@delete');
+//スキー場検索
+Route::get('/pages/search_slope', 'SkiAreaController@search');
+Route::post('/search_slope_list', 'SkiAreaController@search');
 
 //プロフィール関係
 Route::get('/pages/profile', 'ProfileController@profile');

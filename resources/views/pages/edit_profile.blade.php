@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
-        <title>自己プロフィール登録</title>
+        <title>自己プロフィール編集</title>
         <link rel="stylesheet" href="/css/profile.css">
         
     </head>

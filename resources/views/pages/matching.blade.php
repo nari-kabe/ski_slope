@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
-        <title>お気に入り一覧</title>
+        <title>マッチング</title>
         <link rel="stylesheet" href="/css/matching.css">
     </head>
     <body>
