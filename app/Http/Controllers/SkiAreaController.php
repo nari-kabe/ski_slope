@@ -135,7 +135,6 @@ class SkiAreaController extends Controller
         $place_id_num = null;
         $place_name = null;
         $num = null;
-        
         if (Star::where('id', 1)->exists()) {
             $num = 1;
             $star_place_id_sort = $star->orderBy('place_id', 'asc')->take(30)->get();
@@ -328,5 +327,16 @@ class SkiAreaController extends Controller
     {
         $ski_area->delete();
         return redirect('/pages/login_home');
+    }
+    
+    public function search(Request $request)
+    {
+        $query = Ski_area::query();
+        $search_slope = $request->input('search_slope');
+        if (!empty($search_slope)) {
+            $query->where('place_name', $search_slope);
+        }
+        $result_search_slope = $query->get();
+        return view('/pages/search_slope')->with(['search_slope' => $search_slope, 'slopes' => $result_search_slope]);
     }
 }
