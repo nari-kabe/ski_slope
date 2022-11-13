@@ -178,7 +178,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><span>*</span>住まい</td>
+                    <td><span>*</span>住まい（都道府県）</td>
                     <td>
                         <input class="input_list" type=text name="profile[prefecture]" value="{{ old('profile.prefecture', $profile->prefecture) }}">
                         <p class=error>{{ $errors->first('profile.prefecture') }}</p>
