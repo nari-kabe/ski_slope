@@ -102,6 +102,7 @@ class MatchingController extends Controller
                 "上級者"
             ];
             
+            //各条件に合ったデータを検索
             if (!empty($sex) && $sex[0] != 10) {
                 $query->where('sex', $sex);
             }
@@ -122,7 +123,6 @@ class MatchingController extends Controller
                 }
             }
             
-            //各条件に合ったデータを取得
             if (!empty($prefecture) && $prefecture[0] !== "選択なし") {
                 $query->where('prefecture', $prefecture[0]);
             }
@@ -147,13 +147,28 @@ class MatchingController extends Controller
             } else {
                 $old_sex = 10;
             }
+
+            //マッチング相手プロフィールのお気に入り登録関係
+            $registered_profile = Find_friend::where('user_id', '=', Auth::user()->id)->get();
             
-            $star_profile = null;
-        
+            for ($i = 0; $i < count($registered_profile); $i++) {
+                $registered_profile_id[] = $registered_profile[$i]['profile_id'];
+            }
+            
+            for ($i = 0; $i < count($profiles); $i++) {
+                $profile_id[] = $profiles[$i]['id'];
+            }
+            
+            //登録済みのプロフィールとquery検索でヒットしたプロフィールが一致するものを探す
+            $overlap_id = [];
+            if (!empty($registered_profile_id) && !empty($profile_id)) {
+                $overlap_id = (array_intersect($registered_profile_id, $profile_id));
+            }
+            
             if (!empty($profiles)) {
                 return view('pages/matching', compact(
                     'profiles', 'sex_data', 'old_sex', 'age_data', 'age', 'prefecture_data', 'prefecture',
-                    'home_slope', 'level_data', 'ski_level', 'snowboard_level', 'star_profile'
+                    'home_slope', 'level_data', 'ski_level', 'snowboard_level', 'overlap_id'
                 ));
             } else {
                 return view('pages/no_matching');

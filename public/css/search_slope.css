@@ -9,7 +9,65 @@ h1 {
     margin-right: 25px;
 }
 
+/*
+ **絞り込み検索
+ */
+.refine_search {
+    position: relative;
+    width: 1339px;
+    margin: 40px 25px 70px 25px;
+    padding: 0.5em 1em;
+    border: solid 3px #a8ccf3;
+    border-radius: 8px;
+}
+
+.refine_search .refine_search_title {
+    position: absolute;
+    display: inline-block;
+    top: -13px;
+    left: 10px;
+    padding: 0 9px;
+    line-height: 1;
+    font-size: 19px;
+    background: #FFF;
+    color: #ff9595;
+    font-weight: bold;
+}
+
+#input_slope {
+    width: 200px;
+}
+
+.refine_search table, .refine_search th, .refine_search td {
+    border-collapse: collapse;
+    padding: 10px 15px;
+    border: solid 1px #a8d4f3;
+    text-align: center;
+    margin: 20px 92.961px;
+}
+
+.search {
+    position: absolute;
+    top: 75%;
+    right: 75px;
+    transform: translate(0, -75%);
+}
+
+.clear {
+    position: absolute;
+    top: 25%;
+    right: 40px;
+    transform: translate(0, -25%);
+}
+
 .ski_slope {
+    display: block;
+    margin-left: 30px;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.no_slope {
     margin-left: 30px;
 }
 
@@ -18,8 +76,8 @@ h1 {
  */
 .slope_information{
     position: relative;
-    margin-left: 30px;
-    margin-bottom: 40px;
+    margin-left: 40px;
+    margin-bottom: 50px;
 }
 
 table, th, td {
@@ -46,12 +104,11 @@ td{
 }
 
 .width_second_row_l{
-    width: 450px;
+    width: 430px;
 }
 
 .width_second_row_r{
-    /*width: 180px;*/
-    width: 450px;
+    width: 430px;
 }
 
 .summary_left{

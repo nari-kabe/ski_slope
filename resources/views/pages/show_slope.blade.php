@@ -177,7 +177,7 @@
             </div>
         
             <div class=twitter>
-                <div class="information_header">
+                <div>
                     <h2 class="h2_twitter">Twitter</h2>
                     <a class="fab fa-twitter fa-2x" href="https://twitter.com/?lang=ja"></a>
                 </div>

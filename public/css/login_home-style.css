@@ -113,7 +113,7 @@ table, th, td {
 }
 
 td{
-    height: 50px;
+    height: 60px;
 }
 
 .color_first_row{
@@ -149,6 +149,7 @@ td{
 .ski_slope{
     display: block;
     margin: 10px 0;
+    font-size: 16px;
 }
 
 .margin_bottom{

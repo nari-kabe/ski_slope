@@ -201,10 +201,10 @@ class SkiAreaController extends Controller
         $results = $this->getAreaTweets(10);
         $users = [];
         $tweets = [];
-        for($i=0; $i < 4; $i++){
+        for($i=0; $i <= 5; $i++){
             $users[$results["includes"]["users"][$i]["id"]] = $results["includes"]["users"][$i];
         }
-        for($i=0; $i < 4; $i++){
+        for($i=0; $i <= 5; $i++){
             $tweets[$i]=$results["data"][$i];
             $tweets[$i]["user"]=$users[$results["data"][$i]["author_id"]]; 
         }
@@ -332,11 +332,137 @@ class SkiAreaController extends Controller
     public function search(Request $request)
     {
         $query = Ski_area::query();
+        
+        $snowboard = $request->input('snowboard');
+        $prefecture = $request->input('prefecture');
+        $evening_hours = $request->input('evening_hours');
+        $lesson = $request->input('lesson');
+        $kids_park = $request->input('kids_park');
+        $spa = $request->input('spa');
+        $hotel = $request->input('hotel');
         $search_slope = $request->input('search_slope');
+        
+        $snowboard_data = [
+            10 => "選択なし",
+            0 => "使用不可",
+            1 => "使用可能",
+        ];
+            
+        $existence_data = [
+            "選択なし",
+            "有り",
+            "無し",
+        ];
+        
+        $prefecture_data = [
+            "選択なし",
+            "北海道",
+            "青森県",
+            "岩手県",
+            "宮城県",
+            "秋田県",
+            "山形県",
+            "福島県",
+            "茨城県",
+            "栃木県",
+            "群馬県",
+            "埼玉県",
+            "千葉県",
+            "東京都",
+            "神奈川県",
+            "新潟県",
+            "富山県",
+            "石川県",
+            "福井県",
+            "山梨県",
+            "長野県",
+            "岐阜県",
+            "静岡県",
+            "愛知県",
+            "三重県",
+            "滋賀県",
+            "京都府",
+            "大阪府",
+            "兵庫県",
+            "奈良県",
+            "和歌山県",
+            "鳥取県",
+            "島根県",
+            "岡山県",
+            "広島県",
+            "山口県",
+            "徳島県",
+            "香川県",
+            "愛媛県",
+            "高知県",
+            "福岡県",
+            "佐賀県",
+            "長崎県",
+            "熊本県",
+            "大分県",
+            "宮崎県",
+            "鹿児島県",
+            "沖縄県"
+        ];
+        
+        $null_judgment = ["有り" => '!=', "無し" => '='];
+ 
+        //各条件に合ったデータを検索
+        if (!empty($snowboard) && $snowboard[0] != 10) {
+            $query->where('snowboard', $snowboard);
+        }
+        
+        if (!empty($prefecture) && $prefecture[0] !== "選択なし") {
+            $query->where('prefecture', $prefecture[0]);
+        }
+        
+        if (!empty($evening_hours) && $evening_hours[0] !== "選択なし") {
+            $query->where('evening_hours', $null_judgment[$evening_hours[0]], null);
+        }
+        
+        if (!empty($lesson) && $lesson[0] !== "選択なし") {
+            $query->where('lesson', $null_judgment[$lesson[0]], null);
+        }
+        
+        if (!empty($kids_park) && $kids_park[0] !== "選択なし") {
+            $query->where('kids_park', $null_judgment[$kids_park[0]], null);
+        }
+        
+        if (!empty($spa) && $spa[0] !== "選択なし") {
+            $query->where('spa', $null_judgment[$spa[0]], null);
+        }
+
+        if (!empty($hotel) && $hotel[0] !== "選択なし") {
+            $query->where('hotel', $null_judgment[$hotel[0]], null);
+        }
+            
         if (!empty($search_slope)) {
             $query->where('place_name', $search_slope);
         }
+        
         $result_search_slope = $query->get();
-        return view('/pages/search_slope')->with(['search_slope' => $search_slope, 'slopes' => $result_search_slope]);
+        
+        //選択されたスノーボードの使用のセレクトボックスの値を保持
+        if(isset($_POST['snowboard'])){
+            $old_snowboard = $_POST['snowboard'][0];
+        } else {
+            $old_snowboard = 10;
+        }
+        
+        return view('/pages/search_slope')->with([
+            'snowboard_data' => $snowboard_data, 
+            'existence_data' => $existence_data, 
+            'prefecture_data' => $prefecture_data, 
+            'snowboard' => $snowboard, 
+            'prefecture' => $prefecture,
+            'evening_hours' => $evening_hours,
+            'lesson' => $lesson,
+            'kids_park' => $kids_park,
+            'spa' => $spa,
+            'hotel' => $hotel,
+            'search_slope' => $search_slope,
+            'slopes' => $result_search_slope,
+            'old_snowboard' => $old_snowboard,
+        ]);
     }
 }
