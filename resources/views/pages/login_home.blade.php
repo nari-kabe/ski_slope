@@ -7,6 +7,7 @@
         <meta charset="utf-8">
         <title>スキー場検索・登録・マッチング</title>
         <link rel="stylesheet" href="/css/login_home-style.css">
+        <link rel="stylesheet" href="/css/reset.css">
         <link href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" rel="stylesheet">
         <script src="{{ asset('/js/login_home.js') }}"></script>
         <hr class="head_hr">

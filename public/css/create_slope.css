@@ -1,11 +1,11 @@
+body {
+    font-family: "游ゴシック体", "Yu Gothic", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "sans-serif";
+}
+
 a {
   color: #3490dc;
   text-decoration: none;
   background-color: transparent;
-}
-
-input, textarea {
-    font-family: "游ゴシック体", "Yu Gothic", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "sans-serif";
 }
 
 .header{
