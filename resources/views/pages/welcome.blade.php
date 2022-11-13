@@ -3,7 +3,6 @@
     <head>
         <meta charset="utf-8">
         <title>welcom</title>
-        <!--<link rel="stylesheet" href="/css/style.css">-->
         <link rel="stylesheet" href="/css/home-style.css">
         
     </head>
