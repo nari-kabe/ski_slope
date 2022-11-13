@@ -24,7 +24,7 @@
                         <th>ホームゲレンデ・よく行くスキー場</th>
                     </tr>
                     <tr>
-                        <td class="terms">
+                        <td>
                             <select name="sex[]" id="select_sex">
                                 @foreach($sex_data as $key => $value)
                                         @if ($key == $old_sex)
@@ -36,7 +36,7 @@
                                @endforeach
                             </select>
                         </td>
-                        <td class="terms">
+                        <td>
                             <select name="age[]" id="select_age">
                                 @foreach($age_data as $value)
                                         @if ($age !== null && $value === $age[0])
@@ -48,7 +48,7 @@
                                @endforeach
                             </select>
                         </td>
-                        <td class="terms">
+                        <td>
                             <select name="prefecture[]" id="select_prefecture">
                                 @foreach($prefecture_data as $value)
                                         @if ($prefecture !== null && $value === $prefecture[0])
@@ -59,7 +59,7 @@
                                @endforeach
                             </select>
                         </td>
-                        <td class="terms">
+                        <td>
                             <select name="ski_level[]" id="select_ski_level">
                                 @foreach($level_data as $value)
                                         @if ($ski_level !== null && $value === $ski_level[0])
@@ -70,7 +70,7 @@
                                @endforeach
                             </select>
                         </td>
-                        <td class="terms">
+                        <td>
                             <select name="snowboard_level[]" id="select_snowboard_level">
                                 @foreach($level_data as $value)
                                         @if ($snowboard_level !== null && $value === $snowboard_level[0])
@@ -81,25 +81,25 @@
                                @endforeach
                             </select>
                         </td>
-                        <td class="terms">
+                        <td>
                             <input name='home_slope' id="input_slope" value='{{ $home_slope }}' placeholder="スキー場名を入力">
                         </td>
                     </tr>
             </table>
-                <input class="search" type='submit' value="検索">
+                    <input class="search" type='submit' value="検索">
                 </form>
             <button class="clear" onclick="reset()">すべての条件を<br>クリア</button>
         </div>
         @foreach ($profiles as $profile)
             <a class='profile' href="/profiles/{{ $profile['id'] }}">{{ $profile['user_name'] }}</a>
-            @if ($star_profile === null)
+            @if (in_array($profile['id'], $overlap_id))
+                <p class="p_inline">お気に入り登録済み</p>
+            @else
                 <form action="/find_profile_list" method="POST" class="bookmark">
-                @csrf
-                <input type="hidden" name="star_profile[profile_id]" value="{{ $profile['id'] }}">
+                    @csrf
+                    <input type="hidden" name="star_profile[profile_id]" value="{{ $profile['id'] }}">
                     <button type="submit">お気に入り登録</button>
                 </form>
-            @else
-                <td><p>お気に入り登録済み</p></td>
             @endif
             <div class='profile_information'>
                 <p class='sns'>SNS：{{ $profile['sns'] }}</p>
@@ -151,7 +151,7 @@
             </div>
         @endforeach
         @if ($profiles->isEmpty() === true)
-            <p>相手が見つかりませんでした</p>
+            <p class="no_profile">相手が見つかりませんでした</p>
         @endif
         <script>
             function reset() {

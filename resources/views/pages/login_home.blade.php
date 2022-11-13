@@ -5,7 +5,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
-        <title>スキー場検索</title>
+        <title>スキー場検索・登録・マッチング</title>
         <link rel="stylesheet" href="/css/login_home-style.css">
         <link href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" rel="stylesheet">
         <script src="{{ asset('/js/login_home.js') }}"></script>
@@ -368,16 +368,16 @@
                                             @endif
                                         </tr>
                                         <tr>
-                                            <td class="color_first_row">宿泊施設</td>
-                                            @if($ski_area->hotel===null)
+                                            <td class="color_first_row">レッスン</td>
+                                            @if($ski_area->lesson===null)
                                                 <td class="color_second_row width_second_row_r">-</td>
                                             @else
                                                 <td class="color_second_row width_second_row_r">有り</td>
                                             @endif
                                         </tr>
                                         <tr>
-                                            <td class="color_first_row">レッスン</td>
-                                            @if($ski_area->lesson===null)
+                                            <td class="color_first_row">宿泊施設</td>
+                                            @if($ski_area->hotel===null)
                                                 <td class="color_second_row width_second_row_r">-</td>
                                             @else
                                                 <td class="color_second_row width_second_row_r">有り</td>

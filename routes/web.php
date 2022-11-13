@@ -2,21 +2,23 @@
 
 use Illuminate\Support\Facades\Route;
 
+//ホーム
 Route::get('/', 'SkiAreaController@welcome');
+Route::get('/pages/login_home', 'SkiAreaController@login_home');
 
-//スキー場関係
+//スキー場作成・表示関係
 Route::get('/pages/create_slope', 'SkiAreaController@create_slope');
-Route::get('/pages/login_home', 'SkiAreaController@login_home'); //ホーム
 Route::get('/ski_areas/{ski_area}', 'SkiAreaController@show'); //注意! Route::get('/pages/create_slope', 'PostController@create_slope');よりも下に書く
 Route::post('/infomation_list', 'SkiAreaController@store');
 Route::get('/ski_areas/{ski_area}/edit', 'SkiAreaController@edit');
 Route::put('/ski_areas/{ski_area}', 'SkiAreaController@update');
 Route::delete('/ski_areas/{ski_area}', 'SkiAreaController@delete');
+
 //スキー場検索
 Route::get('/pages/search_slope', 'SkiAreaController@search');
 Route::post('/search_slope_list', 'SkiAreaController@search');
 
-//プロフィール関係
+//プロフィール作成・表示関係
 Route::get('/pages/profile', 'ProfileController@profile');
 Route::get('/profiles/{profile}', 'ProfileController@show');
 Route::post('/profile_list', 'ProfileController@store');
