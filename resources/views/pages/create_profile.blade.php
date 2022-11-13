@@ -4,9 +4,6 @@
         <meta charset="utf-8">
         <title>自己プロフィール登録</title>
         <link rel="stylesheet" href="/css/profile.css">
-        <!--<link rel="stylesheet" href="/css/create_slope.css">-->
-        <!--<script src="{{ asset('/js/create_slope.js') }}"></script>-->
-        
     </head>
     <body>
         <h1 class=header>CREATE YOUR PROFILE!</h1>
@@ -47,7 +44,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><span>*</span>住まい</td>
+                    <td><span>*</span>住まい（都道府県）</td>
                     <td>
                         <input class="input_list" type=text name="profile[prefecture]" value="{{ old('profile.prefecture') }}">
                         <p class=error>{{ $errors->first('profile.prefecture') }}</p>

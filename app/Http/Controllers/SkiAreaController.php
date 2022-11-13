@@ -256,7 +256,6 @@ class SkiAreaController extends Controller
     
     public function store(Request $request, Ski_area $ski_area)
     {
-        //dd($request->all());
         $request->validate([
             'ski_area.place_name' => ['required','string','min:5','max:40'],
             'ski_area.home_page' => ['nullable','url'],
@@ -266,7 +265,7 @@ class SkiAreaController extends Controller
             'ski_area.after_address' => ['required','string','max:50'],
             'ski_area.phone_number' => ['required', new PhoneNumberRule()],
             'ski_area.business_hours' => ['required','string'],
-            'ski_area.evening_hours' => ['nullable','string','max:30'],
+            'ski_area.evening_hours' => ['nullable','string','max:200'],
             'ski_area.season' => ['nullable','string'],
             'ski_area.lesson' => ['nullable','string'],
             'ski_area.restaurant' => ['nullable','string'],
@@ -293,7 +292,6 @@ class SkiAreaController extends Controller
     
     public function update(Request $request, Ski_area $ski_area)
     {
-        //dd($request->all());
         $request->validate([
             'ski_area.place_name' => ['required','string','min:5','max:40'],
             'ski_area.home_page' => ['nullable','url'],
@@ -303,7 +301,7 @@ class SkiAreaController extends Controller
             'ski_area.after_address' => ['required','string','max:50'],
             'ski_area.phone_number' => ['required', new PhoneNumberRule()],
             'ski_area.business_hours' => ['required','string'],
-            'ski_area.evening_hours' => ['nullable','string','max:30'],
+            'ski_area.evening_hours' => ['nullable','string','max:200'],
             'ski_area.season' => ['nullable','string'],
             'ski_area.lesson' => ['nullable','string'],
             'ski_area.restaurant' => ['nullable','string'],

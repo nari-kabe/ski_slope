@@ -8,6 +8,10 @@ a:hover{
   color:red;
 }
 
+input, textarea {
+    font-family: "游ゴシック体", "Yu Gothic", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "sans-serif";
+}
+
 .header{
     display: inline-block;
     margin-right: 40px;
