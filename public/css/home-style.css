@@ -3,17 +3,17 @@
 }
 
 .login_yes{
-    /*position: relative;*/
-    /*left: 25%;*/
     margin-bottom: 15px;
 }
 
 .login_no{
-    /*position: relative;*/
-    /*left: 75%;*/
 }
 
 .attention{
     color: red;
     margin-top: 8px;
+}
+
+.images {
+    width: 300px;
 }

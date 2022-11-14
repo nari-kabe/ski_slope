@@ -522,9 +522,10 @@
                     @endif
                 </tr>
                 <tr>
-                    <td><span>*</span>SNS</td>
+                    <td>SNS</td>
                     <td>
                         <input class="input_list" type=text placeholder="使用しているSNSとそのユーザー名またはリンクを記載してください" name=profile[sns] value="{{ old('profile.sns', $profile->sns) }}">
+                        <p>※マッチングの検索対象になるには入力必須です</p>
                         <p class=error>{{ $errors->first('profile.sns') }}</p>
                     </td>
                 </tr>

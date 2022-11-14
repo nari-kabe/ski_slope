@@ -36,6 +36,30 @@
                     @endauth
                 </div>
             </div>
+            <div class="nav_s_screen">
+                <div>
+                    @guest
+                        <p>ログインしていません</p>
+                    @endguest
+                    @auth
+                        @if ($profile_record === null)
+                            <a class="link_color right_space" href="/pages/profile">自己プロフィール登録</a>
+                            <p class="line_right"></p>
+                        @endif
+                        <a class="link_color right_space" href="/pages/my_information">My information</a>
+                        <p class="line_right"></p>
+                        <a class="link_color right_space" href="/pages/create_slope">スキー場を追加する</a>
+                        <p class="line_right"></p>
+                        <a class="link_color right_space" href="/pages/search_slope">スキー場を検索する</a>
+                        
+                        <div class="nav_block">
+                        <a class="link_color right_space" href="#star_rank">スキー場お気に入りランキング</a>
+                        <p class="line_right"></p>
+                        <a class="link_color right_space" href="/pages/matching">マッチング相手を探す</a>
+                        </div>
+                    @endauth
+                </div>
+            </div>
         </div>
             
         <div class="image_container">
@@ -69,7 +93,7 @@
                         @if( $ski_area->prefecture === "北海道")
                             <a class='ski_slope' href="/ski_areas/{{ $ski_area->id }}">{{ $ski_area->place_name }}</a>
                             <div class=slope_information>
-                                <div class=summary_left>
+                                <div class=summary>
                                     <table>
                                         <tr>
                                             <td class="color_first_row">シーズン期間</td>
@@ -77,6 +101,13 @@
                                                 <td class="color_second_row width_second_row_l">-</td>
                                             @else
                                                 <td class="color_second_row width_second_row_l">{{ $ski_area->season }}</td>
+                                            @endif
+                                            <td></td>
+                                            <td class="color_first_row min_963px">ナイター</td>
+                                            @if($ski_area->evening_hours===null)
+                                                <td class="color_second_row width_second_row_r min_963px">-</td>
+                                            @else
+                                                <td class="color_second_row width_second_row_r min_963px">有り</td>
                                             @endif
                                         </tr>
                                         <tr>
@@ -86,6 +117,13 @@
                                             @else
                                                  <td class="color_second_row width_second_row_l">{{ $ski_area->lift_ticket }}</td>
                                             @endif
+                                            <td></td>
+                                            <td class="color_first_row min_963px">宿泊施設</td>
+                                            @if($ski_area->hotel===null)
+                                                <td class="color_second_row width_second_row_r min_963px">-</td>
+                                            @else
+                                                <td class="color_second_row width_second_row_r min_963px">有り</td>
+                                            @endif
                                         </tr>
                                         <tr>
                                             <td class="color_first_row">スノーボードの使用</td>
@@ -94,34 +132,12 @@
                                             @else
                                                 <td class="color_second_row width_second_row_l">使用可能</td>
                                             @endif
-                                        </tr>
-                                    </table>
-                                </div>
-                                
-                                <div class=summary_right>
-                                    <table>
-                                        <tr>
-                                            <td class="color_first_row">ナイター</td>
-                                            @if($ski_area->evening_hours===null)
-                                                <td class="color_second_row width_second_row_r">-</td>
-                                            @else
-                                                <td class="color_second_row width_second_row_r">有り</td>
-                                            @endif
-                                        </tr>
-                                        <tr>
-                                            <td class="color_first_row">宿泊施設</td>
-                                            @if($ski_area->hotel===null)
-                                                <td class="color_second_row width_second_row_r">-</td>
-                                            @else
-                                                <td class="color_second_row width_second_row_r">有り</td>
-                                            @endif
-                                        </tr>
-                                        <tr>
-                                            <td class="color_first_row">レッスン</td>
+                                            <td></td>
+                                            <td class="color_first_row min_963px">レッスン</td>
                                             @if($ski_area->lesson===null)
-                                                <td class="color_second_row width_second_row_r">-</td>
+                                                <td class="color_second_row width_second_row_r min_963px">-</td>
                                             @else
-                                                <td class="color_second_row width_second_row_r">有り</td>
+                                                <td class="color_second_row width_second_row_r min_963px">有り</td>
                                             @endif
                                         </tr>
                                     </table>
@@ -143,6 +159,13 @@
                                             @else
                                                 <td class="color_second_row width_second_row_l">{{ $ski_area->season }}</td>
                                             @endif
+                                            <td></td>
+                                            <td class="color_first_row min_963px">ナイター</td>
+                                            @if($ski_area->evening_hours===null)
+                                                <td class="color_second_row width_second_row_r min_963px">-</td>
+                                            @else
+                                                <td class="color_second_row width_second_row_r min_963px">有り</td>
+                                            @endif
                                         </tr>
                                         <tr>
                                             <td class="color_first_row">リフト料金</td>
@@ -150,6 +173,13 @@
                                                 <td class="color_second_row width_second_row_l">-</td>
                                             @else
                                                  <td class="color_second_row width_second_row_l">{{ $ski_area->lift_ticket }}</td>
+                                            @endif
+                                            <td></td>
+                                            <td class="color_first_row min_963px">宿泊施設</td>
+                                            @if($ski_area->hotel===null)
+                                                <td class="color_second_row width_second_row_r min_963px">-</td>
+                                            @else
+                                                <td class="color_second_row width_second_row_r min_963px">有り</td>
                                             @endif
                                         </tr>
                                         <tr>
@@ -159,34 +189,12 @@
                                             @else
                                                 <td class="color_second_row width_second_row_l">使用可能</td>
                                             @endif
-                                        </tr>
-                                    </table>
-                                </div>
-                                
-                                <div class=summary_right>
-                                    <table>
-                                        <tr>
-                                            <td class="color_first_row">ナイター</td>
-                                            @if($ski_area->evening_hours===null)
-                                                <td class="color_second_row width_second_row_r">-</td>
-                                            @else
-                                                <td class="color_second_row width_second_row_r">有り</td>
-                                            @endif
-                                        </tr>
-                                        <tr>
-                                            <td class="color_first_row">宿泊施設</td>
-                                            @if($ski_area->hotel===null)
-                                                <td class="color_second_row width_second_row_r">-</td>
-                                            @else
-                                                <td class="color_second_row width_second_row_r">有り</td>
-                                            @endif
-                                        </tr>
-                                        <tr>
-                                            <td class="color_first_row">レッスン</td>
+                                            <td></td>
+                                            <td class="color_first_row min_963px">レッスン</td>
                                             @if($ski_area->lesson===null)
-                                                <td class="color_second_row width_second_row_r">-</td>
+                                                <td class="color_second_row width_second_row_r min_963px">-</td>
                                             @else
-                                                <td class="color_second_row width_second_row_r">有り</td>
+                                                <td class="color_second_row width_second_row_r min_963px">有り</td>
                                             @endif
                                         </tr>
                                     </table>
@@ -208,6 +216,13 @@
                                             @else
                                                 <td class="color_second_row width_second_row_l">{{ $ski_area->season }}</td>
                                             @endif
+                                            <td></td>
+                                            <td class="color_first_row min_963px">ナイター</td>
+                                            @if($ski_area->evening_hours===null)
+                                                <td class="color_second_row width_second_row_r min_963px">-</td>
+                                            @else
+                                                <td class="color_second_row width_second_row_r min_963px">有り</td>
+                                            @endif
                                         </tr>
                                         <tr>
                                             <td class="color_first_row">リフト料金</td>
@@ -215,6 +230,13 @@
                                                 <td class="color_second_row width_second_row_l">-</td>
                                             @else
                                                  <td class="color_second_row width_second_row_l">{{ $ski_area->lift_ticket }}</td>
+                                            @endif
+                                            <td></td>
+                                            <td class="color_first_row min_963px">宿泊施設</td>
+                                            @if($ski_area->hotel===null)
+                                                <td class="color_second_row width_second_row_r min_963px">-</td>
+                                            @else
+                                                <td class="color_second_row width_second_row_r min_963px">有り</td>
                                             @endif
                                         </tr>
                                         <tr>
@@ -224,34 +246,12 @@
                                             @else
                                                 <td class="color_second_row width_second_row_l">使用可能</td>
                                             @endif
-                                        </tr>
-                                    </table>
-                                </div>
-                                
-                                <div class=summary_right>
-                                    <table>
-                                        <tr>
-                                            <td class="color_first_row">ナイター</td>
-                                            @if($ski_area->evening_hours===null)
-                                                <td class="color_second_row width_second_row_r">-</td>
-                                            @else
-                                                <td class="color_second_row width_second_row_r">有り</td>
-                                            @endif
-                                        </tr>
-                                        <tr>
-                                            <td class="color_first_row">宿泊施設</td>
-                                            @if($ski_area->hotel===null)
-                                                <td class="color_second_row width_second_row_r">-</td>
-                                            @else
-                                                <td class="color_second_row width_second_row_r">有り</td>
-                                            @endif
-                                        </tr>
-                                        <tr>
-                                            <td class="color_first_row">レッスン</td>
+                                            <td></td>
+                                            <td class="color_first_row min_963px">レッスン</td>
                                             @if($ski_area->lesson===null)
-                                                <td class="color_second_row width_second_row_r">-</td>
+                                                <td class="color_second_row width_second_row_r min_963px">-</td>
                                             @else
-                                                <td class="color_second_row width_second_row_r">有り</td>
+                                                <td class="color_second_row width_second_row_r min_963px">有り</td>
                                             @endif
                                         </tr>
                                     </table>
@@ -273,6 +273,13 @@
                                             @else
                                                 <td class="color_second_row width_second_row_l">{{ $ski_area->season }}</td>
                                             @endif
+                                            <td></td>
+                                            <td class="color_first_row min_963px">ナイター</td>
+                                            @if($ski_area->evening_hours===null)
+                                                <td class="color_second_row width_second_row_r min_963px">-</td>
+                                            @else
+                                                <td class="color_second_row width_second_row_r min_963px">有り</td>
+                                            @endif
                                         </tr>
                                         <tr>
                                             <td class="color_first_row">リフト料金</td>
@@ -280,6 +287,13 @@
                                                 <td class="color_second_row width_second_row_l">-</td>
                                             @else
                                                  <td class="color_second_row width_second_row_l">{{ $ski_area->lift_ticket }}</td>
+                                            @endif
+                                            <td></td>
+                                            <td class="color_first_row min_963px">宿泊施設</td>
+                                            @if($ski_area->hotel===null)
+                                                <td class="color_second_row width_second_row_r min_963px">-</td>
+                                            @else
+                                                <td class="color_second_row width_second_row_r min_963px">有り</td>
                                             @endif
                                         </tr>
                                         <tr>
@@ -289,34 +303,12 @@
                                             @else
                                                 <td class="color_second_row width_second_row_l">使用可能</td>
                                             @endif
-                                        </tr>
-                                    </table>
-                                </div>
-                                
-                                <div class=summary_right>
-                                    <table>
-                                        <tr>
-                                            <td class="color_first_row">ナイター</td>
-                                            @if($ski_area->evening_hours===null)
-                                                <td class="color_second_row width_second_row_r">-</td>
-                                            @else
-                                                <td class="color_second_row width_second_row_r">有り</td>
-                                            @endif
-                                        </tr>
-                                        <tr>
-                                            <td class="color_first_row">宿泊施設</td>
-                                            @if($ski_area->hotel===null)
-                                                <td class="color_second_row width_second_row_r">-</td>
-                                            @else
-                                                <td class="color_second_row width_second_row_r">有り</td>
-                                            @endif
-                                        </tr>
-                                        <tr>
-                                            <td class="color_first_row">レッスン</td>
+                                            <td></td>
+                                            <td class="color_first_row min_963px">レッスン</td>
                                             @if($ski_area->lesson===null)
-                                                <td class="color_second_row width_second_row_r">-</td>
+                                                <td class="color_second_row width_second_row_r min_963px">-</td>
                                             @else
-                                                <td class="color_second_row width_second_row_r">有り</td>
+                                                <td class="color_second_row width_second_row_r min_963px">有り</td>
                                             @endif
                                         </tr>
                                     </table>
@@ -338,6 +330,13 @@
                                             @else
                                                 <td class="color_second_row width_second_row_l">{{ $ski_area->season }}</td>
                                             @endif
+                                            <td></td>
+                                            <td class="color_first_row">ナイター</td>
+                                            @if($ski_area->evening_hours===null)
+                                                <td class="color_second_row width_second_row_r">-</td>
+                                            @else
+                                                <td class="color_second_row width_second_row_r">有り</td>
+                                            @endif
                                         </tr>
                                         <tr>
                                             <td class="color_first_row">リフト料金</td>
@@ -345,6 +344,13 @@
                                                 <td class="color_second_row width_second_row_l">-</td>
                                             @else
                                                  <td class="color_second_row width_second_row_l">{{ $ski_area->lift_ticket }}</td>
+                                            @endif
+                                            <td></td>
+                                            <td class="color_first_row">宿泊施設</td>
+                                            @if($ski_area->hotel===null)
+                                                <td class="color_second_row width_second_row_r">-</td>
+                                            @else
+                                                <td class="color_second_row width_second_row_r">有り</td>
                                             @endif
                                         </tr>
                                         <tr>
@@ -354,31 +360,9 @@
                                             @else
                                                 <td class="color_second_row width_second_row_l">使用可能</td>
                                             @endif
-                                        </tr>
-                                    </table>
-                                </div>
-                                
-                                <div class=summary_right>
-                                    <table>
-                                        <tr>
-                                            <td class="color_first_row">ナイター</td>
-                                            @if($ski_area->evening_hours===null)
-                                                <td class="color_second_row width_second_row_r">-</td>
-                                            @else
-                                                <td class="color_second_row width_second_row_r">有り</td>
-                                            @endif
-                                        </tr>
-                                        <tr>
+                                            <td></td>
                                             <td class="color_first_row">レッスン</td>
                                             @if($ski_area->lesson===null)
-                                                <td class="color_second_row width_second_row_r">-</td>
-                                            @else
-                                                <td class="color_second_row width_second_row_r">有り</td>
-                                            @endif
-                                        </tr>
-                                        <tr>
-                                            <td class="color_first_row">宿泊施設</td>
-                                            @if($ski_area->hotel===null)
                                                 <td class="color_second_row width_second_row_r">-</td>
                                             @else
                                                 <td class="color_second_row width_second_row_r">有り</td>
@@ -404,21 +388,29 @@
                         @if (!empty($place_id_rank))
                             <div class=star_ranking>
                                 <table>
-                                @for ($i = 0; $i < 10; $i++)
-                                    <tr>
-                                        <td>
-                                            <p class="rank">No.{{ $i+1 }} {{ $place_name[$i] }}</p>
-                                        </td>
-                                        <td>
-                                            <a class='ski_slope' href="/ski_areas/{{ $place_id_rank[$i] }}">詳細を見る</a>
-                                        </td>
-                                    </tr>
-                                    @if ($i < (10 -2) && $place_id_num[$i] !== $place_id_num[$i + 1])
-                                        @php
-                                            $num += 1;
-                                        @endphp
-                                    @endif
-                                @endfor
+                                @if (count($place_id_rank) < 10)
+                                    @for ($i = 0; $i < count($place_id_rank); $i++)
+                                        <tr>
+                                            <td>
+                                                <p class="rank">No.{{ $i+1 }} {{ $place_name[$i] }}</p>
+                                            </td>
+                                            <td>
+                                                <a class='ski_slope' href="/ski_areas/{{ $place_id_rank[$i] }}">詳細を見る</a>
+                                            </td>
+                                        </tr>
+                                    @endfor
+                                @else 
+                                    @for ($i = 0; $i < 10; $i++)
+                                        <tr>
+                                            <td>
+                                                <p class="rank">No.{{ $i+1 }} {{ $place_name[$i] }}</p>
+                                            </td>
+                                            <td>
+                                                <a class='ski_slope' href="/ski_areas/{{ $place_id_rank[$i] }}">詳細を見る</a>
+                                            </td>
+                                        </tr>
+                                    @endfor
+                                @endif
                                 </table>
                             </div>
                         @else

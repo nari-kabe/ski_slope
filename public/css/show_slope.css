@@ -40,6 +40,12 @@ a {
     position: relative;
 }
 
+@media screen and (max-width: 1370px) {
+    .twitter{
+        display: none;
+    }
+}
+
 .twitter{
     position: absolute;
     top: 0px;

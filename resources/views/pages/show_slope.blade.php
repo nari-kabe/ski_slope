@@ -62,7 +62,7 @@
                     <tr>
                         <td>ホームページ</td> 
                         @if($ski_area->home_page===null)
-                            <td>未記入</td>
+                            <td>無し</td>
                         @else
                             <td><a href="{{ $ski_area->home_page }}">{{ $ski_area->home_page }}</a></td>
                         @endif
@@ -78,7 +78,7 @@
                     <tr>
                         <td>リフト料金</td> 
                         @if($ski_area->lift_ticket===null)
-                            <td>未記入</td>
+                            <td>無し</td>
                         @else
                             <td>{{ $ski_area->lift_ticket }}</td>
                         @endif
@@ -86,7 +86,7 @@
                     <tr>
                         <td>シーズン期間</td>
                         @if($ski_area->season===null)
-                            <td>未記入</td>
+                            <td>無し</td>
                         @else
                             <td>{{ $ski_area->season }}</td>
                         @endif
@@ -94,7 +94,7 @@
                     <tr>
                         <td>ナイター</td> 
                         @if($ski_area->evening_hours===null)
-                            <td>未記入</td>
+                            <td>無し</td>
                         @else
                             <td>{{ $ski_area->evening_hours }}</td>
                         @endif
@@ -110,7 +110,7 @@
                     <tr>
                         <td>レッスン</td> 
                         @if($ski_area->lesson===null)
-                            <td>未記入</td>
+                            <td>無し</td>
                         @else
                             <td>{{ $ski_area->lesson }}</td>
                         @endif
@@ -118,7 +118,7 @@
                     <tr>
                         <td>キッズパーク</td> 
                         @if($ski_area->kids_park===null)
-                            <td>未記入</td>
+                            <td>無し</td>
                         @else
                             <td>{{ $ski_area->kids_park }}</td>
                         @endif
@@ -126,7 +126,7 @@
                     <tr>
                         <td>駐車場</td> 
                         @if($ski_area->parking_lot===null)
-                            <td>未記入</td>
+                            <td>無し</td>
                         @else
                             <td>{{ $ski_area->parking_lot }}</td>
                         @endif
@@ -134,7 +134,7 @@
                     <tr>
                         <td>レストラン</td> 
                         @if($ski_area->restaurant===null)
-                            <td>未記入</td>
+                            <td>無し</td>
                         @else
                             <td>{{ $ski_area->restaurant }}</td>
                         @endif
@@ -142,7 +142,7 @@
                     <tr>
                         <td>温泉</td> 
                         @if($ski_area->spa===null)
-                            <td>未記入</td>
+                            <td>無し</td>
                         @else
                             <td>{{ $ski_area->spa }}</td>
                         @endif
@@ -150,7 +150,7 @@
                     <tr>
                         <td>宿泊施設</td> 
                         @if($ski_area->hotel===null)
-                            <td>未記入</td>
+                            <td>無し</td>
                         @else
                             <td>{{ $ski_area->hotel }}</td>
                         @endif
@@ -158,7 +158,7 @@
                     <tr>
                         <td>自由記入欄</td> 
                         @if($ski_area->hotel===null)
-                            <td>未記入</td>
+                            <td>無し</td>
                         @else
                             <td>{{ $ski_area->free_entry }}</td>
                         @endif
