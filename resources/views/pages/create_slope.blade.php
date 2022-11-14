@@ -21,6 +21,7 @@
         
         <h2 class=inline>情報一覧</h2>
         <p class=inline id=inline_width><span>*</span>は必須です</p>
+        <p class="caution">※"有" を選択した場合は情報を入力してください。"有" を選択した際でも、入力がなかった場合は、閲覧する際に "無"として表示されます。</p>
         <div id="list">
             <table>
                 <tr>

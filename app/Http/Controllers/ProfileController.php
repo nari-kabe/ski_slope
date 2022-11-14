@@ -75,7 +75,7 @@ class ProfileController extends Controller
             'profile.public_setting' => ['required'],
             'profile.greeting' => ['nullable','string','max:300'],
             'profile.prefecture' => ['required', new PrefectureRule()],
-            'profile.sns' => ['required','string','max:300'],
+            'profile.sns' => ['nullable','string','max:300'],
         ]);
         
         $input = $request['profile'];

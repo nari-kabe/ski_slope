@@ -103,11 +103,18 @@
             @endif
             <div class='profile_information'>
                 <p class='sns'>SNS：{{ $profile['sns'] }}</p>
-                <div class='summary_left'>
+                <div class='summary'>
                     <table>
                         <tr>
-                            <td class="color_first_row">住まい</td>
+                            <td class="color_first_row">住まい（都道府県）</td>
                             <td class="color_second_row width_second_row_l">{{ $profile['prefecture'] }}</td>
+                            <td>　</td>
+                            <td class="color_first_row">ホームゲレンデ</td>
+                            @if ($profile['home_slope'] === null)
+                                <td class="color_second_row width_second_row_l">-</td>
+                            @else
+                                <td class="color_second_row width_second_row_l">{{ $profile['home_slope']}}</td>
+                            @endif
                         </tr>
                         <tr>
                             <td class="color_first_row">性別</td>
@@ -120,29 +127,14 @@
                             @else
                                 <td class="color_second_row width_second_row_l">その他</td>
                             @endif
-                        </tr>
-                        <tr>
-                            <td class="color_first_row">年齢</td>
-                            <td class="color_second_row width_second_row_l">{{ $profile['age'] }}</td>
-                        </tr>
-                    </table>
-                </div>
-                
-                <div class=summary_right>
-                    <table>
-                        <tr>
-                            <td class="color_first_row">ホームゲレンデ</td>
-                            @if ($profile['home_slope'] === null)
-                                <td class="color_second_row width_second_row_r">-</td>
-                            @else
-                                <td class="color_second_row width_second_row_r">{{ $profile['home_slope']}}</td>
-                            @endif
-                        </tr>
-                        <tr>
+                            <td>　</td>
                             <td class="color_first_row">スキーの経験</td>
                             <td class="color_second_row width_second_row_l">{{ $profile['ski_level'] }}</td>
                         </tr>
                         <tr>
+                            <td class="color_first_row">年齢</td>
+                            <td class="color_second_row width_second_row_l">{{ $profile['age'] }}</td>
+                            <td>　</td>
                             <td class="color_first_row">スノーボードの経験</td>
                             <td class="color_second_row width_second_row_l">{{ $profile['snowboard_level'] }}</td>
                         </tr>

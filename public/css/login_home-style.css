@@ -61,8 +61,35 @@ a.link_color:hover {
     justify-content: center;
 }
 
-.right_space{
-    margin: 0 20px;
+@media screen and (max-width: 963px) {
+    .nav{
+        display: none;
+    }
+    
+    .right_space{
+        margin: 0 15px;
+    }
+}
+
+.nav_s_screen {
+    display: flex;
+    justify-content: center;
+}
+
+.nav_block {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+@media screen and (min-width: 963px) {
+    .nav_s_screen{
+        display: none;
+    }
+    
+    .right_space{
+        margin: 0 20px;
+    }
 }
 
 .space{
@@ -92,17 +119,23 @@ a.link_color:hover {
 
 .information{
     position: absolute;
+    width: auto;
     left: 50px;
 }
 
 .information_header{
     margin-bottom: 10px;
-    margin-right: 380px;
 }
 
 .slope_information{
     position: relative;
     margin-bottom: 40px;
+}
+
+@media screen and (max-width: 704px) {
+    .slope_information{
+        display: none;
+    }
 }
 
 table, th, td {
@@ -129,17 +162,17 @@ td{
 }
 
 .width_second_row_r{
-    width: 180px;
+    width: 160px;
 }
 
-.summary_left{
+.summary{
     display: inline-block;
 }
 
-.summary_right{
-    position: absolute;
-    top: 0;
-    left: 45vw;
+@media screen and (max-width: 963px) {
+    .min_963px{
+        display: none;
+    }
 }
 
 .slope_list{
@@ -200,6 +233,12 @@ td{
 **twitterAPI
 **
 */
+@media screen and (max-width: 1380px) {
+    .twitter{
+        display: none;
+    }
+}
+
 .twitter{
     position: absolute;
     top: 0px;

@@ -4,6 +4,10 @@ a {
   background-color: transparent;
 }
 
+hr {
+    width: 1424px;
+}
+
 .matching_header {
     display: inline-block;
     margin-right: 25px;
@@ -11,7 +15,7 @@ a {
 
 .profile {
     display: inline-block;
-    margin: 10px 25px;
+    margin: 10px 25px 10px 40px;
     font-size: 18px;
 }
 
@@ -33,19 +37,11 @@ a {
 }
 
 .profile_information {
-    position: relative;
-    margin-left: 35px;
-    margin-bottom: 40px;
+    margin: 0 auto 40px auto;
+    width: 1278px;
 }
 
-.summary_left table, .summary_left th, .summary_left td {
-    border-collapse: collapse;
-    padding: 5px 15px;
-    border-top: 5px solid #FFFFFF;
-    border-bottom: 2px solid #FFFFFF;
-}
-
-.summary_right table, .summary_right th, .summary_right td {
+.summary table, .summary th, .summary td {
     border-collapse: collapse;
     padding: 5px 15px;
     border-top: 5px solid #FFFFFF;
@@ -56,15 +52,9 @@ td{
     height: 50px;
 }
 
-.summary_left {
+.summary {
     display: inline-block;
-    margin-left: 20px;
-}
-
-.summary_right {
-    position: absolute;
-    top: 32px;
-    left: 45vw;
+    margin-left: 2px;
 }
 
 .color_first_row {
@@ -76,17 +66,13 @@ td{
 }
 
 .width_second_row_l {
-    width: 450px;
-}
-
-.width_second_row_r {
-    width: 180px;
+    width: 460px;
 }
 
 .refine_search {
     position: relative;
     width: 1278px;
-    margin: 40px 25px 70px 25px;
+    margin: 40px auto 70px auto;
     padding: 0.5em 1em;
     border: solid 3px #a8ccf3;
     border-radius: 8px;
