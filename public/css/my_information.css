@@ -4,60 +4,64 @@ a {
   background-color: transparent;
 }
 
-a:hover{
+a:hover {
   color:red;
 }
 
-.header{
+.header {
   display: inline-block;
   margin-left: 15px;
   margin-right: 18px;
 }
 
-.sub_header{
+.sub_header {
   margin-left: 18px;
   display: inline-block;
 }
 
-.inline_block{
+.inline_block {
   display: inline-block;
 }
 
-.left_right_space{
+.left_right_space {
   margin: 0 18px;
 }
 
-.text{
-  margin-left: 24px;
+.text {
+  margin-left: 38px;
+}
+
+#list {
+  margin-left: 40px;
 }
 
 #list table, #list th, #list td {
   border-collapse: collapse;
   padding: 5px 15px;
   border: solid 1px #a8d4f3;
-  margin-left: 30px;
+  /*margin-left: 30px;*/
 }
 
-#list td{
+#list td {
     height: 40px;
 }
 
-.input_list{
+.input_list {
   width: 500px;
   height: 25px;
 }
 
 /*お気に入り*/
-.star_header{
+.star_header {
   display: inline-block;
-  margin: 30px 25px 0 18px;
+  margin: 30px 0 19.92px 18px;
 }
 
-.rank{
+.rank {
   display: inline-block;
 }
 
-.ski_slope{
+.ski_slope {
   color:white;
   background-color: #87CEFA;
   padding: 10px 10px;
@@ -65,7 +69,7 @@ a:hover{
   transition: all .7s;
 }
 
-.ski_slope:hover{
+.ski_slope:hover {
   color: #87CEFA;
   background-color: white;
   border:3px solid #87CEFA;
@@ -76,24 +80,24 @@ table, th, td {
   padding: 5px 15px;
 }
 
-td.detail{
+td.detail {
   width: 150px;
 }
 
-.delete{
+.delete {
   width: 80px;
 }
 
-.header_space{
+.header_space {
   margin: 0 15px;
 }
 
-.star_rank{
-  margin-left: 25px;
+.star_rank {
+  margin-left: 40px;
 }
 
 .profile {
   display: block;
   margin-top: 15px;
-  margin-left: 30px;
+  margin-left: 40px;
 }
