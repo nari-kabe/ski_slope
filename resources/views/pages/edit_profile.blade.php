@@ -25,7 +25,7 @@
                     <td><span>*</span>ユーザーネーム</td>
                     <td>
                         <input class="input_list" type=text name="profile[user_name]" value="{{ old('profile.user_name', $profile->user_name) }}">
-                        <p class=error>{{ $errors->first('profile.user_name') }}</p>
+                        <p class="error">{{ $errors->first('profile.user_name') }}</p>
                     </td>
                 </tr>
                 <tr>
@@ -37,7 +37,7 @@
                                 <input type="radio" id="sex1" class="radio2" name="profile[sex]" value="1" {{ old("profile[sex]", 1) == "1" ? "checked" : "" }}><label for="sex1">男</label>
                                 <input type="radio" id="sex2" class="radio3" name="profile[sex]" value="2" {{ old("profile[sex]") == "2" ? "checked" : "" }}><label for="sex2">女</label>
                                 <input type="radio" id="sex9" class="radio4" name="profile[sex]" value="9" {{ old("profile[sex]") == "9" ? "checked" : "" }}><label for="sex9">その他</label>
-                                <p class=error>{{ $errors->first('profile.sex') }}</p>
+                                <p class="error">{{ $errors->first('profile.sex') }}</p>
                             </td>
                         @elseif((old("profile.sex") == "2"))
                             <td>
@@ -45,7 +45,7 @@
                                 <input type="radio" id="sex1" class="radio2" name="profile[sex]" value="1" {{ old("profile[sex]") == "1" ? "checked" : "" }}><label for="sex1">男</label>
                                 <input type="radio" id="sex2" class="radio3" name="profile[sex]" value="2" {{ old("profile[sex]",2) == "2" ? "checked" : "" }}><label for="sex2">女</label>
                                 <input type="radio" id="sex9" class="radio4" name="profile[sex]" value="9" {{ old("profile[sex]") == "9" ? "checked" : "" }}><label for="sex9">その他</label>
-                                <p class=error>{{ $errors->first('profile.sex') }}</p>
+                                <p class="error">{{ $errors->first('profile.sex') }}</p>
                             </td>
                         
                         @elseif ((old("profile.sex") == "9"))
@@ -54,7 +54,7 @@
                                 <input type="radio" id="sex1" class="radio2" name="profile[sex]" value="1" {{ old("profile[sex]") == "1" ? "checked" : "" }}><label for="sex1">男</label>
                                 <input type="radio" id="sex2" class="radio3" name="profile[sex]" value="2" {{ old("profile[sex]") == "2" ? "checked" : "" }}><label for="sex2">女</label>
                                 <input type="radio" id="sex9" class="radio4" name="profile[sex]" value="9" {{ old("profile[sex]", 9) == "9" ? "checked" : "" }}><label for="sex9">その他</label>
-                                <p class=error>{{ $errors->first('profile.sex') }}</p>
+                                <p class="error">{{ $errors->first('profile.sex') }}</p>
                             </td>
                         @else
                             <td>
@@ -62,7 +62,7 @@
                                 <input type="radio" id="sex1" class="radio2" name="profile[sex]" value="1" {{ old("profile[sex]") == "1" ? "checked" : "" }}><label for="sex1">男</label>
                                 <input type="radio" id="sex2" class="radio3" name="profile[sex]" value="2" {{ old("profile[sex]") == "2" ? "checked" : "" }}><label for="sex2">女</label>
                                 <input type="radio" id="sex9" class="radio4" name="profile[sex]" value="9" {{ old("profile[sex]") == "9" ? "checked" : "" }}><label for="sex9">その他</label>
-                                <p class=error>{{ $errors->first('profile.sex') }}</p>
+                                <p class="error">{{ $errors->first('profile.sex') }}</p>
                             </td>
                         @endif
                     @elseif ($profile->sex === 1)
@@ -72,7 +72,7 @@
                                 <input type="radio" id="sex1" class="radio2" name="profile[sex]" value="1" {{ old("profile[sex]") == "1" ? "checked" : "" }}><label for="sex1">男</label>
                                 <input type="radio" id="sex2" class="radio3" name="profile[sex]" value="2" {{ old("profile[sex]") == "2" ? "checked" : "" }}><label for="sex2">女</label>
                                 <input type="radio" id="sex9" class="radio4" name="profile[sex]" value="9" {{ old("profile[sex]") == "9" ? "checked" : "" }}><label for="sex9">その他</label>
-                                <p class=error>{{ $errors->first('profile.sex') }}</p>
+                                <p class="error">{{ $errors->first('profile.sex') }}</p>
                             </td>
                         @elseif((old("profile.sex") == "2"))
                             <td>
@@ -80,7 +80,7 @@
                                 <input type="radio" id="sex1" class="radio2" name="profile[sex]" value="1" {{ old("profile[sex]") == "1" ? "checked" : "" }}><label for="sex1">男</label>
                                 <input type="radio" id="sex2" class="radio3" name="profile[sex]" value="2" {{ old("profile[sex]",2) == "2" ? "checked" : "" }}><label for="sex2">女</label>
                                 <input type="radio" id="sex9" class="radio4" name="profile[sex]" value="9" {{ old("profile[sex]") == "9" ? "checked" : "" }}><label for="sex9">その他</label>
-                                <p class=error>{{ $errors->first('profile.sex') }}</p>
+                                <p class="error">{{ $errors->first('profile.sex') }}</p>
                             </td>
                         
                         @elseif ((old("profile.sex") == "9"))
@@ -89,7 +89,7 @@
                                 <input type="radio" id="sex1" class="radio2" name="profile[sex]" value="1" {{ old("profile[sex]") == "1" ? "checked" : "" }}><label for="sex1">男</label>
                                 <input type="radio" id="sex2" class="radio3" name="profile[sex]" value="2" {{ old("profile[sex]") == "2" ? "checked" : "" }}><label for="sex2">女</label>
                                 <input type="radio" id="sex9" class="radio4" name="profile[sex]" value="9" {{ old("profile[sex]", 9) == "9" ? "checked" : "" }}><label for="sex9">その他</label>
-                                <p class=error>{{ $errors->first('profile.sex') }}</p>
+                                <p class="error">{{ $errors->first('profile.sex') }}</p>
                             </td>
                         @else
                             <td>
@@ -97,7 +97,7 @@
                                 <input type="radio" id="sex1" class="radio2" name="profile[sex]" value="1" {{ old("profile[sex]", 1) == "1" ? "checked" : "" }}><label for="sex1">男</label>
                                 <input type="radio" id="sex2" class="radio3" name="profile[sex]" value="2" {{ old("profile[sex]") == "2" ? "checked" : "" }}><label for="sex2">女</label>
                                 <input type="radio" id="sex9" class="radio4" name="profile[sex]" value="9" {{ old("profile[sex]") == "9" ? "checked" : "" }}><label for="sex9">その他</label>
-                                <p class=error>{{ $errors->first('profile.sex') }}</p>
+                                <p class="error">{{ $errors->first('profile.sex') }}</p>
                             </td>
                         @endif
                     @elseif ($profile->sex === 2)
@@ -107,7 +107,7 @@
                                 <input type="radio" id="sex1" class="radio2" name="profile[sex]" value="1" {{ old("profile[sex]") == "1" ? "checked" : "" }}><label for="sex1">男</label>
                                 <input type="radio" id="sex2" class="radio3" name="profile[sex]" value="2" {{ old("profile[sex]") == "2" ? "checked" : "" }}><label for="sex2">女</label>
                                 <input type="radio" id="sex9" class="radio4" name="profile[sex]" value="9" {{ old("profile[sex]") == "9" ? "checked" : "" }}><label for="sex9">その他</label>
-                                <p class=error>{{ $errors->first('profile.sex') }}</p>
+                                <p class="error">{{ $errors->first('profile.sex') }}</p>
                             </td>
                         @elseif((old("profile.sex") === "1"))
                             <td>
@@ -115,7 +115,7 @@
                                 <input type="radio" id="sex1" class="radio2" name="profile[sex]" value="1" {{ old("profile[sex]", 1) == "1" ? "checked" : "" }}><label for="sex1">男</label>
                                 <input type="radio" id="sex2" class="radio3" name="profile[sex]" value="2" {{ old("profile[sex]") == "2" ? "checked" : "" }}><label for="sex2">女</label>
                                 <input type="radio" id="sex9" class="radio4" name="profile[sex]" value="9" {{ old("profile[sex]") == "9" ? "checked" : "" }}><label for="sex9">その他</label>
-                                <p class=error>{{ $errors->first('profile.sex') }}</p>
+                                <p class="error">{{ $errors->first('profile.sex') }}</p>
                             </td>
                         @elseif ((old("profile.sex") === "9"))
                             <td>
@@ -123,7 +123,7 @@
                                 <input type="radio" id="sex1" class="radio2" name="profile[sex]" value="1" {{ old("profile[sex]") == "1" ? "checked" : "" }}><label for="sex1">男</label>
                                 <input type="radio" id="sex2" class="radio3" name="profile[sex]" value="2" {{ old("profile[sex]") == "2" ? "checked" : "" }}><label for="sex2">女</label>
                                 <input type="radio" id="sex9" class="radio4" name="profile[sex]" value="9" {{ old("profile[sex]", 9) == "9" ? "checked" : "" }}><label for="sex9">その他</label>
-                                <p class=error>{{ $errors->first('profile.sex') }}</p>
+                                <p class="error">{{ $errors->first('profile.sex') }}</p>
                             </td>
                         @else
                             <td>
@@ -131,7 +131,7 @@
                                 <input type="radio" id="sex1" class="radio2" name="profile[sex]" value="1" {{ old("profile[sex]") == "1" ? "checked" : "" }}><label for="sex1">男</label>
                                 <input type="radio" id="sex2" class="radio3" name="profile[sex]" value="2" {{ old("profile[sex]", 2) == "2" ? "checked" : "" }}><label for="sex2">女</label>
                                 <input type="radio" id="sex9" class="radio4" name="profile[sex]" value="9" {{ old("profile[sex]") == "9" ? "checked" : "" }}><label for="sex9">その他</label>
-                                <p class=error>{{ $errors->first('profile.sex') }}</p>
+                                <p class="error">{{ $errors->first('profile.sex') }}</p>
                             </td>
                         @endif
                     @else
@@ -141,7 +141,7 @@
                                 <input type="radio" id="sex1" class="radio2" name="profile[sex]" value="1" {{ old("profile[sex]") == "1" ? "checked" : "" }}><label for="sex1">男</label>
                                 <input type="radio" id="sex2" class="radio3" name="profile[sex]" value="2" {{ old("profile[sex]") == "2" ? "checked" : "" }}><label for="sex2">女</label>
                                 <input type="radio" id="sex9" class="radio4" name="profile[sex]" value="9" {{ old("profile[sex]") == "9" ? "checked" : "" }}><label for="sex9">その他</label>
-                                <p class=error>{{ $errors->first('profile.sex') }}</p>
+                                <p class="error">{{ $errors->first('profile.sex') }}</p>
                             </td>
                         @elseif((old("profile.sex") === "1"))
                             <td>
@@ -149,7 +149,7 @@
                                 <input type="radio" id="sex1" class="radio2" name="profile[sex]" value="1" {{ old("profile[sex]", 1) == "1" ? "checked" : "" }}><label for="sex1">男</label>
                                 <input type="radio" id="sex2" class="radio3" name="profile[sex]" value="2" {{ old("profile[sex]") == "2" ? "checked" : "" }}><label for="sex2">女</label>
                                 <input type="radio" id="sex9" class="radio4" name="profile[sex]" value="9" {{ old("profile[sex]") == "9" ? "checked" : "" }}><label for="sex9">その他</label>
-                                <p class=error>{{ $errors->first('profile.sex') }}</p>
+                                <p class="error">{{ $errors->first('profile.sex') }}</p>
                             </td>
                         @elseif ((old("profile.sex") === "2"))
                             <td>
@@ -157,7 +157,7 @@
                                 <input type="radio" id="sex1" class="radio2" name="profile[sex]" value="1" {{ old("profile[sex]") == "1" ? "checked" : "" }}><label for="sex1">男</label>
                                 <input type="radio" id="sex2" class="radio3" name="profile[sex]" value="2" {{ old("profile[sex]", 2) == "2" ? "checked" : "" }}><label for="sex2">女</label>
                                 <input type="radio" id="sex9" class="radio4" name="profile[sex]" value="9" {{ old("profile[sex]") == "9" ? "checked" : "" }}><label for="sex9">その他</label>
-                                <p class=error>{{ $errors->first('profile.sex') }}</p>
+                                <p class="error">{{ $errors->first('profile.sex') }}</p>
                             </td>
                         @else
                             <td>
@@ -165,7 +165,7 @@
                                 <input type="radio" id="sex1" class="radio2" name="profile[sex]" value="1" {{ old("profile[sex]") == "1" ? "checked" : "" }}><label for="sex1">男</label>
                                 <input type="radio" id="sex2" class="radio3" name="profile[sex]" value="2" {{ old("profile[sex]") == "2" ? "checked" : "" }}><label for="sex2">女</label>
                                 <input type="radio" id="sex9" class="radio4" name="profile[sex]" value="9" {{ old("profile[sex]", 9) == "9" ? "checked" : "" }}><label for="sex9">その他</label>
-                                <p class=error>{{ $errors->first('profile.sex') }}</p>
+                                <p class="error">{{ $errors->first('profile.sex') }}</p>
                             </td>
                         @endif
                     @endif
@@ -174,21 +174,21 @@
                     <td>年齢</td>
                     <td>
                         <input class="input_list" type=text name="profile[age]" value="{{ old('profile.age', $profile->age) }}">　歳
-                        <p class=error>{{ $errors->first('profile.age') }}</p>
+                        <p class="error">{{ $errors->first('profile.age') }}</p>
                     </td>
                 </tr>
                 <tr>
                     <td><span>*</span>住まい（都道府県）</td>
                     <td>
                         <input class="input_list" type=text name="profile[prefecture]" value="{{ old('profile.prefecture', $profile->prefecture) }}">
-                        <p class=error>{{ $errors->first('profile.prefecture') }}</p>
+                        <p class="error">{{ $errors->first('profile.prefecture') }}</p>
                     </td>
                 </tr>
                 <tr>
                     <td>職業</td>
                     <td>
                         <input class="input_list" type=text name="profile[occupation]" value="{{ old('profile.occupation', $profile->occupation) }}">
-                        <p class=error>{{ $errors->first('profile.occupation') }}</p>
+                        <p class="error">{{ $errors->first('profile.occupation') }}</p>
                     </td>
                 </tr>
                 <tr>
@@ -200,7 +200,7 @@
                                 <input type="radio" id="ski_level1" class="radio1" name="profile[ski_level]" value="初級者" {{ old("profile[ski_level]", "初級者") == "初級者" ? "checked" : "" }}><label for="ski_level1">初級者</label>
                                 <input type="radio" id="ski_level2" class="radio2" name="profile[ski_level]" value="中級者" {{ old("profile[ski_level]") == "中級者" ? "checked" : "" }}><label for="ski_level2">中級者</label>
                                 <input type="radio" id="ski_level3" class="radio3" name="profile[ski_level]" value="上級者" {{ old("profile[ski_level]") == "上級者" ? "checked" : "" }}><label for="ski_level3">上級者</label>
-                                <p class=error>{{ $errors->first('profile.ski_level') }}</p>
+                                <p class="error">{{ $errors->first('profile.ski_level') }}</p>
                             </td>
                         @elseif ((old("profile.ski_level") === "中級者"))
                             <td>
@@ -208,7 +208,7 @@
                                 <input type="radio" id="ski_level1" class="radio1" name="profile[ski_level]" value="初級者" {{ old("profile[ski_level]") == "初級者" ? "checked" : "" }}><label for="ski_level1">初級者</label>
                                 <input type="radio" id="ski_level2" class="radio2" name="profile[ski_level]" value="中級者" {{ old("profile[ski_level]", "中級者") == "中級者" ? "checked" : "" }}><label for="ski_level2">中級者</label>
                                 <input type="radio" id="ski_level3" class="radio3" name="profile[ski_level]" value="上級者" {{ old("profile[ski_level]") == "上級者" ? "checked" : "" }}><label for="ski_level3">上級者</label>
-                                <p class=error>{{ $errors->first('profile.ski_level') }}</p>
+                                <p class="error">{{ $errors->first('profile.ski_level') }}</p>
                             </td>
                         @elseif ((old("profile.ski_level") === "上級者"))
                             <td>
@@ -216,7 +216,7 @@
                                 <input type="radio" id="ski_level1" class="radio1" name="profile[ski_level]" value="初級者" {{ old("profile[ski_level]") == "初級者" ? "checked" : "" }}><label for="ski_level1">初級者</label>
                                 <input type="radio" id="ski_level2" class="radio2" name="profile[ski_level]" value="中級者" {{ old("profile[ski_level]") == "中級者" ? "checked" : "" }}><label for="ski_level2">中級者</label>
                                 <input type="radio" id="ski_level3" class="radio3" name="profile[ski_level]" value="上級者" {{ old("profile[ski_level]", "上級者") == "上級者" ? "checked" : "" }}><label for="ski_level3">上級者</label>
-                                <p class=error>{{ $errors->first('profile.ski_level') }}</p>
+                                <p class="error">{{ $errors->first('profile.ski_level') }}</p>
                             </td>
                         @else
                             <td>
@@ -224,7 +224,7 @@
                                 <input type="radio" id="ski_level1" class="radio1" name="profile[ski_level]" value="初級者" {{ old("profile[ski_level]") == "初級者" ? "checked" : "" }}><label for="ski_level1">初級者</label>
                                 <input type="radio" id="ski_level2" class="radio2" name="profile[ski_level]" value="中級者" {{ old("profile[ski_level]") == "中級者" ? "checked" : "" }}><label for="ski_level2">中級者</label>
                                 <input type="radio" id="ski_level3" class="radio3" name="profile[ski_level]" value="上級者" {{ old("profile[ski_level]") == "上級者" ? "checked" : "" }}><label for="ski_level3">上級者</label>
-                                <p class=error>{{ $errors->first('profile.ski_level') }}</p>
+                                <p class="error">{{ $errors->first('profile.ski_level') }}</p>
                             </td>
                         @endif
                     @elseif ($profile->ski_level === "初級者")
@@ -234,7 +234,7 @@
                                 <input type="radio" id="ski_level1" class="radio1" name="profile[ski_level]" value="初級者" {{ old("profile[ski_level]") == "初級者" ? "checked" : "" }}><label for="ski_level1">初級者</label>
                                 <input type="radio" id="ski_level2" class="radio2" name="profile[ski_level]" value="中級者" {{ old("profile[ski_level]") == "中級者" ? "checked" : "" }}><label for="ski_level2">中級者</label>
                                 <input type="radio" id="ski_level3" class="radio3" name="profile[ski_level]" value="上級者" {{ old("profile[ski_level]") == "上級者" ? "checked" : "" }}><label for="ski_level3">上級者</label>
-                                <p class=error>{{ $errors->first('profile.ski_level') }}</p>
+                                <p class="error">{{ $errors->first('profile.ski_level') }}</p>
                             </td>
                         @elseif ((old("profile.ski_level") === "中級者"))
                             <td>
@@ -242,7 +242,7 @@
                                 <input type="radio" id="ski_level1" class="radio1" name="profile[ski_level]" value="初級者" {{ old("profile[ski_level]") == "初級者" ? "checked" : "" }}><label for="ski_level1">初級者</label>
                                 <input type="radio" id="ski_level2" class="radio2" name="profile[ski_level]" value="中級者" {{ old("profile[ski_level]", "中級者") == "中級者" ? "checked" : "" }}><label for="ski_level2">中級者</label>
                                 <input type="radio" id="ski_level3" class="radio3" name="profile[ski_level]" value="上級者" {{ old("profile[ski_level]") == "上級者" ? "checked" : "" }}><label for="ski_level3">上級者</label>
-                                <p class=error>{{ $errors->first('profile.ski_level') }}</p>
+                                <p class="error">{{ $errors->first('profile.ski_level') }}</p>
                             </td>
                         @elseif ((old("profile.ski_level") === "上級者"))
                             <td>
@@ -250,7 +250,7 @@
                                 <input type="radio" id="ski_level1" class="radio1" name="profile[ski_level]" value="初級者" {{ old("profile[ski_level]") == "初級者" ? "checked" : "" }}><label for="ski_level1">初級者</label>
                                 <input type="radio" id="ski_level2" class="radio2" name="profile[ski_level]" value="中級者" {{ old("profile[ski_level]") == "中級者" ? "checked" : "" }}><label for="ski_level2">中級者</label>
                                 <input type="radio" id="ski_level3" class="radio3" name="profile[ski_level]" value="上級者" {{ old("profile[ski_level]", "上級者") == "上級者" ? "checked" : "" }}><label for="ski_level3">上級者</label>
-                                <p class=error>{{ $errors->first('profile.ski_level') }}</p>
+                                <p class="error">{{ $errors->first('profile.ski_level') }}</p>
                             </td>
                         @else
                             <td>
@@ -258,7 +258,7 @@
                                 <input type="radio" id="ski_level1" class="radio1" name="profile[ski_level]" value="初級者" {{ old("profile[ski_level]", "初級者") == "初級者" ? "checked" : "" }}><label for="ski_level1">初級者</label>
                                 <input type="radio" id="ski_level2" class="radio2" name="profile[ski_level]" value="中級者" {{ old("profile[ski_level]") == "中級者" ? "checked" : "" }}><label for="ski_level2">中級者</label>
                                 <input type="radio" id="ski_level3" class="radio3" name="profile[ski_level]" value="上級者" {{ old("profile[ski_level]") == "上級者" ? "checked" : "" }}><label for="ski_level3">上級者</label>
-                                <p class=error>{{ $errors->first('profile.ski_level') }}</p>
+                                <p class="error">{{ $errors->first('profile.ski_level') }}</p>
                             </td>
                         @endif
                     @elseif ($profile->ski_level === "中級者")
@@ -268,7 +268,7 @@
                                 <input type="radio" id="ski_level1" class="radio1" name="profile[ski_level]" value="初級者" {{ old("profile[ski_level]") == "初級者" ? "checked" : "" }}><label for="ski_level1">初級者</label>
                                 <input type="radio" id="ski_level2" class="radio2" name="profile[ski_level]" value="中級者" {{ old("profile[ski_level]") == "中級者" ? "checked" : "" }}><label for="ski_level2">中級者</label>
                                 <input type="radio" id="ski_level3" class="radio3" name="profile[ski_level]" value="上級者" {{ old("profile[ski_level]") == "上級者" ? "checked" : "" }}><label for="ski_level3">上級者</label>
-                                <p class=error>{{ $errors->first('profile.ski_level') }}</p>
+                                <p class="error">{{ $errors->first('profile.ski_level') }}</p>
                             </td>
                         @elseif ((old("profile.ski_level") === "初級者"))
                             <td>
@@ -276,7 +276,7 @@
                                 <input type="radio" id="ski_level1" class="radio1" name="profile[ski_level]" value="初級者" {{ old("profile[ski_level]", "初級者") == "初級者" ? "checked" : "" }}><label for="ski_level1">初級者</label>
                                 <input type="radio" id="ski_level2" class="radio2" name="profile[ski_level]" value="中級者" {{ old("profile[ski_level]") == "中級者" ? "checked" : "" }}><label for="ski_level2">中級者</label>
                                 <input type="radio" id="ski_level3" class="radio3" name="profile[ski_level]" value="上級者" {{ old("profile[ski_level]") == "上級者" ? "checked" : "" }}><label for="ski_level3">上級者</label>
-                                <p class=error>{{ $errors->first('profile.ski_level') }}</p>
+                                <p class="error">{{ $errors->first('profile.ski_level') }}</p>
                             </td>
                         @elseif ((old("profile.ski_level") === "上級者"))
                             <td>
@@ -284,7 +284,7 @@
                                 <input type="radio" id="ski_level1" class="radio1" name="profile[ski_level]" value="初級者" {{ old("profile[ski_level]") == "初級者" ? "checked" : "" }}><label for="ski_level1">初級者</label>
                                 <input type="radio" id="ski_level2" class="radio2" name="profile[ski_level]" value="中級者" {{ old("profile[ski_level]") == "中級者" ? "checked" : "" }}><label for="ski_level2">中級者</label>
                                 <input type="radio" id="ski_level3" class="radio3" name="profile[ski_level]" value="上級者" {{ old("profile[ski_level]", "上級者") == "上級者" ? "checked" : "" }}><label for="ski_level3">上級者</label>
-                                <p class=error>{{ $errors->first('profile.ski_level') }}</p>
+                                <p class="error">{{ $errors->first('profile.ski_level') }}</p>
                             </td>
                         @else
                             <td>
@@ -292,7 +292,7 @@
                                 <input type="radio" id="ski_level1" class="radio1" name="profile[ski_level]" value="初級者" {{ old("profile[ski_level]") == "初級者" ? "checked" : "" }}><label for="ski_level1">初級者</label>
                                 <input type="radio" id="ski_level2" class="radio2" name="profile[ski_level]" value="中級者" {{ old("profile[ski_level]", "中級者") == "中級者" ? "checked" : "" }}><label for="ski_level2">中級者</label>
                                 <input type="radio" id="ski_level3" class="radio3" name="profile[ski_level]" value="上級者" {{ old("profile[ski_level]") == "上級者" ? "checked" : "" }}><label for="ski_level3">上級者</label>
-                                <p class=error>{{ $errors->first('profile.ski_level') }}</p>
+                                <p class="error">{{ $errors->first('profile.ski_level') }}</p>
                             </td>
                         @endif
                     @else
@@ -302,7 +302,7 @@
                                 <input type="radio" id="ski_level1" class="radio1" name="profile[ski_level]" value="初級者" {{ old("profile[ski_level]") == "初級者" ? "checked" : "" }}><label for="ski_level1">初級者</label>
                                 <input type="radio" id="ski_level2" class="radio2" name="profile[ski_level]" value="中級者" {{ old("profile[ski_level]") == "中級者" ? "checked" : "" }}><label for="ski_level2">中級者</label>
                                 <input type="radio" id="ski_level3" class="radio3" name="profile[ski_level]" value="上級者" {{ old("profile[ski_level]") == "上級者" ? "checked" : "" }}><label for="ski_level3">上級者</label>
-                                <p class=error>{{ $errors->first('profile.ski_level') }}</p>
+                                <p class="error">{{ $errors->first('profile.ski_level') }}</p>
                             </td>
                         @elseif ((old("profile.ski_level") === "初級者"))
                             <td>
@@ -310,7 +310,7 @@
                                 <input type="radio" id="ski_level1" class="radio1" name="profile[ski_level]" value="初級者" {{ old("profile[ski_level]", "初級者") == "初級者" ? "checked" : "" }}><label for="ski_level1">初級者</label>
                                 <input type="radio" id="ski_level2" class="radio2" name="profile[ski_level]" value="中級者" {{ old("profile[ski_level]") == "中級者" ? "checked" : "" }}><label for="ski_level2">中級者</label>
                                 <input type="radio" id="ski_level3" class="radio3" name="profile[ski_level]" value="上級者" {{ old("profile[ski_level]") == "上級者" ? "checked" : "" }}><label for="ski_level3">上級者</label>
-                                <p class=error>{{ $errors->first('profile.ski_level') }}</p>
+                                <p class="error">{{ $errors->first('profile.ski_level') }}</p>
                             </td>
                         @elseif ((old("profile.ski_level") === "中級者"))
                             <td>
@@ -318,7 +318,7 @@
                                 <input type="radio" id="ski_level1" class="radio1" name="profile[ski_level]" value="初級者" {{ old("profile[ski_level]") == "初級者" ? "checked" : "" }}><label for="ski_level1">初級者</label>
                                 <input type="radio" id="ski_level2" class="radio2" name="profile[ski_level]" value="中級者" {{ old("profile[ski_level]", "中級者") == "中級者" ? "checked" : "" }}><label for="ski_level2">中級者</label>
                                 <input type="radio" id="ski_level3" class="radio3" name="profile[ski_level]" value="上級者" {{ old("profile[ski_level]") == "上級者" ? "checked" : "" }}><label for="ski_level3">上級者</label>
-                                <p class=error>{{ $errors->first('profile.ski_level') }}</p>
+                                <p class="error">{{ $errors->first('profile.ski_level') }}</p>
                             </td>
                         @else
                             <td>
@@ -326,7 +326,7 @@
                                 <input type="radio" id="ski_level1" class="radio1" name="profile[ski_level]" value="初級者" {{ old("profile[ski_level]") == "初級者" ? "checked" : "" }}><label for="ski_level1">初級者</label>
                                 <input type="radio" id="ski_level2" class="radio2" name="profile[ski_level]" value="中級者" {{ old("profile[ski_level]") == "中級者" ? "checked" : "" }}><label for="ski_level2">中級者</label>
                                 <input type="radio" id="ski_level3" class="radio3" name="profile[ski_level]" value="上級者" {{ old("profile[ski_level]", "上級者") == "上級者" ? "checked" : "" }}><label for="ski_level3">上級者</label>
-                                <p class=error>{{ $errors->first('profile.ski_level') }}</p>
+                                <p class="error">{{ $errors->first('profile.ski_level') }}</p>
                             </td>
                         @endif
                     @endif
@@ -340,7 +340,7 @@
                                 <input type="radio" id="snowboard_level1" class="radio1" name="profile[snowboard_level]" value="初級者" {{ old("profile[snowboard_level]", "初級者") == "初級者" ? "checked" : "" }}><label for="snowboard_level1">初級者</label>
                                 <input type="radio" id="snowboard_level2" class="radio2" name="profile[snowboard_level]" value="中級者" {{ old("profile[snowboard_level]") == "中級者" ? "checked" : "" }}><label for="snowboard_level2">中級者</label>
                                 <input type="radio" id="snowboard_level3" class="radio3" name="profile[snowboard_level]" value="上級者" {{ old("profile[snowboard_level]") == "上級者" ? "checked" : "" }}><label for="snowboard_level3">上級者</label>
-                                <p class=error>{{ $errors->first('profile.snowboard_level') }}</p>
+                                <p class="error">{{ $errors->first('profile.snowboard_level') }}</p>
                             </td>
                         @elseif ((old("profile.snowboard_level") === "中級者"))
                             <td>
@@ -348,7 +348,7 @@
                                 <input type="radio" id="snowboard_level1" class="radio1" name="profile[snowboard_level]" value="初級者" {{ old("profile[snowboard_level]") == "初級者" ? "checked" : "" }}><label for="snowboard_level1">初級者</label>
                                 <input type="radio" id="snowboard_level2" class="radio2" name="profile[snowboard_level]" value="中級者" {{ old("profile[snowboard_level]", "中級者") == "中級者" ? "checked" : "" }}><label for="snowboard_level2">中級者</label>
                                 <input type="radio" id="snowboard_level3" class="radio3" name="profile[snowboard_level]" value="上級者" {{ old("profile[snowboard_level]") == "上級者" ? "checked" : "" }}><label for="snowboard_level3">上級者</label>
-                                <p class=error>{{ $errors->first('profile.snowboard_level') }}</p>
+                                <p class="error">{{ $errors->first('profile.snowboard_level') }}</p>
                             </td>
                         @elseif ((old("profile.snowboard_level") === "上級者"))
                             <td>
@@ -356,7 +356,7 @@
                                 <input type="radio" id="snowboard_level1" class="radio1" name="profile[snowboard_level]" value="初級者" {{ old("profile[snowboard_level]") == "初級者" ? "checked" : "" }}><label for="snowboard_level1">初級者</label>
                                 <input type="radio" id="snowboard_level2" class="radio2" name="profile[snowboard_level]" value="中級者" {{ old("profile[snowboard_level]") == "中級者" ? "checked" : "" }}><label for="snowboard_level2">中級者</label>
                                 <input type="radio" id="snowboard_level3" class="radio3" name="profile[snowboard_level]" value="上級者" {{ old("profile[snowboard_level]", "上級者") == "上級者" ? "checked" : "" }}><label for="snowboard_level3">上級者</label>
-                                <p class=error>{{ $errors->first('profile.snowboard_level') }}</p>
+                                <p class="error">{{ $errors->first('profile.snowboard_level') }}</p>
                             </td>
                         @else
                             <td>
@@ -364,7 +364,7 @@
                                 <input type="radio" id="snowboard_level1" class="radio1" name="profile[snowboard_level]" value="初級者" {{ old("profile[snowboard_level]") == "初級者" ? "checked" : "" }}><label for="snowboard_level1">初級者</label>
                                 <input type="radio" id="snowboard_level2" class="radio2" name="profile[snowboard_level]" value="中級者" {{ old("profile[snowboard_level]") == "中級者" ? "checked" : "" }}><label for="snowboard_level2">中級者</label>
                                 <input type="radio" id="snowboard_level3" class="radio3" name="profile[snowboard_level]" value="上級者" {{ old("profile[snowboard_level]") == "上級者" ? "checked" : "" }}><label for="snowboard_level3">上級者</label>
-                                <p class=error>{{ $errors->first('profile.snowboard_level') }}</p>
+                                <p class="error">{{ $errors->first('profile.snowboard_level') }}</p>
                             </td>
                         @endif
                     @elseif ($profile->snowboard_level === "初級者")
@@ -374,7 +374,7 @@
                                 <input type="radio" id="snowboard_level1" class="radio1" name="profile[snowboard_level]" value="初級者" {{ old("profile[snowboard_level]") == "初級者" ? "checked" : "" }}><label for="snowboard_level1">初級者</label>
                                 <input type="radio" id="snowboard_level2" class="radio2" name="profile[snowboard_level]" value="中級者" {{ old("profile[snowboard_level]") == "中級者" ? "checked" : "" }}><label for="snowboard_level2">中級者</label>
                                 <input type="radio" id="snowboard_level3" class="radio3" name="profile[snowboard_level]" value="上級者" {{ old("profile[snowboard_level]") == "上級者" ? "checked" : "" }}><label for="snowboard_level3">上級者</label>
-                                <p class=error>{{ $errors->first('profile.snowboard_level') }}</p>
+                                <p class="error">{{ $errors->first('profile.snowboard_level') }}</p>
                             </td>
                         @elseif ((old("profile.snowboard_level") === "中級者"))
                             <td>
@@ -382,7 +382,7 @@
                                 <input type="radio" id="snowboard_level1" class="radio1" name="profile[snowboard_level]" value="初級者" {{ old("profile[snowboard_level]") == "初級者" ? "checked" : "" }}><label for="snowboard_level1">初級者</label>
                                 <input type="radio" id="snowboard_level2" class="radio2" name="profile[snowboard_level]" value="中級者" {{ old("profile[snowboard_level]", "中級者") == "中級者" ? "checked" : "" }}><label for="snowboard_level2">中級者</label>
                                 <input type="radio" id="snowboard_level3" class="radio3" name="profile[snowboard_level]" value="上級者" {{ old("profile[snowboard_level]") == "上級者" ? "checked" : "" }}><label for="snowboard_level3">上級者</label>
-                                <p class=error>{{ $errors->first('profile.snowboard_level') }}</p>
+                                <p class="error">{{ $errors->first('profile.snowboard_level') }}</p>
                             </td>
                         @elseif ((old("profile.snowboard_level") === "上級者"))
                             <td>
@@ -390,7 +390,7 @@
                                 <input type="radio" id="snowboard_level1" class="radio1" name="profile[snowboard_level]" value="初級者" {{ old("profile[snowboard_level]") == "初級者" ? "checked" : "" }}><label for="snowboard_level1">初級者</label>
                                 <input type="radio" id="snowboard_level2" class="radio2" name="profile[snowboard_level]" value="中級者" {{ old("profile[snowboard_level]") == "中級者" ? "checked" : "" }}><label for="snowboard_level2">中級者</label>
                                 <input type="radio" id="snowboard_level3" class="radio3" name="profile[snowboard_level]" value="上級者" {{ old("profile[snowboard_level]", "上級者") == "上級者" ? "checked" : "" }}><label for="snowboard_level3">上級者</label>
-                                <p class=error>{{ $errors->first('profile.snowboard_level') }}</p>
+                                <p class="error">{{ $errors->first('profile.snowboard_level') }}</p>
                             </td>
                         @else
                             <td>
@@ -398,7 +398,7 @@
                                 <input type="radio" id="snowboard_level1" class="radio1" name="profile[snowboard_level]" value="初級者" {{ old("profile[snowboard_level]", "初級者") == "初級者" ? "checked" : "" }}><label for="snowboard_level1">初級者</label>
                                 <input type="radio" id="snowboard_level2" class="radio2" name="profile[snowboard_level]" value="中級者" {{ old("profile[snowboard_level]") == "中級者" ? "checked" : "" }}><label for="snowboard_level2">中級者</label>
                                 <input type="radio" id="snowboard_level3" class="radio3" name="profile[snowboard_level]" value="上級者" {{ old("profile[snowboard_level]") == "上級者" ? "checked" : "" }}><label for="snowboard_level3">上級者</label>
-                                <p class=error>{{ $errors->first('profile.snowboard_level') }}</p>
+                                <p class="error">{{ $errors->first('profile.snowboard_level') }}</p>
                             </td>
                         @endif
                     @elseif ($profile->snowboard_level === "中級者")
@@ -408,7 +408,7 @@
                                 <input type="radio" id="snowboard_level1" class="radio1" name="profile[snowboard_level]" value="初級者" {{ old("profile[snowboard_level]") == "初級者" ? "checked" : "" }}><label for="snowboard_level1">初級者</label>
                                 <input type="radio" id="snowboard_level2" class="radio2" name="profile[snowboard_level]" value="中級者" {{ old("profile[snowboard_level]") == "中級者" ? "checked" : "" }}><label for="snowboard_level2">中級者</label>
                                 <input type="radio" id="snowboard_level3" class="radio3" name="profile[snowboard_level]" value="上級者" {{ old("profile[snowboard_level]") == "上級者" ? "checked" : "" }}><label for="snowboard_level3">上級者</label>
-                                <p class=error>{{ $errors->first('profile.snowboard_level') }}</p>
+                                <p class="error">{{ $errors->first('profile.snowboard_level') }}</p>
                             </td>
                         @elseif ((old("profile.snowboard_level") === "初級者"))
                             <td>
@@ -416,7 +416,7 @@
                                 <input type="radio" id="snowboard_level1" class="radio1" name="profile[snowboard_level]" value="初級者" {{ old("profile[snowboard_level]", "初級者") == "初級者" ? "checked" : "" }}><label for="snowboard_level1">初級者</label>
                                 <input type="radio" id="snowboard_level2" class="radio2" name="profile[snowboard_level]" value="中級者" {{ old("profile[snowboard_level]") == "中級者" ? "checked" : "" }}><label for="snowboard_level2">中級者</label>
                                 <input type="radio" id="snowboard_level3" class="radio3" name="profile[snowboard_level]" value="上級者" {{ old("profile[snowboard_level]") == "上級者" ? "checked" : "" }}><label for="snowboard_level3">上級者</label>
-                                <p class=error>{{ $errors->first('profile.snowboard_level') }}</p>
+                                <p class="error">{{ $errors->first('profile.snowboard_level') }}</p>
                             </td>
                         @elseif ((old("profile.snowboard_level") === "上級者"))
                             <td>
@@ -424,7 +424,7 @@
                                 <input type="radio" id="snowboard_level1" class="radio1" name="profile[snowboard_level]" value="初級者" {{ old("profile[snowboard_level]") == "初級者" ? "checked" : "" }}><label for="snowboard_level1">初級者</label>
                                 <input type="radio" id="snowboard_level2" class="radio2" name="profile[snowboard_level]" value="中級者" {{ old("profile[snowboard_level]") == "中級者" ? "checked" : "" }}><label for="snowboard_level2">中級者</label>
                                 <input type="radio" id="snowboard_level3" class="radio3" name="profile[snowboard_level]" value="上級者" {{ old("profile[snowboard_level]", "上級者") == "上級者" ? "checked" : "" }}><label for="snowboard_level3">上級者</label>
-                                <p class=error>{{ $errors->first('profile.snowboard_level') }}</p>
+                                <p class="error">{{ $errors->first('profile.snowboard_level') }}</p>
                             </td>
                         @else
                             <td>
@@ -432,7 +432,7 @@
                                 <input type="radio" id="snowboard_level1" class="radio1" name="profile[snowboard_level]" value="初級者" {{ old("profile[snowboard_level]") == "初級者" ? "checked" : "" }}><label for="snowboard_level1">初級者</label>
                                 <input type="radio" id="snowboard_level2" class="radio2" name="profile[snowboard_level]" value="中級者" {{ old("profile[snowboard_level]", "中級者") == "中級者" ? "checked" : "" }}><label for="snowboard_level2">中級者</label>
                                 <input type="radio" id="snowboard_level3" class="radio3" name="profile[snowboard_level]" value="上級者" {{ old("profile[snowboard_level]") == "上級者" ? "checked" : "" }}><label for="snowboard_level3">上級者</label>
-                                <p class=error>{{ $errors->first('profile.snowboard_level') }}</p>
+                                <p class="error">{{ $errors->first('profile.snowboard_level') }}</p>
                             </td>
                         @endif
                     @else
@@ -442,7 +442,7 @@
                                 <input type="radio" id="snowboard_level1" class="radio1" name="profile[snowboard_level]" value="初級者" {{ old("profile[snowboard_level]") == "初級者" ? "checked" : "" }}><label for="snowboard_level1">初級者</label>
                                 <input type="radio" id="snowboard_level2" class="radio2" name="profile[snowboard_level]" value="中級者" {{ old("profile[snowboard_level]") == "中級者" ? "checked" : "" }}><label for="snowboard_level2">中級者</label>
                                 <input type="radio" id="snowboard_level3" class="radio3" name="profile[snowboard_level]" value="上級者" {{ old("profile[snowboard_level]") == "上級者" ? "checked" : "" }}><label for="snowboard_level3">上級者</label>
-                                <p class=error>{{ $errors->first('profile.snowboard_level') }}</p>
+                                <p class="error">{{ $errors->first('profile.snowboard_level') }}</p>
                             </td>
                         @elseif ((old("profile.snowboard_level") === "初級者"))
                             <td>
@@ -450,7 +450,7 @@
                                 <input type="radio" id="snowboard_level1" class="radio1" name="profile[snowboard_level]" value="初級者" {{ old("profile[snowboard_level]", "初級者") == "初級者" ? "checked" : "" }}><label for="snowboard_level1">初級者</label>
                                 <input type="radio" id="snowboard_level2" class="radio2" name="profile[snowboard_level]" value="中級者" {{ old("profile[snowboard_level]") == "中級者" ? "checked" : "" }}><label for="snowboard_level2">中級者</label>
                                 <input type="radio" id="snowboard_level3" class="radio3" name="profile[snowboard_level]" value="上級者" {{ old("profile[snowboard_level]") == "上級者" ? "checked" : "" }}><label for="snowboard_level3">上級者</label>
-                                <p class=error>{{ $errors->first('profile.snowboard_level') }}</p>
+                                <p class="error">{{ $errors->first('profile.snowboard_level') }}</p>
                             </td>
                         @elseif ((old("profile.snowboard_level") === "中級者"))
                             <td>
@@ -458,7 +458,7 @@
                                 <input type="radio" id="snowboard_level1" class="radio1" name="profile[snowboard_level]" value="初級者" {{ old("profile[snowboard_level]") == "初級者" ? "checked" : "" }}><label for="snowboard_level1">初級者</label>
                                 <input type="radio" id="snowboard_level2" class="radio2" name="profile[snowboard_level]" value="中級者" {{ old("profile[snowboard_level]", "中級者") == "中級者" ? "checked" : "" }}><label for="snowboard_level2">中級者</label>
                                 <input type="radio" id="snowboard_level3" class="radio3" name="profile[snowboard_level]" value="上級者" {{ old("profile[snowboard_level]") == "上級者" ? "checked" : "" }}><label for="snowboard_level3">上級者</label>
-                                <p class=error>{{ $errors->first('profile.snowboard_level') }}</p>
+                                <p class="error">{{ $errors->first('profile.snowboard_level') }}</p>
                             </td>
                         @else
                             <td>
@@ -466,7 +466,7 @@
                                 <input type="radio" id="snowboard_level1" class="radio1" name="profile[snowboard_level]" value="初級者" {{ old("profile[snowboard_level]") == "初級者" ? "checked" : "" }}><label for="snowboard_level1">初級者</label>
                                 <input type="radio" id="snowboard_level2" class="radio2" name="profile[snowboard_level]" value="中級者" {{ old("profile[snowboard_level]") == "中級者" ? "checked" : "" }}><label for="snowboard_level2">中級者</label>
                                 <input type="radio" id="snowboard_level3" class="radio3" name="profile[snowboard_level]" value="上級者" {{ old("profile[snowboard_level]", "上級者") == "上級者" ? "checked" : "" }}><label for="snowboard_level3">上級者</label>
-                                <p class=error>{{ $errors->first('profile.snowboard_level') }}</p>
+                                <p class="error">{{ $errors->first('profile.snowboard_level') }}</p>
                             </td>
                         @endif
                     @endif
@@ -475,14 +475,15 @@
                     <td>その他の経験</td>
                     <td>
                         <textarea name="profile[others_level]" placeholder="">{{ old('profile.others_level', $profile->others_level) }}</textarea>
-                        <p class=error>{{ $errors->first('profile.others_level') }}</p>
+                        <p class="error">{{ $errors->first('profile.others_level') }}</p>
                     </td>
                 </tr>
                 <tr>
-                    <td>ホームゲレンデ・よく行くスキー場</td>
+                    <td>ホームゲレンデ</td>
                     <td>
-                        <input class="input_list" type=text placeholder="札幌国際スキー場" name=profile[home_slope] value="{{ old('profile.home_slope', $profile->home_slope) }}">
-                        <p class=error>{{ $errors->first('profile.home_slope') }}</p>
+                        <input class="input_list" type=text name=profile[home_slope] value="{{ old('profile.home_slope', $profile->home_slope) }}">
+                        <p>※よく行くスキー場もこの欄に記入してください</p>
+                        <p class="error">{{ $errors->first('profile.home_slope') }}</p>
                     </td>
                 </tr>
                 <tr>
@@ -493,14 +494,14 @@
                                 <input type="radio" id="permission" class="radio1" name="profile[exchange_people]" value="0" {{ old("profile[exchange_people]") == 0 ? "checked" : "" }}><label for="permission">許可しない</label>
                                 <input type="radio" id="no_permission" class="radio2" name="profile[exchange_people]" value="1" {{ old("profile[exchange_people]", "1") == 1 ? "checked" : "" }}><label for="no_permission">許可</label>
                                 <p>※許可を選択すると自分がマッチング候補者として他のユーザーに表示されます</p>
-                                <p class=error>{{ $errors->first('profile.exchange_people') }}</p>
+                                <p class="error">{{ $errors->first('profile.exchange_people') }}</p>
                             </td>
                         @else
                             <td>
                                 <input type="radio" id="permission" class="radio1" name="profile[exchange_people]" value="0" {{ old("profile[exchange_people]", "0") == 0 ? "checked" : "" }}><label for="permission">許可しない</label>
                                 <input type="radio" id="no_permission" class="radio2" name="profile[exchange_people]" value="1" {{ old("profile[exchange_people]") == 1 ? "checked" : "" }}><label for="no_permission">許可</label>
                                 <p>※許可を選択すると自分がマッチング候補者として他のユーザーに表示されます</p>
-                                <p class=error>{{ $errors->first('profile.exchange_people') }}</p>
+                                <p class="error">{{ $errors->first('profile.exchange_people') }}</p>
                             </td>
                         @endif
                     @else 
@@ -509,14 +510,14 @@
                                 <input type="radio" id="permission" class="radio1" name="profile[exchange_people]" value="0" {{ old("profile[exchange_people]", "0") == 0 ? "checked" : "" }}><label for="permission">許可しない</label>
                                 <input type="radio" id="no_permission" class="radio2" name="profile[exchange_people]" value="1" {{ old("profile[exchange_people]") == 1 ? "checked" : "" }}><label for="no_permission">許可</label>
                                 <p>※許可を選択すると自分がマッチング候補者として他のユーザーに表示されます</p>
-                                <p class=error>{{ $errors->first('profile.exchange_people') }}</p>
+                                <p class="error">{{ $errors->first('profile.exchange_people') }}</p>
                             </td>
                         @else
                             <td>
                                 <input type="radio" id="permission" class="radio1" name="profile[exchange_people]" value="0" {{ old("profile[exchange_people]") == 0 ? "checked" : "" }}><label for="permission">許可しない</label>
                                 <input type="radio" id="no_permission" class="radio2" name="profile[exchange_people]" value="1" {{ old("profile[exchange_people]", "1") == 1 ? "checked" : "" }}><label for="no_permission">許可</label>
                                 <p>※許可を選択すると自分がマッチング候補者として他のユーザーに表示されます</p>
-                                <p class=error>{{ $errors->first('profile.exchange_people') }}</p>
+                                <p class="error">{{ $errors->first('profile.exchange_people') }}</p>
                             </td>
                         @endif
                     @endif
@@ -524,9 +525,10 @@
                 <tr>
                     <td>SNS</td>
                     <td>
-                        <input class="input_list" type=text placeholder="使用しているSNSとそのユーザー名またはリンクを記載してください" name=profile[sns] value="{{ old('profile.sns', $profile->sns) }}">
-                        <p>※マッチングの検索対象になるには入力必須です</p>
-                        <p class=error>{{ $errors->first('profile.sns') }}</p>
+                        <input class="input_list" type=text placeholder="例：twitter(@kantei) https://twitter.com/kantei" name=profile[sns] value="{{ old('profile.sns', $profile->sns) }}">
+                        <p>※使用しているSNSとそのユーザー名またはリンクを記載してください</p>
+                        <p class="caution">※マッチングの検索対象になるには入力必須です</p>
+                        <p class="error">{{ $errors->first('profile.sns') }}</p>
                     </td>
                 </tr>
                 <tr>
@@ -537,14 +539,14 @@
                                 <input type="radio" id="private" class="radio1" name="profile[public_setting]" value="private" {{ old("profile[public_setting]") == "private" ? "checked" : "" }}><label for="private">private</label>
                                 <input type="radio" id="public" class="radio2" name="profile[public_setting]" value="public" {{ old("profile[public_setting]", "public") == "public" ? "checked" : "" }}><label for="public">public</label>
                                 <p>※publicを選択すると他のユーザーが自分のプロフィール内容を見れるようになります</p>
-                                <p class=error>{{ $errors->first('profile.public_setting') }}</p>
+                                <p class="error">{{ $errors->first('profile.public_setting') }}</p>
                             </td>
                         @else
                             <td>
                                 <input type="radio" id="private" class="radio1" name="profile[public_setting]" value="private" {{ old("profile[public_setting]", "private") == "private" ? "checked" : "" }}><label for="private">private</label>
                                 <input type="radio" id="public" class="radio2" name="profile[public_setting]" value="public" {{ old("profile[public_setting]") == "public" ? "checked" : "" }}><label for="public">public</label>
                                 <p>※publicを選択すると他のユーザーが自分のプロフィール内容を見れるようになります</p>
-                                <p class=error>{{ $errors->first('profile.public_setting') }}</p>
+                                <p class="error">{{ $errors->first('profile.public_setting') }}</p>
                             </td>
                         @endif
                     @else
@@ -553,14 +555,14 @@
                                 <input type="radio" id="private" class="radio1" name="profile[public_setting]" value="private" {{ old("profile[public_setting]", "private") == "private" ? "checked" : "" }}><label for="private">private</label>
                                 <input type="radio" id="public" class="radio2" name="profile[public_setting]" value="public" {{ old("profile[public_setting]") == "public" ? "checked" : "" }}><label for="public">public</label>
                                 <p>※publicを選択すると他のユーザーが自分のプロフィール内容を見れるようになります</p>
-                                <p class=error>{{ $errors->first('profile.public_setting') }}</p>
+                                <p class="error">{{ $errors->first('profile.public_setting') }}</p>
                             </td>
                         @else
                             <td>
                                 <input type="radio" id="private" class="radio1" name="profile[public_setting]" value="private" {{ old("profile[public_setting]") == "private" ? "checked" : "" }}><label for="private">private</label>
                                 <input type="radio" id="public" class="radio2" name="profile[public_setting]" value="public" {{ old("profile[public_setting]", "public") == "public" ? "checked" : "" }}><label for="public">public</label>
                                 <p>※publicを選択すると他のユーザーが自分のプロフィール内容を見れるようになります</p>
-                                <p class=error>{{ $errors->first('profile.public_setting') }}</p>
+                                <p class="error">{{ $errors->first('profile.public_setting') }}</p>
                             </td>
                         @endif
                     @endif
@@ -569,7 +571,7 @@
                     <td>コメント</td>
                     <td>
                         <textarea name="profile[greeting]" placeholder="補足等、自由にお使いください">{{ old('profile.greeting', $profile->greeting) }}</textarea>
-                        <p class=error>{{ $errors->first('profile.greeting') }}</p>
+                        <p class="error">{{ $errors->first('profile.greeting') }}</p>
                     </td>
                 </tr>
             </table>
