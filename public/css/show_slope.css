@@ -4,7 +4,7 @@ a {
   background-color: transparent;
 }
 
-.information_header{
+.information_header {
     margin-left: 15px;
 }
 
@@ -15,20 +15,20 @@ a {
     margin-left: 30px;
 }
 
-#list td{
+#list td {
     height: 40px;
 }
 
-.input_list{
+.input_list {
     width: 500px;
     height: 25px;
 }
 
-.horizontal_line{
+.horizontal_line {
     margin-top: 40px;
 }
 
-.delete{
+.delete {
     display: inline;
 }
 
@@ -36,47 +36,47 @@ a {
 **twitterAPI
 **
 */
-.container{
+.container {
     position: relative;
 }
 
 @media screen and (max-width: 1370px) {
-    .twitter{
+    .twitter {
         display: none;
     }
 }
 
-.twitter{
+.twitter {
     position: absolute;
     top: 0px;
     width: 40vw;
     right: 50px;
 }
 
-.h2_twitter{
+.h2_twitter {
     display: inline-block;
     padding-right: 10px;
 }
 
 
 /*twitterアイコン*/
-.fa-twitter{
+.fa-twitter {
     margin: auto;
     padding: auto;
     color: #1DA1F2;
     text-decoration: none;
 }
 
-.tweet{
+.tweet {
     margin: 0;
 }
 
-.tweet_text{
+.tweet_text {
     margin-top: 5px;
     margin-bottom: 0;
 }
 
-.tweet_space{
+.tweet_space {
     padding-bottom: 20px;
 }
 
@@ -84,12 +84,12 @@ a {
 **weatherAPI
 **
 */
-.h2_weather{
+.h2_weather {
     margin-top: 30px;
     margin-left: 15px;
 }
 
-#openweathermap-widget-1{
+#openweathermap-widget-1 {
     margin-left: 30px;
 }
     
@@ -97,11 +97,11 @@ a {
 **mapAPI
 **
 */
-.h2_map{
+.h2_map {
     margin-top: 80px;
     margin-left: 15px;
 }
 
-#map{
+#map {
     height: 760px;
 }

@@ -78,7 +78,7 @@ h1 {
 /*
  **スキー場概略テーブル
  */
-.slope_information{
+.slope_information {
     position: relative;
     margin-left: 32px;
     margin-bottom: 50px;
@@ -92,15 +92,15 @@ table, th, td {
     border-bottom: 2px solid #FFFFFF;
 }
 
-td{
+td {
     height: 50px;
 }
 
-.color_first_row{
+.color_first_row {
     background-color: #DDDDDD;
 }
 
-.color_second_row{
+.color_second_row {
     background-color: #EEEEEE;
 }
 
@@ -108,14 +108,14 @@ td{
     width: 173.52px;
 }
 
-.width_second_row_l{
+.width_second_row_l {
     width: 425px;
 }
 
-.width_second_row_r{
+.width_second_row_r {
     width: 425px;
 }
 
-.summary_left{
+.summary_left {
     display: inline-block;
 }

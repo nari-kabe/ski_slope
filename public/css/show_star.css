@@ -4,20 +4,20 @@ a {
   background-color: transparent;
 }
 
-.star_header{
+.star_header {
     display: inline-block;
     margin-right: 25px;
 }
 
-.ski_slope{
+.ski_slope {
     display: block;
     margin: 20px 15px;
 }
 
-.header_space{
+.header_space {
     margin: 0 15px;
 }
 
-.star_rank{
+.star_rank {
     margin-left: 25px;
 }

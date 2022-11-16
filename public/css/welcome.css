@@ -1,0 +1,32 @@
+body {
+    margin: 12px;
+}
+
+.login_yes, .login_no {
+    display: block;
+}
+
+.login_yes {
+    margin-bottom: 15px;
+}
+
+.attention {
+    color: red;
+    margin-top: 8px;
+}
+
+.summary_container {
+    width: 60%;
+}
+
+.login_yes, .login_no, .attention, .summary, .functions {
+    margin-left: 30px;
+}
+
+.login, .non_login {
+    margin-left: 15px;
+}
+
+.non_login {
+    margin-top: 30px;
+}
