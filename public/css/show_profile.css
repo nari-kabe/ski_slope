@@ -4,26 +4,26 @@ a {
   background-color: transparent;
 }
 
-.header{
+.header {
   display: inline-block;
   margin-left: 15px;
   margin-right: 18px;
 }
 
-.inline_block{
+.inline_block {
   margin: 0 18px;
 }
 
-.sub_header{
+.sub_header {
   margin-left: 18px;
   display: inline-block;
 }
 
-.inline_block{
+.inline_block {
   display: inline-block;
 }
 
-.left_right_space{
+.left_right_space {
   margin: 0 18px;
 }
 
@@ -34,11 +34,11 @@ a {
   margin-left: 30px;
 }
 
-#list td{
+#list td {
     height: 40px;
 }
 
-.input_list{
+.input_list {
   width: 500px;
   height: 25px;
 }

@@ -8,7 +8,7 @@ a {
   background-color: transparent;
 }
 
-.header{
+.header {
     display: block;
     font-size: 2em;
     margin-block-start: 0.67em;
@@ -18,7 +18,7 @@ a {
     font-weight: bold;
 }
 
-h2{
+h2 {
     margin-left: 15px;
 }
 
@@ -26,15 +26,15 @@ h2{
     margin: 0 0 20px 15px;
 }
 
-.inline{
+.inline {
     display: inline-block;
 }
 
-#inline_width{
+#inline_width {
     padding-left: 20px;
 }
 
-span{
+span {
     color: red;
 }
 
@@ -45,18 +45,18 @@ span{
     margin-left: 30px;
 }
 
-.input_list{
+.input_list {
     width: 500px;
     height: 25px;
 }
 
-.normal_textarea{
+.normal_textarea {
     width: 500px;
     height: 40px;
     margin-top: 20px
 }
 
-.input_list{
+.input_list {
     margin-top: 15px;
 }
 
@@ -66,40 +66,40 @@ span{
     margin-left: 30px;
 }
 
-.radio1, .radio2{
+.radio1, .radio2 {
     margin-top: 15px;
     width: 30px;
 }
 
-.radio2{
+.radio2 {
     margin-left: 15px;
 }
 
-.check1, .check2, .check3{
+.check1, .check2, .check3 {
     width: 30px;
     margin-top: 15px;
     margin-bottom: 15px;
 }
 
-.check2, .check3{
+.check2, .check3 {
     margin-left: 15px;
 }
 
-.detail{
+.detail {
     width: 500px;
     height: 40px;
     margin-top: 10px;
     margin-bottom: 15px;
 }
 
-.others{
+.others {
     width: 500px;
     height: 40px;
     margin-top: 10px;
     margin-bottom: 15px;
 }
 
-.error{
+.error {
     color: red;
 }
 

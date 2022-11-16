@@ -1,20 +1,20 @@
-.head_hr{
+.head_hr {
     margin-top: 0;
     margin-bottom: 50px;
 }
 
-h1{
+h1 {
     color: blue;
     margin: 10px 0 0 10px;
     display: inline-block;
 }
 
-h2{
+h2 {
     display: inline-block;
     padding-right: 10px;
 }
 
-h5{
+h5 {
     margin-bottom: 15px;
 }
 
@@ -42,31 +42,31 @@ a.link_color:hover {
     color: #fff;
 }
 
-#header{
+#header {
     position: relative;
     top: 0px;
     z-index: 99;
 }
 
-#header_horizon{
+#header_horizon {
     margin: 20px 0;
 }
 
-.various{
+.various {
     margin-top: 5px;
     margin-bottom: 35px;
 }
 
-.nav{
+.nav {
     justify-content: center;
 }
 
 @media screen and (max-width: 963px) {
-    .nav{
+    .nav {
         display: none;
     }
     
-    .right_space{
+    .right_space {
         margin: 0 15px;
     }
 }
@@ -83,57 +83,57 @@ a.link_color:hover {
 }
 
 @media screen and (min-width: 963px) {
-    .nav_s_screen{
+    .nav_s_screen {
         display: none;
     }
     
-    .right_space{
+    .right_space {
         margin: 0 20px;
     }
 }
 
-.space{
+.space {
     padding-left: 15px;
 }
 
-.sp{
+.sp {
     margin-left: 15px;
 }
 
-.line_right{
+.line_right {
     display: inline;
     border-right: 1px solid;
     color: #BBBBBB;
 }
 
-.horizontal{
+.horizontal {
     position: absolute;
     width: 65%;
     left: 0;
 }
 
-.information_container{
+.information_container {
     position:relative;
     margin-top: 40px;
 }
 
-.information{
+.information {
     position: absolute;
     width: auto;
     left: 50px;
 }
 
-.information_header{
+.information_header {
     margin-bottom: 10px;
 }
 
-.slope_information{
+.slope_information {
     position: relative;
     margin-bottom: 40px;
 }
 
 @media screen and (max-width: 704px) {
-    .slope_information{
+    .slope_information {
         display: none;
     }
 }
@@ -145,47 +145,47 @@ table, th, td {
     border-bottom: 2px solid #F7FAFC;
 }
 
-td{
+td {
     height: 60px;
 }
 
-.color_first_row{
+.color_first_row {
     background-color: #DDDDDD;
 }
 
-.color_second_row{
+.color_second_row {
     background-color: #EEEEEE;
 }
 
-.width_second_row_l{
+.width_second_row_l {
     width: 450px;
 }
 
-.width_second_row_r{
+.width_second_row_r {
     width: 160px;
 }
 
-.summary{
+.summary {
     display: inline-block;
 }
 
 @media screen and (max-width: 963px) {
-    .min_963px{
+    .min_963px {
         display: none;
     }
 }
 
-.slope_list{
+.slope_list {
     margin-bottom: 35px;
 }
 
-.ski_slope{
+.ski_slope {
     display: block;
     margin: 10px 0;
     font-size: 16px;
 }
 
-.margin_bottom{
+.margin_bottom {
     margin-bottom: 3px;
     display: block;
 }
@@ -193,28 +193,28 @@ td{
 /*
  **お気に入りランキング
  */
-.star_ranking{
+.star_ranking {
     margin-top: 10px;
 }
 
-.star_ranking td{
+.star_ranking td {
     padding-left: 0;
 }
 
-.star{
+.star {
     font-size: 28.8px;
     color: #212529;
     pointer-events: none;
     padding-top: 20px;
 }
 
-.rank{
+.rank {
   display: inline-block;
   margin: 0;
   font-size: 17px;
 }
 
-.star_ranking a{
+.star_ranking a {
     transition: 0.5s;
 }
 
@@ -234,19 +234,19 @@ td{
 **
 */
 @media screen and (max-width: 1380px) {
-    .twitter{
+    .twitter {
         display: none;
     }
 }
 
-.twitter{
+.twitter {
     position: absolute;
     top: 0px;
     width: 25vw;
     right: 50px;
 }
 
-.bar{
+.bar {
     display: none;
     /*position: absolute;*/
     /*margin: 0;*/
@@ -258,7 +258,7 @@ td{
 }
 
 /*twitterアイコン*/
-.fa-twitter{
+.fa-twitter {
     margin: auto;
     padding: auto;
     color: #1DA1F2;
@@ -268,16 +268,16 @@ td{
     left: 110px;
 }
 
-.tweet{
+.tweet {
     margin: 0;
 }
 
-.tweet_text{
+.tweet_text {
     margin-top: 5px;
     margin-bottom: 0;
 }
 
-.tweet_space{
+.tweet_space {
     padding-bottom: 20px;
     margin-bottom: 16px;
 }
@@ -285,31 +285,31 @@ td{
 /*
 **画像関係
 */
-.image_container{
+.image_container {
     position: relative;
     width: 100vw;
     height: 80vh;
 }
 
-#image{
+#image {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-#back_button{
+#back_button {
     position: absolute;
     top: 50%;
     left: 5px;
 }
 
-#forward_button{
+#forward_button {
     position: absolute;
     top: 50%;
     right: 5px;
 }
 
-#back_button, #forward_button{
+#back_button, #forward_button {
     width: 40px;
     height: 40px;
     border: none;
@@ -318,12 +318,12 @@ td{
 }
 
 /*画像下のラジオボタン*/
-label{
+label {
     width: 20px;
     height: 20px;
 }
 
-.image_radio_button label{
+.image_radio_button label {
     background: rgba(0, 0, 0, 0.5);
     color: #000;
     border-radius: 50%;
@@ -331,18 +331,18 @@ label{
     font-size: 15px;
 }
 
-.image_radio_button input:checked+label{
+.image_radio_button input:checked+label {
     background: #000;
     color: #000;
 }
 
 /*ラジオボタンは消す*/
-.image_radio_button input{
+.image_radio_button input {
     display: none;
 }
 
 /*ラジオボタンの位置*/
-.image_radio_button{
+.image_radio_button {
     position: absolute;
     bottom: 5px;
     left: 47%;
