@@ -21,16 +21,20 @@ h2 {
     width: 60%;
 }
 
-.login_yes, .login_no, .attention, .summary, .functions {
+.login_yes, .login_no, .attention, .summary {
     margin-left: 30px;
 }
 
 .login, .non_login {
-    margin-left: 15px;
+    margin-left: 30px;
 }
 
 .non_login {
-    margin-top: 30px;
+    margin-top: 50px;
+}
+
+.functions {
+    margin-left: 65px;
 }
 
 span {
