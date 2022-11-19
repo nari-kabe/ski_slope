@@ -2,17 +2,19 @@ body {
     margin: 12px;
 }
 
-.login_yes, .login_no {
-    display: block;
+h2 {
+    margin-bottom: 28px;
 }
 
-.login_yes {
+.login_yes, .login_no {
+    display: block;
     margin-bottom: 15px;
 }
 
 .attention {
     color: red;
     margin-top: 8px;
+    margin-bottom: 8px;
 }
 
 .summary_container {
@@ -33,5 +35,4 @@ body {
 
 span {
     background-color: #ffeb3bb3;
-    border-bottom: solid 3px #87CEFA;
 }

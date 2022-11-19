@@ -9,7 +9,8 @@
         <h1>Welcome!</h1>
         <a href="/login" class="login_yes">ログインする</a>
         <a href="/pages/login_home" class="login_no">ログインしない</a>
-        <p class="attention">※ログインしない場合は一部の機能が制限されます</p>  
+        <p class="attention">※ログインしない場合は一部の機能が制限されます</p>
+        <p class="attention">※Google Chromeの使用を推奨します</p>
         <h2>アプリ概要</h2>
         <div class="summary_container">
             <p class="summary">このWebサイトでは、まず、スキー場の概要や特徴を閲覧したり、スキー場の情報を登録することができます。
